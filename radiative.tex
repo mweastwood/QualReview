@@ -1,14 +1,73 @@
 \section{Radiative Processes}
+
 Remember guys, there's nothing funny about neutrinos.
+
 \subsection{Questions}
+
 \begin{enumerate}
-\item Derive the total power and characteristic frequency of synchrotron radiation from
+
+\item \textbf{Derive the total power and characteristic frequency of synchrotron radiation from
       a relativistic particle of mass m, charge e, and energy E moving in a magnetic field B.
-      Use this to explain why synchrotron radiation is generally negligible for protons.
-\item Explain the connection between detailed balance, the Einstein A and B relations,
+      Use this to explain why synchrotron radiation is generally negligible for protons.}
+      
+\item \textbf{Explain the connection between detailed balance, the Einstein A and B relations,
       Kirchoff's law and the Milne relations, and give an example of their use to connect the
-      bremsstrahlung emission spectrum and the free-free absorption coefficient.
-\item Draw the energy levels of the hydrogen atom and identify which transitions are
+      bremsstrahlung emission spectrum and the free-free absorption coefficient.}
+      
+      Einstein relations:
+      
+      Ignore collisions for now and just think about particles that are radiating and absorbing photons. Consider a gas with $n_1$ number density in the lower state (1) and $n_2$ in the excited state (2). Assume thermodynamic equilibrium for now. We have Einstein relations
+      
+      $A_{21}$: probability of spontaneous emission per time (s$^{-1}$),
+      
+      $B_{12}\bar{J}$: probability of absorption per time (s$^{-1}$),
+      
+       $B_{21}\bar{J}$: probability of stimulated emission per time (s$^{-1}$).
+       
+       $\bar{J}$ is just the mean intensity averaged over the line profile for the transition:
+       \begin{equation}
+       \bar{J} = \int^\infty_0 J_\nu \phi(\nu) d\nu \,\,.
+       \end{equation}
+       
+       Also recall the Maxwell-Boltzmann relationship between $n_1$ and $n_2$:
+       \begin{equation}
+       \frac{n_1}{n_2} = \frac{g_1}{g_2} e^{h\nu_0 / k_B T},
+       \end{equation}
+       where $h\nu_0$ is the energy of the photon and the energy difference between the two levels, $E_2 - E_1$. You can use these equations to solve for $\bar{J}$, then equate $\bar{J}$ to $B_\nu$ assuming $J_\nu = B_\nu$ and $B_\nu$ varies very little over the sharp line profile $\phi(\nu)$. Equating these two gives the following Einstein relations:
+      
+      \begin{equation}
+      \frac{g1}{g2} = \frac{B_{21}}{B_{12}}
+      \end{equation}
+      
+      \begin{equation}
+      \frac{A_{21}}{B_{21}} = \frac{2 h \nu^3}{c^2}
+      \end{equation}
+      
+      Even though we assumed thermodynamic equilibrium, these relations do not depend on temperature and just describe properties of the atoms. Therefore, we can say they are more general and hold for cases that are not in thermodynamic equilibrium.
+      
+      Kirchoff's law:
+      
+      \begin{equation}
+      j_\nu = \alpha_\nu B_\nu.
+      \end{equation}
+      
+      Show the following:
+      
+      \begin{equation}
+      j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
+      \end{equation}
+      
+       \begin{equation}
+      \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
+      \end{equation}
+      
+      The Einstein relations and Kirchoff's law are both relations using the blackbody function between absorption and emission of photons. One deals with them on an atomic level using the properties and thermal distributions of atoms, and one uses the bulk properties of the material like emission and absorption coefficients (does anyone have thoughts to add here?).
+      
+      Milne relations:
+      
+      
+\item \textbf{Draw the energy levels of the hydrogen atom and identify which transitions are
       allowed. Which ones are in the visible part of the spectrum? Which level has no
-      allowed decays, and what is its main decay mode?
+      allowed decays, and what is its main decay mode?}
+      
 \end{enumerate}
