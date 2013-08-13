@@ -61,9 +61,31 @@ Remember guys, there's nothing funny about neutrinos.
       \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
       \end{equation}
       
-      The Einstein relations and Kirchoff's law are both relations using the blackbody function between absorption and emission of photons. One deals with them on an atomic level using the properties and thermal distributions of atoms, and one uses the bulk properties of the material like emission and absorption coefficients (does anyone have thoughts to add here?).
+      (see p. 5 of Tony's notes). 
       
       Milne relations:
+      
+      These relations are analogous to the Einstein relations, but they are for photoionization and radiative recombination, rather than transitions between energy levels in an atom. Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal velocity distribution of electrons and that the radiation field is described by the Planck function $B_\nu$. Let $\sigma_{\rm fb}(v)$ be the cross section for an electron with speed $v$ to recombine with an ion; meanwhile, $\sigma_{\rm bf}(\nu)$ is the cross section for an ion to to be photoionized by a photon with frequency $\nu$. We can write the rate of recombinations per volume (s$^{-1}$ cm$^{-3}$) in terms of the number densities of ions and electrons, the cross section, and the electron velocity distribution for a velocity range $dv$:
+      
+      \begin{equation}
+      R_{\rm recomb} = N_+N_e \sigma_{\rm fb} f(v) dv
+      \end{equation}
+      
+      and the rate of ionization is
+      
+       \begin{equation}
+      R_{\rm ioniz} = \frac{4\pi}{h\nu} N_n \sigma_{\rm bf} (1 - e^{-h\nu/k_{\rm B}T}) I_\nu d\nu
+      \end{equation}
+      
+      and we have assumed $I_\nu = B_\nu$ (note: where does the factor of $(1 - e^{-h\nu/k_{\rm B}T})$ come from? Also, justify these expressions to yourself in general).
+      
+      Set these two equations equal and obtain an expression for $\sigma_{\rm bf} / \sigma_{\rm fb}$; use the Maxwell-Boltzmann distribution for $f(v)$ and the Saha equation to obtain the Milne relation:
+      
+      \begin{equation}
+      \frac{\sigma_{\rm bf}}{\sigma_{\rm fb}} = \frac{m^2 c^2 v^2 g_e g_+}{\nu^2 h^2 2 g_n}\,\, .
+      \end{equation}
+      
+      The Einstein relations, Milne relations, and Kirchoff's law all describe relationships between the absorption and emission of photons. Einstein deals with transitions between two energy levels on an atomic level using the properties and thermal distributions of atoms. Milne is the analogous relationship for ionization and radiative recombination. The Kirchoff law is general and describes both in terms of the bulk properties of the material like emission and absorption coefficients (io is kind of bullshitting here. Does anyone have a better explanation for tying these together?).
       
       
 \item \textbf{Draw the energy levels of the hydrogen atom and identify which transitions are
