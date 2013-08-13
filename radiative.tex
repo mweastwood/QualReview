@@ -10,6 +10,76 @@ Remember guys, there's nothing funny about neutrinos.
       a relativistic particle of mass m, charge e, and energy E moving in a magnetic field B.
       Use this to explain why synchrotron radiation is generally negligible for protons.}
       
+      $\bullet$ Synchrotron radiation is caused by relativistic charged particles moving in an external magnetic field. Therefore, the Lorentz force equations of motion and the Larmor formula for the power radiated by an accelerating charged particle will be relevant. 
+      
+      Lorentz force: 
+      \begin{equation}
+      F_{B} = \frac{q}{c} \bar{v} \times \bar{B}
+      \end{equation}
+      
+      Larmor Formula:
+      \begin{equation}
+      P = \frac{2}{3} \frac{q^{2}}{c^{3}} \gamma^{4} a^{2}
+      \end{equation}
+      
+      $\bullet$ Use the equations of motion to solve for the acceleration $a$ of the particle and plug into the Larmor formula to get the total power radiated from a single particle.
+      
+      \begin{equation}
+      F_{B} = \frac{d}{dt} (\gamma m \bar{v})
+      \end{equation}
+      
+      We can determine that $\gamma$ is constant by using the definition of work and power.
+      
+      \begin{equation}
+      \frac{dE}{dt} = \frac{d}{dt} (\bar{F} \cdot distance) = \bar{F} \cdot \frac{dx}{dt} = \bar{F} \cdot \bar{v}
+      \end{equation}
+      
+      But since $F_{B}$ is perpendicular to $\bar{v}$, this whole equation is $0$. This implies $E = \gamma mc^{2}$ is constant, so $\gamma$ is constant. This simplifies our equation of motion:
+      
+      \begin{equation}
+      \gamma m \frac{d\bar{v}}{dt} = \frac{q}{c} \bar{v} \times \bar{B}
+      \end{equation}
+      
+      Now the acceleration can be solved for directly. In the direction of B, there is no acceleration (remember the cross product). Perpendicular to B:
+      
+      \begin{equation}
+      \frac{dv}{dt}_{\perp} = \frac{q}{\gamma mc} vB \sin{\alpha}
+      \end{equation}
+      
+      where $\alpha$ is the angle between the velocity and the magnetic field. Plug into the Larmor Formula to get the total power radiated by a single electron:
+      
+      \begin{equation}
+      P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
+      \end{equation} 
+      
+      $\bullet$ The emission from the synchrotron has a characteristic frequency because it gyrates with a certain frequency, and is also beamed because of its relativistic motion. The emission is confined to a cone of radius $\frac{2}{\gamma}$. Observers can only see the emission during the times this cone is pointed in the line of sight. Solve for the time the particle spends in this section of its orbit:
+      
+      \begin{equation}
+      \Delta t = \frac{\Delta s}{v} = \frac{2r}{\gamma v}
+      \end{equation}
+      
+      Use the equation of motion to solve for either the arc length $\Delta s$ or radius of curvature $r$.
+      
+      \begin{equation}
+      \Delta t = \frac{2mc}{qB\sin{\alpha}}
+      \end{equation}
+      
+      $\bullet$ What is seen is the light emitted from this region of space, so subtract the light travel time from the beginning to the end of the path to get the duration of the pulse:
+      
+       \begin{equation}
+      \Delta t^{A} = \frac{2mc}{qB\sin{\alpha}} - \frac{\Delta s}{c} = \Delta t (1 - \frac{v}{c})
+      \end{equation}
+      
+      \begin{equation}
+      (1 - \frac{v}{c}) \approx \frac{1}{2\gamma^{2}}
+      \end{equation}
+      
+      If you write out the definition of $\gamma$ and factor the polynomial, you can approximate $(1 + \frac{v}{c}) \approx 2$ since the particle is very relativistic.
+      
+      $\bullet$ The inverse of this is the characteristic or 'critical' frequency. It tells you the spectrum will be centered around this frequency.
+      
+      $\bullet$ A proton is $\sim10^{4}$ times as massive as an electron. To compare electron and proton synchrotron radiation, think about which quantities are affected by mass. Power is inversely proportional to mass, so it won't radiate with as much power for a proton. Also, for a given energy, the proton won't move as fast, lowering $\gamma$. This lowers the power as well, but it also makes it harder for the proton to reach synchrotron energies at all. Finally, the characteristic frequency is proportional to $\gamma$, so a proton's peak frequency will be at longer wavelengths, therefore with lower energy.
+      
 \item \textbf{Explain the connection between detailed balance, the Einstein A and B relations,
       Kirchoff's law and the Milne relations, and give an example of their use to connect the
       bremsstrahlung emission spectrum and the free-free absorption coefficient.}
