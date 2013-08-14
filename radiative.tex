@@ -10,47 +10,50 @@ Remember guys, there's nothing funny about neutrinos.
       a relativistic particle of mass m, charge e, and energy E moving in a magnetic field B.
       Use this to explain why synchrotron radiation is generally negligible for protons.}
       
-      $\bullet$ Synchrotron radiation is caused by relativistic charged particles moving in an external magnetic field. Therefore, the Lorentz force equations of motion and the Larmor formula for the power radiated by an accelerating charged particle will be relevant. 
+      \newthought{Synchrotron radiation is}
+      caused by relativistic charged particles moving in an external
+      magnetic field. Therefore, the Lorentz force equations of motion and the Larmor formula
+      for the power radiated by an accelerating charged particle will be relevant. 
+      \begin{dgroup}
+      \begin{dmath}
+        \text{Lorentz Force:}\quad F_{B} = \frac{q}{c} \v{v} \times \v{B}
+      \end{dmath}
+      \begin{dmath}
+        \text{Larmor Formula:}\quad P = \frac{2}{3} \frac{q^{2}}{c^{3}} \gamma^{4} a^{2}
+      \end{dmath}
+      \end{dgroup}
+      Use the equations of motion to solve for the acceleration, $a$, of the particle and plug
+      into the Larmor formula to get the total power radiated from a single particle.
+      \begin{dgroup*}
+      \begin{dmath*}
+            F_{B} = \frac{\d}{\d t} (\gamma m \v{v})
+      \end{dmath*}
+      \begin{dmath*}
+            \frac{q}{c} \v{v} \times \v{B} = \gamma m \frac{\d\v v}{\d t},
+      \end{dmath*}
+      \end{dgroup*}
+      where we have used the fact that $\gamma$ is constant\sidenote{
+        From the definition of work:
+        \begin{dgroup*}
+        \begin{dmath*}
+        \d W = \v F\cdot \v{\d s}
+        \end{dmath*}
+        \end{dgroup*}
+        However, the Lorentz force $F_B$ is always perpendiculr to $\v{\d s}$ so that
+        no work is done on the particle.  Therefore the speed (and hence $\gamma$) is constant.
+      }.
       
-      Lorentz force: 
+      
+      Now the acceleration can be solved for directly. In the direction of $\v B$,
+      there is no acceleration (remember the cross product). Perpendicular to $\v B$:
       \begin{equation}
-      F_{B} = \frac{q}{c} \bar{v} \times \bar{B}
+        \left(\frac{\d v}{\d t}\right)_{\perp} = \frac{q}{\gamma mc} vB \sin{\alpha},
       \end{equation}
-      
-      Larmor Formula:
-      \begin{equation}
-      P = \frac{2}{3} \frac{q^{2}}{c^{3}} \gamma^{4} a^{2}
-      \end{equation}
-      
-      $\bullet$ Use the equations of motion to solve for the acceleration $a$ of the particle and plug into the Larmor formula to get the total power radiated from a single particle.
-      
-      \begin{equation}
-      F_{B} = \frac{d}{dt} (\gamma m \bar{v})
-      \end{equation}
-      
-      We can determine that $\gamma$ is constant by using the definition of work and power.
-      
-      \begin{equation}
-      \frac{dE}{dt} = \frac{d}{dt} (\bar{F} \cdot distance) = \bar{F} \cdot \frac{dx}{dt} = \bar{F} \cdot \bar{v}
-      \end{equation}
-      
-      But since $F_{B}$ is perpendicular to $\bar{v}$, this whole equation is $0$. This implies $E = \gamma mc^{2}$ is constant, so $\gamma$ is constant. This simplifies our equation of motion:
-      
-      \begin{equation}
-      \gamma m \frac{d\bar{v}}{dt} = \frac{q}{c} \bar{v} \times \bar{B}
-      \end{equation}
-      
-      Now the acceleration can be solved for directly. In the direction of B, there is no acceleration (remember the cross product). Perpendicular to B:
-      
-      \begin{equation}
-      \frac{dv}{dt}_{\perp} = \frac{q}{\gamma mc} vB \sin{\alpha}
-      \end{equation}
-      
-      where $\alpha$ is the angle between the velocity and the magnetic field. Plug into the Larmor Formula to get the total power radiated by a single electron:
-      
-      \begin{equation}
-      P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
-      \end{equation} 
+      where $\alpha$ is the angle between the velocity and the magnetic field.
+      Plug into the Larmor Formula to get the total power radiated by a single electron:
+      \begin{equation}\boxed{
+        P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
+      }\end{equation} 
       
       $\bullet$ The emission from the synchrotron has a characteristic frequency because it gyrates with a certain frequency, and is also beamed because of its relativistic motion. The emission is confined to a cone of radius $\frac{2}{\gamma}$. Observers can only see the emission during the times this cone is pointed in the line of sight. Solve for the time the particle spends in this section of its orbit:
       
