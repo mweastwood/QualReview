@@ -122,8 +122,24 @@ Remember guys, there's nothing funny about neutrinos.
       Also, the A and B coefficients are intrinsic properties of individual 
       atoms, so they should have nothing to do with the overall state of the 
       gas and whether or not it's in thermodynamic equilibrium.
+
       Kirchoff's law:
-      
+
+      Take a thermally emitting (not necessarily blackbody) material at temperature T and place it 
+      in a blackbody cavity also at temperature T.  With just the cavity, $S_{\nu}=I_{\nu}=B_{\nu}$.  
+      With the material added, we still have a cavity of temperature T, so the total intensity must 
+      still be a blackbody, since by definition this intensity does not depend on the internal 
+      structure.  The added material has some source function $S_{\nu 2}$ that affects the total 
+      intensity of the cavity.  Think of the new material as a new piece of the cavity, with radiation 
+      contributed by its source function.  If the source function is greater than the blackbody function 
+      of the cavity, too much radiation will be contributed and the resulting intensity will also be 
+      greater than the blackbody of the cavity on its own.  If the source function is less than the 
+      blackbody function, too little radiation will be contributed, decreasing the total intensity to 
+      below the blackbody function.  But we know the total intensity must still be a blackbody function 
+      of temperature T.  So the source function of the new material must be a blackbody of temperature T.  
+      So, we have 
+      \begin{displaymath}S_{\nu}=B_{\nu}\end{displaymath}
+      and, by definition of $S_{\nu}$,
       \begin{equation}
       j_\nu = \alpha_\nu B_\nu.
       \end{equation}
