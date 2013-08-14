@@ -19,64 +19,70 @@
       H$^-$ ion: Occasionally, if there are enough free electrons present (easier with increased partial ionization of heavy elements), some will become weakly bound to hydrogen atoms, so that the proton is surrounded by two electrons.
 \end{enumerate}
 
-
-\subsection{Basic Information}
-
+\subsection{Stellar Properties}
 Let's start by listing the properties of the Sun, which are just good to know.
-
-\begin{equation}
-L_\odot = 3.8 \times 10^33~{\rm erg}~{\rm s}^-1
-\end{equation}
-
-\begin{equation}
-R_\odot = 6.9 \times 10^10~{\rm cm}
-\end{equation}
-
-\begin{equation}
-M_\odot = 2 \times 10^33~{\rm g}
-\end{equation}
-
-\begin{equation}
-t_\odot = 4.5 \times 10^9~{\rm yrs}
-\end{equation}
-
-\begin{equation}
+\begin{dgroup}
+\begin{dmath}
+L_\astrosun = 3.8 \times 10^33~{\rm erg}~{\rm s}^-1
+\end{dmath}
+\begin{dmath}
+R_\astrosun = 6.9 \times 10^10~{\rm cm}
+\end{dmath}
+\begin{dmath}
+M_\astrosun = 2 \times 10^33~{\rm g}
+\end{dmath}
+\begin{dmath}
+t_\astrosun = 4.5 \times 10^9~{\rm yrs}
+\end{dmath}
+\begin{dmath}
 T_{\rm eff} = 5800~{\rm K}
-\end{equation}
-
-\begin{equation}
+\end{dmath}
+\begin{dmath}
 \rho_{\rm c} = 150~{\rm g}~{\rm cm}^{-2}
-\end{equation}
-
-\begin{equation}
-\langle \rho \rangle_\odot = 150~{\rm g}~{\rm cm}^{-2}
-\end{equation}
-
+\end{dmath}
+\begin{dmath}
+\langle \rho \rangle_\astrosun = 150~{\rm g}~{\rm cm}^{-2} (this is wrong)
+\end{dmath}
+\end{dgroup}
 Ranges for other stars:
-
-\begin{equation}
-M \sim 0.1 - 100~{\rm M}_\odot
-\end{equation}
-
-\begin{equation}
-R \sim 0.1 - 1000~{\rm R}_\odot
-\end{equation}
-
-\begin{equation}
-L \sim 10^{-4} - 10^6~{\rm L}_\odot
-\end{equation}
-
-\begin{equation}
+\begin{dgroup}
+\begin{dmath}
+M \sim 0.1 - 100~{\rm M}_\astrosun
+\end{dmath}
+\begin{dmath}
+R \sim 0.1 - 1000~{\rm R}_\astrosun
+\end{dmath}
+\begin{dmath}
+L \sim 10^{-4} - 10^6~{\rm L}_\astrosun
+\end{dmath}
+\begin{dmath}
 T_{\rm eff} \sim 1000 - 5 \times 10^4~{\rm K}
-\end{equation}
+\end{dmath}
+\end{dgroup}
 
-Understanding stars: 3 key pieces of physics
+\subsection{Timescales}
+The free-fall timescale and Kelvin-Helmholtz timescale are the most relevant here.  We should
+include a definition and derivation
 
-1. Force balance: pressure vs. gravity (and sometimes rotation)
+\subsection{The Virial Theorem}
+I will add a nice description of this when I'm not tired -- Michael
 
-2. Energy transport: conduction, radiation, convection
-
-3. Energy generation: fusion, gravitational contraction
+\subsection{Equations of Stellar Structure}
+\newthought{There are three} key pieces of physics that are necessary for understanding stars:
+\begin{enumerate}
+    \item Force balance: pressure vs. gravity (and sometimes rotation)
+    \item Energy transport: conduction, radiation, convection
+    \item Energy generation: fusion, gravitational contraction
+\end{enumerate}
+These form the essence of the equations of stellar structure.
+\begin{dgroup*}
+\begin{dmath}
+    \frac{\d M_r}{\d r} = 4\pi r^2\rho \quad \text{(mass continuity)}
+\end{dmath}
+\begin{dmath}
+    \frac{\d P}{\d r} = -\frac{GM_r\rho}{r^2} \quad \text{(hydrostatic equilibrium)}
+\end{dmath}
+\end{dgroup*}
 
 Let's talk first about force balance. Assuming no radiation, this is just a competition between pressure and gravity. We can look at a layer in the star with pressure $P$ at its base and $P+dP$ above, and we know the force on the layer due to gravity. The total force will be the pressure difference times the area of the shell $A$ (which will eventually drop out) plus the gravitational force $-\frac{G M_r M_{\rm shell}}{r^2}$. If we assume hydrostatic equilibrium, the total force is zero. We then can switch to differentials to get the hydrostatic equilibrium equation:
 
@@ -132,7 +138,7 @@ What eventually stops fragmentation is that the cloud stops being isothermal. Th
 
 Pre-Main-Sequence Evolution:
 
-First, the pre-MS protostar collapses on the Kelvin-Helmholtz timescale $t_{\rm KH}$, which for $1~{\rm M}_\odot$ is about $10^7$ years (what is the expression?). The effective temperature increases, so the opacity of the outer layers becomes dominated by the H$^-$ ion, which gets its extra electrons from increased partial ionization of heavy elements. This increased opacity causes the envelope of the protostar to become convective and sometimes this envelope can become very large, reaching even to the center of the star. This object evolves along the Hayashi track, its luminosity decreasing while the effective temperature increases only slightly (it is almost constant, $\sim 3800$ K).
+First, the pre-MS protostar collapses on the Kelvin-Helmholtz timescale $t_{\rm KH}$, which for $1~{\rm M}_\astrosun$ is about $10^7$ years (what is the expression?). The effective temperature increases, so the opacity of the outer layers becomes dominated by the H$^-$ ion, which gets its extra electrons from increased partial ionization of heavy elements. This increased opacity causes the envelope of the protostar to become convective and sometimes this envelope can become very large, reaching even to the center of the star. This object evolves along the Hayashi track, its luminosity decreasing while the effective temperature increases only slightly (it is almost constant, $\sim 3800$ K).
 
 \subsection{Atmospheres}
 \subsection{Interiors}
