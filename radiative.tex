@@ -211,7 +211,6 @@ Remember guys, there's nothing funny about neutrinos.
 \end{enumerate}
 
 \subsection{The Basics}
-Scott and Michael are awesome.
 Fermi-Dirac Distribution:
 \begin{displaymath}N_i=\frac{g_i}{e^{(\epsilon_i-\mu)\beta}+1}\end{displaymath}
 
@@ -312,3 +311,48 @@ by the extra material.  For an optically thick material, $\tau$ is large, and th
 brightness temperature approaches the actual temperature of the material.  In other words, 
 optically thick things emit like blackbodies.  The equation for $T_b$ above is just a mathematical 
 statement of this.
+
+\subsection{Thomson Scattering}
+
+Derivation of the Thomson scattering cross section:
+
+The cross section is given by the following:
+
+$\sigma_T$ = power radiated by accelerated electron/flux incident on the electron
+
+Starting from the dipole approximation, the power radiated by the accelerated electron is given by:
+
+\begin{equation}
+P = \frac{2\ddot d}{3c^3}
+\end{equation}
+
+Next balance forces. 
+
+\begin{equation}
+eE_0sin(\omega t) = m_e\ddot r
+\end{equation}
+
+So the power becomes:
+
+\begin{equation}
+P = \frac{e^4E_0^2}{3c^3m_e^2}
+\end{equation}
+
+The flux incident on the electron is given by the time-averaged poynting vector:
+
+\begin{equation}
+<S> = \frac{cE_0^2}{8\pi}
+\end{equation}
+
+The Thomson cross section is then given by:
+
+\begin{equation}
+\sigma_T = \frac{e^4E_0^2}{3c^3m_e^2}\frac{8\pi}{cE_0^2}
+\end{equation}
+
+\begin{equation}
+\sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
+\end{equation}
+
+
+
