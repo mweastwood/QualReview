@@ -140,6 +140,54 @@ Pre-Main-Sequence Evolution:
 
 First, the pre-MS protostar collapses on the Kelvin-Helmholtz timescale $t_{\rm KH}$, which for $1~{\rm M}_\astrosun$ is about $10^7$ years (what is the expression?). The effective temperature increases, so the opacity of the outer layers becomes dominated by the H$^-$ ion, which gets its extra electrons from increased partial ionization of heavy elements. This increased opacity causes the envelope of the protostar to become convective and sometimes this envelope can become very large, reaching even to the center of the star. This object evolves along the Hayashi track, its luminosity decreasing while the effective temperature increases only slightly (it is almost constant, $\sim 3800$ K).
 
+
+\subsection{Radial Velocities}
+
+Derivation of radial velocity amplitude from a star and a low mass companion (say a planet).
+
+Let $r_p$ be the distance between the planet and the center of mass of the system, and $r_s$ be the distance between the star and the center of mass.
+
+\begin{equation}
+a = r_p + r_s
+\end{equation}
+
+\begin{equation}
+v_p = \frac{2\pi r_p}{P}
+\end{equation}
+\begin{equation}
+v_s = \frac{2\pi r_s}{P}
+\end{equation}
+
+\begin{equation}
+M_pr_p = M_sr_s
+\end{equation}
+
+Combining above equations yields the following relation:
+\begin{equation}
+\frac{v_p}{v_s} = \frac{r_p}{r_s} = \frac{M_s}{M_p}
+\end{equation} 
+
+\begin{equation}
+a = r_p + r_s = (\frac{M_s}{M_p} + 1)r_s = r_s\big(\frac{M_s + M_p}{M_s}\big)
+\end{equation}
+
+Plugging the above expression into Kepler's 3rd law:
+
+\begin{equation}
+P^2 = \frac{4\pi^2r_s^3(M_p + M_s)^2}{GM_p^3}
+\end{equation}
+
+Plugging in for $r_s$ and rearranging a bit:
+
+\begin{equation}
+v_s^3 = \frac{P^{-1}2\pi GM_p^3}{(M_p + M_s)}
+\end{equation}
+
+By assuming the companion is significantly less massive than the star, you can simplify the expression for the radial velocity amplitude K.  
+\begin{equation}
+v_s = K = 2\pi G P^{-\frac{1}{3}}M_pM_s^{-\frac{2}{3}}
+\end{equation}
+
 \subsection{Atmospheres}
 \subsection{Interiors}
 
