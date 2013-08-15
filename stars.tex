@@ -5,8 +5,27 @@
 \begin{enumerate}
 \item \textbf{Explain what is the Hayashi track, and describe what types of objects live on it.
       Qualitatively explain how it arises and what assumptions are required for its derivation.}
-\item \textbf{Estimate the temperature as a function of depth in the Sun's convection zone. What
-      is the temperature at the base of the convection zone?}
+\item \textbf{Estimate the temperature as a function of depth in the Sun's convection zone. What is the temperature at the base of the convection zone?}
+
+	Imagine a blob of gas inside a gaseous medium whose density deviates from the density of its environment. If the blob's density is smaller than the surrounding density, the system is unstable to convection (we should also know how to express this in terms of entropy).
+	Imagine that the blob has $rho_{b1},~P_{b1},~T_{b1}$, and the surrounding medium has $rho_1,~P_1,~T_1$. The blob moves up a distance $\delta r$, where the environment has $rho_2,~P_2,~T_2$, and now the blob has $rho_{b2},~P_{b2},~T_{b2}$. Assume the process is adiabatic, so the blob obeys $P = K \rho ^\gamma$, and assume we have an ideal gas, so P = \frac{rho k_{\rm B} T}{\mu m_p}. First differentiate the ideal gas law to obtain
+	
+	\begin{equation}
+	\frac{dP}{dr} = \frac{P}{\rho} \frac{d \rho}{dr} + \frac{P}{T} \frac{d T}{dr} \,\, ,
+	\end{equation}
+	assuming that the pressure does not vary much with the mean molecular weight $\mu$. We can also differentiate the adiabatic pressure equation
+	\begin{equation}
+	\frac{dP}{dr} = \gamma \frac{P}{\rho}\frac{d\rho}{dr}\,\, .
+	\end{equation}
+	Setting these two equal, we get
+	\begin{equation}
+	\biggl(\frac{dT}{dr}\biggr)_{\rm ad} = \biggl(1 - \frac{1}{\gamma}\biggr)\frac{T}{P} \frac{dP}{dr}\,\, ,
+	\end{equation}
+	which is the adiabatic temperature gradient. In a star, we can also use the ideal gas law to replace $P$ and hydrostatic equilibrium to replace $dP/dr$:
+	\begin{equation}
+	\biggl(\frac{dT}{dr}\biggr)_{\rm ad} = -\biggl(1 - \frac{1}{\gamma}\biggr)\frac{\mu m_p}{k_{\rm B} \frac{G M_r}{r^2}\,\, .
+	This describes how the temperature in the bubble changes as it rises and expands adiabatically.
+	
 \item \textbf{Describe the major sources of opacity in stars, and how each depends on density,
       temperature, and metallicity.}
       
