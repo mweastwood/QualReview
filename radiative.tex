@@ -54,33 +54,45 @@ Remember guys, there's nothing funny about neutrinos.
         P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
       }\end{equation} 
       
-      \newthought{The emission from} synchrotron has a characteristic frequency
-      because it gyrates with a certain frequency, and is also beamed because of its
-      relativistic motion. The emission is confined to a cone of radius $\frac{2}{\gamma}$.
-      Observers can only see the emission during the times this cone is pointed in the line
-      of sight. Solve for the time the particle spends in this section of its orbit:
-      \begin{equation}
-      \Delta t = \frac{\Delta s}{v} = \frac{2r}{\gamma v}
-      \end{equation}
-      
-      Use the equation of motion to solve for either the arc length $\Delta s$ or radius of curvature $r$.
-      
-      \begin{equation}
-      \Delta t = \frac{2mc}{qB\sin{\alpha}}
-      \end{equation}
-      
-      $\bullet$ What is seen is the light emitted from this region of space, so subtract the light travel time from the beginning to the end of the path to get the duration of the pulse:
-      
-       \begin{equation}
-      \Delta t^{A} = \frac{2mc}{qB\sin{\alpha}} - \frac{\Delta s}{c} = \Delta t (1 - \frac{v}{c})
-      \end{equation}
-      
-      \begin{equation}
-      (1 - \frac{v}{c}) \approx \frac{1}{2\gamma^{2}}
-      \end{equation}
-      
-      If you write out the definition of $\gamma$ and factor the polynomial, you can approximate $(1 + \frac{v}{c}) \approx 2$ since the particle is very relativistic.
-      
+      \newthought{The characteristic frequency} of synchrotron emission is influenced
+      by two effects: the gyro-frequency\sidenote{
+        The frequency at which a relativistic electron gyrates in a constant magnetic field.
+      }, and relativistic beaming.
+
+      The opening angle of the cone of emission (due to the beaming) is $\sim2/\gamma$.
+      Therefore an observer can only see the emission during the time it takes the electron
+      to travel $2/\gamma$ radians along its circular orbit.  This corresponds to an arclength
+      of $2r/\gamma$ where $r$ is the Larmor radius\sidenote{
+        The radius of an electron's orbit in a uniform magnetic field.  Begin by equating
+        the Lorentz force with the centripetal force:
+        \begin{dgroup*}
+        \begin{dmath*}
+            \frac{qvB}{c}\sin\alpha = \frac{\gamma mv^2}{r}
+        \end{dmath*}
+        \begin{dmath*}
+            r = \frac{\gamma mvc}{qB\sin\alpha}
+        \end{dmath*}
+        \end{dgroup*}
+      }.
+      Therefore, if the electron is moving with a speed $v$, it is only visible for a time
+      \begin{dmath}
+        \Delta t = \frac{2r}{\gamma v}\nolinebreak=\nolinebreak \frac{2mc}{qB\sin\alpha}
+      \end{dmath}.
+      However, the light emitted at the beginning of the pulse has to travel an extra
+      distance $2r/\gamma$ (assuming $\gamma \gg 1$ we can treat the arc as a straight line).
+      The distance in arrival time between the beginning and the end of the pulse is then
+      \begin{dmath}
+        \Delta t^\star = \Delta t - \frac{2r}{\gamma c}
+            \nolinebreak=\nolinebreak \Delta t\left(1-\frac{v}{c}\right)
+            \nolinebreak\approx\nolinebreak \frac{\Delta t}{2\gamma^2}
+      \end{dmath},
+      where the approximation\sidenote{
+        \begin{dmath*}
+            \frac{1}{\gamma^2} = 1-\frac{v^2}{c^2} = \left(1-\frac{v}{c}\right)\left(1+\frac{v}{c}\right)
+                \approx 2\left(1-\frac{v}{c}\right)
+        \end{dmath*}
+      } requires $\gamma \gg 1$.
+
       $\bullet$ The inverse of this is the characteristic or 'critical' frequency. It tells you the spectrum will be centered around this frequency.
       
       $\bullet$ A proton is $\sim10^{4}$ times as massive as an electron. To compare electron and proton synchrotron radiation, think about which quantities are affected by mass. Power is inversely proportional to mass, so it won't radiate with as much power for a proton. Also, for a given energy, the proton won't move as fast, lowering $\gamma$. This lowers the power as well, but it also makes it harder for the proton to reach synchrotron energies at all. Finally, the characteristic frequency is proportional to $\gamma$, so a proton's peak frequency will be at longer wavelengths, therefore with lower energy.
