@@ -154,6 +154,22 @@ radii range from $\sim 0.25\ R_{\odot}$ to $\sim 25\ R_{\odot}$.
 \subsection{Timescales}
 The free-fall timescale and Kelvin-Helmholtz timescale are the most relevant here.  We should
 include a definition and derivation
+Free-fall Time:\newline
+If the Sun had no pressure support and just collapsed under gravity, it's velocity would be 
+determined by energy conservation:
+\begin{equation}
+\frac{1}{2}\left(\frac{dr}{dt}\right)^2 = \frac{GM}{r}-\frac{GM}{r_0}
+\end{equation}
+assuming the mass interior to any element is constant (the entire cloud collapse all at once).
+This equation can be integrated to give
+\begin{equation}
+\tau_{ff}=\left(\frac{r_0^3}{2GM}\right)^{1/2}\int_0^1\left(\frac{x}{1-x}\right)^{1/2}\,dx
+\end{equation}
+The definite integral is equal to $\pi/2$, so
+\begin{equation}
+\tau_{ff}=\left(\frac{3\pi}{32G\rho}\right)^{1/2}
+\end{equation}
+Free fall time for the Sun is 1800s.
 
 \subsection{The Virial Theorem}
 I will add a nice description of this when I'm not tired -- Michael
