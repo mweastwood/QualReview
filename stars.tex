@@ -106,7 +106,7 @@ T_{\rm eff} \sim 1000 - 5 \times 10^4~{\rm K}
 \end{dmath}
 \end{dgroup}
 
-\section{Spectral Types}
+\subsection{Spectral Types}
 O, B, A, F, G, K, M\newline
 Within these types, stars are numbered 0 through 9 (hottest to coolest).  Luminosity classes 
 are also used.  I-IV are giant stars, while V are main sequence stars.  D is for white dwarfs.  
@@ -142,7 +142,7 @@ M stars:\newline
 <0.5 $M_{\odot}$\newline
 Dominated by molecular bands, in particular TiO between 6600 \AA\ and 8600 \AA.
 
-\section{HR Diagram}
+\subsection{HR Diagram}
 Be able to draw and explain one.  Some useful approximate relations for the main sequence:
 \begin{equation}L\propto T_{eff}^8\end{equation}
 \begin{equation}R\propto T_{eff}^2\end{equation}
@@ -173,6 +173,34 @@ Free fall time for the Sun is 1800s.
 
 \subsection{The Virial Theorem}
 I will add a nice description of this when I'm not tired -- Michael
+
+Here's a description from Astrophysics in a nutshell.  It's pretty conceptual, so feel free 
+to add to it Michael.
+Start with the hydrostatic equilibrium equation, multiply both sides by $4\pi r^3dr$, and integrate:
+\begin{equation}
+\int_0^R4\pi r^3\frac{dP}{dr}\,dr = -\int_0^R\frac{GM(r)\rho (r)4\pi r^2}{r}\,dr
+\end{equation}
+The right hand side is just the total gravitational energy in the star.  The left hand side 
+can be integrated by parts to give
+\begin{equation}
+[P(r)4\pi r^3]_0^R-3\int_0^RP(r)4\pi r^2\,dr
+\end{equation}
+The first term is 0 because pressure goes to 0 at the surface.  The second term is average 
+pressure times volume, so 
+\begin{equation}
+\bar{P}=-\frac{1}{3}\frac{E_{gr}}{V}
+\end{equation}
+Using the ideal gas law and the thermal energy of a gas ($\frac{3}{2}NkT$), can show
+\begin{equation}
+P=\frac{2}{3}\frac{E_{th}}{V}
+\end{equation}
+So, 
+\begin{equation}
+\boxed{E_{th}=-\frac{E_{gr}}{2}}
+\end{equation}
+which is the Virial theorem.  This is why stars have a negative heat capacity and evolve the way 
+they do.  If they contract (making $E_{gr}$ more negative), the thermal energy (temperature) 
+increases.
 
 \subsection{Equations of Stellar Structure}
 \newthought{There are three} key pieces of physics that are necessary for understanding stars:
