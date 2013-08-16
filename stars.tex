@@ -225,7 +225,37 @@ Let's talk first about force balance. Assuming no radiation, this is just a comp
 \frac{dP}{dr} = -\frac{\rho G M_r}{r^2}\,\,.
 \end{equation}
 
-...
+The mass continuity equatin just comes from the amount of mass in a spherical shell at radius r 
+and of thickness dr.
+
+The radiative temperature gradient can be derived by considering the energy in shells at different 
+radii.  Since energy flows out of the star, the energy density must decrease outwards.  Consider 
+a shell with energy denstity $u+du$ (shell 1), with another shell $dr$ above it of energy 
+density $u$ (shell 2).  The energy flow from shell 1 to shell 2 per unit time ($L(r)$) is 
+the excess energy in shell 1 divided by the time it takes for this energy to flow from shell 1 to 
+shell 2.  So
+\begin{equation}\label{eq:L}
+L(r)=-\frac{4\pi r^2\,dr\,du}{(dr)^2/lc}
+\end{equation}
+where the denominator is the time it takes a the photon to cross from shell 1 to shell 2 by random 
+walk.  Taking the angle of the radiation into account introduces a factor of 1/3 on the right hand 
+side.  Equation \ref{eq:L} can be rewritten as 
+\begin{equation}
+\frac{L(r)}{4\pi r^2}=-\frac{cl}{3}\frac{du}{dr}
+\end{equation}
+This can also be thought of as a diffusoin equation, where the left hand side is energy flux, 
+$\frac{cl}{3}$ is the diffusion coefficient, and $\frac{du}{dr}$ is the energy density gradient.  
+Plugging in $u=aT^4$ and $l=\frac{1}{\kappa\rho}$, and solving for $\frac{dT}{dr}$ gives
+\begin{equation}
+\boxed{\frac{dT(r)}{dr}=-\frac{3L(r)\kappa(r)\rho(r)}{4\pi r^2 4acT^3(r)}}
+\end{equation}
+
+The energy conservation equation just comes from defining $\epsilon(r)$ as the power generated 
+per unit mass.  With this definition,
+\begin{equation}
+\boxed{\frac{dL(r)}{dr}=4\pi r^2\rho (r)\epsilon (r)}
+\end{equation}
+
 
 
 \subsection{Stellar Evolution}
