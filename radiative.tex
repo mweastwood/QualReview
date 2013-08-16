@@ -374,5 +374,18 @@ The Thomson cross section is then given by:
 \sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
 \end{equation}
 
+\subsection{Synchrotron Self-Absorption}
+	I did not even understand what was going on with this when I started studying, so I thought I'd write down what I found out in case this confuses anyone else.
+	An astrophysical synchrotron has an ensemble of electrons at various energies, producing emission at their own characteristic frequencies. The energy levels of these electrons are continuous, but can be treated as quantized on the order of $h^{3}$ (not clear about this part really). Emitted photons can change the energy level of another electron by being absorbed and giving up their energy to the electron.
+	The amount that this happens depends on the way the electron energies are distributed, both for the emission spectrum and for the distribution of energy levels that can absorb photons of specific energies.
+	Result:
+	\begin{equation}
+	\text{non-thermal electron distribution:} \quad S_{\nu} \propto \nu^{5/2}		
+	\end{equation}
+	\begin{equation}
+	\text{thermal electron distribution:} \quad S_{\nu} \propto \nu^{2}		
+	\end{equation}
+	
+	$\rightarrow$Lower energy photons are more likely to be absorbed, because for them, the synchrotron source is optically thick. You could also say it conversely: the synchrotron source is optically thick for lower energy photons because they are more likely to be absorbed. This is what causes the synchrotron spectrum to turn over and not just continue to infinity for long wavelengths.
 
 
