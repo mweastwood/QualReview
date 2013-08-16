@@ -374,6 +374,44 @@ The Thomson cross section is then given by:
 \sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
 \end{equation}
 
+\subsection{Bremsstrahlung}
+For the Bremsstrahlung power from a single electron, use Thompson scattering in the electron's 
+frame.  The electron sees a moving proton, which creates a varying E and B field (ie photons).  
+The electron Thompson scatters off these virtual photons, radiating as in Thompson scattering.
+Because energy is invariant of frame, the power radiated in this process according to the 
+electron is the same as the power we see.  So
+\begin{displaymath}P=2\sigma_Tc<u_E>=2\sigma_Tc\frac{E^2}{8\pi}=2\sigma_Tc\frac{Z^2e^2}{8\pi b^4}\end{displaymath}
+To get the emissivity, need to integrate over possible impact parameters and (Boltzmann) 
+velocities of a population of electrons, and consider many possible ions to interact with.  
+Know how to describe and explain a Bremsstrahlung spectrum.
+
+\subsection{Cyclotron}
+Non-relativistic electrons spiraling in a magnetic field.  From far away, looks like a dipole.  
+\begin{displaymath}P=\frac{2e^2a^2}{3c^3}\end{displaymath}
+The accelaration can be found from the cyclotron frequency:
+\begin{displaymath}a=\dot{v}=\frac{v^2}{r}=v\omega_{cyc}=v\frac{eB}{m_ec}\end{displaymath}
+\begin{displaymath}P=\frac{2e^4B^2v^2}{3c^5m_e^2}\end{displaymath}
+\begin{displaymath}\boxed{P=\frac{2}{3}r_0^2B^2c\beta^2}\end{displaymath}
+
+\subsection{Synchrotron}
+See will ask for derivation of power from single electron.  
+
+To get the spectrum of many electrons, assume a power law distribution of electron energies, and 
+multiply this by the power of one electron as a function of energy.  This results in 
+\begin{displaymath}j_{\nu}\propto B^{(p+1)/2}\nu^{(1-p)/2}\end{displaymath}
+For most synchrotron spectra, $(1-p)/2\equiv \alpha=-0.7$, so
+\begin{displaymath}j_{\nu}\propto B^{1.7}\nu^{-0.7}\end{displaymath}
+For optically thick synchrotron, absorption becomes important.  In this regime, $h\nu<<kT$, so
+\begin{displaymath}I_{\nu}=\frac{2k}{c^2}T\nu^2\end{displaymath}
+Since synchrotron is a non-thermal process, T is no longer brightness temperature, and varies 
+as a function of frequencies (electrons emitting at different frequencies have different 
+temperatures).  Assuming an electron emits at its critical frequency, $\nu\propto\gamma^2$, so 
+$\gamma\propto\nu^{1/2}$.  Assuming $kT\sim E=\gamma m_ec^2$, then 
+$T\propto\gamma\propto\nu^{1/2}$.  So, the sychrotron spectrum is described by
+\begin{displaymath}I_{\nu}\propto \nu^{5/2} (low\ frequency,\ optically\ thick)\end{displaymath}
+\begin{displaymath}I_{\nu}\propto \nu^{-0.7} (high\ frequency,\ optically\ thin)\end{displaymath}
+
+
 \subsection{Synchrotron Self-Absorption}
 	I did not even understand what was going on with this when I started studying, so I thought I'd write down what I found out in case this confuses anyone else.
 	An astrophysical synchrotron has an ensemble of electrons at various energies, producing emission at their own characteristic frequencies. The energy levels of these electrons are continuous, but can be treated as quantized on the order of $h^{3}$ (not clear about this part really). Emitted photons can change the energy level of another electron by being absorbed and giving up their energy to the electron.
@@ -387,6 +425,67 @@ The Thomson cross section is then given by:
 	\end{equation}
 	
 	$\rightarrow$Lower energy photons are more likely to be absorbed, because for them, the synchrotron source is optically thick. You could also say it conversely: the synchrotron source is optically thick for lower energy photons because they are more likely to be absorbed. This is what causes the synchrotron spectrum to turn over and not just continue to infinity for long wavelengths.
+
+Sychrotron Cooling:
+Electrons cool by emitting photons, timescale given by
+\begin{displaymath}t=\frac{E}{-dE/dt}=\frac{\gamma m_ec}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}\end{displaymath}
+\begin{displaymath}\boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}\end{displaymath}
+
+Equipartition:
+Electron and magnetic field energy density both scale with B.
+\begin{displaymath}U_e\propto B^{-3/2}\end{displaymath}
+\begin{displaymath}U_B\propto B^2\end{displaymath}
+At minimum total energy, $U_e\sim U_B$.  Assuming equipartion, the flux from a sychrotron source 
+can be used to determine $U_e$, which can then be used to determine $U_B$.
+
+\subsection{Compton Scattering}
+In Thomson scattering, collisions are elastic (energy of the photon doesn't change).  In Compton 
+scattering, the energy of the photon decreases.  In inverse Compton scattering, a photon gains 
+energy from scattering off a high energy electron.  Conserve momentum and energy in the 
+scattering to find
+\begin{displaymath}\Delta \lambda=\lambda_c(1-\cos{\theta})\end{displaymath}
+where $\lambda_c=0.02426$ \AA.
+The energy increase for a photon in inverse compton can be derived by treating the scatter as 
+regular compton scatter in the frame of the electron, then converting back to the lab frame.  
+This gives an energy shift for the photon of 
+\begin{displaymath}E_2=\frac{4}{3}E_1\gamma^2\end{displaymath}
+For example, in the Crab Nebula, microwave photons from the nebula are inverse compton scattered 
+to gamma ray energies.  This is why we see gamma rays from the Crab.  Inverse Compton power 
+of a single electron in a photon gas is similar to sychrotron power:
+\begin{displaymath}\boxed{P=\frac{4}{3}c\sigma_T\gamma^2\beta^2u_ph}\end{displaymath}
+For a population of electrons, $I_{\nu}\propto \nu$ for low $\nu$ and drops off sharply for 
+high $\nu$.
+
+\subsection{Sychrotron Self-Compton}
+Can get double peaked synchrotron spectra because sychrotron photons are scattered to higher 
+energies by all the fast moving electrons around.  This is seen in blazars and the Crab nebula.  
+If $P_{IC}>P_{sync}$, the sychrotron photons can be depleted, with none getting out.  Can show 
+(as we did in high energy) that this happens for brightness temperatures above $10^12$ K.
+
+\subsection{S-Z effect}
+Thermal electrons in intra-cluster gas inverse Compton CMB photons to a slightly higher energy 
+(this is a non-relativistic effect).  The fractional increase in energy from one collision is 
+the power from the that collision divided by the power from all collisions/second.
+\begin{displaymath}\frac{\Delta{E}}{E}=\frac{P}{\frac{dN}{dt}E}=\frac{\frac{4}{3}c\sigma_T\beta^2n_{ph}h\nu}{c\sigma_Tn_{ph}}=\frac{4}{3}\beta^2\end{displaymath}
+If the population of electrons is thermal, their 3-D rms velocity is $\sqrt{\frac{3kT}{m_e}}$, so
+\begin{displaymath}\frac{\Delta{E}}{E}=\frac{4kT}{m_ec^2}\end{displaymath}
+For an optically thin gas (which this is), the total number of scatterings is given by the 
+optical depth
+\begin{displaymath}\tau=\sigma_Tn_e2R\end{displaymath}
+So, the fractional shift in the temperature of the CMB blackbody is given by
+\begin{displaymath}\frac{\Delta T}{T}=\frac{-2\Delta\nu}{\nu}=\frac{-2\Delta E}{E}\end{displaymath}
+can be used to determine the physical radius of the cluster.  Measurements of x-ray thermal 
+Bremsstrahlung can give the temperature and density of the electrons, allowing R to be solved for.
+Then, the angular size of the cluster can be used to determine its distance.  This, combined with 
+its redshift, can be used to measure the Hubble constant.
+
+\subsection{Dispersion}
+Light travelling through a plasma is delayed by an amount 
+\begin{displaymath}\tau=\int\left(\frac{1}{v_g}-\frac{1}{c}\right)\,ds\end{displaymath}
+\begin{displaymath}v_g\sim c\left(1-\frac{\omega_p^2}{\omega^2}\right)^{1/2}\end{displaymath}
+So
+\begin{displaymath}\tau\sim\frac{1}{2c\omega^2}\int\omega_p^2\,ds=\frac{2\pi e^2}{m_ec}\frac{1}{\omega}DM\end{displaymath}
+where $\omega_p^2=\frac{4\pi n_ee^2}{m_e}$ and $DM=\int n_e\,ds$.
 
 \subsection{Hydrogen energy levels}
 
