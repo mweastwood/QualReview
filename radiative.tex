@@ -109,42 +109,65 @@ Remember guys, there's nothing funny about neutrinos.
       Kirchoff's law and the Milne relations, and give an example of their use to connect the
       bremsstrahlung emission spectrum and the free-free absorption coefficient.}
       
-      Einstein relations:
-      
-      Ignore collisions for now and just think about particles that are radiating and absorbing photons. Consider a gas with $n_1$ number density in the lower state (1) and $n_2$ in the excited state (2). Assume thermodynamic equilibrium for now. We have Einstein relations
-      
-      $A_{21}$: probability of spontaneous emission per time (s$^{-1}$),
-      
-      $B_{12}\bar{J}$: probability of absorption per time (s$^{-1}$),
-      
-       $B_{21}\bar{J}$: probability of stimulated emission per time (s$^{-1}$).
-       
-       $\bar{J}$ is just the mean intensity averaged over the line profile for the transition:
-       \begin{equation}
-       \bar{J} = \int^\infty_0 J_\nu \phi(\nu) d\nu \,\,.
-       \end{equation}
-       
-       Also recall the Maxwell-Boltzmann relationship between $n_1$ and $n_2$:
-       \begin{equation}
-       \frac{n_1}{n_2} = \frac{g_1}{g_2} e^{h\nu_0 / k_B T},
-       \end{equation}
-       where $h\nu_0$ is the energy of the photon and the energy difference between the two levels, $E_2 - E_1$. You can use these equations to solve for $\bar{J}$, then equate $\bar{J}$ to $B_\nu$ assuming $J_\nu = B_\nu$ and $B_\nu$ varies very little over the sharp line profile $\phi(\nu)$. Equating these two gives the following Einstein relations:
-      
-      \begin{equation}
-      \frac{g1}{g2} = \frac{B_{21}}{B_{12}}
-      \end{equation}
-      
-      \begin{equation}
-      \frac{A_{21}}{B_{21}} = \frac{2 h \nu^3}{c^2}
-      \end{equation}
-      
+      \newthought{Let's begin with} detailed balance\sidenote{
+        Any ideas on what distinguishes detailed balance from un-detailed balance?
+      }.  Detailed balance is simply a statement that there are an equal number of transitions
+      into and out of a given state.
+      \begin{dmath}
+        \text{rate of transitions into state A} = \text{rate of transitions out of state A}
+      \end{dmath}
+      Einstein's coefficients tell us how to express this idea mathematically
+      for radiative transitions\sidenote{
+        Transitions that involve the emission or absorption of a photon.
+      }.
+      Consider a two state system where state (1) has a lower energy than state (2).
+      Given an incident mean intensity (averaged over the line profile\sidenote{
+        The mean intensity is
+        \begin{dmath*}
+            J_\nu\equiv\frac{1}{4\pi}\int I_\nu\d\Omega
+        \end{dmath*},
+        and averaging over the line profile gives us
+        \begin{dmath*}
+            \bar J = \int J_\nu\phi(\nu)\d\nu
+        \end{dmath*}.
+      }),
+      $A_{21}$ is the probability of spontaneous emission per unit time,
+      $B_{12}\bar J$ is the probability of absorption per unit time, and
+      $B_{21}\bar J$ is the probability of stimulated emission per unit time.
+      Detailed balance therefore tells us (for this two-state system) that
+      \begin{dmath}\label{eq:detailed_balance}
+        n_2A_{21} = (n_1B_{12}-n_2B_{21})\bar J
+      \end{dmath}.
+      In thermodynamic equilibrium (and with Maxwell-Boltzmann statistics\sidenote{
+        This means spin-statistics aren't important.  We aren't dealing with bosons
+        or fermions here.
+      }), we have
+       \begin{dmath}
+        \frac{n_1}{n_2} = \frac{g_1}{g_2} e^{h\nu_0 / k_B T}
+       \end{dmath},
+       where $h\nu_0$ is the energy of the photon and the energy difference between the two levels,
+       $E_2 - E_1$.  Similarly, in thermodynamic equilibrium (with a narrow line profile), the
+       line-averaged mean intensity is given by the Planck function\sidenote{
+        \begin{dmath*}
+            \bar J = B_\nu\nolinebreak= \frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT}-1}
+        \end{dmath*}
+       }.  These two relations combined with the expression for detailed balance given
+       in Equation~\ref{eq:detailed_balance} imply that
+       \begin{dgroup}
+       \begin{dmath}
+        g_1B_{12} = g_2B_{21}
+       \end{dmath},
+       \begin{dmath}
+        A_{21} = \frac{2 h \nu^3}{c^2}B_{21}
+       \end{dmath}.
+       \end{dgroup}
+       These are called the Einstein relations.
       Even though we assumed thermodynamic equilibrium, these relations do not depend on temperature and just describe properties of the atoms. Therefore, we can say they are more general and hold for cases that are not in thermodynamic equilibrium.
       Also, the A and B coefficients are intrinsic properties of individual 
       atoms, so they should have nothing to do with the overall state of the 
       gas and whether or not it's in thermodynamic equilibrium.
 
-      Kirchoff's law:
-
+      \newthought{Now let's discuss} Kirchoff's law.
       Take a thermally emitting (not necessarily blackbody) material at temperature T and place it 
       in a blackbody cavity also at temperature T.  With just the cavity, $S_{\nu}=I_{\nu}=B_{\nu}$.  
       With the material added, we still have a cavity of temperature T, so the total intensity must 
@@ -163,18 +186,20 @@ Remember guys, there's nothing funny about neutrinos.
       \begin{equation}
       j_\nu = \alpha_\nu B_\nu.
       \end{equation}
+      To clarify, the source function of a material in thermodynamic equilibrium is the
+      Planck function.
       
-      Show the following:
-      
-      \begin{equation}
+      We can relate the Einstein coefficients to the emission and absorption coefficients
+      by noting that each transition adds or removes $h\nu$ in energy spread over a solid
+      angle of $4\pi$.  Therefore
+      \begin{dgroup}
+      \begin{dmath}
       j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
-      \end{equation}
-      
-       \begin{equation}
+      \end{dmath},
+      \begin{dmath}
       \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
-      \end{equation}
-      
-      (see p. 5 of Tony's notes). 
+      \end{dmath}.
+      \end{dgroup}
       
       Milne relations:
       
