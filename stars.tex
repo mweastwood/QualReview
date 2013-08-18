@@ -167,57 +167,6 @@ Be able to draw and explain one.  Some useful approximate relations for the main
 Main sequence masses range from $\sim 0.1\ M_{\odot}$ to $\sim 100\ M_{\odot}$.  Main sequence 
 radii range from $\sim 0.25\ R_{\odot}$ to $\sim 25\ R_{\odot}$.
 
-\subsection{Timescales}
-The free-fall timescale and Kelvin-Helmholtz timescale are the most relevant here.  We should
-include a definition and derivation
-Free-fall Time:\newline
-If the Sun had no pressure support and just collapsed under gravity, it's velocity would be 
-determined by energy conservation:
-\begin{equation}
-\frac{1}{2}\left(\frac{dr}{dt}\right)^2 = \frac{GM}{r}-\frac{GM}{r_0}
-\end{equation}
-assuming the mass interior to any element is constant (the entire cloud collapse all at once).
-This equation can be integrated to give
-\begin{equation}
-\tau_{ff}=\left(\frac{r_0^3}{2GM}\right)^{1/2}\int_0^1\left(\frac{x}{1-x}\right)^{1/2}\,dx
-\end{equation}
-The definite integral is equal to $\pi/2$, so
-\begin{equation}
-\tau_{ff}=\left(\frac{3\pi}{32G\rho}\right)^{1/2}
-\end{equation}
-Free fall time for the Sun is 1800s.
-
-\subsection{The Virial Theorem}
-I will add a nice description of this when I'm not tired -- Michael
-
-Here's a description from Astrophysics in a nutshell.  It's pretty conceptual, so feel free 
-to add to it Michael.
-Start with the hydrostatic equilibrium equation, multiply both sides by $4\pi r^3dr$, and integrate:
-\begin{equation}
-\int_0^R4\pi r^3\frac{dP}{dr}\,dr = -\int_0^R\frac{GM(r)\rho (r)4\pi r^2}{r}\,dr
-\end{equation}
-The right hand side is just the total gravitational energy in the star.  The left hand side 
-can be integrated by parts to give
-\begin{equation}
-[P(r)4\pi r^3]_0^R-3\int_0^RP(r)4\pi r^2\,dr
-\end{equation}
-The first term is 0 because pressure goes to 0 at the surface.  The second term is average 
-pressure times volume, so 
-\begin{equation}
-\bar{P}=-\frac{1}{3}\frac{E_{gr}}{V}
-\end{equation}
-Using the ideal gas law and the thermal energy of a gas ($\frac{3}{2}NkT$), can show
-\begin{equation}
-P=\frac{2}{3}\frac{E_{th}}{V}
-\end{equation}
-So, 
-\begin{equation}
-\boxed{E_{th}=-\frac{E_{gr}}{2}}
-\end{equation}
-which is the Virial theorem.  This is why stars have a negative heat capacity and evolve the way 
-they do.  If they contract (making $E_{gr}$ more negative), the thermal energy (temperature) 
-increases.
-
 \subsection{Equations of Stellar Structure}
 \newthought{There are three} key pieces of physics that are necessary for understanding stars:
 \begin{enumerate}

@@ -63,3 +63,98 @@ H$\alpha$, and H$_{con}$.  Those are all important for other things (Lyman break
 H ionization, Balmer jump...).  The other lines, maybe just have some idea of where they are.
 Fun fact, the wavelength of Ly$\alpha$ is the address of Cahill!
 
+\subsection{The Virial Theorem}
+\newthought{The virial theorem} is a cute result of classical mechanics that can be generally
+applied to many areas of astronomy.  Therefore we will treat it here without reference to
+stars, galaxies, or the ISM.
+
+Let's begin by thinking about a system of particles labeled with $i=1,\ldots,N$, and with
+position and momentum denoted by $\b r_i$ and $\b p_i$ respectively.  By applying the non-relativistic
+definition of momentum\sidenote{
+    \begin{dmath*}
+        \b p_i = m_i\dot{\b r_i}
+    \end{dmath*},
+    where $m_i$ is the mass of the $i$th particle.
+}, we can show
+\begin{dmath*}
+    \frac{\d}{\d t}\sum_i \b p_i\cdot\b r_i
+        = \frac{\d}{\d t}\sum_i m_i\dot{\b r_i}\cdot\b r_i
+        = \frac{1}{2}\frac{\d^2}{\d t^2}\sum_i m_i r_i^2
+\end{dmath*}.
+The final sum is simply the total moment of inertia $I$ of the system\sidenote{
+    \begin{dmath*}
+        I \equiv \sum_i m_i r_i^2
+    \end{dmath*}
+}.
+
+However, if we apply the product rule, we can also show
+\begin{dmath*}
+    \frac{\d}{\d t}\sum_i \b p_i\cdot\b r_i
+        = \sum_i \frac{\d\b p_i}{\d t}\cdot\b r_i
+            +\sum_i \b p_i\cdot\frac{\d\b r_i}{\d t}
+        = \sum_i \b F_i\cdot\b r_i
+            +\sum_i m_i{\dot r_i}^2
+\end{dmath*}.
+The final term we recognize as twice the kinetic energy of the system, $2K$.
+Combining this with the previous result gives us the identity\sidenote{
+    This is always true if classical mechanics holds!
+}
+\begin{dmath}
+    \frac{1}{2}\frac{\d^2I}{\d t^2}
+        = \sum_i \b F_i\cdot\b r_i+2K
+\end{dmath}.
+
+Now we specialize to the case of gravitational interactions\sidenote{
+    That is, we require
+    \begin{dmath*}
+        \b F_i = -\sum_{j\neq i} \frac{Gm_im_j}{r_{ij}^3}(\b r_i-\b r_j)
+    \end{dmath*}
+}.  This implies
+\begin{dmath*}
+    \sum_i \b F_i\cdot\b r_i
+        = -\sum_i\sum_{j\neq i} \frac{Gm_im_j}{r_{ij}^3}(\b r_i-\b r_j)\cdot \b r_i
+        = -\sum_i\sum_{j > i} \frac{Gm_im_j}{r_{ij}}
+\end{dmath*}.
+The final expression is that of the total gravitational potential energy $\Omega$
+of the system\sidenote{
+    The limit on the second sum is necessary to prevent double-counting.
+}.  This gives us the virial theorem
+\begin{dmath}\boxed{
+    \frac{1}{2}\frac{\d^2I}{\d t^2}
+        = \Omega+2K
+}\end{dmath}.
+A system is said to be virialized if $\d^2I/\d t^2=0$, in which case
+\begin{dmath}\boxed{
+    \Omega+2K = 0
+}\end{dmath}.
+
+Although, we assumed purely gravitational interactions, random thermal collisions
+do not contribute to $\sum_i\b F_i\cdot\b r_i$ because the direction of the force is
+randomized.  This means we have a very general relation that relates the gravitational potential
+energy to the kinetic energy of virialized systems.  Note that virialized systems are
+bound because $\Omega+K < 0$.
+
+\subsection{Timescales}
+\newthought{The free-fall timescale} describes the length of time an object takes to collapse
+under the influence of gravity if its pressure support is removed.  The collapse of a star
+during a supernova occurs on the free-fall timescale.
+If the Sun had no pressure support and just collapsed under gravity, it's velocity would be 
+determined by energy conservation:
+\begin{equation}
+\frac{1}{2}\left(\frac{dr}{dt}\right)^2 = \frac{GM}{r}-\frac{GM}{r_0}
+\end{equation}
+assuming the mass interior to any element is constant (the entire cloud collapse all at once).
+This equation can be integrated to give
+\begin{equation}
+\tau_{ff}=\left(\frac{r_0^3}{2GM}\right)^{1/2}\int_0^1\left(\frac{x}{1-x}\right)^{1/2}\,dx
+\end{equation}
+The definite integral is equal to $\pi/2$, so
+\begin{equation}\boxed{
+\tau_{ff}=\left(\frac{3\pi}{32G\rho}\right)^{1/2}
+}\end{equation}
+Free fall time for the Sun is 1800 seconds.
+
+\newthought{The Kelvin-Helmholtz timescale} is the relevant timescale for an object to
+radiate away its energy.  Gas clouds collapse into protostars on the Kelvin-Helmholtz timescale,
+and stellar cores contract on the Kelvin-Helmholtz timescale when they run out of nuclear fuel.
+
