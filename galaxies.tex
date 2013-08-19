@@ -2,10 +2,23 @@
 \subsection{Questions}
 galaxies suck!!!!
 \begin{enumerate}
-\item Define two-body relaxation and estimate its time scale in (a) a globular cluster; (b)
-      the Milky Way's disk. In which cases is two-body relaxation important?
-\item Draw qualitatively the spectral energy distribution of the Milky Way, and describe
-      how its morphology might appear to an external observer as a function of wavelength.
-\item Describe at least three methods to probe the gravitational potential of galaxies,
-      their assumptions, and their realm of applicability.
+\item \textbf{Define two-body relaxation and estimate its time scale in (a) a globular cluster; (b)
+      the Milky Way's disk. In which cases is two-body relaxation important?}
+      
+      Here's one way of calculating two-body relaxation. Assume $N$ bodies of mass $m$. Look at one mass travelling past another mass with relative velocity $v$ and impact parameter $b$. Assume that the time for the two to interact gravitationally is $2b/v$, that is, they are only interacting while the moving mass is $b$ away from its point of closest approach. The acceleration the mass feels due to the other mass is on the order of $Gm/b^2$. Therefore the change in velocity is
+      \begin{equation}
+      \delta v_\perp (v,b) \sim \frac{Gm2b}{b^2v} = \frac{2Gm}{bv}\,\,.
+      \end{equation}
+      When looking at many interactions over time, $(\delta v_\perp)^2$ grows with time.
+      \begin{equation}
+      \frac{d}{dt}(\delta \bar{v_\perp})^2 \sim \int^{b_{\rm max}}_{b_{\rm min}}\delta v_\perp^2(v,b) n v 2 \pi b db \sim \frac{8 \pi G^2 m^2 n}{v} \ln \biggl( \frac{b_{\rm min}}{b_{\rm max}} \biggr) \,\, .
+      \end{equation}
+      We can approximate the relaxation time as
+      \begin{equation}
+      t_R = \frac{v^2}{\frac{d}{dt}(\delta \bar{v_\perp})^2} = \frac{v^3}{8 \pi G^2 m^3 n \ln(b_{\rm max}/b_{\rm min})} \,\,.
+      \end{equation}
+\item \textbf{Draw qualitatively the spectral energy distribution of the Milky Way, and describe
+      how its morphology might appear to an external observer as a function of wavelength.}
+\item \textbf{Describe at least three methods to probe the gravitational potential of galaxies,
+      their assumptions, and their realm of applicability.}
 \end{enumerate}
