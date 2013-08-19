@@ -91,6 +91,24 @@ spectral lines are more popular than I thought they would be.  Globular clusters
       The opacity is very sensitive to temperature, because a fragile balancing act is required. The temperature must be less than 10,000K (when Hydrogen ionizes) so that neutral Hydrogen is around to get another electron. But, the temperature must also be high enough so that an abundance of free electrons are around which were liberated from ionized heavy elements. This opacity is also sensitive to metallicity, for the same reason. 
       Despite $H^{-}$ being a fragile and rare ion, this type of opacity is the most important source in our Sun's atmosphere, and is dominant in FGK stars.
 
+      Neutral H Transitions:
+      These include bound-bound transitions and bound-free transitions.  In bound-bound 
+      transitions, a photon is absorbed by an atom, moving an electron to a higher energy level.  
+      These transitions have corresponding wavelengths asscociated with them, giving rise 
+      to spectral lines.  Higher density leads to higher opacity, but the temperature 
+      dependence of this opacity is complicated.  The temperature and composition determine 
+      how many atoms of a certain type there are, and what state these atoms are in.  This 
+      determines the strengths of spectral lines.  Of course, if the star is hot enough to 
+      ionize everything, neutral transitions will not take place.
+      
+      Bound-free opactiy is the ionization of an atom (H is most important, since it's most 
+      abundant).  For photons with enough energy to ionize H, the cross section depends varies 
+      as $\lambda^3$.  On our stars midterm, we had to plot bound-free opacity as a function of 
+      wavelength.  I can't draw it here, but it's good to know what the plot looks like.  
+      Bound-free opacity is responsible for the Balmer jump is stellar spectra at 365 nm, where 
+      H in the $n=2$ level can be ionized.  This produces a drop in flux from the star at shorter 
+      wavelengths.
+
       Averaging bound-free and free-free absorption over all wavelenthts gives Kramer's opacity:
       \begin{equation}
       \bar{\kappa}\propto \frac{\rho}{T^{3.5}}
@@ -148,7 +166,7 @@ Within these types, stars are numbered 0 through 9 (hottest to coolest).  Lumino
 are also used.  I-IV are giant stars, while V are main sequence stars.  D is for white dwarfs.  
 So, for example, the Sun is a G2V star.\newline
 O stars:\newline
->16 $M_{\odot}$\newline
+>16 $M_{\odot}$, $M_V=-5$ or brighter\newline
 Very weak spectral lines (just about everything is ionized, so there's nothing 
 to produce transitions).  Very weak Balmer lines and some weak lines to due 
 ionization of He.  No Balmer break visible.\newline
@@ -158,7 +176,7 @@ Stronger Balmer lines, also He absorption lines.  Still a relatively clean
 spectrum though.  Balmer break visible (and visible in all later spectral 
 types.\newline
 A stars:\newline
-1.5-2 $M_{\odot}$\newline
+1.5-2 $M_{\odot}$, $M_V\sim 0$\newline
 Strongest Balmer lines because these are the hottest stars (hot enough to have 
 lots of H in the n=2 state) without being too hot and ionizing all the H.  
 Effective temperature of $\sim$10,000 K is perfect for Balmer lines.\newline
@@ -167,7 +185,7 @@ F stars:\newline
 Balmer lines start to weaken again.  Star seeing metal lines (mainly neutral 
 or singly ionized Ca, Mg, and Na).\newline
 G stars:\newline
-0.8-1 $M_{\odot}$\newline
+0.8-1 $M_{\odot}$, $M_V\sim4$\newline
 This includes the Sun.  Weaker Balmer lines, stronger metal lines.\newline
 K stars:\newline
 0.5-0.8 $M_{\odot}$\newline
@@ -175,8 +193,8 @@ Weaker Balmer, stronger metal.  Also start seeing absorption bands from
 molecules (smearing of lots of absorption lines due to rotational, vibrational, 
 and electronic transitions).
 M stars:\newline
-<0.5 $M_{\odot}$\newline
-Dominated by molecular bands, in particular TiO between 6600 \AA\ and 8600 \AA.
+<0.5 $M_{\odot}$, $M_V\sim 8-12$\newline
+Dominated by molecular bands, in particular TiO between 6600\AA\ and 8600\AA.
 
 \subsection{HR Diagram}
 Be able to draw and explain one.  Some useful approximate relations for the main sequence:
@@ -575,6 +593,22 @@ v_s = K = 2\pi G P^{-\frac{1}{3}}M_pM_s^{-\frac{2}{3}}
 \end{equation}
 
 \subsection{Atmospheres}
+The Boltzmann and Saha equations are probably more involved than we need to know (especially the 
+Saha equation), but here they are anyway.
+\begin{equation}
+\frac{n_1}{n_2}=\frac{g_1}{g_2}e^{-(E_1-E_2)/kT}
+\end{equation}
+\begin{equation}
+\frac{n_{i+1}}{n_i}=\frac{2Z_{i+1}}{n_eZ_i}\left(\frac{2\pi m_ekT}{h^2}\right)^{3/2}e^{-\chi_i/kT}
+\end{equation}
+where $n_{i+1}$ and $n_i$ are are the numbers of atoms in the $i$ or $i+1$ ionization state, 
+$Z_i$ is the partition function of the $ith$ ionization state, and $\chi_i$ is the ionization 
+energy.  All we should probably know for these equations relating to stars is that the describe 
+the population of atoms in the star's atmosphere, and thus determine the strengths of spectral 
+lines.  For example, the competing temperature dependence of these equations gives that the 
+peak fraction of H atoms in the $n=2$ state happens at around 10,000 K.  This is why A stars show 
+such strong Balmer lines.
+
 \subsection{Interiors}
 
 
