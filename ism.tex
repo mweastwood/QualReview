@@ -1,14 +1,14 @@
 \section{The Interstellar Medium}
 \subsection{Questions}
 \begin{enumerate}
-\item Draw the cooling function for gas of solar metallicity, and describe the cooling
+\item \textbf{Draw the cooling function for gas of solar metallicity, and describe the cooling
       mechanisms in each part of the curve. Explain the relevance of this function to multi-
-      phase ISM models.
-\item Draw a typical spectrum of an HII region, including both lines and continuum, and
-      explain the major processes that give rise to each feature.
-\item Explain quantitatively what determines the temperature of dust grains and their
+      phase ISM models.}
+\item \textbf{Draw a typical spectrum of an HII region, including both lines and continuum, and
+      explain the major processes that give rise to each feature.}
+\item \textbf{Explain quantitatively what determines the temperature of dust grains and their
       thermal emission spectrum. Give examples of astrophysical environments with different
-      dust temperatures.
+      dust temperatures.}
 \end{enumerate}
 
 \subsection{Phases of a Supernova}
@@ -43,7 +43,42 @@ something that is wrong or could be explained better -- this is the point of usi
     where $R$ is the radius of the supernova remnant, $E$ is the energy released by the
     supernova, and $\rho$ is the density of the surrounding ISM.
 
-    \item The radiative phase (or snowplough phase)
+    \item The radiative phase (or snowplow phase)
     \item Merger with the ISM
 \end{enumerate}
 
+\subsection{The Fluid Equations}
+The following are the ideal or ``inviscid" fluid equations.
+
+Mass conservation:
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \vec{\nabla} \cdot \rho \vec{v} = 0
+\end{equation}
+
+Momentum conservation:
+\begin{equation}
+\frac{\partial}{\partial t} (\rho \vec{v}) + \vec{\nabla}\cdot (\rho \vec{v} \vec{v}) = -\vec{\nabla} P + \rho \vec{f}
+\end{equation}
+
+Energy conservation:
+\begin{equation}
+\frac{\partial}{\partial t} \biggl( \frac{1}{2} \rho v^2 + \rho \epsilon \biggr) + \vec{\nabla}\biggl[\biggl(\frac{1}{2}\rho v^2 + \rho \epsilon \biggr) + P \vec{v} \biggr] = \rho \vec{f} \cdot \vec{v}\,\,.
+\end{equation}
+The right-hand side of this equation is the work done by external forces (other people should feel free to add to this section or add different forms of the equations). Also, the Lagrangian or ``comoving" time derivative is
+
+\begin{equation}
+\frac{d}{dt} = \frac{\partial}{\partial t} + (\vec{v} \cdot \vec{\nabla})\,\, ,
+\end{equation}
+where $\frac{\partial}{\partial t}$ is the Eulerian time derivative, not comoving with the fluid.
+
+It's probably good to know basically how to do perturbation theory on these equations, which you can do by saying $\rho \rightarrow \rho_0 + \delta \rho$ and the same with $P$ and $v$ (assume $v_0 = 0$), then killing all the terms that are second-order in $\delta$ quantities.
+
+It's also a good idea to know Bernoulli's equation:
+\begin{equation}
+(\vec{v}\cdot \vec{\nabla})\biggl(\frac{1}{2} v^2 + h + \phi \biggr) = 0\,\, .
+\end{equation}
+or
+\begin{equation}
+\frac{1}{2} v^2 + h + \phi = {\rm constant}
+\end{equation}
+along every streamline. The first term is kinetic energy, the second is gravitational potential energy, and and third is thermal energy $+$ work that can be done.
