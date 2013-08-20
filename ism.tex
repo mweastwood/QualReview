@@ -14,12 +14,12 @@
 \subsection{Phases of a Supernova}
 \newthought{Anneila mentioned that} this was a fairly popular question on the quals, so
 I believe a brief review of the phases of a supernova is relevant.  This focuses on the
-supernova remant as opposed to the supernova mechanism itself.  Please edit this if I wrote
+supernova remnant as opposed to the supernova mechanism itself.  Please edit this if I wrote
 something that is wrong or could be explained better -- this is the point of using git.
 \begin{enumerate}
     \item The free-expansion phase
 
-    This phase is defined by the fact that the velocity of the ejecta is constant with time.
+    This phase is defined by the fact that the velocity of the ejecta is constant with time. This is also known as ``homologous expansion" because the shape of the density profile remains the same. For every shell of the expanding ejecta, the distance from the source $r = vt$. The condition for being in this phase is that $M_{\rm ejecta} \ll M_{\rm swept}$, that is, the mass swept up by the ejecta from the ISM is not a significant fraction of the ejecta mass.
     The expanding mass of ejecta creates a shock that travels outwards through the ISM
     and a reverse shock that travels inwards through the ejecta.  The reverse shock has a finite
     amount of material to travel through and dies away.
@@ -27,13 +27,13 @@ something that is wrong or could be explained better -- this is the point of usi
     Thermal bremsstrahlung is seen
     in X-rays, and synchrotron emission is seen in radio from ejected
     particles spiralling around $\mu$G magnetic fields.  This phase ends after 10s to 100s of
-    years when the mass of the swept up ISM is comparable to the mass of the ejecta.
-    Recall that high mass stars (the progenitors of core-collapse supernovae) typically
+    years when the mass of the swept up from the ISM is comparable to the mass of the ejecta.
+    Recall that high-mass stars (the progenitors of core-collapse supernovae) typically
     drive large stellar winds.
 
-    \item The adiabatic phase (or Sedov-Taylor phase)
+    \item The adiabatic phase (also called Sedov-Taylor or Blast Wave phase)
 
-    In this phase, the mass of the swept up ISM dominates the mass of the ejected material.
+    In this phase, the mass of the swept up ISM dominates the mass of the ejected material ($M_{\rm swept} > M_{\rm ejecta}$).
     However, the density of the material behind the shock is not yet large enough for cooling
     to be significant.  Therefore, the gas expands adiabatically.
     From dimensional analysis considerations, we can derive the Sedov-Taylor solution which says
@@ -41,10 +41,21 @@ something that is wrong or could be explained better -- this is the point of usi
         R \sim \left(\frac{Et^2}{\rho}\right)^{1/5}
     \end{dmath},
     where $R$ is the radius of the supernova remnant, $E$ is the energy released by the
-    supernova, and $\rho$ is the density of the surrounding ISM.
+    supernova, and $\rho$ is the density of the surrounding ISM. The Sedov phase usually lasts about $10^4$ years.
 
     \item The radiative phase (or snowplow phase)
+    
+    This is also called the momentum-conserving phase. Consider a shell with mass $M_s$ and velocity $v_s$. The momentum $p_0 = M_s v_s$ is constant, giving the equation of motion
+    \begin{equation}
+    p_0 - \biggl(\frac{4}{3}\pi R^3 \rho_0 \biggr) \dot{R}\,\, ,
+    \end{equation}
+    which can be integrated to show that
+    \begin{equation}
+    R \propto t^{1/4}\,\,.
+    \end{equation}
     \item Merger with the ISM
+    
+    Occurs when $v_s = c_s$ is the sound speed.
 \end{enumerate}
 
 \subsection{The Fluid Equations}
