@@ -335,11 +335,11 @@ the boundary of stability, maintaining a constant effective temperature
 Let's see a brief derivation of this.  To begin with we assume that the interior is entirely
 convective so that the pressure is given by the adiabatic relationship
 \begin{dmath}
-    P\sim\rho^\gamma
-\end{dmath}.
+    P\propto\rho^\gamma
+\end{dmath},
 By combining this with the ideal gas law, we find that
 \begin{dmath}\label{eq:pt_adiabatic}
-    P\sim T^{\frac{\gamma}{\gamma-1}}
+    P\propto T^{\frac{\gamma}{\gamma-1}}
 \end{dmath}.
 For a monatomic gas, $\gamma=5/3$, so that $P\sim T^{5/2}$.
 
@@ -609,6 +609,45 @@ lines.  For example, the competing temperature dependence of these equations giv
 peak fraction of H atoms in the $n=2$ state happens at around 10,000 K.  This is why A stars show 
 such strong Balmer lines.
 
+Optical Depth and the atmosphere:
+Using the radiative transfer equation with simplifying assumptions (plane-parallel atmosphere, 
+wavelength independent opacity (grey), and the Eddinton approximation- the intensity of radiation 
+is just an average of outward and inward radiation), can show that (see Carroll and Ostlie pg 
+258-263) the temperature in the 
+atmosphere varies with optical depth as:
+\begin{equation}
+T^4=\frac{3}{4}T_{eff}^4\left(\tau_{\nu}+\frac{2}{3}\right)
+\end{equation}
+This equation implies that the photosphere (where $T=T_{eff}$) is at $\tau=2/3$.  This also 
+explains spectral lines and limb darkening.  If a certain wavelength corresponds to an atomic 
+transition, that wavelength will have a higher opacity than the continuum.  So the point 
+where $\tau=2/3$ will be higher in the star at that wavelength (in other words, you can't 
+see as deep into the star at that wavelength).  Because of this, the light we see at that 
+wavelength comes from cooler gas than light from the continuum, so there is less flux at that 
+wavelength.  Limb darkening is the same idea.  At the edge of the disk of a star, we look into 
+the atmosphere at an angle from the verticle direction, so $\tau=2/3$ is higher in the atmosphere, 
+and thus cooler, so we see less flux from it.  In both cases, the effective temperature at 
+$\tau=2/3$ is cooler.
+
+Spectral Lines:
+Spectral lines are broadened by natural broadening, Doppler broadening, and pressure broadening.  
+Natural broadening is due to the uncertainty principle.  Since an electron spends a short time 
+in an excited state, there is an uncertainty the energy of the state.  This makes the wavelenght 
+of light that can be absorbed uncertain.  The typcial full-width-half-max of natural broadening is 
+of the order of $10^{-5}nm$.  Doppler broadening is due to random thermal motions of the gas 
+described by the Maxwell-Boltzmann distribution.  In the Sun, with $T_{eff}=5777 K$, the 
+full-width-half-max of this effect is $\sim 10^{-2}$ nm.  Large-scale motions, such as turbulence, 
+rotation, mass loss, and pulsation also contribute to Doppler broadening.  Doppler broadening 
+is wider than natural broadening, but falls off exponentially, much faster than natural 
+broadening (so the center line shape is due to Doppler broadening, but the wings are shaped by 
+natural and pressure broadening.  Pressure broadening is caused when collisions of individual 
+particles and electric fields of large numbers of particles perturb the energy levels of atoms.  
+Pressure broadening has a similar shape and full-width-half-max to natural broadening.
+
 \subsection{Interiors}
+Most of this is covered in the stellar structure equations section.  The only other thing I can
+think of is polytropes.  Maybe just some basic knowledge of them would be good (enough to 
+answer that question Shri kept asking us in stars about what it means for white dwarfs or 
+protostars to have a certain polytropic index).
 
 
