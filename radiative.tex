@@ -423,12 +423,88 @@ So finally the Thomson cross-section is given by
 }\end{dmath}.
 
 \subsection{Bremsstrahlung}
-For the Bremsstrahlung power from a single electron, use Thompson scattering in the electron's 
+Let's begin by imagining an electron traveling (in a straight line) by a nucleus
+with atomic number $Z$.  The transverse acceleration is
+\begin{dmath}
+    a_\perp = \frac{Ze^2}{m_e}\frac{1}{x^2+b^2}\frac{b}{\sqrt{x^2+b^2}}
+\end{dmath},
+The total perturbation to the perpendicular velocity
+is therefore given by
+\begin{dgroup*}
+\begin{dmath*}
+    \delta v_\perp = \int_{-\infty}^{+\infty} a_\perp \frac{\d x}{v}
+                   = \frac{Ze^2b}{m_ev}\int_{-\infty}^{+\infty} \frac{\d x}{(x^2+b^2)^{3/2}}
+\end{dmath*}
+\begin{dmath}
+    \p{\delta v_\perp}
+                   = \frac{2Ze^2}{bm_ev}
+\end{dmath}.
+\end{dgroup*}
+From this point, it is assumed that the acceleration is essentially instantaneous.
+By Fourier transforming the Larmor formula, we find\sidenote{
+    Dropping the numerical constants from this point forward because this derivation is
+    approximate anyway.
+}
+\begin{dgroup*}
+\begin{dmath*}
+    P(t) = \frac{2e^2 a^2}{3c^3} \linebreak
+\end{dmath*}
+\begin{dmath*}
+    P(\omega) \sim \frac{e^2}{c^3}\int a^2 e^{i\omega t}\d t
+              \sim \frac{e^2\delta v^2}{c^3}
+              \sim \frac{Z^2e^6}{b^2m_e^2v^2c^3}
+\end{dmath*}
+\end{dgroup*}
+Because the interaction is very rapid and impulsive, the frequency spectrum is \emph{flat}\sidenote{
+    If there's one thing you remember about Bremsstrahlung, remember it is flat!
+}
+out to
+a maximum $\omega\sim b/v$ corresponding to the length of the interaction.
+
+To get the spectrum for an ensemble of electrons, we integrate over impact parameters $b$ and
+velocities $v$.  The energy radiated per unit time per unit frequency and per unit volume
+at a fixed velocity is
+\begin{dmath*}
+    \frac{\d E}{\d\omega\d V\d t}
+        \sim n_en_iv\int_{b_{\rm min}}^{b_{\rm max}} P(\omega) 2\pi b\d b \nolinebreak
+        \sim \frac{Z^2e^6}{m_e^2vc^3}n_en_i\ln\left(\frac{b_{\rm max}}{b_{\rm min}}\right)
+\end{dmath*},
+where $n_e$ and $n_i$ are the number density of electrons and ions respectively.
+Using a Maxwellian velocity distribution\sidenote{
+    \begin{dmath*}
+    P(v)\d v = \left(\frac{m}{2\pi kT}\right)^{3/2}4\pi v^2e^{-mv^2/2kT}\d v
+    \end{dmath*}
+} and sweeping the details of $b_{\rm max}$ and
+$b_{\rm min}$ into a Gaunt factor\sidenote{
+    The minimum and maximum impact parameters depend on whether or not quantum mechanics
+    is relevant.
+}, $g_{ff}$, we have
+\begin{dmath*}
+    \frac{\d E}{\d\omega\d V\d t}
+        \sim \frac{Z^2e^6g_{ff}}{m_e^2c^3}n_en_i\left(\frac{m_e}{kT}\right)^{3/2}\int_{v_{\rm min}}^\infty ve^{-m_ev^2/2kT} \d v
+        \sim \frac{Z^2e^6g_{ff}}{m_e^2c^3}n_en_i\left(\frac{m_e}{kT}\right)^{1/2}e^{-m_ev_{\rm min}^2/2kT}
+\end{dmath*}.
+The minimum velocity $v_{\rm min}$ must be chosen so that a photon of frequency $\nu$ can
+be created.  Therefore choose $v_{\rm min}=(2h\nu/m_e)^{1/2}$ and finally we have the emissivity
+\begin{dmath}\boxed{
+    \epsilon_{ff}
+        \sim \frac{e^6}{m_e^{1/2}k^{1/2}c^3}Z^2n_en_iT^{-1/2}e^{-h\nu/kT}g_{ff}
+}\end{dmath}.
+Note that this spectrum is essentially \emph{flat} until $h\nu\sim kT$.
+
+As an alternative thought\sidenote{
+    Michael: I think it's interesting to think about electron's Compton scattering off
+    virtual photons conceptually, but I don't think it's elucidating (even slightly).
+    I have no intuition about how an electron should Compton scatter virtual photons and
+    what the power or spectrum should be.  Thinking about accelerating electrons seems
+    more physical and obvious to me -- why complicate the matter?
+},
+for the Bremsstrahlung power from a single electron, use Thompson scattering in the electron's 
 frame.  The electron sees a moving proton, which creates a varying E and B field (ie photons).  
 The electron Thompson scatters off these virtual photons, radiating as in Thompson scattering.
 Because energy is invariant of frame, the power radiated in this process according to the 
 electron is the same as the power we see.  So
-\begin{displaymath}P=2\sigma_Tc<u_E>=2\sigma_Tc\frac{E^2}{8\pi}=2\sigma_Tc\frac{Z^2e^2}{8\pi b^4}\end{displaymath}
+\begin{displaymath}P=2\sigma_Tc\langle u_E \rangle=2\sigma_Tc\frac{E^2}{8\pi}=2\sigma_Tc\frac{Z^2e^2}{8\pi b^4}\end{displaymath}
 To get the emissivity, need to integrate over possible impact parameters and (Boltzmann) 
 velocities of a population of electrons, and consider many possible ions to interact with.  
 Know how to describe and explain a Bremsstrahlung spectrum.
@@ -476,7 +552,7 @@ $T\propto\gamma\propto\nu^{1/2}$.  So, the sychrotron spectrum is described by
 
 Sychrotron Cooling:
 Electrons cool by emitting photons, timescale given by
-\begin{displaymath}t=\frac{E}{-dE/dt}=\frac{\gamma m_ec}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}\end{displaymath}
+\begin{displaymath}t=\frac{E}{-dE/dt}=\frac{\gamma m_ec^2}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}\end{displaymath}
 \begin{displaymath}\boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}\end{displaymath}
 
 Equipartition:
@@ -508,7 +584,7 @@ high $\nu$.
 Can get double peaked synchrotron spectra because sychrotron photons are scattered to higher 
 energies by all the fast moving electrons around.  This is seen in blazars and the Crab nebula.  
 If $P_{IC}>P_{sync}$, the sychrotron photons can be depleted, with none getting out.  Can show 
-(as we did in high energy) that this happens for brightness temperatures above $10^12$ K.
+(as we did in high energy) that this happens for brightness temperatures above $10^{12}$ K.
 
 \subsection{S-Z effect}
 Thermal electrons in intra-cluster gas inverse Compton CMB photons to a slightly higher energy 
