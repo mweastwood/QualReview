@@ -60,3 +60,84 @@ I believe we had a colloquium earlier this year (or last year) that used SDSS da
 that there is no thin disk/thick disk distinction but rather a continuous distribution
 where the scale height of a stellar population scales with its age.
 
+\subsection{The Luminosity Function}
+
+The luminosity function $\Phi(M)dM$ is the number of objects per volume in an absolute magnitude range $M$ to $M+dM$. 
+
+In the context of stars, note that while faint K and M dwarfs make up most of the stellar mass density in the solar neighborhood, almost all emitted light comes from the rare, luminous stars. The peak of the stellar luminosity function occurs at about $M_v = 12.5$, as a result of the rapid luminosity decline of main sequence stars as their mass approaches the limit of hydrogen burning ( $M_{crit} = 0.08 M_\odot$)
+
+If the stars in a given population were born at different times, the stellar luminosity function must be corrected for the effects of stellar evolution. If the star formation rate is constant, as it is in the solar neighborhood,  the corrected luminosity function is given by:
+
+ \begin{equation}
+\Phi_0(M) = \Phi(M) \times
+\begin{cases}
+\frac{t}{\tau_{MS}(M)} & \text{for } \tau_{MS}(M)<t \\
+1 & \text{otherwise}
+\end{cases}
+\end{equation} 
+where $t$ is the time since formation started and $\tau_{MS}(M)$ is the main sequence lifetime of stars with absolute magnitude $M$. Note that we only observe stars of magnitude $M$ that were formed in the last $\frac{t}{\tau_{MS}(M)}$ fraction of the population's lifetime.
+
+In the context of galaxies, the Schechter luminosity function provides a general analytic fit to galaxy functions. The Schechter function can be expressed in terms of luminosity:
+
+\begin{equation}
+\Phi(L) dL \propto L^\alpha  e^{\frac{-L}{L_*}} dL
+\end{equation}
+or in terms of absolute magnitude:
+
+\begin{equation}
+\Phi(M) dM \propto 10^{-0.4(\alpha+1)M} e^{-10^{0.4(M^*-M)}} dM.
+ \end{equation}
+ The parameters $\alpha$, $L^*$, and $M^*$ are usually fit to a given dataset. For galaxies near the Milky Way, $\alpha = -1$ and $M^*_B = -21$. For the Milky Way itself, $L_* = 3\times 10^{10} L_\odot$. In the Schechter function, $M^*$ and $L^*$ are also the characteristic values at which the number of galaxies falls off sharply. x 
+
+\section{The Initial Mass Function}
+
+After a burst of star formation, the number of stars in a mass range $\mathcal{M}$ to $\mathcal{M}+d\mathcal{M}$ is given by:
+
+\begin{equation}
+dN = N_0 \xi(\mathcal{M}) d\mathcal{M}
+\end{equation}
+where $\xi(\mathcal{M})$ is the number of stars of mass $\mathcal{M}$, and $N_0$ depends on the normalization of $\xi$. The IMF is normalized such that:
+
+\begin{equation}
+\int d\mathcal{M} \mathcal{M} \xi(\mathcal{M}) = \mathcal{M}_\odot
+\end{equation}
+Thus, $N_0$ is the number of solar masses created in a star formation burst. 
+
+The IMF is assumed to be a power law with mass. This is justified because star formation proceeds through many orders of magnitude of densities and temperatures, so we expect the IMF is be a pretty featureless function. The power law must be chosen such that the IMF steepens with increasing mass. It is given by:
+
+\begin{equation}
+\xi  \propto \mathcal{M}^{-2.35}
+\end{equation}
+This power law, valid for $\mathcal{M} \geq 1\mathcal{M}_\odot$ is known as the Salpeter IMF.
+
+The IMF can also be expressed in terms of the luminosity function:
+
+\begin{equation}
+\xi(\mathcal{M}) = \frac{dM}{d\mathcal{M}} \Phi_0 [M(\mathcal{M})]
+\end{equation}
+where M is absolute magnitude and $\mathcal{M}$ is mass. The function $M(\mathcal{M})$ can be found theoretically or observationally. It can be calculated using models of stellar atmospheres and main sequence stars of varying masses and metallicities. These models break down at $M(\mathcal{M}) \leq 0.6 M(\mathcal{M}_\odot)$ due to spectral deviation from black bodies. $M(\mathcal{M})$ can also be found using mass measurements of binary stars, although the data is generally sparse and noisy. 
+
+\section{Malmquist Bias}
+
+In any apparent magnitude-limited survey, intrinsically brighter objects will be overrepresented. The sample's true mean absolute magnitude is biased by the amount
+
+\begin{equation}
+\overline{\Delta M} = \left<M\right>_m - M_0
+\end{equation}
+where $\left<M\right>_m $ is the uncorrected mean absolute magnitude, and $M_0$ is the true mean absolute magnitude. 
+
+The Malmquist bias $\overline{\Delta M}$ is calculated using $A(m)$, the total number of stars brighter than the apparent magnitude $m$, and $\sigma$, the dispersion in the absolute magnitude:
+\begin{equation}
+\overline{\Delta M} = \left<M\right>_m - M_0 = -\sigma^2 \frac{d ln A}{dm}.
+\end{equation}
+The function A(m) is defined as
+
+\begin{equation}
+A(m) = w\int^\infty_{-\infty} ds \Phi(M) s^2 \nu(s)
+\end{equation}
+where w is the solid angle and s is the distance. We probably won't have to use that expression on the qual, but it may be useful to note that $\Phi(M)$ is often approximated as a gaussian centered on $M_0$ with a standard deviation of $\sigma$. 
+
+The Malmquist bias also allows for a more accurate calculation of the mean distance to a sample, given the distance modulus. For example, solving for distance in the equation $(m-M_m)-\overline{\Delta M} = 5log\left(\frac{D}{10} \right)$.
+
+
+
