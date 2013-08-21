@@ -139,5 +139,78 @@ where w is the solid angle and s is the distance. We probably won't have to use 
 
 The Malmquist bias also allows for a more accurate calculation of the mean distance to a sample, given the distance modulus. For example, solving for distance in the equation $(m-M_m)-\overline{\Delta M} = 5log\left(\frac{D}{10} \right)$.
 
+\subsection{G-dwarf problem}
+
+The closed box model of chemical evolution predicts that one half of all stars near the sun have less than a third of the metallicity of the most metal rich stars.  Since the latter have metallicities comparable to that of the Sun, the closed box model implies that one half of solar neighborhood stars should have metallicities less than $\frac{1}{3}z_\odot$.  However, from observations only $2\%$ of disk F and G stars in the solar neighborhood have $z < -.25 z_\odot$.  This contradiction between the standard close-box model and observation is known as the G-dwarf problem.  From observations, stars are more metal rich than predicted.
+
+\subsection{Distance Measures}
+
+Moving cluster method:
+
+\begin{equation}
+D = \frac{-\theta}{\dot \theta}v_r
+\end{equation}
+
+Measuring the radial velocity of the cluster and the rate at which the cluster is expanding or shrinking allows you to find the distance to the cluster.
+
+Using proper motions:
+
+\begin{equation}
+v_t = v_rtan(\theta)
+\end{equation}
+\begin{equation}
+v_t = \mu d
+\end{equation}
+\begin{equation}
+\mu = \frac{v_rtan(\theta)}{d}
+\end{equation}
+\begin{equation}
+d = \frac{v_rtan(\theta)}{\mu}
+\end{equation}
+
+Baade-Wessilink Method:
+
+This method requires an expanding/shrinking object, for example a variable star or a type Ia supernova.  The change in the radius of the object is given by:
+
+\begin{equation}
+r_1 - r_2 = v_r(t_1 - t_2)
+\end{equation}
+
+Next, use the flux measured at each time to determine the ratio of the radii at those times.
+
+\begin{equation}
+F_1 = \frac{4\pi r_1^2\sigma T_1^4}{4\pi d^2}
+\end{equation}
+
+\begin{equation}
+\frac{r_1}{r_2} = \bigg(\frac{F_1T_2^4}{F_2T_1^4}\bigg)^{\frac{1}{2}}
+\end{equation}
+
+Now you can solve for the radii individually, and use the angular size of the object to get the distance.  
+
+
+\subsection{Star Formation}
+
+Observational methods to measure star formation:
+
+1.  UV continuum - the UV spectrum is dominated by young massive stars, SFR scales linearly with luminosity.
+	
+	pros:  directly linked to young stellar population, wide range in redshift explorable.
+	
+	cons:  sensitivity to extinction and the IMF
+	
+2.  Recombination lines:  young stars emit UV radiation that ionizes atoms (mostly H) in nearby gas clouds.  Free electrons in the ionized gas then recombine with atoms.  They then drop to less excited states.  
+
+	pros:  direct and highly sensitive
+	
+	cons:  extinction, IMF, uncertainty in gas distribution
+	
+3.  far-IR continuum:  UV radiation from young stars can be absorbed by interstellar dust and reemitted in the thermal infrared.
+
+	pros:  sensitivity
+	
+	cons:  not direct, atmospheric absorption, distribution of dust, contribution of old stars
+
+
 
 
