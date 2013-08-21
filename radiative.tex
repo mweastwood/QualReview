@@ -291,54 +291,59 @@ Remember guys, there's nothing funny about neutrinos.
 
 \end{enumerate}
 
-\subsection{The Basics}
-Fermi-Dirac Distribution:
-\begin{displaymath}N_i=\frac{g_i}{e^{(\epsilon_i-\mu)\beta}+1}\end{displaymath}
-
-Bose-Einstein Distribution:
-\begin{displaymath}N_i=\frac{g_i}{e^{(\epsilon_i-\mu)\beta}-1}\end{displaymath}
-where $\beta=\frac{1}{kT}$.
-
+\subsection{Specific intensity}
 Specific intensity $I_{\nu}$ = energy per time per area per frequency per
 steradian (erg/s/Hz/ster/cm$^2$).
 
-Moments of Specific Intensity:\newline
-Specific mean intensity (0th moment)\newline
-\begin{displaymath}J_{\nu}=\frac{1}{4\pi}\int I_{\nu}\,d\Omega \end{displaymath}
-Units- erg/s/cm$^2$/Hz\newline
-Specific energy density $u_{\nu}=\frac{4\pi}{c}J_{\nu}$.
+\begin{table}[ht]
+\begin{tabular}{cc}
+\hline\hline
+Specific mean intensity (erg/s/cm$^2$/Hz) &
+    $J_{\nu}=\frac{1}{4\pi}\int I_{\nu}\,d\Omega$ \\
+Specific energy density (erg/cm$^3$/Hz) &
+    $u_{\nu}=\frac{4\pi}{c}J_{\nu}$ \\
+Energy Flux (erg/s/cm$^2$/Hz) &
+    $F_{\nu}=\int I_{\nu}\cos \theta\,d\Omega$ \\
+Momentum Flux &
+    $p_{\nu}=\frac{1}{c}\int I_{\nu}\cos^2 \theta\,d\Omega$ \\
+\hline\hline
+\end{tabular}
+\caption{Moments of the specific intensity}
+\end{table}
 
-Energy Flux (1st moment)\newline
-\begin{displaymath}H_{\nu}=\frac{1}{4\pi}\int I_{\nu}\cos \theta\,d\Omega \end{displaymath}
-\begin{displaymath}F_{\nu}=4\pi \v{H_{\nu}} \end{displaymath}
-
-Momentum Flux (2nd moment)\newline
-\begin{displaymath}p_{\nu}=\frac{1}{c}\int I_{\nu}\cos^2 \theta\,d\Omega  \end{displaymath}
 \subsection{Radiative Transfer}
 In steady state, with no scattering, along a path s, change in intensity is emission - absorption.
-\begin{displaymath}\frac{dI_{\nu}}{ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\end{displaymath}
+\begin{dmath}\frac{dI_{\nu}}{ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\end{dmath}
 where $\kappa_{\nu}$=absorption opacity=$n\sigma$=$\frac{1}{\lambda_{\nu}}$ and $j_{\nu}$ is 
 defined as the energy emitted per unit volume per steradian per second per Hz.  This is similar 
 to emissivity, except emissivity ($\epsilon_{\nu}$) is per unit mass, not per unit volume.
 An alternate for of the radiative transfer equation is 
-\begin{displaymath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}\end{displaymath}
+\begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}\end{dmath}
 $S_{\nu}=\frac{j_{\nu}}{\kappa_{\nu}}$ is the source function and $d\tau_{\nu}=\kappa_{\nu}ds$ 
 is measured along the path of the light ray (from the source to the observer).  If optical depth 
 is measured from the observer to the source, $d\tau_{\nu}$ picks up a negative sign, and the 
 equation becomes
-\begin{displaymath}\frac{dI_{\nu}}{d\tau_{\nu}}=I_{\nu}-S_{\nu}\end{displaymath}
-Solutions:\newline
-If the source function is independent of optical depth (constant along the path):\newline
-\begin{displaymath}I_{\nu}(\tau_{\nu})=I_{\nu}(0)e^{-\tau_{\nu}}+S_{\nu}(1-e^{-\tau_{\nu}})\end{displaymath}
-Pure (constant) absorption:\newline
-\begin{displaymath}I_{\nu}(\tau_{\nu})=I_{\nu}(0)e^{-\tau_{\nu}}\end{displaymath}
-\begin{displaymath}I_{\nu}(s)=I_{\nu}(0)e^{-\kappa_{\nu} s}\end{displaymath}
-Pure emission:\newline
-\begin{displaymath}I_{\nu}(s)=I_{\nu}(0)+\int_0^s j_{\nu}(s')\,ds'\end{displaymath}
+\begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=I_{\nu}-S_{\nu}\end{dmath}
+
+Solutions to the radiative transfer equation:
+\begin{dgroup}
+\begin{dmath}
+\text{Constant source function:}\quad
+    I_{\nu}(\tau_{\nu})=I_{\nu}(0)e^{-\tau_{\nu}}+S_{\nu}(1-e^{-\tau_{\nu}})
+\end{dmath}
+\begin{dmath}
+\text{Pure absorption:}\quad
+    I_{\nu}(s)=I_{\nu}(0)e^{-\tau_{\nu}}\nolinebreak=I_{\nu}(0)e^{-\kappa_{\nu} s}
+\end{dmath}
+\begin{dmath}
+\text{Pure emission:}\quad
+    I_{\nu}(s)=I_{\nu}(0)+\int_0^s j_{\nu}(s')\,ds'
+\end{dmath}
+\end{dgroup}
 
 Random Walk:\newline
 Good derivation in Carrol and Ostlie of 3-D random walk.  Number of steps needed to travel a 
-distance R is $R^2\lambda^2$.  Diffusion time is thus $\frac{R^2}{\lambda c}$ or $\frac{tau R}{c}$ 
+distance R is $R^2\lambda^2$.  Diffusion time is thus $\frac{R^2}{\lambda c}$ or $\frac{\tau R}{c}$ 
 for constant optical depth.  Technically, I think there should be a factor of 3 the numerator, 
 but this is all handwavy and order of magnitude anyway.
 
@@ -394,46 +399,28 @@ optically thick things emit like blackbodies.  The equation for $T_b$ above is j
 statement of this.
 
 \subsection{Thomson Scattering}
-
-Derivation of the Thomson scattering cross section:
-
-The cross section is given by the following:
-
-$\sigma_T$ = power radiated by accelerated electron/flux incident on the electron
-
-Starting from the dipole approximation, the power radiated by the accelerated electron is given by:
-
-\begin{equation}
-P = \frac{2\ddot d}{3c^3}
-\end{equation}
-
-Next balance forces. 
-
-\begin{equation}
-eE_0sin(\omega t) = m_e\ddot r
-\end{equation}
-
-So the power becomes:
-
-\begin{equation}
+The cross section is defined by
+\begin{dmath*}
+\sigma_T = \frac{\text{power radiated by accelerated electron}}{\text{flux incident on the electron}}
+\end{dmath*}.
+Starting from the dipole approximation, the power radiated by the accelerated electron is given by
+\begin{dmath}
+P = \frac{2{\ddot d}^2}{3c^3}
+\end{dmath}.
+By balancing forces ($eE_0sin(\omega t) = m_e\ddot r$)\sidenote{
+    Note that we take the time average here so that $\langle \sin^2 \rangle = 1/2$.
+}, the power becomes
+\begin{dmath}
 P = \frac{e^4E_0^2}{3c^3m_e^2}
-\end{equation}
-
-The flux incident on the electron is given by the time-averaged poynting vector:
-
-\begin{equation}
-<S> = \frac{cE_0^2}{8\pi}
-\end{equation}
-
-The Thomson cross section is then given by:
-
-\begin{equation}
-\sigma_T = \frac{e^4E_0^2}{3c^3m_e^2}\frac{8\pi}{cE_0^2}
-\end{equation}
-
-\begin{equation}
+\end{dmath}.
+The flux incident on the electron is given by the time-averaged poynting vector
+\begin{dmath}
+\langle S\rangle = \frac{cE_0^2}{8\pi}
+\end{dmath}.
+So finally the Thomson cross-section is given by
+\begin{dmath}\boxed{
 \sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
-\end{equation}
+}\end{dmath}.
 
 \subsection{Bremsstrahlung}
 For the Bremsstrahlung power from a single electron, use Thompson scattering in the electron's 
