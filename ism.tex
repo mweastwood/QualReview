@@ -177,6 +177,64 @@ in metal ions.  Collisional excitations remove kinetic energy from the gas,
 followed by photon emission.  The gas is optically thin to these photons, 
 so the photons escape and carry the energy away.
 
+By the way, there's a simplified 
+version of all this in chapter 5 of Astrophysics in a Nutshell.  The reason I followed Nick's 
+slides is he actually plugs in numbers to show that H cooling is not enough to cool an HII region 
+to the observed temperatures.  Nick doesn't plug in any numbers from this point on though, 
+so I'm switching to Astrophysics in a Nutshell for metal cooling.
+
+The basic picture of metal cooling starts with free electrons colliding with ionized species of 
+C, N, O, S, Si, Fe, and other elements.  The electrons have kinetic energies that match the 
+excited states of these atoms, so the atoms are excited and kinetic energy is removed from the 
+gas.  If the atoms can decay by emitting a photon before another collision puts that kinetic 
+energy back into the gas through collisional deexcitation, the photon can escape the HII region 
+and carry away the energy, cooling the region.  The photon can escape because these metals have a 
+low abundance, so it is unlikely to be absorbed by another atom.  Also, if forbidden transitions 
+are involved, re-absorption is even less likely.  
+
+Consider an atom with energy levels level $1$ and level $2$.  The cooling rate for this 
+transition is given by the radiative transition rate times the energy.
+\begin{equation}\label{eq:cooling}
+\Lambda=n_2A_{21}h\nu
+\end{equation}
+where $A_{21}$ is the Einstein A coefficient that determines the rate.  The collisional excitation 
+rate from level $1$ to level $2$ is given by 
+\begin{equation}
+R_{12,coll}=n_en_1q_{12}=n_e(n-n_2)q_{12}
+\end{equation}
+where $q_{12}$ is a coefficient for that rate that includes temperature and cross section 
+effects.  The collisional deexcitation rate is 
+\begin{equation}
+R_{21,coll}=n_en_2q_{21}
+\end{equation}
+The radiative decay rate is 
+\begin{equation}
+R_{21,rad}=n_2A_{21}
+\end{equation}
+Stimulated emission can be ignored in HII regions (although it is important for masers).  
+Balancing excitations with deexcitations and solving for $n_2$ gives:
+\begin{equation}
+n_2=\frac{n_enq{12}}{n_e(q_{21}+q_{12})+A_{21}}
+\end{equation}
+Plugging this into Equation \ref{eq:cooling} gives
+\begin{equation}
+\Lambda=\frac{n_enq_{12}A_{21}h\nu}{n_e(q_{21}+q_{12})+A_{21}}=\frac{n_enq_{12}h\nu}{(1+q_{12}/q_{21})n_eq_{21}/A_{21}+1}
+\end{equation}
+Defining $n_{crit}\equiv A_{21}/q{21}$ results in 
+\begin{equation}\label{eq:cooling2}
+\Lambda=\frac{n_enq_{12}h\nu}{(1+q_{12}/q{21})n_e/n_{crit}+1}
+\end{equation}
+The ratio of q's in the denominator is given by 
+\begin{equation}
+\frac{q_{12}}{q_{21}}=\frac{g_2}{g_1}e^{-h\nu/kT}
+\end{equation}
+For any temperature, this ratio is of order 1 or less.  Therefore, if $n_e<<n_{crit}$, the first 
+term in the denominator of Equation \ref{eq:cooling2} can be ignored, and 
+$\Lambda\propto n_en\sim n_e^2$.  For $n_e>>n_{crit}$, the first term dominates and 
+$\Lambda\propto n\sim n_e$.  H recombination and bremsstrahlung cooling always go as $n_e^2$, 
+so for high densities, these processes are more efficient than metal cooling.  
+
+
 \subsection{Line Emission}
 
 \subsection{HII regions}
