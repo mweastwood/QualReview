@@ -84,6 +84,98 @@ multiple supernovae.  It can be detected from X-ray emission and UV absorption.
  Ionization of neutral hydrogen requires $13.6~{\rm eV}$, or photons with wavelength $\lambda < 912 \AA$, OR shocks that are faster than $50~{\rm km/s}$. In HII regions around hot (O,B) stars, the hydrogen is photoionized by the UV radiation from the star, and there are very sharp transitions between the HII, HI, and H$_2$ regions around the star.
 
 \subsection{Heating and Cooling}
+The example of heating and cooling we did in class was for an HII region.  
+According to the slides, the same derivation can be followed for other 
+phases of the ISM, just with different transitions.  
+
+In an HII region, gas is heated when a photon with energy $>13.6$ eV ionizes 
+a neutral H atom.  This gives the free electron extra kinetic energy, which 
+it transfers to the gas.  The rate of heating is just the rate at which 
+energy is transferred into the gas by this method.  So the heating rate 
+$\Gamma$ is the photo-ionization rate times the extra energy per 
+photo-ionization.
+\begin{equation}
+\Gamma=R_{ph}\times\bar{E}
+\end{equation}
+Since the HII region is fully ionized, photo-ionizations can only take 
+place at the rate of recombinations (this is basically saying ionization 
+equilibrium is maintained.  So the rate of photo-ionizations equals the rate 
+of recombinations:
+\begin{equation}
+R_{ph}=n_en_p\alpha_B
+\end{equation}
+where $\alpha_B$ is the recombination rate coefficient into levels higher than 
+n$=1$.  Things get confusing here with these $\alpha$s.  There's a total $\alpha$ 
+for all recombinations, an $\alpha_A$ for recombinations to n$=1$, and 
+$\alpha_B$.  Kwok says $\alpha_B$ should be used here.  The lecture slides 
+say it should be $\alpha_A$, but later in the derivation, it looks like this 
+magically turns into $\alpha_B$.  I'm assuming the $\alpha_A$ in the lecture 
+slides is a typo, and we should be using $\alpha_B$.  This makes sense 
+physically, because we want to know the rate of recombinations that allow 
+a photon from the central star to ionize an atom.  If a recombination happens 
+directly to n$=1$, then a photon will be emitted with enough energy to 
+ionize a new atom.  So the photon from the star that is trying to heat the gas 
+will still have nothing new to ionize.  If the recombination happens to a 
+higher energy level, and the electron cascades down to n$=1$, several photons 
+will be emitted, but none will be able to ionize anything.  So the net result 
+is there is now a new neutral atom that can be ionized by the star.  If this 
+is all still too confusing, we can probably get away with just saying $\alpha$ 
+and ignoring this whole A or B business. 
+
+Meanwhile, back at the ranch, we need the average energy given to an electron 
+in a photo-ionization.  The kinetic energy given to the electron by a photon 
+of frequency $\nu$ is just $h(\nu-\nu_0)$ where $\nu_0$ is the frequency 
+required to ionize H.  The total energy added by this frequency is the 
+energy from one photon times the number of photons at that frequency, given 
+by the intensity of the radiation field divided by the photon energy.  
+Integrating over all frequencies above the ionization frequency, and dividing 
+by the total number of photons gives the average kinetic energy given.   
+\begin{equation}
+\bar{E}=\frac{\int_{\nu_0}^\infty{h(\nu-\nu_0)\frac{J_{\nu}}{h\nu}a_{nu}\,d\nu}}{\int_{\nu_0}^\infty{\frac{J_{\nu}}{h\nu}a_{nu}\,d\nu}}
+\end{equation}
+$a_{\nu}$ is the photo-ionization cross section.  Defining $T_i$ such that 
+\begin{equation}
+\bar{E}=\frac{3}{2}kT_i
+\end{equation}
+results in 
+\begin{equation}
+\Gamma=n_en_p\alpha_B\frac{3}{2}kT_i
+\end{equation}
+For $J_{\nu}$ from a central star of temperature $T_*$ and 
+$a_{\nu}\propto\left(\frac{\nu}{\nu_0}\right)^3$, $T_i\sim T_*$.
+
+One way an HII region can cool is through recombination to energy levels 
+above n$=1$, followed by a cascade to n$=1$.  Assuming all the H in the region 
+is in the ground state, the emitted photons will escape the HII region, and 
+kinetic energy will have been removed.  The rate at which this happens is 
+\begin{equation}
+\Lambda=n_en_pkT\beta
+\end{equation}
+where 
+\begin{equation}
+\beta=\alpha_B\int_0^\infty{\frac{1}{2}mv^2\frac{\sigma_vv}{kT_e}f(v)\,dv}
+\end{equation}
+The integral includes the kinetic energy lost by the electron, $\sigma v$, 
+which has appeared in rate equations before that we've had (I don't remember 
+why), and the distribution of velocities.  Re-writing the cooling rate to 
+look more like the heating rate,
+\begin{equation}
+\Lambda=n_en_p\alpha_B\bar{E}
+\end{equation}
+For $\sigma_v\propto v^{-2}$, $\bar{E}\sim0.4\times\frac{3}{2}kT_e$.
+So
+\begin{equation}
+\Lambda=n_en_p\alpha_B0.4\times\frac{3}{2}kT_e
+\end{equation}
+Setting heating equal to cooling to find the gas temperature ($T_e$) gives
+$T_e\sim1.7T_*$.  The O and B stars at the center of HII regions are 40,000-
+50,000 K, but the gas in the region is only around 10,000 K.  So H 
+recombination is not enough to cool the gas to the observed temperatures.  
+Free-free emission can cool the gas to about $T_*$, but this is still not 
+enough.  The most important coolent of the gas turns out to be line transitions 
+in metal ions.  Collisional excitations remove kinetic energy from the gas, 
+followed by photon emission.  The gas is optically thin to these photons, 
+so the photons escape and carry the energy away.
 
 \subsection{Line Emission}
 
