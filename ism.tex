@@ -381,6 +381,163 @@ done for higher densities, but then the detailed balance equations include more 
 and are more complicated.  
 
 \subsection{HII regions}
+HII regions are created by young O and B stars, which produce large numbers of UV photons capable 
+of ionizing the H clouds these stars are born in.  To ionize significant amounts of H, these 
+stars need temperature $>25,000$ K.  The initial size of an HII region is determined by 
+balancing the flux of ionizing photons from the star with the rate of recombinations.  As the 
+HII region is heated, the pressure inside becomes much greater than the pressure of the 
+surrounding neutral cloud, and the region dynamically expands.  This lowers the density in the 
+region, allowing more ionizing photons to get out and ionize additional material.  This continues 
+until pressure and ionization equilibrium are reached with the surrounding cloud.  In reality, 
+however, the O and B stars powering HII regions will supernova before this final state is 
+achieved.  Note- I'll be using the word expansion a lot in this section, so I'll try to be as 
+specific as I can what I mean.  Ionization expansion means new material is being ionized, so 
+the size of the HII region ``expands'', but the gas itself is staying where it is.  Dynamical 
+expansion means the already ionized gas is out of pressure equilibrium, so the gas itself moves 
+outwards and the regions physically expands into the surrounding cloud.  
+
+The initial size of an HII region is defined by the \emph{Stromgren sphere}, which assumes 
+a uniform, non-expanding medium of neutral H surrounding a star that turns on at $t=0$.  The 
+star's output rate of ionizing photons is $N_u$ and the density of the surrounding medium is 
+$n_0$.  Initially, all of the ionizing photons from the star go into ionizing new material.  
+In a time $dt$, the star puts out $N_udt$ ionizing photons.  These photons ionize a shell of 
+thickness $dR$ which contains $N_udt$ neutral H atoms.  So the ionization expansion is governed 
+by the equation
+\begin{equation}\label{eq:earlyHII}
+N_u=n_04\pi R^2\frac{dR}{dt}
+\end{equation}
+The solution is 
+\begin{equation}
+R(t)=\left(\frac{3N_u}{4\pi n_0}t\right)^{1/3}
+\end{equation}
+After a short time (the actual time can probably be estimated from the density and the 
+recombination coefficient), recombination becomes important, and the photons from the star are 
+must keep material ionized in addition to ionizing new material.  The rate of recombination 
+rate per unit volume is given by 
+\begin{equation}
+N_{rec}=\alpha n_en_p=\alpha n_0^2
+\end{equation}
+Multiplying this by the volume of the HII region and including it on the right hand side of 
+Equation \ref{eq:earlyHII} gives
+\begin{equation}
+N_u=4\pi n_0R^2\frac{dR}{dt}+\alpha n_0^2\frac{4\pi}{3}R^3
+\end{equation}
+which has the solution
+\begin{equation}
+R(t)=R_S\left(1-e^{-t/t_S}\right)^{1/3}
+\end{equation}
+with $t_S=\frac{1}{\alpha n_0}$ and the \emph{Stromgren radius} defined as 
+\begin{equation}
+R_S\equiv\left(\frac{3N_u}{4\pi \alpha n_0^2}\right)^{1/3}
+\end{equation}
+For a typical HII region with $T\sim10^4$ K, $\alpha=2.6\times10^{-13}$ cm$^3$s$^{-1}$.  
+Assuming $n_0\sim30$ cm$^{-3}$ and an O$5$ star with $N_u=4\times10^{46}$ s$^{-1}$, 
+$R_S\sim4\times10^{19}$ cm $\sim12$ pc.  The timescale to create this sphere is $t_S\sim4000$ yr.
+The transition from the HII region to the surrounding medium will be very sharp, of order 
+the mean free path of an ionizing photon (why?), $\lambda_i=1/(n_0\sigma_i)$, where 
+$\sigma_i=6\times10^{-18} $cm$^2$.
+
+This all assumes a static sphere, which is not realistic.  The temperature inside the HII region 
+will be $\sim10^4$ K, compared to $\sim100$ K in the surrounding gas.  Also, the HII region has 
+twice as many particles once it is ionized, so the pressure in the region is $\sim200$ times the 
+pressure of the neutral gas.  As the HII region expands, and shock front and ionization front 
+develop.  Let $\Phi_i$ be the ionizing flux from the star at the ionization front, $P_1$ and 
+$\rho_1$ be the pressure and density of neutral gas, and $u_1$ be the velocity of the neutral 
+gas relative to the ionization front.  Let $\rho_2$, $P_2$, and $u_2$ be the density, pressure, 
+and relative velocity of the ionized material inside the HII region.  Across the ionization front, 
+the usual mass and momentum conservations equations hold:
+\begin{equation}
+\rho_1u_1=\rho_2u_2
+\end{equation}
+\begin{equation}
+P_1+\rho_1u_1^2=P_2+\rho_2u_2^2
+\end{equation}
+Also, any mass that crosses the ionization front must become ionized, so the flux of particles 
+across the front must equal the flux of ionizing photons:
+\begin{equation}
+\rho_1u_1=m_i\Phi_i
+\end{equation}
+where $m_i$ is the mean particle mass of the ionized gas.  Defining the sound speeds in the 
+neutral and ionized material as $a_1=(P_1/\rho_1)^{1/2}$ and $a_2=(P_1/\rho_1)^{1/2}$, the 
+mass and momentum equations can be solved for $\rho_2/\rho_1$ in terms of these sound speeds 
+and $u_1$.  
+\begin{equation}\label{eq:ratio}
+\frac{\rho_2}{\rho_1}=\frac{1}{2a_2^2}(a_1^2+u_1^2\pm\sqrt{f(u_1)})
+\end{equation}
+where $f(u_1)=(a_1^2+u_1^2)^2-4a_2^2u_1^2=(u_1^2-u_R^2)(u_1^2-u_D^2)$, with 
+\begin{equation}
+u_R\equiv a_2+\sqrt{a_2^2-a_1^2}
+\end{equation}
+\begin{equation}
+u_D\equiv a_2-\sqrt{a_2^2-a_1^2}
+\end{equation}
+The density ratio must be real, either $u_1\geq u_R\geq u_D$ or $u_1\leq u_D\leq u_R$.  The 
+first case (rapidly moving ionization front) is called an R-type front.  The second is a 
+slower D-type front.  In an R-type front, $u_1>u_R>a_2>a_1$, so the shock into the neutral medium 
+is supersonic.  In a D-type front, $u_1<u_D<a_1<a_2$, so the shock is subsonic.  
+
+\begin{figure}[!h]
+\label{fig:shock}
+\begin{center}
+\includegraphics[width=\textwidth]{shock_plot.pdf}
+\end{center}
+\end{figure}
+
+For every ionization front velocity $u_1$, there are two possible density ratios because of the 
+plus-minus sign in Eqaution \ref{eq:ratio} (see Figure \ref{fig:shock}.  The larger ratio is a 
+\emph{strong front}, and the smaller ratio is a \emph{weak front}.  Strong R-type fronts are 
+unstable, but weak R fronts and strong and weak D fronts are observed in HII regions.  In a 
+weak front, the ``sonic-ness'' changes (sub to super or super to sub).  In a weak front, 
+the sonic-ness does not change.  
+
+Qualitatively, an HII region goes through the following evolution.  When the star first turns on, 
+the HII region is small, so the flux of photons is large at the ionization front.  This creates 
+a high ionization front velocity $u_1$.  The front in this phase is a weak R-type front.  As 
+the ionization front expands, the photon flux decreases, and $u_1$ drops.  When the front slows 
+to $u_1=u_R$, the front becomes ``R-critical.''  As $u_1$ continues to drop, an R-type ionization 
+front can no longer exist.  At this point, the ionization front becomes D-critical, but the 
+shock front remains R-critical and moves ahead of the ionization front (see Figure 
+\ref{fig:front}).  The leading shock compresses the neutral gas, and the ionization front then 
+ionizes it.  This continues until pressure equilibrium and ionization equilibrium are both 
+reached.  At this point
+\begin{equation}
+R_{final}=\left(\frac{3N_u}{4\pi \alpha n_{final}^2}\right)^{1/3}
+\end{equation}
+The final density is given by pressure balance:
+\begin{equation}
+2n_{final}T_2=n_0T_1
+\end{equation}
+Using the original definition of the Stromgren radius, 
+\begin{equation}
+R_{final}=\left(\frac{2T_2}{T_2}\right)^{2/3}R_S\sim27R_S
+\end{equation}
+Before the HII region gets to this point though, the central star will have supernova-ed.  
+
+\begin{figure}[!h]
+\label{fig:front}
+\begin{center}
+\includegraphics[width=\textwidth]{shock_diagram.pdf}
+\end{center}
+\end{figure}
+
+The other thing of interest for HII regions is ionization fraction.  Balancing ionization with 
+recombination gives
+\begin{equation}
+n_{photon}n(1-x)\sigma_{i}c=\alpha x^2n^2
+\end{equation}
+where x is the fraction of ionized H and n is the total number density of the gas.  The number 
+of photons per second coming from the star pass through a volume $4\pi R^2c$, so 
+\begin{equation}
+n_{photon}=\frac{Q_*}{4\pi r^2c}
+\end{equation}
+Solving for x and plugging in typical HII region values gives over 99\% ionization (Nutshell 
+has an example where $x=0.999983$).  
+
+Also, it might be good to know that the outer parts of an HII region are hotter than the inner 
+parts.  This is because the photons that make it to the outer region have a harder spectrum, so 
+they can heat the gas more efficiently.  The cross section for H ionization decreases as 
+$\nu^{-3}$, so lower energy photons do most of the ionization inside the region.  By the time 
+photons reach the outer parts, the lower energy photons have been used up.  
 
 \subsection{Dust}
 
