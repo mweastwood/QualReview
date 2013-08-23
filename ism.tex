@@ -262,6 +262,106 @@ cloud is cooled by CO (I think) the same way an HII region is cooled by [O III].
 
 
 \subsection{Line Emission}
+Forbidden Lines:\newline
+These are lines that violate the transitions rules:
+\begin{displaymath}
+\Delta L=\pm1\ or\ 0
+\end{displaymath}
+\begin{displaymath}
+\Delta S=0
+\end{displaymath}
+\begin{displaymath}
+\Delta J=0,\ \pm1\ except\ 0\ to\ 0
+\end{displaymath}
+These transitions can occur through electric quadropole or magnetic dipole transitions, but these 
+have much longer lifetimes (how much longer?) than allowed transitions.  Because of this, in the 
+lab, atoms will collisionally deexcite before radiatively decaying by a forbidden transition.  
+In the ISM, however, densities are low enough (below the critical density, see heating and 
+cooling), that these forbidden transitions can happen.  Forbidden lines make important coolents 
+and are observationally very strong because the upward transitions are forbidden as well, so once 
+a forbidden photon is emitted, it is unlikely to be reabsorbed.  Atoms can be excited to forbidden 
+levels by collisions, so getting the atoms excited in the first place is not a problem.  Forbidden 
+lines in nebulae tend to be as strong as H recombination lines because even though metals are 
+much less abundant than H, collisional excitation is a much faster process than H recombination 
+in nebulae.  
+
+Determning Density and Temperature:
+Density of a nebula can be determined using the intensity ratio of two forbidden lines with 
+similar energy but different critical densities (different A coefficients).  For example, 
+this can be done with the [O II] doublet at $3726$ and $3729$ \AA.  This corresponds to transitions 
+from the $^2D_{3/2}$ and $^2D_{5/2}$ states.  Since these lines are optically thin, the intensity 
+observed will just be proportional to the emission.  Call $^2D_{3/2}$ level $3$ and $^2D_{5/2}$ 
+level $2$, with both transitions going to level $1$.  Assuming the energy emitted in each 
+transition is $\sim$the same and there are no transitions between levels $2$ and $3$, then
+\begin{equation}\label{eq:Irat}
+\frac{I_{31}}{I_{21}}=\frac{n_3A_{31}}{n_2A_{21}}
+\end{equation}
+Using detailed balance for the $2\rightarrow1$ transition:
+\begin{equation}
+n_2(A_{21}+n_eC_{21})=n_1n_eC_{12}
+\end{equation}
+Solving for $\frac{n_2}{n_1}$ gives
+\begin{equation}
+\frac{n_2}{n_1}=\frac{n_eC_{12}}{A_{21}}\left(\frac{1}{1+\frac{n_eC_{21}}{A_{21}}}\right)
+\end{equation}
+A similar equation can be derived for $\frac{n_3}{n_1}$.  Using these equations to determine 
+the ratio of $n_3$ to $n_2$ and plugging into Equation \ref{eq:Irat} gives
+\begin{equation}
+\frac{I_{31}}{I_{21}}=\frac{C_{13}}{C_{12}}\frac{1+\frac{n_eC_{21}}{A_21}}{1+\frac{n_eC_{31}}{A_31}}
+\end{equation}
+The A's in this equation are constants that can be looked up.  The ratio of the C's is given by 
+a Boltzmann distribution, which depends on the statistical weights of each level (constants) and 
+exponentially on the energy of the transitions and the temperature.  The energies of the two 
+transitions are $\sim$the same and the temperature is just whatever the gas temperature is, so 
+the exponentials cancel out.  So, the only free parameter 
+is the density, and by measuring the ratio of the line strengths, the density can be determined.  
+Another doublet that this can be done with is [S II] (6716 and 6731 \AA).
+
+Temperature can be determined in a similar way using three transitions, including a doublet.  
+An example is the [O III] lines at 4363, 4959, and 5007 \AA.  These correspond to the transitions
+$^1S_0\rightarrow ^1D_2$, $^1D_2\rightarrow ^3P_1$, and $^1D_2\rightarrow ^3P_2$.  Call the S 
+level $3$, D level $2$, and both P levels level $1$.  Assume the gas is low density, so that every 
+collisional excitation results in a radiative deexcitation, and that levels $2$ and $3$ can only 
+be populated by collisional excitation from level $1$.  With these assumptions, 
+\begin{equation}\label{eq:I3rat}
+\frac{I(4363)}{I(5007)+I(4969)}=\frac{n_3E_{32}A_{32}}{n_2E_{21}A_{21}}
+\end{equation}
+The denominator in Equation \ref{eq:I3rat} is because we assumed any atoms in level $2$ must 
+radiatively decay to level $1$, and both of these doublet transitions have $\sim$the same energy.  
+Using detailed balance in levels $2$ and $3$, assuming only collisional excitation and radiative 
+deexcitation are important:
+\begin{equation}
+n_2A_{21}=n_1n_eC_{12}
+n_3(A_{31}+A_{32})=n_1n_eC_{13}
+\end{equation}
+This is basically a statement that every collisional excitation must be followed by a 
+radiative deexcitation.  The reason the level $2$ equation does not include transition into 
+level $2$ from level $3$ is because we're not trying to balance an equilibrium population in level 
+$2$.  In equilibrium, everything is in level $1$, because anything that gets excited decays right 
+away.  All we're doing is saying a collision happens that can send the atom into level $2$ or 
+level $3$.  The first balance equation describes the first case, and the seond describes the 
+second case.  Temperature comes into play because it determines the speed of the colliding 
+electrons and atoms.  If it's really hot, and there are only ever collions up to level $3$, the 
+ensuing decays will produce a certain line ratio.  If it's cold, and only collisions to level $2$ 
+can happen, their will be no transitions from $3$ to $1$, so the line ratio will be $0$.  The 
+temperature determines the ratio of collisions into $2$ to collisions into $3$, and the line 
+ratio directly follows from this.  
+
+Going through the rest of the math, solving for the ratio of $n_3$ to $n_2$ and plugging into 
+Equation \ref{eq:I3rat} gives
+\begin{equation}\label{eq:Iratfinal}
+\frac{I(4363)}{I(5007)+I(4969)}=\frac{C_13}{C_12}\frac{\nu_{32}}{\nu{21}}\frac{A_{32}}{A_{31}+A_{32}}\propto\frac{C_13}{C_12}
+\end{equation}
+\begin{equation}
+\frac{I(4363)}{I(5007)+I(4969)}\propto\frac{\Omega_{13}}{\Omega_12}e^{-E_{32}/kT}
+\end{equation}
+The $\Omega$'s are collisional strength, which can be looked up, so the only free parameter is 
+temperature.  Getting from C to $\Omega$ requires a bunch of equations in Kwok that we don't need 
+to waste our time on.  If we actually have to go through all this math on the qual, I say 
+we stop at Equation \ref{eq:Iratfinal} and say the C's depend on an exponential term involving 
+temperature, so knowing the line ratios gives the temperature.  This proceedure can also be 
+done for higher densities, but then the detailed balance equations include more collisional terms 
+and are more complicated.  
 
 \subsection{HII regions}
 
