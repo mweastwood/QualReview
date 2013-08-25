@@ -27,7 +27,7 @@ spectral lines are more popular than I thought they would be.  Globular clusters
 	\biggl(\frac{dT}{dr}\biggr)_{\rm ad} = \biggl(1 - \frac{1}{\gamma}\biggr)\frac{T}{P} \frac{dP}{dr}\,\, ,
 	\end{equation}
 	which is the adiabatic temperature gradient. In a star, we can also use the ideal gas law to replace $P$ and hydrostatic equilibrium to replace $dP/dr$:
-	\begin{equation}
+	\begin{equation}\label{conv}
 	\biggl(\frac{dT}{dr}\biggr)_{\rm ad} = -\biggl(1 - \frac{1}{\gamma}\biggr)\frac{\mu m_p}{k_{\rm B}} \frac{G M_r}{r^2}\,\, .
 	\end{equation}
 	This describes how the temperature in the bubble changes as it rises and expands adiabatically. If $dT/dr$ is steeper than the adiabatic temperature gradient, the fluid is superadiabatic and there will be convection.
@@ -267,7 +267,7 @@ side.  Equation \ref{eq:L} can be rewritten as
 This can also be thought of as a diffusoin equation, where the left hand side is energy flux, 
 $\frac{cl}{3}$ is the diffusion coefficient, and $\frac{du}{dr}$ is the energy density gradient.  
 Plugging in $u=aT^4$ and $l=\frac{1}{\kappa\rho}$, and solving for $\frac{dT}{dr}$ gives
-\begin{equation}
+\begin{equation}\label{eq:rad}
 \boxed{\frac{dT(r)}{dr}=-\frac{3L(r)\kappa(r)\rho(r)}{4\pi r^2 4acT^3(r)}}
 \end{equation}
 
@@ -432,6 +432,24 @@ increase (it can no longer remain constant as on the Hayashi track)\sidenote{
 }.  Therefore, when the core becomes radiative, the protostar moves to higher luminosities and
 higher effective temperatures (after moving to lower luminosities with a constant effective
 temperature on the Hayashi track).  This track is occasionally called the Henyey track.
+
+\indent The relation between luminosity, mass, and T$_{eff}$ for objects on the Henyey track can be derived with homology, using the following scaling relations which apply to the core of the protostar:
+
+\begin{enumerate}
+	\item Kramer's opacity: $\kappa \propto \rho T_{c}^{-3.5}$
+	\item Ideal gas: $P \propto \rho T_{c}$, where $\rho \propto M R^{-3}$
+	\item Radiative energy transport\sidenote{This scaling relation comes from solving for $\kappa$ in Equation \ref{eq:rad}, and approximating $dT(r)/dr$ as $T/R$}: $\kappa \propto T_{c}^{4} L^{-1} M^{-1} R^{4}$
+\end{enumerate}
+
+\noindent Finally, by using everyone's favorite $L \propto R^{2} T_{eff}^{4}$, you find that
+
+\begin{equation}
+L \propto M^{22/5} T_{eff}^{4/5}
+\end{equation}
+
+This equation illustrates what was described above -- as the core becomes radiative, an increase in $L$ corresponds to an increase in $T_{eff}$.
+
+\newthought{Cool note} on the Henyey Track -- if the mass of the protostar is too low, then hydrogen burning ignites before the events which cause the protostar to travel along the Henyey track can begin.  Thus, the resulting main sequence star will remain completely convective -- this is why main sequence stars with mass $< .8 M_{\odot}$ are fully convective (and why their Hayashi tracks directly intersect the main sequence, without the upward trend of the Henyey track; see Figure 2.2 in HKT for a good plot illustrating this).  
 
 \subsection{Scaling Relations on the Main Sequence}
 Assume that P(r), M(r), $\rho (r)$, and T(r) are roughly power laws.  Then from the equations of stellar structure we have:
@@ -746,4 +764,33 @@ think of is polytropes.  Maybe just some basic knowledge of them would be good (
 answer that question Shri kept asking us in stars about what it means for white dwarfs or 
 protostars to have a certain polytropic index).
 
+\subsection{Homology}
 
+Homology is used to find scaling relations between properties of a star, e.g. $R(M), L(M), P_{c}(M), T_{c}(M)$ to name a few.  We must first determine four things about the star we are considering:
+
+\begin{enumerate}
+	\item Is pressure given by ideal gas ($P \propto \rho T$) or radiative pressure support ($P \propto T^{4}$).
+	\item Is the luminosity carried by radiative diffusion ($\kappa \propto T^{4} L^{-1} M^{-1} R^{4}$)\sidenote{This scaling relation comes from solving for $\kappa$ in Equation \ref{eq:rad}.} or convection ($T \propto M R^{-1}$)\sidenote{From the adiabatic temperature gradient, Equation \ref{conv}}.
+	\item Is Thomson ($\kappa \propto \rho^{0} T^{0}$) or Kramer's opacity ($\kappa \propto \rho T^{-3.5}$) dominating.
+	\item Through what process is fusion occurring, e.g. p-p chain ($\epsilon \propto \rho T^{4}$) or CNO cycle ($\epsilon \propto \rho T^{15}$).
+\end{enumerate}
+
+Then, using the equations of \textbf{mass continuity}
+
+\begin{equation}
+\rho \propto \frac{M}{R^{3}}
+\end{equation}
+
+\noindent and \textbf{hydrostatic equilibrium}
+
+\begin{equation}
+P \propto \frac{M \rho}{R}
+\end{equation}
+
+\noindent and the \textbf{energy conservation} equation
+
+\begin{equation}
+L \propto R^3 \rho \epsilon
+\end{equation}
+
+\noindent we can set up a system of equations to solve for whatever scaling relation we desire for the star.
