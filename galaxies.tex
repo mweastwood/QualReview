@@ -110,7 +110,15 @@ where the scale height of a stellar population scales with its age.
 
 The luminosity function $\Phi(M)dM$ is the number of objects per volume in an absolute magnitude range $M$ to $M+dM$. 
 
-In the context of stars, note that while faint K and M dwarfs make up most of the stellar mass density in the solar neighborhood, almost all emitted light comes from the rare, luminous stars. The peak of the stellar luminosity function occurs at about $M_v = 12.5$, as a result of the rapid luminosity decline of main sequence stars as their mass approaches the limit of hydrogen burning ( $M_{crit} = 0.08 M_\odot$)
+In the context of stars, note that while faint K and M dwarfs make up most of
+the stellar mass density in the solar neighborhood, almost all emitted light
+comes from the rare, luminous stars.\sidenote{
+Might be a good idea to know how to justify this, I feel like that would be a 
+good follow-up question.  Can probably assume an IMF and how the lifetime 
+and luminosity of stars scales with mass, then compare fraction of high mass 
+stars to the luminosity they produce.  I don't know all these powers off the 
+top of my head though}
+The peak of the stellar luminosity function occurs at about $M_v = 12.5$, as a result of the rapid luminosity decline of main sequence stars as their mass approaches the limit of hydrogen burning ( $M_{crit} = 0.08 M_\odot$)
 
 If the stars in a given population were born at different times, the stellar luminosity function must be corrected for the effects of stellar evolution. If the star formation rate is constant, as it is in the solar neighborhood,  the corrected luminosity function is given by:
 
@@ -121,7 +129,11 @@ If the stars in a given population were born at different times, the stellar lum
 1 & \text{otherwise}
 \end{cases}
 \end{equation} 
-where $t$ is the time since formation started and $\tau_{MS}(M)$ is the main sequence lifetime of stars with absolute magnitude $M$. Note that we only observe stars of magnitude $M$ that were formed in the last $\frac{t}{\tau_{MS}(M)}$ fraction of the population's lifetime.
+where $t$ is the time since formation started and $\tau_{MS}(M)$ is the main
+sequence lifetime of stars with absolute magnitude $M$. Note that we only
+observe stars of magnitude $M$ that were formed in the last
+$\frac{t}{\tau_{MS}(M)}$ fraction of the population's lifetime.  Should this 
+fraction be flipped?
 
 In the context of galaxies, the Schechter luminosity function provides a general analytic fit to galaxy functions. The Schechter function can be expressed in terms of luminosity:
 
