@@ -12,7 +12,29 @@
       assumptions required to get an answer, and comment on what could go wrong with
       them. Define the Eddington luminosity and explain its relevance to the peak frequency
       of the emitted radiation.}
+      
+      Consider the vertical structure of an accretion disk, assume we're at large radii ($r \gg r_{\rm in}$), and assume it's a thin disk radiating mostly just through the top and bottom. The heating rate per volume is
+      \begin{equation}
+      \nabla \cdot F_{\rm rad} = \rho \nu (r \Omega^\prime)^2 = \rho \nu \biggl(\frac{3}{2} \Omega \biggr)^2
+      \end{equation}
+      from assuming that the rotation is Keplerian. Use radiative diffusion with $P_{\rm rad} = \frac{1}{3} a T^4 = \frac{1}{3}\frac{4 \sigma_{\rm SB}}{c}T^4$. Assume that the disk is optically thick enough that the spectrum is a blackbody. Assume radiation travelling through a layer that is one mean free path $\lambda = 1/\kappa \rho$ thick is what's giving you the flux. The flux is then the speed of light times the mean free path times the change in radiation pressure with height (note: I have not totally justified this expression. If anyone can shed light on this, that'll be cool):
+      \begin{equation}
+      F_{\rm rad} - \frac{1}{\kappa \rho} \frac{d}{dz}P_{\rm rad} c = -\frac{4}{3}\frac{\sigma_{\rm SB}}{\kappa \rho}\frac{\partial T^4}{\partial z}
+      \end{equation}
+      This is similar to the radiative diffusion equation for stars\footnote{$L(r) = -4 \pi r^2 \frac{4}{3} \frac{c a T^3}{\kappa\rho}\frac{\partial T}{\partial r}$}. Now let's integrate vertically, because we want the total flux from each vertical layer in the accretion disk coming out of the top and bottom of the disk.
+      \begin{equation}
+      \int^infty_0 \frac{\partial F_{\rm rad}}{\partial z} = \sigma T_{\rm eff}^4 = \frac{1}{2} \Sigma \langle \nu \rangle \frac{9}{4}\Omega^2 = \frac{9}{8} \frac{G M \dot{M}}{3 \pi r^3}
+      \end{equation}
+      
+      
 \end{enumerate}
+
+For reference, here is the general equation for accretion and winds for which you have a steady state, that is, $\dot{M} = 4 \pi r^2 \rho v$ is a constant with radius:
+
+\begin{equation}
+\frac{1}{v} \frac{dv}{dr} (v^2 - c_s^2) = \frac{2 c_s^2}{r} - \frac{G M}{r^2}\,\,.
+\end{equation}
+Solutions are depicted in Figure \ref{f:mach}. The point where $v = c_s$ is called the sonic point, and it represents the transition between subsonic and supersonic flow.
 
 \subsection{Bondi Accrection}
 
@@ -57,5 +79,8 @@ Let's also look at Bondi-Hoyle accretion, which is similar to Bondi accretion, e
 \end{equation}
 In this case, the incoming gas (from the perspective of the accreting mass) travels around the object and meets on the other side. This creates a shock in the gas, which heats and expands, and eventually this creates a bow shock around the accreting object as it moves through the fluid.
 
+\subsection{Accretion Disks}
+
+The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in.
 
 
