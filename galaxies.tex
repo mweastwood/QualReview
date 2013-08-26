@@ -25,6 +25,51 @@ galaxies suck!!!!
       The average density of stars in a globular cluster is $0.4~{\rm pc}^{-3}$, and we can probably assume the average mass is something like $1-2~{\rm M}_\odot$.
 \item \textbf{Draw qualitatively the spectral energy distribution of the Milky Way, and describe
       how its morphology might appear to an external observer as a function of wavelength.}
+      
+      \begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{galaxy_sed.jpg}
+\end{center}
+\end{figure}
+
+The spectral energy distribution of the Milky Way looks like the magenta curve on the above plot.  There are a number of important features, which will be identified by their wavelength range.  
+
+1. $ \thicksim0.1 \mu m$:  This is the Lyman limit.  912 angstroms corresponds to the photon energy required to ionize the electron in the hydrogen ground state.  The left of the break is dominated by stars whoa re hot enough to produce many photons with 13.6 eV or more that can ionize hydrogen en masse.  This appears as a sharp break because the opacity dramatically increases when stars become hot enough to produce photons at these energies.  
+
+2.  $\thicksim 0.1 \mu m - 0.25 \mu m$:  Here the UV continuum of the disk SED is lower than that of a star-forming galaxy since it does not have as many O and B stars that dominate this wavelength range.
+
+3. $ 0.25 \mu m - 1 \mu m$:  Dust extinction is strong for bluer optical wavelengths (also for UV), which causes the downward slope as wavelength decreases.  The bluer the light is, the more it is extinct.
+
+4.  $  \thicksim 1 \mu m - \thicksim 11 \mu m$:  After the peak at $1 \mu m$, which is dominated by $1 M_\odot$ and slightly lower mass stars, this wavelength range is dominated by evolved and low mass stars, which output a lower total intensity than the solar mass stars at the peak.  The longer the wavelength, the cooler the star, and the less energy is outputted.  This regime also has little to no extinction.   
+
+5.  $\thicksim 5 \mu m - \thicksim 10 \mu m$:  These strong emission lines are due to PAHs (polycyclic aromatic hydrocarbons).  These are complex organic planar molecules with multiple benzene ring-like structures that are probably responsible for a series of molecular bonds that have been observed in emission in the light from diffuse dust clouds.  The emission lines appear to be due to vibrations in the C-C and C-H bonds common in PAHs.  
+
+6.  $\thicksim 100 \mu m$:  Dust in the galaxy preferentially absorbs shorter wavelengths, i.e. UV and blue optical.  This peak is due to this high energy radiation being absorbed and re-emitted (i.e. reprocessed), as thermal emission by dust.
+
+
+The following figure is the one to have in mind when thinking about the morphology of the Milky Way as a function of wavelength.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{MW_morphology.jpg}
+\end{center}
+\end{figure}
+
+Starting from the bottom and working back up:
+
+Gamma rays:  The central plane of the galaxy is brightest at these wavelengths.  This radiation can come from objects such as blazers, pulsars, and accreting black holes, found predominantly in the mid plane of the galaxy.
+
+X-rays:  Here the galaxy has a large scale height since the hot gas producing the x-rays has a larger scale height than the dust in the disk.  Dust is responsible for absorbing light from the mid plane.
+
+Optical:  Most of the light comes from the mid plane and the central part of the bulge.  Since dust preferentially extincts bluer wavelengths, some light from the mid plane is extinct (this is coming from the young, bright, blue stars).
+
+Near-IR:  As is evident from the image, there is hardly any extinction by dust in this wavelength range.  The light here is dominated by massive, evolved stars.  The bulge is especially bright since it s dominated by these evolved stars that peak in the near-IR.
+
+Far-IR:  These wavelengths are dominated by reprocessed thermal emission from dust.  This emission is brightest at the mid plane.
+
+Radio:  The continuum is dominated by synchrotron emission (from black holes, jets, pulsars, etc).  Objects producing this radiation are found in the mid plane - this it is bright in the radio.  In terms of line emission, hydrogen emission (21 cm line), is brightest at the mid plane but has a larger scale height than molecular gas that produces molecular lines.  
+
+      
 \item \textbf{Describe at least three methods to probe the gravitational potential of galaxies,
       their assumptions, and their realm of applicability.}
       
@@ -285,6 +330,55 @@ By claiming that the galaxy formed out of many different components, the SZ mode
 As collisions between fragments heated the proto-galaxy, the collapse began to slow. This accounts for the age spread of halo and thick disk stars. Since $t_{ff} \propto \rho^{1/2}$, the collapse was the fastest where the density was highest. Since the density was highest in the innermost region of the proto-galaxy, the central bulge formed and underwent early chemical enrichment from SN. The bulge was further fed by dynamical friction, causing the massive fragments to slow down and spiral into the central bulge region. These predictions are confirmed by observations of old, metal-rich stars in the central bulge. 
 
 The SZ model does not, however, include dark matter, or adequately explain the formation of the disk 
+
+\subsection{Empirical Relations}
+
+M-$\sigma$ relation:  Empirical correlation between the stellar velocity dispersion $\sigma$ of a galaxy bulge and the mass of the central supermassive black hole.
+
+\begin{equation}
+\frac{M}{10^8M\odot} = 1.9\bigg(\frac{\sigma}{200 \frac{km}{sec}}\bigg)^{5.1}
+\end{equation}
+
+Sersic's Law:  Describes how intensity of a galaxy varies with distance from the center.  
+
+\begin{equation}
+I(R) = I_0exp\bigg(-b_n\bigg(\frac{R}{R_e}\bigg)^{\frac{1}{n}} - 1\bigg)
+\end{equation}
+
+For elliptical galaxies n $\thicksim$ 4, and for spiral galaxies n is approximately 1.  $R_e$ is the radius of the isophote containing half the luminosity.  
+
+Kormendy Relation:  Correlation between $R_e$ and $I_e$, the surface brightness at $R_e$.  
+
+\begin{equation}
+R_e \thicksim \bigg<I\bigg>_e^{-0.83}
+\end{equation}
+
+Faber-Jackson:  Relation between luminosity and the central velocity dispersion.
+
+\begin{equation}
+L \thicksim \sigma^4
+\end{equation}
+
+Tully Fisher Relation:  Empirical relation between the intrinsic luminosity of a spiral galaxy and its velocity width.
+
+\begin{equation}
+L \thicksim v_{rot}^4
+\end{equation}
+
+This relation enables the difficult to observe L to be calculated from $v_{rot}$.  The use of apparent brightness (observed) and the inverse square law allows the distance to objects to be estimated.  
+
+\subsection{Toomre's Q parameter}
+
+When are self-gravitating disks vulnerable to local gravitational instabilities?  Instabilities can arise from competition between gravity causing over dense regions to collapse, stellar dispersion which inhibits the collapse, and angular momentum which inhibits the collapse.  The condition for instability is Q $\textless$ 1, where Q is given by:
+
+\begin{equation}
+Q \thicksim \frac{\kappa \sigma}{3G\Epsilon}
+\end{equation}
+
+In this equation, $\sigma$ is the stellar velocity dispersion, $\Epsilon$ is the local surface density, and $\kappa$ is the epicyclic frequency (the frequency at which radially displaced particles will oscillate).
+
+Marta will add the derivation when she is not hungry.
+
 
 
 
