@@ -820,3 +820,35 @@ L \propto R^3 \rho \epsilon
 \end{equation}
 
 \noindent we can set up a system of equations to solve for whatever scaling relation we desire for the star.
+
+
+\subsection{Nuclear Energy Generation}
+
+Nuclear reactions are the primary power source in stars -- for stars on the main sequence, it is the fusion of four hydrogen nuclei into one $^{4}$He.  For fusion to occur, an atomic nucleus must overcome the Coulomb barrier of another nucleus into the potential well created by the strong nuclear force which binds nuclei together.
+
+In the classical picture, the ability of a particle to overcome the Coulomb barrier is determined by whether the thermal energy is greater than the Coulomb potential energy.  The temperature $T_{classical}$ required to overcome the barrier can be estimated using the following equation\sidenote{This doesn't take into account the fact that the Maxwell-Boltzmann distribution of velocities will give some of the particles much higher velocities than $v_{avg}$ and therefore much higher thermal energies.  But this gives a good general picture of why we need quantum mechanics to describe nuclear reactions!}:
+
+\begin{equation}
+\frac{3}{2} k T_{classical} = \frac{Z_{1} Z_{2} e^2}{r}
+\end{equation}
+
+\begin{equation}
+T_{classical} \sim 10^{10} \text{  K}
+\end{equation}
+
+\noindent assuming the collision is between two protons and $r$ is the radius of a typical nucleus ($10^{-10}$ cm).  Since the Sun's central temperature is on the order of $10^7$ K, there would not be a sufficient number of particles with high enough thermal energies to overcome the Coulomb barrier and thereby power the Sun.
+
+The answer is (\textit{clearly}) quantum mechanical tunneling, whereby the inherent uncertainty in the position of the particle is large enough that even though there is not enough kinetic energy in the collision of two particles, one can still wind up in the potential well of the other and allow fusion to proceed.
+
+The probability of successful tunneling (and a nuclear reaction occurring) is related to the ratio of the Coulomb barrier height to the initial kinetic energy of the incoming nucleus (this can be visualized by associating a \textit{larger} ratio with a \textit{wider} barrier and therefore a lower probability of tunneling -- see Figure 10.4 in Carroll and Ostlie).  Specifically, the probability is 
+
+\begin{equation}
+g(E) = e^{-\sqrt{E_{G}/E}}
+\end{equation}
+
+\noindent where $E$ is the particle kinetic energy and $E_{G}$ is the Gamow energy\sidenote{$\alpha=\frac{e^2}{\hbar c} = \frac{1}{137}$ is the fine structure constant and $\mu$ is the reduced mass.}:
+
+\begin{equation}
+E_{G} = \left(\pi \alpha Z_{1} Z_{2} \right)^2 2 \mu c^2
+\end{equation}
+
