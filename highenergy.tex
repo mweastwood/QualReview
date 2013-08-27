@@ -26,6 +26,28 @@
       P = \frac{1}{3} \int p v n(p) dp\,\,.
       \end{equation}
       We also know the electron density
+      \begin{equation}
+      n_e = \frac{\rho}{\mu_e m_H},~\mu_e = \frac{A}{Z} \approx 2
+      \end{equation}
+      for a regular white dwarf. Now let's calculate the electron degeneracy pressure in the nonrelativistic case, in which $v = p/m_e$. Then we have
+      \begin{equation}
+      P_e = \frac{1}{3} \int^{p_F}_0 \frac{p}{m_e} p \frac{8 \pi p^2}{3 h^3} dp = \frac{8 \pi p_F^5}{15 h^2 m_e}\,\,.
+      \end{equation}
+      Plugging in for $p_F$ gives
+      \begin{equation}
+      P_e = \frac{8\pi}{15 h^3 m_e} \biggl( \frac{3 h^3 \rho}{8 \pi\mu_e m_H}\biggr)^{5/3}\,\,.
+      \end{equation}
+      You can simplify this further and make it pretty, but the important thing is that this has the form $P_e = k_1 \rho^{5/3}$, so it follows an adiabatic form of the pressure. It's also convenient to write this as $P_e = k_1^\prime \biggl( \frac{\rho}{\mu_e} \biggr)^{5/3}$ so the degeneracy pressure depends on both the density and the electron fraction of the gas. If there are nuclear reactions going on, $\mu_e$ may change and $k_1$ will not be constant.
+      
+      Now let's look at the very relativistic case. Here we can approximate $v \sim c$, and the pressure becomes
+      \begin{equation}
+      P_{e,r} = \frac{1}{3} \int^{p_F}_0 c p \frac{8 \pi p^2}{3 h^3} dp = \frac{8\pi c p_F^4}{12 h^3} = \frac{2\pi c p_F^4}{12 h^3}\,\,.
+      \end{equation}
+      This can be rewritten as
+      \begin{equation}
+      P_{e,r} = \frac{2\pi c}{12 h^3} \biggl( \frac{3 h^3 \rho}{8 \pi\mu_e m_H} \biggr)^{4/3}
+      \end{equation}
+      This we can rewrite as $P_{e,r} = k_2 \rho^{4/3} = k_2^\prime \biggl(\frac{\rho}{\mu_e}\biggr)^{4/3}$, so this is also a polytrope but with adiabatic index $4/3$. We will see in a second that this is key to showing that white dwarfs have a maximum mass once their electrons become ultrarelativistic.
       
       
 \item \textbf{Derive the equation for the effective temperature of an accretion disk around a
