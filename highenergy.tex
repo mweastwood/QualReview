@@ -7,6 +7,27 @@
 \item \textbf{Discuss the equation of state of relativistic/nonrelativistic degenerate gases of electrons
       and neutrons and derive the Chandrasekhar mass limit for white dwarfs. (A
       heuristic approach, as in Shapiro and Teukolsky, is sufficient.)}
+      
+      Let's derive the degeneracy pressure for nonrelativistic electrons. First we look at the Heisenberg uncertainty principle, which states that $\Delta x \Delta p \ge \frac{h}{2\pi}$. Therefore the minimum phase space that can be occupied by two electrons is $\Delta x \Delta y \Delta z \Delta p_x \Delta p_y \Delta p_z \sim h^3$ (don't ask me why there isn't a factor of $8 \pi^3$ on the bottom, but no one puts it in). The density $n(p) = 2/h^3$, since two electrons can occupy each cell of $h^3$ space. To get the spatial electron density, integrate over momentum:
+      \begin{equation}
+      n_e = \int_0^{p_F} 4\pi p^2 dp = \frac{8 \pi}{3 h^3} p_F^3\,\,,
+      \end{equation}
+      where we have assumed that at $T=0$ (or rather that thermal pressure is very small compared to degeneracy pressure, the maximum momentum is the Fermi momentum. We now know that
+      \begin{equation}
+      p_F = \biggl( \frac{3 h^3}{8 \pi} n_e \biggr) ^{1/3}
+      \end{equation}
+      and
+      \begin{equation}
+      E_F = \frac{p_F^2}{2m_e} = \biggl( \frac{3 h^3}{8 \pi} n_e \biggr) ^{2/3}\frac{1}{2m_e}\,\,.
+      \end{equation}
+      
+      Now let's figure out how to get the pressure. %Define the phase space distribution $\tilde{f} = \frac{g_s}{h^3} f$, where $g_s = 2S + 1$ which is $2$ in the case of spin-1/2 particles. The pressure is defined by
+      \begin{equation}
+      P = \frac{1}{3} \int p v n(p) dp\,\,.
+      \end{equation}
+      We also know the electron density
+      
+      
 \item \textbf{Derive the equation for the effective temperature of an accretion disk around a
       black hole of mass $M$ with accretion rate $\dot M$, as a function of radius $r$. Specify the
       assumptions required to get an answer, and comment on what could go wrong with
@@ -23,7 +44,11 @@
       \end{equation}
       This is similar to the radiative diffusion equation for stars\footnote{$L(r) = -4 \pi r^2 \frac{4}{3} \frac{c a T^3}{\kappa\rho}\frac{\partial T}{\partial r}$}. Now let's integrate vertically, because we want the total flux from each vertical layer in the accretion disk coming out of the top and bottom of the disk.
       \begin{equation}
-      \int^infty_0 \frac{\partial F_{\rm rad}}{\partial z} = \sigma T_{\rm eff}^4 = \frac{1}{2} \Sigma \langle \nu \rangle \frac{9}{4}\Omega^2 = \frac{9}{8} \frac{G M \dot{M}}{3 \pi r^3}
+      \int^\infty_0 \frac{\partial F_{\rm rad}}{\partial z} = \sigma T_{\rm eff}^4 = \frac{1}{2} \Sigma \langle \nu \rangle \frac{9}{4}\Omega^2 = \frac{9}{8} \frac{G M \dot{M}}{3 \pi r^3}
+      \end{equation}
+      Now approximate 
+      \begin{equation}
+      -\frac{4}{3} \frac{\sigma_{\rm SB}}{\kappa rho} \frac{\partial T^4}{\partial z} \approx D(r) = \frac{3}{8 \pi}\frac{GM\dot{M}}{r^3}\biggl[1 - \sqrt{\frac{r_{\rm in}}{r}} \biggr]
       \end{equation}
       
       
