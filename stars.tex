@@ -906,3 +906,50 @@ E_{o} = \left( \frac{kT}{2} \right)^{2/3} E_{G}^{1/3}.
 \end{equation}
 
 The greatest contribution to the nuclear reaction rate comes from a narrow energy band that depends on the temperature of the gas $T$, and the masses and charges of the reacting nuclei ($\mu$ and $Z_{1},Z_{2}$).
+
+\newthought{The following} are some relevant nucleosynthesis chains.  In each chain of the reactions, the following conservation laws must hold: conservation of electric charge, number of nucleons, and number of leptons\sidenote{The only way I can remember what constitutes a lepton is remembering that it means "light thing".  It includes electrons, positrons, neutrinos, and antineutrinos.}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c c}
+\hline\hline
+Reaction&$\gamma$&$\nu$\\
+\hline
+p-p & 1 & 4\\
+CNO & 1 & 15\\
+triple-$\alpha$ & 2 & 40\\
+\hline\hline
+\end{tabular}
+\caption{Summary table for energy generation for various reactions, where $\epsilon \propto \rho^{\gamma} T^{\nu}$.}
+\end{table}
+ 
+ \begin{enumerate}
+ \item \textbf{Proton-Proton Chain}: Chain of reactions which convert hydrogen to helium.
+ 
+ \begin{equation}
+ ^1_1H + \text{}^1_1H \rightarrow \text{}^2_1H + e^{+} + \nu_{e}
+ \end{equation}
+ \begin{equation}\label{ppstep2}
+ ^2_1H + \text{}^1_1H \rightarrow \text{}^3_2He + \gamma
+ \end{equation}
+ \begin{equation}
+ ^3_2He + \text{}^3_2He \rightarrow \text{}^4_2He + 2\text{}^1_1H
+ \end{equation}
+ 
+ The first step is the slowest because it involves the decay of a proton into a neutron (weak force).  There are two other p-p chain branches; the second p-p chain involves the interaction of the helium-3 produced in Equation \ref{ppstep2} with a helium-4 ($^7Be$ and $^7Li$ are intermediate products).  The third p-p chain involves the capture of an electron by the $^7Be$ nucleus created in the second p-p chain.  Most solar neutrinos come from the first p-p chain, but the highest energy ones come from the third p-p chain, despite this having a very low probability of occurrence.
+ 
+ Important note: the total amount of energy released in forming the helium nucleus (binding energy) from four protons is $E_{b} = \Delta mc^2 = 26.731$ MeV.  That is, the combined mass of the four hydrogen atoms is greater than the mass of the resulting helium atom by $\Delta m = 26.731\text{MeV}/c^2$, or $0.7\%$ -- i.e. why hydrogen fusion has an efficiency factor of $.007$.
+ 
+ \item \textbf{CNO Cycle}: This is another cycle for producing helium-4 from hydrogen.  The CNO cycle is more strongly temperature-dependent than the p-p chain, and is the dominant method of generating helium from hydrogen in massive stars ($\geq 1.2 M_{\odot}$) which have higher central temperatures (compared to low-mass stars, which predominantly use the p-p chain).  The CNO cycle uses carbon, nitrogen, and oxygen as catalysts and like the p-p chain has multiple branches\sidenote{I am too lazy to type them all out here, they are on pg. 311 in Carroll and Ostlie}.
+ 
+ \item \textbf{Triple-$\alpha$ Process}: This is the chain of reactions in which helium is converted into carbon-12.
+ 
+ \begin{equation}
+ ^4_2He + \text{}^4_2He \rightleftharpoons \text{}^8_4Be
+ \end{equation}
+ \begin{equation}
+ ^8_4Be + \text{}^4_2He \rightarrow \text{}^{12}_6C + \gamma
+ \end{equation}
+ 
+ The beryllium nucleus produced by step one is unstable (even-numbered A) and will rapidly decay back into two heliums if it does not immediately interact with another helium nucleus.  The resonance of $^8_4Be + \text{}^4_2He$ with the energy of an excited state of carbon-12 greatly increases the probability of this second step occurring.
+ \end{enumerate}
