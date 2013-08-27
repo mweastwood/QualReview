@@ -685,6 +685,130 @@ or
 along every streamline. The first term is kinetic energy, the second is gravitational potential energy, and and third is thermal energy $+$ work that can be done.
 
 \subsection{Shocks}
+Adiabatic shocks:\newline
+Shocks form easily in astrophysical enviroments because gravity can accelarate 
+gas to large velocities, but the cold gas in the ISM has a low sound speed.  
+The ratio of flow velocity to sound speed is called the Mach number:
+\begin{equation}
+\boxed{M=\frac{v}{c_s}}
+\end{equation}
+A shock forms when the bulk flow of a fluid is faster than the sound speed in the 
+gas, and the gas is decelerated by another fluid.  Since the fluid is 
+moving supersonically, the next layer of the fluid hits the decelaration before 
+information about the decelaration can reach it from the previous layer.  So 
+the fluid cannot adjust slowly to the decelaration, and a discontinuity forms.  
+This is a shock.  
+
+Adiabatic Shocks:\newline
+The jump conditions across a shock can be derived using the 1-D fluid 
+continiuity equations across the shock boundary.  In the frame of the shock, 
+fluid is coming at the shock from region 1 and leaving the shock into region 2.  
+Consider a thin layer d$x$ around the shock.  Starting with mass continuity:
+\begin{equation}
+\frac{\partial \rho}{\partial t}+\frac{\partial}{\partial x}(\rho u_x)=0
+\end{equation}
+Mass is not accumalted in the layer d$x$, so 
+$\frac{\partial \rho}{\partial t}=0$.  This implies 
+$\frac{\partial}{\partial x}(\rho u_x)=0$, so 
+\begin{equation}
+\boxed{\rho_1u_2=\rho_2u_2}
+\end{equation}
+Similarly, the momentum energy conservation equations (assuming an adiabatic 
+shock) give 
+\begin{equation}
+\boxed{\rho_1u_1^2+p_1=\rho_2u_2^2+p_2}
+\end{equation}
+\begin{equation}
+\boxed{\frac{1}{2}u_1^2+\epsilon_1+\frac{p_1}{\rho_1}=\frac{1}{2}u_2^2+\epsilon_2+\frac{p_2}{\rho_2}}
+\end{equation}
+These are the Rankine-Hugoniot jump conditions.  The energy condition can 
+be put into a more convenient form by substituting for $\epsilon$, the internal 
+energy per unit mass.  The fluid is brought to $\epsilon$ by $p$d$V$ work (it's 
+adiabatic), so
+\begin{equation}
+\epsilon=\frac{pdV}{m}=K\rho^{\gamma}d(1/\rho)=\frac{1}{\gamma-1}\frac{p}{\rho}
+\end{equation}
+Then
+\begin{equation}
+\frac{1}{2}u_1^2+\frac{\gamma}{\gamma-1}\frac{p_1}{\rho_1}=\frac{1}{2}u_2^2+\frac{\gamma}{\gamma-1}\frac{p_2}{\rho_2}
+\end{equation}
+Assuming $\gamma$ does not change across the shock.  Using 
+$=\gamma\frac{p}{\rho}$,
+\begin{equation}
+\frac{1}{2}u_1^2+\frac{c_1^2}{\gamma-1}=\frac{1}{2}u_2^2+\frac{c_2^2}{\gamma-1}
+\end{equation}
+Now follows a bunch of messy algebra that we probably don't need to know, but 
+look at pages 82 and 83 of Clark and Carswell if you're interested.  
+The result is that 
+\begin{equation}
+\frac{\rho_2}{\rho_1}=\frac{(\gamma+1)p_2+(\gamma-1)p_1}{(\gamma+1)p_1+(\gamma-1)p_2}
+\end{equation}
+In a strong shock, $p_1$ is negligible, and this expression becomes
+\begin{equation}\label{eq:den}
+\boxed{\frac{\rho_2}{\rho_1}=\frac{\gamma+1}{\gamma-1}=4}
+\end{equation}
+assuming $\gamma=5/3$.  The compression of the fluid is limited because of 
+the adiabatic assumption.  As the shock gets stronger, the thermal pressure 
+of the post-shocked gas increases, which prevents additional compression.  
+If the thermal energy could be released, this wouldn't happen, but we assumed 
+the shock is adiabatic.  
+
+Using the second jump condition, and neglecting $p_1$, 
+\begin{equation}
+P_2=\rho_1u_1^2-\rho_2u_2^2=\rho_1u_1^2-\rho_1u_1^2/4=\frac{3}{4}\rho_1u_1^2
+\end{equation}
+This can be used with Equation \ref{eq:den} and the ideal gas law to show 
+\begin{equation}
+\boxed{T_2=\frac{3\mu m_H u_1^2}{16k}}
+\end{equation}
+For typical shock velocities of $100$ km/s, this corresponds to post-shock 
+temperatures of $\sim10^5$ K.  Also of interest is the Mach number of the 
+post-shocked gas.  
+\begin{equation}
+M_2^2=\frac{u_2^2}{c_2^2}=
+\frac{\rho_2}{\gamma p_2}\frac{u_1^2}{16}=
+\frac{u_1^2}{16}\frac{4\rho_2}{3\gamma\rho_1u_1^2}=
+\frac{1}{3\gamma}=
+\frac{1}{5}
+\end{equation}
+So the post-shocked gas moves subsonically.
+
+Isothermal Shocks:\newline
+The other limiting case of shocks is an isothermal shock.  In an isothermal 
+shock, the shocked gas cools to its pre-shock temperature.  This 
+happens over a cooling length that is much less than the lengthscale of the 
+system.  The immediate post-shock will be adiabatic, but if this is over a 
+small enough length, the adiabatic portion can be lumped is as part of the 
+shock and ignored.  The continuity conditions can then be applied to the 
+pre-shock and isothermal part of the post-shock.  The first two jump conditions 
+still hold, but the energy conserving one no longer applies.  Instead, it is 
+replaced by 
+\begin{equation}
+\boxed{T_1=T_2}
+\end{equation}
+Since the shock is isothermal, the sounds speed before and after is the same.
+\begin{equation}
+c_s^2=\frac{p}{\rho}
+\end{equation}
+The momentum jump condition then gives
+\begin{equation}
+\rho_1(u_1^2+c_s^2)=\rho_2(u_2^2+c_s^2)
+\end{equation}
+Substituting the mass jump condition for $\rho_1$ and rearrangeing gives
+\begin{equation}
+(u_2-u_1)c_s^2=u_1u_2(u_2-u_1)
+\end{equation}
+Therefore
+\begin{equation}
+c_s^2=u_1u_2
+\end{equation}
+and 
+\begin{equation}
+\boxed{\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2}=\left(\frac{u_1}{c_s}\right)^2=M^2}
+\end{equation}
+So there is no limit to how much a strong shock can compress the gas.  
+Note that because $c_s^2=u_1u_2$ and $u_1>c_s$ by definition of a shock, the 
+post-shocked gas is subsonic.  
 
 \subsection{Magnetic Fields}
 
