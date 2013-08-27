@@ -869,7 +869,7 @@ R_{AB} = n_{A} n_{B} \sigma_{AB} v_{AB}.
 
 If the average energy per reaction $\Delta mc^2 = Q_{AB}$, then the energy generation (power per unit mass) is 
 
-\begin{equation}
+\begin{equation}\label{engen}
 \epsilon = \frac{Q_{AB} R_{AB}}{\rho} = Q_{AB} \frac{n_{A} n_{B}}{\rho} \left<\sigma_{AB} v_{AB}\right>.
 \end{equation}
 
@@ -907,6 +907,16 @@ E_{o} = \left( \frac{kT}{2} \right)^{2/3} E_{G}^{1/3}.
 
 The greatest contribution to the nuclear reaction rate comes from a narrow energy band that depends on the temperature of the gas $T$, and the masses and charges of the reacting nuclei ($\mu$ and $Z_{1},Z_{2}$).
 
+The energy generation rate, $\epsilon$ in Equation \ref{engen}, can then be found by doing some fancy math.  The important part is that it contains an exponential term that goes as 
+
+\begin{equation}
+\epsilon \propto \exp \left[ -3 \left( \frac{E_{G}}{4kT}\right)^{1/3} \right]
+\end{equation}
+
+Because of the Gamow energy in the exponential, there will be a strong preference for reactions between species with low atomic number, and thus small $E_{G}$; e.g., for similar abundances of deuterium and carbon in the center of star with kinetic energies typical of the Sun (1 keV), the p-p chain reactions would be heavily favored over the CNO cycle (see below for explanations of these reactions).
+
+Also, the steep temperature dependence of nuclear reactions works as a "thermostat" in stars.  If $T$ increases inside a star, the rate of nuclear reactions will increase, $L$ will increase, the star will expand, which will cause $T$ to decrease, and the rate of nuclear reactions will decline accordingly.  Over the lifetime of the star, once the dominant nuclear fuel runs out, the rate of nuclear reactions will go down, the core will contract, and $T$ will rise until a new nuclear reaction involving nuclei of higher atomic number becomes favored\sidenote{This text is from Astrophysics in a Nutshell, pg. 57}.
+
 \newthought{The following} are some relevant nucleosynthesis chains.  In each chain of the reactions, the following conservation laws must hold: conservation of electric charge, number of nucleons, and number of leptons\sidenote{The only way I can remember what constitutes a lepton is remembering that it means "light thing".  It includes electrons, positrons, neutrinos, and antineutrinos.}.
 
 \begin{table}[h!]
@@ -941,6 +951,8 @@ triple-$\alpha$ & 2 & 40\\
  Important note: the total amount of energy released in forming the helium nucleus (binding energy) from four protons is $E_{b} = \Delta mc^2 = 26.731$ MeV.  That is, the combined mass of the four hydrogen atoms is greater than the mass of the resulting helium atom by $\Delta m = 26.731\text{MeV}/c^2$, or $0.7\%$ -- i.e. why hydrogen fusion has an efficiency factor of $.007$.
  
  \item \textbf{CNO Cycle}: This is another cycle for producing helium-4 from hydrogen.  The CNO cycle is more strongly temperature-dependent than the p-p chain, and is the dominant method of generating helium from hydrogen in massive stars ($\geq 1.2 M_{\odot}$) which have higher central temperatures (compared to low-mass stars, which predominantly use the p-p chain).  The CNO cycle uses carbon, nitrogen, and oxygen as catalysts and like the p-p chain has multiple branches\sidenote{I am too lazy to type them all out here, they are on pg. 311 in Carroll and Ostlie}.
+ 
+Note: when hydrogen is converted into helium by either the p-p chain or the CNO cycle, the mean molecular weight $\mu$ of the gas increases, which (from the ideal gas law) means the central pressure will decrease.  That stellar core, no longer being in hydrostatic equilibrium, will begin to collapse.  This has the effect of raising the central temperature and density to compensate for the increase in $\mu$; once the temperature and density are high enough, helium nuclei can overcome their Coulomb repulsion and begin to fuse.\sidenote{This text is from Carroll and Ostlie pg. 312.  This page also has more information on the CNO cycle.}.
  
  \item \textbf{Triple-$\alpha$ Process}: This is the chain of reactions in which helium is converted into carbon-12.
  
