@@ -141,6 +141,21 @@ In this case, the incoming gas (from the perspective of the accreting mass) trav
 
 \subsection{Accretion Disks}
 
-The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in.
+The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplertian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor.
 
+One good thing to know about an accretion disk is its thickness. The scale height $H$ provides a measure of the thickness when compared with the radius $R$. It's possible to approximate the scale height by using hydrostatic equilibrium in the $z$ direction:
+\begin{equation}
+\frac{dP}{dz} = -g_z \rho = -\frac{GM}{r^2} \frac{z}{r}\,\,.
+\end{equation}
+We can hand-wave this by setting $dz = z = H$ and $r = R$ and using ideal gas for $P$:
+\begin{equation}
+H \sim \biggl( \frac{k_{\rm B} T R^3}{GM m_p}\biggr)^{1/2}\,\,.
+\end{equation}
+Typical temperatures are around $10^4~{\rm K}$.
+
+Now let's define the surface mass density $\Sigma(r) = \int^\infty_{-\infty} \rho dz$. We can get the average velocity $\langle v_r \rangle$ by integrating $v_r$ over $z$ and $\phi$ in a mass-weighted way. Then we can get the accretion rate,
+\begin{equation}
+\dot{M} = 2 \pi r \Sigma \langle v_r \rangle\,\, ,
+\end{equation}
+which is constant.
 
