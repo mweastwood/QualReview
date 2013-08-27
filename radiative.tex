@@ -143,111 +143,138 @@ Remember guys, there's nothing funny about neutrinos.
         or fermions here.
       }), we have
        \begin{dmath}
-        \frac{n_1}{n_2} = \frac{g_1}{g_2} e^{h\nu_0 / k_B T}
+        \frac{n_2}{n_1} = \frac{g_2}{g_1} e^{-h\nu_0 / k_B T}
        \end{dmath},
-       where $h\nu_0$ is the energy of the photon and the energy difference between the two levels,
-       $E_2 - E_1$.  Similarly, in thermodynamic equilibrium (with a narrow line profile), the
+       where $h\nu_0 = E_2-E_1$ is the energy difference between the two levels,
+       $E_2 - E_1$, such that taken together with detailed balance
+       \begin{dmath}
+        \bar J = \frac{A_{21}/B_{21}}{\frac{g_1B_{12}}{g_2B_{21}}e^{h\nu_0/kT}-1}
+       \end{dmath}
+       In thermodynamic equilibrium (with a narrow line profile), the
        line-averaged mean intensity is given by the Planck function\sidenote{
         \begin{dmath*}
             \bar J = B_\nu\nolinebreak= \frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT}-1}
         \end{dmath*}
-       }.  These two relations combined with the expression for detailed balance given
-       in Equation~\ref{eq:detailed_balance} imply that
+       }.  Therefore we must have
        \begin{dgroup}
-       \begin{dmath}
+       \begin{dmath}\boxed{
         g_1B_{12} = g_2B_{21}
-       \end{dmath},
-       \begin{dmath}
+       }\end{dmath},
+       \begin{dmath}\boxed{
         A_{21} = \frac{2 h \nu^3}{c^2}B_{21}
-       \end{dmath}.
+       }\end{dmath}.
        \end{dgroup}
        These are called the Einstein relations.
-      Even though we assumed thermodynamic equilibrium, these relations do not depend on temperature and just describe properties of the atoms. Therefore, we can say they are more general and hold for cases that are not in thermodynamic equilibrium.
+      Even though we assumed thermodynamic equilibrium, these relations do not depend on
+      temperature and just describe properties of the atoms. Therefore, we can say they are more
+      general and hold for cases that are not in thermodynamic equilibrium.
       Also, the A and B coefficients are intrinsic properties of individual 
       atoms, so they should have nothing to do with the overall state of the 
       gas and whether or not it's in thermodynamic equilibrium.
 
       \newthought{Now let's discuss} Kirchoff's law.
-      Take a thermally emitting (not necessarily blackbody) material at temperature T and place it 
-      in a blackbody cavity also at temperature T.  With just the cavity, $S_{\nu}=I_{\nu}=B_{\nu}$.  
-      With the material added, we still have a cavity of temperature T, so the total intensity must 
+      Take a thermally emitting (not necessarily blackbody) material at temperature $T$ and place it 
+      in a blackbody cavity also at temperature $T$.  With just the cavity, $I_{\nu}=B_{\nu}$
+      (by definition of the Planck function $B(\nu)$).  
+      With the material added, we still have a cavity of temperature $T$, so the total intensity must 
       still be a blackbody, since by definition this intensity does not depend on the internal 
-      structure.  The added material has some source function $S_{\nu 2}$ that affects the total 
+      structure.  The added material has some source function $S_{\nu}$ that affects the total 
       intensity of the cavity.  Think of the new material as a new piece of the cavity, with radiation 
       contributed by its source function.  If the source function is greater than the blackbody function 
       of the cavity, too much radiation will be contributed and the resulting intensity will also be 
       greater than the blackbody of the cavity on its own.  If the source function is less than the 
       blackbody function, too little radiation will be contributed, decreasing the total intensity to 
       below the blackbody function.  But we know the total intensity must still be a blackbody function 
-      of temperature T.  So the source function of the new material must be a blackbody of temperature T.  
-      So, we have 
-      \begin{displaymath}S_{\nu}=B_{\nu}\end{displaymath}
+      of temperature $T$.
+      So, we must have 
+      \begin{dmath}\boxed{
+        S_\nu = B_\nu
+      }\end{dmath},
       and, by definition of $S_{\nu}$,
-      \begin{equation}
-      j_\nu = \alpha_\nu B_\nu.
-      \end{equation}
+      \begin{dmath}\boxed{
+        j_\nu = \alpha_\nu B_\nu
+      }\end{dmath}.
       To clarify, the source function of a material in thermodynamic equilibrium is the
-      Planck function.
+      Planck function\sidenote{
+        This introduces an important distinction: \emph{thermal radiation} implies $S_\nu=B_\nu$,
+        while \emph{blackbody radiation} implies $I_\nu=B_\nu$.
+      }.
       
       We can relate the Einstein coefficients to the emission and absorption coefficients
-      by noting that each transition adds or removes $h\nu$ in energy spread over a solid
+      by noting that each transition adds or removes $h\nu$ in energy, spread over a solid
       angle of $4\pi$.  Therefore
       \begin{dgroup}
-      \begin{dmath}
-      j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
-      \end{dmath},
-      \begin{dmath}
-      \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
-      \end{dmath}.
+      \begin{dmath}\boxed{
+        j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
+      }\end{dmath},
+      \begin{dmath}\boxed{
+        \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
+      }\end{dmath}.
       \end{dgroup}
+
+      \newthought{Now the Milne relations} are the photoionization/recombination equivalent
+      to the Einstein relations (rather than transitions between energy levels in an atom).
+      Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal
+      velocity distribution of electrons\sidenote{
+        The Maxwell-Boltzmann velocity distribution is
+        \begin{dmath*}
+        f(v)\,\d v = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}v^2e^{-mv^2/2kT}\,\d v
+        \end{dmath*}.
+      } and that the radiation field is described by the Planck
+      function $B_\nu$.
+      Let $\sigma_{\rm fb}(v)$ be the cross section for an electron with speed $v$ to recombine
+      with an ion, and let $\sigma_{\rm bf}(\nu)$ be the cross section for an ion to to be
+      photoionized by a photon with frequency $\nu$. We can write the rate of recombinations
+      and ionizations
+      per volume (s$^{-1}$ cm$^{-3}$) in terms of the number densities of ions and electrons,
+      the cross section, and the electron velocity distribution for a velocity range $dv$:
+      \begin{dgroup}
+      \begin{dmath}
+      R_{\rm recomb} = N_+N_e \sigma_{\rm fb} f(v)v\,\d v
+      \end{dmath}
+      \begin{dmath}
+      R_{\rm ioniz} = \frac{4\pi}{h\nu} N_n \sigma_{\rm bf} (1 - e^{-h\nu/k_{\rm B}T}) I_\nu\,\d\nu
+      \end{dmath}
+      \end{dgroup}
+      The factor of $(1-e^{-h\nu/kT})$ apparently accounts for stimulated recombinations.
+      Setting these two expressions equal (ie. assume detailed balance), and using the Planck
+      function, the Maxwellian velocity distribution, and the Saha equation\sidenote{
+        The Saha equation is
+        \begin{dmath}
+        \frac{N_+N_e}{N_n} = \left(\frac{2\pi mkT}{h^2}\right)^{3/2}\frac{g_eg_+}{g_n}e^{-\chi/kT}
+        \end{dmath},
+        where $\chi$ is the ionization potential.
+      } it can be shown\sidenote{
+        Note that $h\nu=mv^2/2+\chi$ and therefore $mv\,\d v=h\,d\nu$.
+      } that
+      \begin{dmath}\boxed{
+      \frac{\sigma_{\rm bf}}{\sigma_{\rm fb}} = \frac{m^2 v^2 c^2}{h^2\nu^2}\frac{g_e g_+}{2g_n}
+      }\end{dmath}.
       
-      Milne relations:
-      
-      These relations are analogous to the Einstein relations, but they are for photoionization and radiative recombination, rather than transitions between energy levels in an atom. Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal velocity distribution of electrons and that the radiation field is described by the Planck function $B_\nu$. Let $\sigma_{\rm fb}(v)$ be the cross section for an electron with speed $v$ to recombine with an ion; meanwhile, $\sigma_{\rm bf}(\nu)$ is the cross section for an ion to to be photoionized by a photon with frequency $\nu$. We can write the rate of recombinations per volume (s$^{-1}$ cm$^{-3}$) in terms of the number densities of ions and electrons, the cross section, and the electron velocity distribution for a velocity range $dv$:
-      
-      \begin{equation}
-      R_{\rm recomb} = N_+N_e \sigma_{\rm fb} f(v) dv
-      \end{equation}
-      
-      and the rate of ionization is
-      
-       \begin{equation}
-      R_{\rm ioniz} = \frac{4\pi}{h\nu} N_n \sigma_{\rm bf} (1 - e^{-h\nu/k_{\rm B}T}) I_\nu d\nu
-      \end{equation}
-      
-      and we have assumed $I_\nu = B_\nu$ (note: where does the factor of $(1 - e^{-h\nu/k_{\rm B}T})$ come from? Also, justify these expressions to yourself in general).
-      
-      Set these two equations equal and obtain an expression for $\sigma_{\rm bf} / \sigma_{\rm fb}$; use the Maxwell-Boltzmann distribution for $f(v)$ and the Saha equation to obtain the Milne relation:
-      
-      \begin{equation}
-      \frac{\sigma_{\rm bf}}{\sigma_{\rm fb}} = \frac{m^2 c^2 v^2 g_e g_+}{\nu^2 h^2 2 g_n}\,\, .
-      \end{equation}
-      
-      The Einstein relations, Milne relations, and Kirchoff's law all describe relationships between the absorption and emission of photons. Einstein deals with transitions between two energy levels on an atomic level using the properties and thermal distributions of atoms. Milne is the analogous relationship for ionization and radiative recombination. The Kirchoff law is general and describes both in terms of the bulk properties of the material like emission and absorption coefficients (io is kind of bullshitting here. Does anyone have a better explanation for tying these together?).
-      The question is a little vague, I think Io's answer is pretty good.  
+      The Einstein relations, Milne relations, and Kirchoff's law all describe relationships
+      between the absorption and emission of photons. Einstein deals with transitions between
+      two energy levels on an atomic level using the properties and thermal distributions of
+      atoms. Milne is the analogous relationship for ionization and radiative recombination.
+      Kirchoff's law relates the absorption and emission coefficients in thermodynamic
+      equilibrium.
       Kirchoff's law and the Einstein relations both relate emission and 
       absorption of photons, but Kirchoff's law only holds for thermal 
       radiation.  The Einstein relations are more general and extend Kirchoff's 
-      law to non-thermal radiation processes.  I don't really 
-      see a relationship like that between the Einstein and Milne relations, 
-      so maybe the question just wants us to say the connection between 
-      detailed balance and the Einstein relations and the connection between 
-      detailed balance and the Milne relations.
+      law to non-thermal radiation processes.
       
-      Bremsstrahlung:\newline
-      Kirchoff's law can be used to determine the free-free absorption coefficient.  Free-free 
-      absorption is just the inverse process to Bremsstrahlung emission, so by knowing the 
-      emission coefficient from Bremsstrahlung, the absorption coefficient can be calculted using 
-      Kirchoff's law:
-      \begin{displaymath}j_{\nu}=\alpha_{\nu}B_{\nu}\end{displaymath}
-      The emission coefficient can be derived by treating Bremsstrahlung interactions as Thompson 
-      scattering by virtual photons in the frame of the electron.  For a thermal population 
-      of electrons, this gives an expression for the emission coefficient of 
-      \begin{displaymath}\epsilon_{\nu}^{ff}=6.8\times10^{-38}T^{-1/2}Z^2n_en_ie^{-h\nu/kT}\overline{g_{ff}}ergs/s/cm^3/Hz\end{displaymath}
-      Using $j_{\nu}^{ff}=\epsilon_{\nu}^{ff}/4\pi$ and the expression for the Blackbody function, and 
-      plugging into Kirchoff's law, gives:
-      \begin{displaymath}\alpha_{\nu}^{ff}=3.7\times10^8T^{-1/2}Z^2n_en_i\nu^{-3}(1-e^{-h\nu/kT})\overline{g_{ff}}cm^{-1}\end{displaymath}
-
+      \newthought{In the case of bremsstrahlung}, the emission process is much easier to think
+      about the reverse absorption process.  However, given Kirchoff's law and an expression
+      for $j_\nu$ (see Section~\ref{sec:bremsstrahlung} for a derivation), the absorption
+      coefficient is simply
+      $\alpha_\nu = j_\nu / B_\nu$.  Recalling that $j_\nu = \epsilon_\nu/4\pi$, we have
+      \begin{dgroup}
+      \begin{dmath}
+      \epsilon_{\nu}^{ff}=6.8\times10^{-38}T^{-1/2}Z^2n_en_ie^{-h\nu/kT}\overline{g_{ff}}ergs/s/cm^3/Hz
+      \end{dmath}
+      \begin{dmath}
+      \alpha_{\nu}^{ff}=3.7\times10^8T^{-1/2}Z^2n_en_i\nu^{-3}(1-e^{-h\nu/kT})\overline{g_{ff}}cm^{-1}
+      \end{dmath}.
+      \end{dgroup}
       
 \item \textbf{Draw the energy levels of the hydrogen atom and identify which transitions are
       allowed. Which ones are in the visible part of the spectrum? Which level has no
@@ -422,7 +449,7 @@ So finally the Thomson cross-section is given by
 \sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
 }\end{dmath}.
 
-\subsection{Bremsstrahlung}
+\subsection{Bremsstrahlung}\label{sec:bremsstrahlung}
 Let's begin by imagining an electron traveling (in a straight line) by a nucleus
 with atomic number $Z$.  The transverse acceleration is
 \begin{dmath}
