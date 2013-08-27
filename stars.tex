@@ -840,7 +840,7 @@ T_{classical} \sim 10^{10} \text{  K}
 
 The answer is (\textit{clearly}) quantum mechanical tunneling, whereby the inherent uncertainty in the position of the particle is large enough that even though there is not enough kinetic energy in the collision of two particles, one can still wind up in the potential well of the other and allow fusion to proceed.
 
-The probability of successful tunneling (and a nuclear reaction occurring) is related to the ratio of the Coulomb barrier height to the initial kinetic energy of the incoming nucleus (this can be visualized by associating a \textit{larger} ratio with a \textit{wider} barrier and therefore a lower probability of tunneling -- see Figure 10.4 in Carroll and Ostlie).  Specifically, the probability is 
+The probability of successful tunneling (and a nuclear reaction occurring) is related to the ratio of the Coulomb barrier height to the initial kinetic energy of the incoming nucleus (this can be visualized by associating a \textit{larger} ratio with a \textit{wider} barrier and therefore a lower probability of tunneling -- see Figure 10.4 in Carroll and Ostlie).  Specifically, the probability for penetrating the Coulomb barrier is 
 
 \begin{equation}
 g(E) = e^{-\sqrt{E_{G}/E}}
@@ -852,3 +852,57 @@ g(E) = e^{-\sqrt{E_{G}/E}}
 E_{G} = \left(\pi \alpha Z_{1} Z_{2} \right)^2 2 \mu c^2
 \end{equation}
 
+
+The probability for a nuclear reaction, however, will depend not only on the probability of penetrating the Coulomb barrier, but on the nuclear cross section, which should scale as $1/E$.  The cross section is
+
+\begin{equation}
+\sigma(E) = \frac{S(E)}{E} g(E) =  \frac{S(E)}{E} e^{-\sqrt{E_{G}/E}}
+\end{equation}
+
+\noindent where $S(E)$ is some function which varies very slowly as a function of energy, so we can write it as a constant\sidenote{Sometimes, $S(E)$ does not hold constant, but peaks rapidly at specific energies that correspond to energy levels within the nucleus due to the resonance between the nucleus' energy level differences and the energy of the incoming particle.  This resonance phenomenon is important in the triple-alpha process.}.
+
+The rate of nuclear reactions (number of reactions per time per volume) is given by 
+
+\begin{equation}
+R_{AB} = n_{A} n_{B} \sigma_{AB} v_{AB}.
+\end{equation}
+
+If the average energy per reaction $\Delta mc^2 = Q_{AB}$, then the energy generation (power per unit mass) is 
+
+\begin{equation}
+\epsilon = \frac{Q_{AB} R_{AB}}{\rho} = Q_{AB} \frac{n_{A} n_{B}}{\rho} \left<\sigma_{AB} v_{AB}\right>.
+\end{equation}
+
+We want to average $\sigma_{AB} v_{AB}$ over all velocities, where the distribution of velocities is given by the Maxwell-Boltzmann distribution\sidenote{Even though we're in the center of a star and the gas is really hot, the MB distribution still applies because our nuclei still constitute a classical, (nuclei are massive and slow) non-relativistic gas.}.  Therefore, we get that
+
+\begin{equation}
+\left< \sigma_{AB} v_{AB} \right> = \int_0^{\infty} \sigma_{AB} v_{AB} P(v_{AB}) dv_{AB}
+\end{equation}
+
+where
+
+\begin{equation}
+P(v)dv = 4 \pi \left( \frac{\mu}{2 \pi kT} \right)^{3/2} v^2 \exp\left(- \frac{\mu v^2}{2kT}\right) dv
+\end{equation}
+
+The point of all this, and probably the only relevant thing we need to know for the qual\sidenote{Being able to draw that plot below is also probably pretty good.}, is that after changing velocity in the above integral to kinetic energy (using $E = \frac{1}{2} \mu v^2$), the integrand becomes
+
+\begin{equation}\label{gamp}
+f(E) = e^{-E/kT} e^{-\sqrt{E_{G}/E}}.
+\end{equation}
+
+This function is referred to as the Gamow peak and is the product of the Maxwell-Boltzmann high-energy exponential tail (first term) and the Coulomb barrier penetration probability\sidenote{That's what she said.} (second term).
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=.9\textwidth]{gamow_peak.pdf}
+%\end{center}
+%\end{figure}
+
+This curve describes the range of kinetic energies over which nuclear reactions will take place.  The maximum is found by setting the derivative of Equation \ref{gamp} equal to zero, and thus
+
+\begin{equation}
+E_{o} = \left( \frac{kT}{2} \right)^{2/3} E_{G}^{1/3}.
+\end{equation}
+
+The greatest contribution to the nuclear reaction rate comes from a narrow energy band that depends on the temperature of the gas $T$, and the masses and charges of the reacting nuclei ($\mu$ and $Z_{1},Z_{2}$).
