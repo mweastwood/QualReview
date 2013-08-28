@@ -771,6 +771,48 @@ angle of rotation $\Delta\theta$ is given by
 \end{dmath}
 
 \subsection{Stokes Parameters}
+\newthought{The Stokes parameters}, $I$, $Q$, $U$, and $V$, describe the intensity and
+polarization state of the incident radiation.
+\marginnote{
+    \begin{tabular}{rl}
+    $I$ & Total intensity of the radiation\\
+    $Q$ & Vertical/horizontal polarization\\
+    $U$ & $\pm45^\circ$ polarization\\
+    $V$ & Circular polarization\\
+    \end{tabular}
+}
+If the radiation is 100\% polarized, the Stokes parameters are defined so that
+\begin{dmath}
+    I^2 = Q^2 + U^2 + V^2
+\end{dmath},
+however if the polarization is random (the radiation is ``unpolarized''), a time average
+measurement of the Stokes parameters will find $Q^2+U^2+V^2=0$.  Therefore if there
+is an unpolarized component to the radiation, we will measure $I^2 < Q^2 + U^2 + V^2$.
+The polarization fraction of the radiation is given by
+\begin{dmath}
+    \text{polarization fraction} = \frac{\sqrt{Q^2+U^2+V^2}}{I}
+\end{dmath}.
+See Table~\ref{tab:stokes} for some example Stokes parameters and their implied
+polarizations.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cl}
+\toprule
+$(I,Q,U,V)$ & Description \\
+\midrule
+$(1,1,0,0)$ & Linear, horizontal polarization \\
+$(1,-1,0,0)$ & Linear, vertical polarization \\
+$(1,0,1,0)$ & Linear, $+45^\circ$ polarization \\
+$(1,0,-1,0)$ & Linear, $-45^\circ$ polarization \\
+$(1,0,0,1)$ & Circular, right-handed polarization \\
+$(1,0,0,-1)$ & Circular, left-handed polarization \\
+$(1,0,0,0)$ & Random polarization / unpolarized \\
+\bottomrule
+\end{tabular}
+\caption{Example Stokes parameters with the intensity $I$ normalized to unity.}
+\label{tab:stokes}
+\end{table}
 
 \subsection{Hydrogen energy levels}
 
