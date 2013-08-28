@@ -2,7 +2,7 @@
 
 Remember guys, there's nothing funny about neutrinos.
 
-\subsection{Questions}
+\subsection{Questions}\label{sec:rad_will_ask}
 
 \begin{enumerate}
 
@@ -50,9 +50,14 @@ Remember guys, there's nothing funny about neutrinos.
       \end{equation}
       where $\alpha$ is the angle between the velocity and the magnetic field.
       Plug into the Larmor Formula to get the total power radiated by a single electron:
-      \begin{equation}\boxed{
-        P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
-      }\end{equation} 
+      \begin{dmath}
+        P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin^2{\alpha}
+      \end{dmath}
+      Averaging over the pitch angle $\alpha$ and using the definition of the Thomson
+      cross-section, we find
+      \begin{dmath}\boxed{
+        P = \frac{4}{3} \sigma_T c\beta^2\gamma^2\frac{B^2}{8\pi}
+      }\end{dmath}
       
       \newthought{The characteristic frequency} of synchrotron emission is influenced
       by two effects: the gyro-frequency\sidenote{
@@ -578,49 +583,90 @@ Averaging over pitch angle\sidenote{
 }\end{dmath*}.
 
 \subsection{Synchrotron}
-See will ask for derivation of power from single electron.  
+See the will ask question (Section~\ref{sec:rad_will_ask})
+for a derivation of the total radiated power from a single electron.  
 
-To get the spectrum of many electrons, assume a power law distribution of electron energies, and 
-multiply this by the power of one electron as a function of energy.  This results in 
-\begin{displaymath}j_{\nu}\propto B^{(p+1)/2}\nu^{(1-p)/2}\end{displaymath}
-For most synchrotron spectra, $(1-p)/2\equiv \alpha=-0.7$, so
-\begin{displaymath}j_{\nu}\propto B^{1.7}\nu^{-0.7}\end{displaymath}
-For optically thick synchrotron, absorption becomes important.  In this regime, $h\nu<<kT$, so
-\begin{displaymath}I_{\nu}=\frac{2k}{c^2}T\nu^2\end{displaymath}
-Since synchrotron is a non-thermal process, T is no longer brightness temperature, and varies 
-as a function of frequencies (electrons emitting at different frequencies have different 
+\newthought{For an ensemble} of electrons, assuming the electron energy distribution
+is a power law\sidenote{
+    For some reason, we only consider a power law here instead of a thermal distribution of
+    electrons.
+}, the total power is given by
+\begin{dmath}
+    P_{\rm tot}(\omega) = \int P(\omega,\omega_c)E^{-p}\,\d E
+\end{dmath},
+where $\omega_c \propto \gamma^2B$ is the critical frequency and $E\propto\gamma$.  Changing
+variables to $x=\omega/\omega_c$, such that
+\begin{dmath*}
+\d E \propto \omega_c^{-1/2}\,\d\omega_c \nolinebreak \propto \omega^{1/2}x^{-3/2}\,\d x
+\end{dmath*},
+which gives us (after a little bit of algebra)
+\begin{dmath*}
+    P_{\rm tot}(\omega) = \omega^{-(p-1)/2}\int P(x)x^{(p-3)/2}\,\d x
+\end{dmath*}.
+Assuming the integral is constant leads us to a power law spectrum $\propto\omega^{-(p-1)/2}$.
+For most synchrotron spectra, $(1-p)/2\equiv \alpha=-0.7$.\sidenote{Citation needed}
+
+Notice that the synchrotron emission is stronger at lower frequencies.  This means that the
+emission is more likely to be optically thick at low frequencies\sidenote{
+    Recall that the emission and
+    absorption coefficients are related.  Although in this case, Kirchoff's law is not
+    applicable because we do not have thermal equilibrium.
+}
+When the emission is optically thick, absorption becomes important and $h\nu\ll kT$, so we
+can take the Rayleigh-Jeans approximation
+\begin{dmath*}I_{\nu}=\frac{2k}{c^2}T\nu^2\end{dmath*}.
+Since synchrotron is a non-thermal process, $T$ is the brightness temperature (not the physical
+temperature of the gas), and varies 
+as a function of frequency (electrons emitting at different frequencies have different 
 temperatures).  Assuming an electron emits at its critical frequency, $\nu\propto\gamma^2$, so 
-$\gamma\propto\nu^{1/2}$.  Assuming $kT\sim E=\gamma m_ec^2$, then 
+$\gamma\propto\nu^{1/2}$, and assuming $kT\sim E=\gamma m_ec^2$, then 
 $T\propto\gamma\propto\nu^{1/2}$.  So, the synchrotron spectrum is described by
-\begin{displaymath}I_{\nu}\propto \nu^{5/2} (low\ frequency,\ optically\ thick)\end{displaymath}
-\begin{displaymath}I_{\nu}\propto \nu^{-0.7} (high\ frequency,\ optically\ thin)\end{displaymath}
+\begin{dgroup}
+\begin{dmath}I_{\nu}\propto \nu^{5/2}\quad\text{(low frequency, optically thick)}\end{dmath}
+\begin{dmath}I_{\nu}\propto \nu^{-(p+1)/2}\quad\text{(high frequency, optically thin)}\end{dmath}
+\end{dgroup}
 
+\newthought{Although the above} set of equations seems to indicate that a synchrotron sectrum
+can be described by two power laws, this is never actually seen in nature.  The reason is that
+synchrotron radiation rapidly cools the higher energy electrons, producing an exponential
+cutoff in the spectrum.  The timescale for this is given by
+\begin{dgroup*}
+\begin{dmath*}
+    t_{cool}=\frac{E}{-dE/dt}\nolinebreak=\frac{\gamma m_ec^2}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}
+\end{dmath*}
+\begin{dmath}
+    \boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}
+\end{dmath}
+\end{dgroup*}
 
-\subsection{Synchrotron Self-Absorption}
-	I did not even understand what was going on with this when I started studying, so I thought I'd write down what I found out in case this confuses anyone else.
-	An astrophysical synchrotron has an ensemble of electrons at various energies, producing emission at their own characteristic frequencies. The energy levels of these electrons are continuous, but can be treated as quantized on the order of $h^{3}$ (not clear about this part really). Emitted photons can change the energy level of another electron by being absorbed and giving up their energy to the electron.
-	The amount that this happens depends on the way the electron energies are distributed, both for the emission spectrum and for the distribution of energy levels that can absorb photons of specific energies.
-	Result:
-	\begin{equation}
-	\text{non-thermal electron distribution:} \quad S_{\nu} \propto \nu^{5/2}		
-	\end{equation}
-	\begin{equation}
-	\text{thermal electron distribution:} \quad S_{\nu} \propto \nu^{2}		
-	\end{equation}
-	
-	$\rightarrow$Lower energy photons are more likely to be absorbed, because for them, the synchrotron source is optically thick. You could also say it conversely: the synchrotron source is optically thick for lower energy photons because they are more likely to be absorbed. This is what causes the synchrotron spectrum to turn over and not just continue to infinity for long wavelengths.
-
-Synchrotron Cooling:
-Electrons cool by emitting photons, timescale given by
-\begin{displaymath}t=\frac{E}{-dE/dt}=\frac{\gamma m_ec^2}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}\end{displaymath}
-\begin{displaymath}\boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}\end{displaymath}
-
-Equipartition:
-Electron and magnetic field energy density both scale with B.
-\begin{displaymath}U_e\propto B^{-3/2}\end{displaymath}
-\begin{displaymath}U_B\propto B^2\end{displaymath}
-At minimum total energy, $U_e\sim U_B$.  Assuming equipartion, the flux from a synchrotron source 
-can be used to determine $U_e$, which can then be used to determine $U_B$.
+\newthought{Nature tends towards} minimizing the total energy of a system.  Given a fixed
+luminosity in synchrotron radiation, what is the total energy in the electrons?  What is the
+total energy in the magnetic field?  The total energy in the electrons is given by
+\begin{dmath}
+    U_e = \int E^{1-p}\,\d E \nolinebreak
+        \propto E^{2-p}
+\end{dmath}.
+However, we expect that by increasing the total energy in the electrons, the total luminosity
+will scale proportionally\sidenote{
+    For example, both scale with the number of electrons and total system volume.
+} (which we want to hold constant).
+The total luminosity is given by
+\begin{dmath}
+    L = -\int \frac{\d E}{\d t}E^{-p}\,\d E \nolinebreak
+      \propto B^2\int E^{2-p}\,\d E \nolinebreak
+      \propto B^2 E^{3-p}
+\end{dmath}.
+Assuming the electrons are all radiating at their critical frequency, $E\propto B^{-1/2}$ so
+that
+\begin{dmath}
+    U_e \propto B^{-3/2}L
+\end{dmath}.
+We already know that the total energy in the magnetic field $U_B\propto B^2$, so there exists
+a minimum in the total energy of the system, which we suppose to be near the true value.
+This can be used to approximately measure the magnetic field.\marginnote{
+    The minimum of the total energy $U=U_e+U_B$ occurs near where $U_e=U_B$, so this is
+    another reasonable approximation that can be used to guess the magnetic field.
+}
 
 \subsection{Compton Scattering}
 In Thomson scattering, collisions are elastic (energy of the photon doesn't change).  In Compton 
