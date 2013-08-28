@@ -64,7 +64,7 @@ before the final.
 	 
 	 \emph{An Explanation of Oxygen Cooling in HII Regions--} The Oxygen ions help maintain the temperature of the HII region at a steady 10,000 K. This is because they are collisionally excited. If the gas is hotter than 10,000 K, the increased velocity of the free electrons increases the number of collisions, converting the excess kinetic energy into line emission which escapes the gas. If the gas is cooler than 10,000 K, the lower velocity reduces the number of collisions, and hence the amount of cooling. This allows the gas opportunity to gain energy and increase its temperature back up to 10,000 K.\emph{end side note}
 	 
-	 The continuum from the HII region is from the star, and from recombination. I wish I had figures of either of these but I couldn't find any. The star's blackbody is modified as the Hydrogen absorbs any wavelength shortward of the Lyman limit of 91\AA. Remember that wavelengths closer to that number are absorbed preferentially, so photons of much higher energy are not attenuated as much. This manifests as a sharp drop of stellar flux at the Lyman limit, and then a slight rise toward shorter wavelengths. I actually found a figure of this situation but I forgot which book it was in and couldn't find it again... Basically this is what makes the stellar spectrum 'harder' toward the edge of the HII region: all the flux right at the Lyman limit has been absorbed, so the far UV flux is higher than the near UV flux. The longer wavelengths of the star's spectrum is mostly left untouched.
+	 The continuum from the HII region is from the star, and from recombination. I wish I had figures of either of these but I couldn't find any. The star's blackbody is modified as the Hydrogen absorbs any wavelength shortward of the Lyman limit of 912\AA. Remember that wavelengths closer to that number are absorbed preferentially, so photons of much higher energy are not attenuated as much. This manifests as a sharp drop of stellar flux at the Lyman limit, and then a slight rise toward shorter wavelengths. I actually found a figure of this situation but I forgot which book it was in and couldn't find it again... Basically this is what makes the stellar spectrum 'harder' toward the edge of the HII region: all the flux right at the Lyman limit has been absorbed, so the far UV flux is higher than the near UV flux. The longer wavelengths of the star's spectrum is mostly left untouched.
 	 
 	 As Hydrogen can be ionized by many possible wavelengths, the free electrons that result can have a continuum of energies. This also means that when one of these free electrons recombines with Hydrogen, the first photon it releases can have a continuum of energies. This is called the "recombination continuum". Unfortunately I have no idea what it looks like in a spectrum...
 	 
@@ -75,6 +75,34 @@ before the final.
 \end{enumerate}
 
 	First, let's remember what dust is. Dust grains are macroscopic particles of mostly ices and metals in solid form. With radii of $r \sim 1 nm - 0.1 \mu m$, they are around the same size of what we'd consider 'smoke'. Because they are macroscopic, their emission is based on their \textbf{temperature}. A gas's temperature is determined by interactions with a radiation field, but also by collisions between the particles. Dust temperature, however, is only determined by equilibrium with the radiation field. Hence, \emph{mixed gas and dust can have different temperatures}. 
+	
+	Dust absorbs preferentially bluer light, depending on the grain's size. In class we had a homework problem where the fraction of light absorbed was defined as:
+	
+	\begin{equation}
+	Q_{abs} = (\frac{2\pi a}{\lambda})^{n}
+	\end{equation}
+	
+	where $a$ is the radius of the dust grain, and $n$ is a positive number. If the grain is very large, or the photon wavelength is very small, all light will be absorbed. This quantity comes into play in the definition of the dust absorption coefficient:
+	
+	\begin{equation}
+	\kappa_{\lambda} = \pi a^{2} Q_{abs} n_{dust}
+	\end{equation}
+	
+	For the typical sizes of dust grains, in a region where the incident flux is dominated by UV light, one can approximate as all the incident flux being absorbed by the dust. 
+	
+	This coefficient, in a detailed treatment, also affects the emission of the dust grain, where:
+	
+	\begin{equation}
+	j_{\lambda} = \kappa_{\lambda} B_{lambda}(T_{dust})
+	\end{equation}
+	
+	This describes the emission as a blackbody at equilibrium dust temperature $T_{dust}$ modified by the opacity. 
+	
+	In the approximation that the dust emits completely like a blackbody, $n = 1$ and one finds the temperature of the dust as function of distance from a nearby star:
+	
+	\begin{equation}
+	T_{dust}(r) = \sqrt{\frac{R_{*}}{2r}}T_{*}
+	\end{equation}	
 	
 	
 
