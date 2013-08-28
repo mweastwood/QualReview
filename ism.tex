@@ -905,5 +905,60 @@ be determined.  Pulsar observations using this technique find a B field
 strength also of order $10^{-6}$ gauss. 
 
 \subsection{Star Formation}
+I think most of what we need to know about star formation is in the Stars 
+section of the notes.  The only thing new here is magnetic fields.  
+
+Most molecular cloud cores are Jeans-unstable to collapse, but star formation 
+efficiency is lower than it should be if this is true.  The angular momentum 
+and magnetic flux in stars is lower than that in clouds, so angular momentum 
+and magnetic flux must be lost during collapse.  Also, collapsing clouds are 
+not as flat as theory predicts, and have broadened lines implying some sort 
+of turbulence.  All this implies magnetic fields play an important role in star 
+formation.  \emph{Ambipolar diffusion} delays cloud collapse and provides a way 
+for magnetic flux to be lost.  The Alfven waves produced in this process 
+cause turbulence, which can broaden spectral lines (the notes just state these 
+things without justifying them).   
+
+Even in a cold molecular cloud core, this is a small fraction of ionization.  
+The ionized particles are frozen to the magnetic field lines, which prevents 
+them from collapsing.  The neutral particles don't care about the magnetic 
+field lines, but they do have diffuse through the trapped ions in order to 
+collapse.  The force per unit volume $f$ on the neutrals from collions with the 
+ions is the collision rate per unit volume times the change in momentum 
+of a neutral per collision.  So $f$ is given by
+\begin{equation}
+f=n_in_n<v\sigma>m_n(u_i-u_n)
+\end{equation}
+Here, $u_i-u_n$ is the velocity of the neutrals relative to the ions and field 
+lines.  Therefore, this is also the velocity with which the neutrals drift 
+across the magnetic field lines, $v_D$.  Balancing the collisional force with 
+gravity:
+\begin{equation}
+\rho\frac{GM}{r^2}=n_in_n<v\sigma>m_nv_D
+\end{equation}
+\begin{equation}
+n_nm_n\frac{GM}{r^2}=n_in_n<v\sigma>m_nv_D
+\end{equation}
+\begin{equation}
+\frac{GM}{r^2}=n_i<v\sigma>v_D
+\end{equation}
+The left hand side can be rewritten as
+\begin{equation}
+\frac{GM}{r^2}=\frac{GM}{r^3}r=\frac{4\pi}{3}Gn_nm_nr
+\end{equation}
+So
+\begin{equation}
+\frac{4\pi}{3}Gn_nm_nr=n_i<v\sigma>v_D
+\end{equation}
+\begin{equation}
+v_D=\frac{4\pi}{3}\frac{Gn_nm_nr}{n_i<v\sigma>}
+\end{equation}
+The timescale for ambipolar diffusion is 
+\begin{equation}
+t_D=\frac{r}{v_D}=\frac{3n_i<v\sigma>}{4\pi Gn_nm_n}\sim7\times10^{13}\frac{n_i}{n_n} years
+\end{equation}
+I'm not sure where the numbers being plugged into this come from.  For 
+molecular cloud cores, $n_i/n_n\lesssim10^{-6}-10^{-5}$, so the diffusion time 
+is $\lesssim10^7$ years.
 
 \subsection{ISM in Other Galaxies}
