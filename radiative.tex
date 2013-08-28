@@ -815,50 +815,40 @@ $(1,0,0,0)$ & Random polarization / unpolarized \\
 \end{table}
 
 \subsection{Hydrogen energy levels}
+\newthought{Neglecting fine structure}, the energy levels of hydrogen are given by
+\begin{dmath}\boxed{
+E_n = -\frac{13.6\,{\rm eV}}{n^2}
+}\end{dmath}.
 
-To calculate the energies of hydrogen levels, the following equation is typically used:
-
-\begin{equation}
-E_n = 13.6eV\big(\frac{1}{n_1^2} - \frac{1}{n_2^2}\big)
-\end{equation}
-
-Here is the derivation of the Rydberg constant.
-
-\begin{equation}
-E_{atom} = \frac{1}{2}mv^2 - \frac{ze^2}{r}
-\end{equation}
-
-Balancing forces:
-
-\begin{equation}
-\frac{ze^2}{r^2} = \frac{mv^2}{r}
-\end{equation}
-
-\begin{equation}
-E_{atom} = \frac{-ze^2}{2r}
-\end{equation}
-
-Since angular momentum is quantized, we have:
-
-\begin{equation}
-L_n = mvr_n = n\big(\frac{h}{2\pi}\big)
-\end{equation}
-
-Solving for v and plugging this value back into the force balance equation yields:
-
-\begin{equation}
-r_n = \big(\frac{h^2}{4\pi^2me^2}\big)\frac{n^2}{z}
-\end{equation}
-
-Atomic energy levels for hydrogen are given by:
-
-\begin{equation}
-E_n = \big(\frac{-2\pi^2me^4}{h^2}\big)\frac{1}{n^2}
-\end{equation}
-
-\begin{equation}
-Ry = \big(\frac{-2\pi^2me^4}{h^2}\big) = -13.6eV
-\end{equation}
-
-
+To derive the Rydberg constant, start with the Hamiltonian for an electron in the
+potential of a nucleus
+\begin{dmath}
+H = \frac{1}{2}mv^2 - \frac{Ze^2}{r}
+\end{dmath}.
+Balancing the electric force with the centripetal force give us
+\begin{dmath*}
+\frac{Ze^2}{r^2} = \frac{mv^2}{r}
+\end{dmath*},
+which implies\sidenote{
+    Notice that this satisfies the Virial theorem!
+}
+\begin{dmath}
+H = -\frac{Ze^2}{2r}
+\end{dmath}.
+Since angular momentum is quantized, we have
+\begin{dmath}
+L_n = mvr_n \nolinebreak = n\hbar
+\end{dmath}
+Solving for v and plugging this value back into the force balance equation yields
+\begin{dmath*}
+r_n = \frac{n^2\hbar^2}{m_eZe^2}
+\end{dmath*}
+Therefore, the atomic energy levels for hydrogenic atoms are given by:
+\begin{dmath}
+E_n = -\left(\frac{me^4}{2\hbar^2}\right)\frac{1}{n^2}
+\end{dmath},
+and the Rydberg constant is
+\begin{dmath}
+{\rm Ry} = \frac{me^4}{2\hbar^2} \nolinebreak = 13.6\,{\rm eV}
+\end{dmath}.
 
