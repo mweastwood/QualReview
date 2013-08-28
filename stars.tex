@@ -592,6 +592,32 @@ For \textbf{lower-mass stars}, the temperature might never get hot enough to bur
 
 \textbf{Massive stars} start burning carbon and hydrogen much more quickly because the central temperature rises faster. These break away from the Hayashi track earlier and at higher luminosities, since nuclear reactions contribute more to the luminosity earlier on. The CNO cycle becomes the dominant energy generation process because of the high temperatures. As the star travels horizontally on the HR diagram, the core remains convective because the energy generation is so temperature-dependent, while the envelope is radiative.
 
+Main Sequence Evolution:
+
+Low mass stars (the mass of the Sun or smaller) increase slightly in luminosity and temperature 
+during their main sequence lifetimes.  This is due to the conversion of H to He in the core, 
+increasing the mean molecular weight.  This reduces the pressure in the core (ideal gas law), 
+causing the core to contract.  The gravitational energy released heats the surrounding material, 
+allowing the H burning region to include more material.  Also, the increased temperature and 
+density increases the rate of the pp chain.  As a result, the energy output of the core increases, 
+increasing the overall luminosity of the star.  The energy released in contraction also goes 
+into increasing the effective temperature.  This process causes the star to move up and to the 
+left in the HR diagram.  As the H in the core of the star is depleted, an 
+inert He core forms, with H shell burning around it.  This shell burning increases the luminosity 
+of the star further, and also expands the outer layers, cooling the star.  The star now moves 
+up and to the right in the HR diagram.  In stars more massive than the Sun, a convective 
+core prevents this process from happening, as new material is brought into the burning region and 
+He is removed.  As the star evolves, the convection in the core decreases and there is some 
+buildup of He, although not as much as in lower mass stars.  
+
+In high and low mass stars, main sequence evolution ends when too much He builds up in the core.  
+The He core is isothermal and does not generate energy, so it must support itself with a density 
+gradient.  Once the core reaches around 10\% the mass of the entire star, it will no longer 
+be able to support itself or the material above it (note- in very low mass stars, electron 
+degeneracy may set in before this happens.  I'm guessing this is how a He white dwarf would form). 
+In higher mass stars, when star runs out of H, the entire star contracts, releasing graviational 
+energy.  This increases luminosity, while the decrease in radius increases effective temperature.  
+
 Post-Main Sequence Evolution:
 
 This section makes a lot more sense with an HR diagram to refer too, so I'll be referring to the 
@@ -794,3 +820,148 @@ L \propto R^3 \rho \epsilon
 \end{equation}
 
 \noindent we can set up a system of equations to solve for whatever scaling relation we desire for the star.
+
+
+\subsection{Nuclear Energy Generation}
+
+Nuclear reactions are the primary power source in stars -- for stars on the main sequence, it is the fusion of four hydrogen nuclei into one $^{4}$He.  For fusion to occur, an atomic nucleus must overcome the Coulomb barrier of another nucleus into the potential well created by the strong nuclear force which binds nuclei together.
+
+In the classical picture, the ability of a particle to overcome the Coulomb barrier is determined by whether the thermal energy is greater than the Coulomb potential energy.  The temperature $T_{classical}$ required to overcome the barrier can be estimated using the following equation\sidenote{This doesn't take into account the fact that the Maxwell-Boltzmann distribution of velocities will give some of the particles much higher velocities than $v_{avg}$ and therefore much higher thermal energies.  But this gives a good general picture of why we need quantum mechanics to describe nuclear reactions!}:
+
+\begin{equation}
+\frac{3}{2} k T_{classical} = \frac{Z_{1} Z_{2} e^2}{r}
+\end{equation}
+
+\begin{equation}
+T_{classical} \sim 10^{10} \text{  K}
+\end{equation}
+
+\noindent assuming the collision is between two protons and $r$ is the radius of a typical nucleus ($10^{-10}$ cm).  Since the Sun's central temperature is on the order of $10^7$ K, there would not be a sufficient number of particles with high enough thermal energies to overcome the Coulomb barrier and thereby power the Sun.
+
+The answer is (\textit{clearly}) quantum mechanical tunneling, whereby the inherent uncertainty in the position of the particle is large enough that even though there is not enough kinetic energy in the collision of two particles, one can still wind up in the potential well of the other and allow fusion to proceed.
+
+The probability of successful tunneling (and a nuclear reaction occurring) is related to the ratio of the Coulomb barrier height to the initial kinetic energy of the incoming nucleus (this can be visualized by associating a \textit{larger} ratio with a \textit{wider} barrier and therefore a lower probability of tunneling -- see Figure 10.4 in Carroll and Ostlie).  Specifically, the probability for penetrating the Coulomb barrier is 
+
+\begin{equation}
+g(E) = e^{-\sqrt{E_{G}/E}}
+\end{equation}
+
+\noindent where $E$ is the particle kinetic energy and $E_{G}$ is the Gamow energy\sidenote{$\alpha=\frac{e^2}{\hbar c} = \frac{1}{137}$ is the fine structure constant and $\mu$ is the reduced mass.}:
+
+\begin{equation}
+E_{G} = \left(\pi \alpha Z_{1} Z_{2} \right)^2 2 \mu c^2
+\end{equation}
+
+
+The probability for a nuclear reaction, however, will depend not only on the probability of penetrating the Coulomb barrier, but on the nuclear cross section, which should scale as $1/E$.  The cross section is
+
+\begin{equation}
+\sigma(E) = \frac{S(E)}{E} g(E) =  \frac{S(E)}{E} e^{-\sqrt{E_{G}/E}}
+\end{equation}
+
+\noindent where $S(E)$ is some function which varies very slowly as a function of energy, so we can write it as a constant\sidenote{Sometimes, $S(E)$ does not hold constant, but peaks rapidly at specific energies that correspond to energy levels within the nucleus due to the resonance between the nucleus' energy level differences and the energy of the incoming particle.  This resonance phenomenon is important in the triple-alpha process.}.
+
+The rate of nuclear reactions (number of reactions per time per volume) is given by 
+
+\begin{equation}
+R_{AB} = n_{A} n_{B} \sigma_{AB} v_{AB}.
+\end{equation}
+
+If the average energy per reaction $\Delta mc^2 = Q_{AB}$, then the energy generation (power per unit mass) is 
+
+\begin{equation}\label{engen}
+\epsilon = \frac{Q_{AB} R_{AB}}{\rho} = Q_{AB} \frac{n_{A} n_{B}}{\rho} \left<\sigma_{AB} v_{AB}\right>.
+\end{equation}
+
+We want to average $\sigma_{AB} v_{AB}$ over all velocities, where the distribution of velocities is given by the Maxwell-Boltzmann distribution\sidenote{Even though we're in the center of a star and the gas is really hot, the MB distribution still applies because our nuclei still constitute a classical, (nuclei are massive and slow) non-relativistic gas.}.  Therefore, we get that
+
+\begin{equation}
+\left< \sigma_{AB} v_{AB} \right> = \int_0^{\infty} \sigma_{AB} v_{AB} P(v_{AB}) dv_{AB}
+\end{equation}
+
+where
+
+\begin{equation}
+P(v)dv = 4 \pi \left( \frac{\mu}{2 \pi kT} \right)^{3/2} v^2 \exp\left(- \frac{\mu v^2}{2kT}\right) dv
+\end{equation}
+
+The point of all this, and probably the only relevant thing we need to know for the qual\sidenote{Being able to draw that plot below is also probably pretty good.}, is that after changing velocity in the above integral to kinetic energy (using $E = \frac{1}{2} \mu v^2$), the integrand becomes
+
+\begin{equation}\label{gamp}
+f(E) = e^{-E/kT} e^{-\sqrt{E_{G}/E}}.
+\end{equation}
+
+This function is referred to as the Gamow peak and is the product of the Maxwell-Boltzmann high-energy exponential tail (first term) and the Coulomb barrier penetration probability\sidenote{That's what she said.} (second term).
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=.9\textwidth]{gamow_peak.pdf}
+\end{center}
+\end{figure}
+
+This curve describes the range of kinetic energies over which nuclear reactions will take place.  The maximum is found by setting the derivative of Equation \ref{gamp} equal to zero, and thus
+
+\begin{equation}
+E_{o} = \left( \frac{kT}{2} \right)^{2/3} E_{G}^{1/3}.
+\end{equation}
+
+The greatest contribution to the nuclear reaction rate comes from a narrow energy band that depends on the temperature of the gas $T$, and the masses and charges of the reacting nuclei ($\mu$ and $Z_{1},Z_{2}$).
+
+The energy generation rate, $\epsilon$ in Equation \ref{engen}, can then be found by doing some fancy math.  The important part is that it contains an exponential term that goes as 
+
+\begin{equation}
+\epsilon \propto \exp \left[ -3 \left( \frac{E_{G}}{4kT}\right)^{1/3} \right]
+\end{equation}
+
+Because of the Gamow energy in the exponential, there will be a strong preference for reactions between species with low atomic number, and thus small $E_{G}$; e.g., for similar abundances of deuterium and carbon in the center of star with kinetic energies typical of the Sun (1 keV), the p-p chain reactions would be heavily favored over the CNO cycle (see below for explanations of these reactions).
+
+Also, the steep temperature dependence of nuclear reactions works as a "thermostat" in stars.  If $T$ increases inside a star, the rate of nuclear reactions will increase, $L$ will increase, the star will expand, which will cause $T$ to decrease, and the rate of nuclear reactions will decline accordingly.  Over the lifetime of the star, once the dominant nuclear fuel runs out, the rate of nuclear reactions will go down, the core will contract, and $T$ will rise until a new nuclear reaction involving nuclei of higher atomic number becomes favored\sidenote{This text is from Astrophysics in a Nutshell, pg. 57}.
+
+\newthought{The following} are some relevant nucleosynthesis chains.  In each chain of the reactions, the following conservation laws must hold: conservation of electric charge, number of nucleons, and number of leptons\sidenote{The only way I can remember what constitutes a lepton is remembering that it means "light thing".  It includes electrons, positrons, neutrinos, and antineutrinos.}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{c c c}
+\hline\hline
+Reaction&$\gamma$&$\nu$\\
+\hline
+p-p & 1 & 4\\
+CNO & 1 & 15\\
+triple-$\alpha$ & 2 & 40\\
+\hline\hline
+\end{tabular}
+\caption{Summary table for energy generation for various reactions, where $\epsilon \propto \rho^{\gamma} T^{\nu}$.}
+\end{table}
+ 
+ \begin{enumerate}
+ \item \textbf{Proton-Proton Chain}: Chain of reactions which convert hydrogen to helium.
+ 
+ \begin{equation}
+ ^1_1H + \text{}^1_1H \rightarrow \text{}^2_1H + e^{+} + \nu_{e}
+ \end{equation}
+ \begin{equation}\label{ppstep2}
+ ^2_1H + \text{}^1_1H \rightarrow \text{}^3_2He + \gamma
+ \end{equation}
+ \begin{equation}
+ ^3_2He + \text{}^3_2He \rightarrow \text{}^4_2He + 2\text{}^1_1H
+ \end{equation}
+ 
+ The first step is the slowest because it involves the decay of a proton into a neutron (weak force).  There are two other p-p chain branches; the second p-p chain involves the interaction of the helium-3 produced in Equation \ref{ppstep2} with a helium-4 ($^7Be$ and $^7Li$ are intermediate products).  The third p-p chain involves the capture of an electron by the $^7Be$ nucleus created in the second p-p chain.  Most solar neutrinos come from the first p-p chain, but the highest energy ones come from the third p-p chain, despite this having a very low probability of occurrence.
+ 
+ Important note: the total amount of energy released in forming the helium nucleus (binding energy) from four protons is $E_{b} = \Delta mc^2 = 26.731$ MeV.  That is, the combined mass of the four hydrogen atoms is greater than the mass of the resulting helium atom by $\Delta m = 26.731\text{MeV}/c^2$, or $0.7\%$ -- i.e. why hydrogen fusion has an efficiency factor of $.007$.
+ 
+ \item \textbf{CNO Cycle}: This is another cycle for producing helium-4 from hydrogen.  The CNO cycle is more strongly temperature-dependent than the p-p chain, and is the dominant method of generating helium from hydrogen in massive stars ($\geq 1.2 M_{\odot}$) which have higher central temperatures (compared to low-mass stars, which predominantly use the p-p chain).  The CNO cycle uses carbon, nitrogen, and oxygen as catalysts and like the p-p chain has multiple branches\sidenote{I am too lazy to type them all out here, they are on pg. 311 in Carroll and Ostlie}.
+ 
+Note: when hydrogen is converted into helium by either the p-p chain or the CNO cycle, the mean molecular weight $\mu$ of the gas increases, which (from the ideal gas law) means the central pressure will decrease.  That stellar core, no longer being in hydrostatic equilibrium, will begin to collapse.  This has the effect of raising the central temperature and density to compensate for the increase in $\mu$; once the temperature and density are high enough, helium nuclei can overcome their Coulomb repulsion and begin to fuse.\sidenote{This text is from Carroll and Ostlie pg. 312.  This page also has more information on the CNO cycle.}.
+ 
+ \item \textbf{Triple-$\alpha$ Process}: This is the chain of reactions in which helium is converted into carbon-12.
+ 
+ \begin{equation}
+ ^4_2He + \text{}^4_2He \rightleftharpoons \text{}^8_4Be
+ \end{equation}
+ \begin{equation}
+ ^8_4Be + \text{}^4_2He \rightarrow \text{}^{12}_6C + \gamma
+ \end{equation}
+ 
+ The beryllium nucleus produced by step one is unstable (even-numbered A) and will rapidly decay back into two heliums if it does not immediately interact with another helium nucleus.  The resonance of $^8_4Be + \text{}^4_2He$ with the energy of an excited state of carbon-12 greatly increases the probability of this second step occurring.
+ \end{enumerate}
