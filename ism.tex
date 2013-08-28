@@ -813,6 +813,73 @@ So there is no limit to how much a strong shock can compress the gas.
 Note that because $c_s^2=u_1u_2$ and $u_1>c_s$ by definition of a shock, the 
 post-shocked gas is subsonic.  
 
+Magnetic Fields in Shocks:\newline
+This is based on the class notes, so I'm going to be making some statements 
+that seem to come out of thin air (just like they do in the notes).  Someone 
+who has a better reference or understands this better should fill in the 
+details.  
+
+In the presence of magnetic field, magnetic pressure must be included in 
+the momentum conservation equation across a shock of a plasma.  
+\begin{equation}
+P_1+\rho_1v_s^2+\frac{B_1^2}{8\pi}=P_2+\rho_2u_2^2+\frac{B_2^2}{8\pi}
+\end{equation}
+Assuming that in the pre-shock gas, ram pressure dominates and in the post-
+shock gas, magnetic pressure dominates, this becomes
+\begin{equation}\label{eq:B2}
+B_2^2=8\pi\rho_1v_s^2
+\end{equation}
+Because the magnetic field lines are frozen into the plasma and magnetic flux 
+$B/\rho$ is through a ``circuit'' of the plasma is conserved, the presence 
+of the magnetic field reduces the compression of the gas by the shock.  
+By flux conservation:
+\begin{equation}
+B_2=B_1\frac{\rho_2}{\rho_1}
+\end{equation}
+Combining this with Equation \ref{eq:B2} and solving for the density ratio gives
+\begin{equation}
+\left(\frac{\rho_2}{\rho_1}\right)^2=2\times\frac{4\pi\rho_1v_s^2}{B_1^2}=2\frac{v_s^2}{v_a^2}
+\end{equation}
+where $v_a$ is the \emph{Alfven velocity}, defined as
+\begin{equation}
+v_a\equiv\frac{B}{(4\pi\rho)^{1/2}}
+\end{equation}
+The Alfven Mach number is then defined as 
+\begin{equation}
+M_A\equiv\frac{v_s}{v_A}
+\end{equation}
+With this definition, 
+\begin{equation}
+\frac{\rho_2}{\rho_1}=\sqrt{2}M_A
+\end{equation}
+In the presence of a magnetic field, disturnbance propogate at the Alfven 
+velocity, not at the sound speed.  
+
+In a gas containing a mix of ions and neutrals, a magnetic field will affect 
+the structure of a shock.  Only the ions feel the magnetic field, but they 
+can transfer the effects to the neutrals through collisions.  The shock 
+structure depends on the strength off the magnetic field.  A magnetic 
+precursor to the shock with smooth out the velocity disontinuity for the ions 
+(see Figure \ref{fig:Cshock}).  The magnetic field does not want to 
+suddenly change strength (and therefore flux), so it pushes the ions away from 
+the shock, smoothing their velocity and density change into the shock.  
+In a very weak magnetic field, the ions will 
+have a small warning off the shock, and will feel less of a discontinuity, 
+while the neutrals will be uneffected and feel a normal \emph{J-shock}.  For 
+increasingly strong magnetic fields, the ions will have more warning and 
+their discontinuity will be increasingly smoothed out.  With the additional 
+warning time, the ions will have more time to collisionally change the 
+neutral velocity, smoothing out the neutral discontinuity as well.  If the 
+magnetic field is strong enough, the J-shock of the neutral will turn into 
+a completely smooth transition known as a \emph{C-shock}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{Cshock.pdf}
+\end{center}
+\caption{Shocks involving magnetic fields. \label{fig:Cshock}}
+\end{figure}
+
 \subsection{Magnetic Fields}
 Applications of magnetic fields is covered in shocks and in star formation.  
 
