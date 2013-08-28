@@ -710,14 +710,65 @@ Then, the angular size of the cluster can be used to determine its distance.  Th
 its redshift, can be used to measure the Hubble constant.
 
 \subsection{Dispersion}
-Light travelling through a plasma is delayed by an amount 
-\begin{displaymath}\tau=\int\left(\frac{1}{v_g}-\frac{1}{c}\right)\,ds\end{displaymath}
-\begin{displaymath}v_g\sim c\left(1-\frac{\omega_p^2}{\omega^2}\right)^{1/2}\end{displaymath}
-So
-\begin{displaymath}\tau\sim\frac{1}{2c\omega^2}\int\omega_p^2\,ds=\frac{2\pi e^2}{m_ec}\frac{1}{\omega}DM\end{displaymath}
-where $\omega_p^2=\frac{4\pi n_ee^2}{m_e}$ and $DM=\int n_e\,ds$.
+\newthought{The dispersion relation} for an electromagnetic wave traveling through a cold,
+unmagnetized plasma\sidenote{
+    Presented here without proof.  The general idea is that the slowest possible oscillations
+    in a plasma are given by the plasma frequency.  If you try to shake the plasma at frequencies
+    lower than the plasma frequency, the plasma is able to restore itself to its original
+    configuration before one period has elapsed.  This damps the wave.
+} is
+\begin{dmath}
+    \omega^2 = c^2k^2 + \omega_{pe}^2
+\end{dmath},
+where the plasma frequency is given by
+\begin{dmath}
+    \omega_{pe}^2 = \frac{4\pi n_e e^2}{m_e}
+\end{dmath}.
+This implies that the group velocity for the waves is given by
+\begin{dmath}
+    v_g = \frac{\d\omega}{\d k} \nolinebreak
+        = \frac{c^2k}{\sqrt{c^2k^2+\omega_{pe}^2}} \nolinebreak
+        = c\sqrt{1-\frac{\omega_{pe}^2}{\omega^2}} \nolinebreak
+        \approx c\left(1-\frac{1}{2}\frac{\omega_{pe}^2}{\omega^2}\right)
+\end{dmath},
+where the final approximation holds if $\omega^2 \gg \omega_{pe}^2$.
+Therefore, light travelling through a plasma is delayed by an amount 
+\begin{dmath}
+    \tau = \int\left(\frac{1}{v_g}-\frac{1}{c}\right)\,\d s \nolinebreak
+         \approx \frac{1}{2c\omega^2}\int\omega_{pe}^2\,\d s \nolinebreak
+         = \frac{2\pi e^2}{m_e c} \frac{1}{\omega^2} {\rm DM}
+\end{dmath},
+where ${\rm DM} = \int n_e\,\d s$ is known as the dispersion measure.
 
 \subsection{Faraday Rotation}
+\newthought{Faraday rotation occurs} in a \emph{magnetized} plasma.  Magnetized plasmas have
+a fairly complicated dispersion relation that differs depending on whether the wave is
+propagating along the magnetic field lines or transverse to the magnetic field lines.  To avoid
+this complexity, I will only treat this qualitatively.
+
+To begin with, note that electrons spiral right-handed about
+magnetic field lines, while the ions spiral left-handed about those same field lines.
+Therefore, if you imagine a circularly polarized electromagnetic wave traveling down a
+magnetic field line (in the direction of the magnetic field), if it is right-circularly polarized,
+the electric field will tend to align with the electrons.  If it is left-circularly polarized,
+the electric field will tend to align with the ions.  There are many implications for this,
+but the relevant result here is that left- and right-circularly polarized waves travel at
+different speeds through a magnetized plasma\sidenote{
+    Another implication is that if the frequency of the wave is exactly the cyclotron frequency,
+    electrons can be excited to very high energies because the electric field rotates with the
+    electrons.
+}.
+
+A linearly polarized wave is the superposition of a right-circularly polarized wave and a
+left-circularly polarized wave.  However, in the magnetized plasma, these components propagate
+at different speeds.  This causes the polarization of a linearly polarized wave to rotate as
+the wave propagates.
+
+Rybicki and Lightman treat this quantitatively on pages 229 to 231 with the result that the
+angle of rotation $\Delta\theta$ is given by
+\begin{dmath}
+    \Delta\theta=\frac{2\pi e^3}{m_e^2c^2\omega^2}\int n_e B_\parallel\,\d s
+\end{dmath}
 
 \subsection{Stokes Parameters}
 
