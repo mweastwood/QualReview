@@ -212,8 +212,8 @@ Remember guys, there's nothing funny about neutrinos.
       }\end{dmath}.
       \end{dgroup}
 
-      \newthought{Now the Milne relations} are the photoionization/recombination equivalent
-      to the Einstein relations (rather than transitions between energy levels in an atom).
+      \newthought{Now the Milne relations} are the equivalent to the Einstein relations for
+      photoionization / recombination (rather than transitions between energy levels in an atom).
       Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal
       velocity distribution of electrons\sidenote{
         The Maxwell-Boltzmann velocity distribution is
@@ -280,21 +280,20 @@ Remember guys, there's nothing funny about neutrinos.
       allowed. Which ones are in the visible part of the spectrum? Which level has no
       allowed decays, and what is its main decay mode?}
 
-      \begin{table}[ht]
-      \begin{tabular}{cccc}
+      \marginnote{
+      \begin{center}\begin{tabular}{cccc}
       $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
       4s & 4p & 4d & 4f \\
       3s & 3p & 3d &\\
       2s & 2p &&\\
       1s &&&\\
-      \end{tabular}
-      \caption{The energy levels of the hydrogen atom (ignoring fine structure).  The first
-               number is the principal quantum number, usually denoted by $n$.  The second letter
-               denotes the orbital angular momentum $l$, where s, p, d, and f denote
-               $l=1,\,2,\,3,\,4$ respectively.  The energy of a state is given by
-               $E_n = -13.6\,{\rm eV}/n^2$.}
-      \label{tab:hydrogen_energy_levels}
-      \end{table}
+      \end{tabular}\end{center}
+        The above sketch shows the energy levels of the hydrogen atom (ignoring fine structure).
+        The first number is the principal quantum number, usually denoted by $n$.
+        The second letter denotes the orbital angular momentum $l$, where s, p, d, and f denote
+        $l=1,\,2,\,3,\,4$ respectively.  The energy of a state is given by
+        $E_n = -13.6\,{\rm eV}/n^2$.
+      }
 
       \newthought{The allowed transitions}
       between states are governed by so-called ``selection rules.''
@@ -309,7 +308,7 @@ Remember guys, there's nothing funny about neutrinos.
         \Delta m = 0,\,\pm1
       \end{dmath}
       \end{dgroup}
-      Keeping these selection rules in mind, and looking at Table~\ref{tab:hydrogen_energy_levels},
+      Keeping these selection rules in mind, and looking at sketch in the margins,
       the only state that has no allowed decays is the 2s state.  Its main decay mode is through
       the spontaneous emission of two photons.
       
@@ -319,40 +318,44 @@ Remember guys, there's nothing funny about neutrinos.
 \end{enumerate}
 
 \subsection{Specific intensity}
-Specific intensity $I_{\nu}$ = energy per time per area per frequency per
+\newthought{The specific intensity} $I_{\nu}$ = energy per time per area per frequency per
 steradian (erg/s/Hz/ster/cm$^2$).
 
 \begin{table}[ht]
-\begin{tabular}{cc}
-\hline\hline
-Specific mean intensity (erg/s/cm$^2$/Hz) &
+\centering
+\begin{tabular}{ccc}
+\toprule
+Name & Units & Expression \\
+\midrule
+Specific mean intensity & erg/s/cm$^2$/Hz &
     $J_{\nu}=\frac{1}{4\pi}\int I_{\nu}\,d\Omega$ \\
-Specific energy density (erg/cm$^3$/Hz) &
+Specific energy density & erg/cm$^3$/Hz &
     $u_{\nu}=\frac{4\pi}{c}J_{\nu}$ \\
-Energy Flux (erg/s/cm$^2$/Hz) &
+Energy Flux & erg/s/cm$^2$/Hz &
     $F_{\nu}=\int I_{\nu}\cos \theta\,d\Omega$ \\
-Momentum Flux &
+Momentum Flux &&
     $p_{\nu}=\frac{1}{c}\int I_{\nu}\cos^2 \theta\,d\Omega$ \\
-\hline\hline
+\bottomrule
 \end{tabular}
 \caption{Moments of the specific intensity}
+\label{tab:moments}
 \end{table}
 
 \subsection{Radiative Transfer}
-In steady state, with no scattering, along a path s, change in intensity is emission - absorption.
+\newthought{In steady state},
+with no scattering, along a path $s$, change in intensity is emission - absorption.
 \begin{dmath}\frac{dI_{\nu}}{ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\end{dmath}
-where $\kappa_{\nu}$=absorption opacity=$n\sigma$=$\frac{1}{\lambda_{\nu}}$ and $j_{\nu}$ is 
+where $\kappa_{\nu}=\text{absorption opacity}=n\sigma=1/\lambda_{\nu}$ and $j_{\nu}$ is 
 defined as the energy emitted per unit volume per steradian per second per Hz.  This is similar 
 to emissivity, except emissivity ($\epsilon_{\nu}$) is per unit mass, not per unit volume.
 An alternate for of the radiative transfer equation is 
-\begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}\end{dmath}
+\begin{dmath}\boxed{\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}}\end{dmath}
 $S_{\nu}=\frac{j_{\nu}}{\kappa_{\nu}}$ is the source function and $d\tau_{\nu}=\kappa_{\nu}ds$ 
 is measured along the path of the light ray (from the source to the observer).  If optical depth 
 is measured from the observer to the source, $d\tau_{\nu}$ picks up a negative sign, and the 
 equation becomes
 \begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=I_{\nu}-S_{\nu}\end{dmath}
-
-Solutions to the radiative transfer equation:
+A few solutions to the radiative transfer equation are given below:
 \begin{dgroup}
 \begin{dmath}
 \text{Constant source function:}\quad
@@ -368,19 +371,19 @@ Solutions to the radiative transfer equation:
 \end{dmath}
 \end{dgroup}
 
-Random Walk:\newline
-Good derivation in Carrol and Ostlie of 3-D random walk.  Number of steps needed to travel a 
+\newthought{Radiative transfer can} also be treated as a random walk problem.
+There is a good derivation in Carrol and Ostlie of 3-D random walk.  Number of steps needed to travel a 
 distance R is $R^2\lambda^2$.  Diffusion time is thus $\frac{R^2}{\lambda c}$ or $\frac{\tau R}{c}$ 
 for constant optical depth.  Technically, I think there should be a factor of 3 the numerator, 
 but this is all handwavy and order of magnitude anyway.
 
 \subsection{Blackbody Emission}
-Derivation of the Blackbody Function:
-Start with specific intensity.  Specific intensity is energy per time per area per frequency per 
+\newthought{To derive the Planck function},
+start with specific intensity.  Specific intensity is energy per time per area per frequency per 
 steradian.  Consider photons moving through an area dA in a direction so that they continue 
 through a solid angle d$\Omega$ (there's a drawing in our notes).  The energy these photons carry 
 is $h\nu dN$, where $dN=f_{\nu}(\v{x},\v{p})d^3xd^3p$.  $d^3x$ is just the volume a photon can be in 
-and still pass though dA at an angel we want, so this is just $cdt\cos{\theta}dA$.  $d^3p$ is the 
+and still pass though dA at an angle we want, so this is just $cdt\cos{\theta}dA$.  $d^3p$ is the 
 volume in momentum space a photon can be in.  It must be travelling in a direction to pass through 
 $d\Omega$, so the region of momentum space it can be in is also limited by $d\Omega$.  So 
 $d^3p=d\Omega p^2dp=d\Omega \frac{h^2\nu^2}{c^2}\frac{h}{c}d\nu$.  Putting this all together gives 
@@ -390,34 +393,40 @@ So $I_{\nu}=\frac{h^4\nu^3}{c^2}f_{\nu}$.
 Using the Bose-Einstein distribution for photons, 
 \begin{displaymath}f_{\nu}=\frac{2}{e^{\frac{h\nu}{kT}}-1}\end{displaymath}
 gives
-\begin{displaymath}\boxed{B_{\nu}(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{\frac{h\nu}{kT}}-1}}\end{displaymath}
+\begin{dmath}\boxed{B_{\nu}(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{\frac{h\nu}{kT}}-1}}\end{dmath}
 
-Energy density:\newline
-Use the moment formula above for u, and integrate $B_{\nu}$ over all frequencies to get 
-\begin{displaymath}u=aT^4\end{displaymath}
-Limits:
-Rayleight-Jeans limit-$h\nu<<kT$
-\begin{displaymath}I_{\nu}(T)=\frac{2\nu^2kT}{c^2}\end{displaymath}
-Here, T is often used as the brightness temperature.
-Wien limit-$h\nu>>kT$
-\begin{displaymath}I_{\nu}(T)=\frac{2h\nu^3}{c^2}e^{-\frac{h\nu}{kT}}\end{displaymath}
-Wien Displacement Law:
-\begin{displaymath}h\nu_{max}=2.82kT\end{displaymath}
-\begin{displaymath}T\lambda_{max}=0.29cmK\end{displaymath}
-Radiative diffusion:
-In the radiative transfer involving thermal radiation, the source function $S_{\nu}=B_{\nu}$.  
-This is derived from Kirchoff's Law.  
-So the transfer equation becomes 
-\begin{displaymath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+B_{\nu}\end{displaymath}
-In the limit of Rayleigh-Jeans limit, 
-\begin{displaymath}I_{\nu}(T_b)=\frac{2\nu^2kT_b}{c^2}\end{displaymath}
-by the definition of brightness temperature.  Also, 
-\begin{displaymath}B_{\nu}(T)=\frac{2\nu^2kT}{c^2}\end{displaymath}
-So the transfer equation becomes
-\begin{displaymath}\frac{dT_b}{d\tau_{\nu}}=-T_b+T\end{displaymath}
-The solution is similar to the intensity solution:
-\begin{displaymath}T_b(\tau_{\nu})=T_b(0)e^{-\tau_{\nu}}+T(1-e^{-\tau_{\nu}})\end{displaymath}
-This is basically saying for a material of temperature T that is emitting thermally, if the 
+\newthought{The energy density} of a blackbody radiation field is found by taking the
+first-moment of the radiation field (see Table~\ref{tab:moments}) and integrating over
+all frequencies to find
+\begin{dmath}\boxed{u=aT^4}\end{dmath}.
+In a photon gas, the pressure is simply $1/3$ of the energy density, so the radiation pressure is
+\begin{dmath}\boxed{P=\frac{1}{3}aT^4}\end{dmath}.
+
+\newthought{We can also} simplify the Planck function by considering various limits.  First,
+in the low-frequency, classical, or Rayleigh-Jeans limit ($h\nu\ll kT$) we have
+\begin{dmath}\boxed{I_{\nu}(T)=\frac{2\nu^2kT}{c^2}}\end{dmath}.
+In the high-frequency, or Wien limit ($h\nu\gg kT$)\sidenote{
+    This limit is rarely used.
+} we have
+\begin{dmath}I_{\nu}(T)=\frac{2h\nu^3}{c^2}e^{-\frac{h\nu}{kT}}\end{dmath}
+The Wien displacement law gives the location of the peak of the Planck function:
+\begin{dgroup}
+\begin{dmath}h\nu_{max}=2.82kT\end{dmath}
+\begin{dmath}T\lambda_{max}=0.29\,\text{cm K}\end{dmath}
+\end{dgroup}
+
+\subsection{Brightness Temperature}
+\newthought{In radio astronomy}, the brightness temperature is typically used in place of
+the specific intensity.  In the Rayleigh-Jeans limit, the brightness temperature is given by
+\begin{dmath}
+    T_b \frac{c^2}{2k\nu^2}I_\nu
+\end{dmath}.
+Using this definition, the radiative transfer equation in the Rayleigh-Jeans limit (and
+assuming thermal radiation\sidenote{See Kirchoff's law}) becomes
+\begin{dmath}\frac{\d T_b}{\d\tau_{\nu}}=-T_b+T\end{dmath}.
+Assuming the medium has a constant temperature, the solution is
+\begin{dmath}T_b(\tau_{\nu})=T_b(0)e^{-\tau_{\nu}}+T(1-e^{-\tau_{\nu}})\end{dmath}
+This is basically saying for a material of temperature $T$ that is emitting thermally, if the 
 material is optically thin, the observed brightness temperature will change based on the amount 
 of the material present.  More material means more emission, but the emission is not re-absorbed 
 by the extra material.  For an optically thick material, $\tau$ is large, and the observed 
@@ -426,7 +435,7 @@ optically thick things emit like blackbodies.  The equation for $T_b$ above is j
 statement of this.
 
 \subsection{Thomson Scattering}
-The cross section is defined by
+\newthought{The cross section} is defined by
 \begin{dmath*}
 \sigma_T = \frac{\text{power radiated by accelerated electron}}{\text{flux incident on the electron}}
 \end{dmath*}.
@@ -637,6 +646,10 @@ Light travelling through a plasma is delayed by an amount
 So
 \begin{displaymath}\tau\sim\frac{1}{2c\omega^2}\int\omega_p^2\,ds=\frac{2\pi e^2}{m_ec}\frac{1}{\omega}DM\end{displaymath}
 where $\omega_p^2=\frac{4\pi n_ee^2}{m_e}$ and $DM=\int n_e\,ds$.
+
+\subsection{Faraday Rotation}
+
+\subsection{Stokes Parameters}
 
 \subsection{Hydrogen energy levels}
 
