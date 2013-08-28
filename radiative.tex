@@ -444,7 +444,7 @@ Starting from the dipole approximation, the power radiated by the accelerated el
 P = \frac{2{\ddot d}^2}{3c^3}
 \end{dmath}.
 By balancing forces ($eE_0sin(\omega t) = m_e\ddot r$)\sidenote{
-    Note that we take the time average here so that $\langle \sin^2 \rangle = 1/2$.
+    Note that we take the time average here so that $\langle \sin^2(\omega t) \rangle = 1/2$.
 }, the power becomes
 \begin{dmath}
 P = \frac{e^4E_0^2}{3c^3m_e^2}
@@ -459,11 +459,11 @@ So finally the Thomson cross-section is given by
 }\end{dmath}.
 
 \subsection{Bremsstrahlung}\label{sec:bremsstrahlung}
-Let's begin by imagining an electron traveling (in a straight line) by a nucleus
+\newthought{Let's begin by imagining} an electron traveling (in a straight line) by a nucleus
 with atomic number $Z$.  The transverse acceleration is
 \begin{dmath}
     a_\perp = \frac{Ze^2}{m_e}\frac{1}{x^2+b^2}\frac{b}{\sqrt{x^2+b^2}}
-\end{dmath},
+\end{dmath}.
 The total perturbation to the perpendicular velocity
 is therefore given by
 \begin{dgroup*}
@@ -528,7 +528,7 @@ be created.  Therefore choose $v_{\rm min}=(2h\nu/m_e)^{1/2}$ and finally we hav
 }\end{dmath}.
 Note that this spectrum is essentially \emph{flat} until $h\nu\sim kT$.
 
-As an alternative thought\sidenote{
+\newthought{As an alternative thought}\sidenote{
     Michael: I think it's interesting to think about electron's Compton scattering off
     virtual photons conceptually, but I don't think it's elucidating (even slightly).
     I have no intuition about how an electron should Compton scatter virtual photons and
@@ -546,12 +546,36 @@ velocities of a population of electrons, and consider many possible ions to inte
 Know how to describe and explain a Bremsstrahlung spectrum.
 
 \subsection{Cyclotron}
-Non-relativistic electrons spiraling in a magnetic field.  From far away, looks like a dipole.  
-\begin{displaymath}P=\frac{2e^2a^2}{3c^3}\end{displaymath}
-The acceleration can be found from the cyclotron frequency:
-\begin{displaymath}a=\dot{v}=\frac{v^2}{r}=v\omega_{cyc}=v\frac{eB}{m_ec}\end{displaymath}
-\begin{displaymath}P=\frac{2e^4B^2v^2}{3c^5m_e^2}\end{displaymath}
-\begin{displaymath}\boxed{P=\frac{2}{3}r_0^2B^2c\beta^2}\end{displaymath}
+\newthought{Cyclotron emission is} due to \emph{non-relativistic} electrons spiraling around
+magnetic field lines.  Begin by equating the centripetal force with the magnetic force
+\begin{dmath*}
+    m_ea = \frac{m_e (v\sin\alpha)^2}{r} \nolinebreak = \frac{evB}{c}\sin\alpha
+\end{dmath*}.
+This allows us to solve for the Larmor radius, $r$, and cyclotron frequency, $\omega=v\sin\alpha/r$:
+\begin{dgroup*}
+\begin{dmath}
+    r = \frac{m_evc}{eB}\sin\alpha
+\end{dmath}
+\begin{dmath}
+    \boxed{\omega = \frac{eB}{m_ec}}
+\end{dmath}
+\end{dgroup*}
+The total power radiated from a single electron can be found by applying the Larmor formula
+for radiated power as follows
+\begin{dmath*}
+    P = \frac{2e^2a^2}{3c^3} \nolinebreak = \frac{2e^4v^2B^2}{3c^5m_e^2} \sin^2\alpha \nolinebreak
+      = 2\sigma_Tc\beta^2\frac{B^2}{8\pi}\sin^2\alpha
+\end{dmath*}.
+Averaging over pitch angle\sidenote{
+    Average the pitch angle over solid angle:
+    \begin{dmath*}
+        \langle \sin^2\alpha \rangle = \frac{1}{4\pi}\int \sin^2\alpha \,\d\Omega
+            \nolinebreak = \frac{2}{3}
+    \end{dmath*}
+}, we find
+\begin{dmath*}\boxed{
+    P = \frac{4}{3}\sigma_Tc\beta^2\frac{B^2}{8\pi}
+}\end{dmath*}.
 
 \subsection{Synchrotron}
 See will ask for derivation of power from single electron.  
