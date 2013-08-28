@@ -608,17 +608,55 @@ Some facts about dust:
 Thermal emission from dust grains is usually in the range of sub-mm wavelengths 
 to about $2~\mu m$. Interstellar grains, with temperatures of $10-100$ K, emit
 at $30-300\ \mu$m.  Grains near stars have temperatures of a few hundred 
-Kelvin, and emit at around $10\ \mu$m.  Dust extinguishes (through both absorption and scattering) background sources in the $0.1-20~\mu m$ range, from UV to mid-IR. This range implies that the sizes of particles is about $0.1-0.2~\mu m$, though I'm not sure why. Dust also polarizes light, and this has to do with how magnetic fields cause dust grains to align, but someone should help fill in the details here.
+Kelvin, and emit at around $10\ \mu$m.  Dust extinguishes (through both absorption and scattering) background sources in the $0.1-20~\mu m$ range, from UV to mid-IR. This range implies that the sizes of particles is about $0.1-0.2~\mu m$ (see explanation below). Dust also polarizes light, and this has to do with how magnetic fields cause dust grains to align, but someone should help fill in the details here.
 
 Some observational evidence of dust includes the following. One is that low observed abundances of heavy elements, i.e. lower than solar, means that individual metal atoms have been depleted in order to form dust grains. Another is the presence of molecular hydrogen, whose formation if catalyzed on the surfaces of dust grains. Dust also can shield H$_2$ from UV radiation, which prevents it from dissociating as much (Anneila also lists IR absorption lines and diffuse radiation in the galaxy. See notes 5).
 
-Scattering by dust roughly follows a $\lambda^{-1}$ law, meaning that redder light is extinguished more easily. Extinction from dust, represented by $A_\lambda$, increases the apparent magnitude of an object:
+Another observational indicator of dust is through the extinction (absorption + scattering) and reddening of the light from background stars.  Scattering by dust roughly follows a $\lambda^{-1}$ law; therefore, shorter bluer wavelengths are more effectively scattered, and light that is transmitted through the cloud appears redder.  An observer not along the dust cloud-star-line-of-sight will receive the shorter bluer wavelengths which were scattered by the dust cloud, and will therefore see a blue reflection nebula.
+
+Extinction from dust, represented by $A_\lambda$, increases the apparent magnitude of an object:
 
 \begin{equation}
 m_\lambda = M + 5 \log d - 5 + A_\lambda \,\, .
 \end{equation}
 
-Assuming $I = I_0 e^{-\tau_\lambda}$,
+Assuming the fractional change in the intensity of light is
+
+\begin{equation}
+I_{\lambda} / I_{\lambda,o} = e^{-\tau_{\lambda}},
+\end{equation}
+
+\noindent we can combine this with
+
+\begin{equation}
+m_1 - m_2 = -2.5 \log_{10} \left(\frac{F_1}{F_2}\right)
+\end{equation}
+
+\noindent to show that
+
+\begin{equation}
+A_\lambda = 1.086 \tau_\lambda.
+\end{equation}
+
+That is, the change in magnitude due to extinction by dust is approximately equal to the optical depth along the line of sight.
+
+\textbf{Mie theory and why dust extinction follows a $1/\lambda$ law}: We can define the extinction coefficient $Q_{\lambda}$ as
+
+\begin{equation}
+Q_\lambda \equiv \frac{\sigma_{\lambda}}{\sigma_g}
+\end{equation}
+
+\noindent where $\sigma_\lambda$ is the scattering cross section and $\sigma_g = \pi a^2$ is the geometrical cross section of the dust grain.  Mie theory states that in the regime where the wavelength of light $\lambda$ is on the order of the size of the dust grains $a$, then $Q_\lambda \sim a/\lambda$.\sidenote{The derivation of this involves using the complex index of refraction and solving Maxwell's equations with appropriate boundary conditions.  I don't include this derivation here; it can be found in Anneila's notes - Lecture 6, pg. 19.}  Then,
+
+\begin{equation}
+\sigma_\lambda \propto \frac{a^3}{\lambda} \quad (\lambda \gtrsim a)
+\end{equation}
+
+This is why dust scattering goes as $1/\lambda$, and why dust particles that are about $0.1-0.2$ $\mu m$ effectively extinct background sources in the $0.1 - 20$ $\mu m$ range (UV to mid-IR).  For wavelengths much longer than this, $Q_{\lambda}$ goes to zero.\sidenote{The waves on the surface of water analogy is good for remembering this.  If the wavelength of the waves is much larger than the object through which they are passing, like a grain of sand, then the waves will pass through unobstructed.}  For wavelengths much smaller than this, $Q_\lambda$ becomes independent of $\lambda$, and
+
+\begin{equation}
+\sigma_\lambda \propto a^2 \quad (\lambda \ll a).
+\end{equation}
 
 \subsection{Phases of a Supernova}
 \newthought{Anneila mentioned that} this was a fairly popular question on the quals, so
