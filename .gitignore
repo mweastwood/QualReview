@@ -3,5 +3,9 @@
 *.toc
 *.out
 *.pdf
+<<<<<<< HEAD
 .DS_Store
 *.gz
+=======
+*.swp
+>>>>>>> ccbc6b12a920a7dad71f2c61a5f14801802dec8e
