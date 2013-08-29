@@ -34,7 +34,7 @@ spectral lines are more popular than I thought they would be.  Globular clusters
 
 	%Imagine a blob of gas inside a gaseous medium whose density deviates from the density of its environment. If the blob's density is smaller than the surrounding density, the system is unstable to convection (we should also know how to express this in terms of entropy).
 	%Imagine that the blob has $\rho_{b1},~P_{b1},~T_{b1}$, and the surrounding medium has $\rho_1,~P_1,~T_1$. The blob moves up a distance $\delta r$, where the environment has $\rho_2,~P_2,~T_2$, and now the blob has $\rho_{b2},~P_{b2},~T_{b2}$. 
-	Assume the process is adiabatic, so the blob obeys $P = K \rho ^\gamma$, and assume we have an ideal gas, so $P = \frac{\rho k_{\rm B} T}{\mu m_p}$. First differentiate the ideal gas law to obtain
+	\newthought{Assume the process} is adiabatic, so the blob obeys $P = K \rho ^\gamma$, and assume we have an ideal gas, so $P = \frac{\rho k_{\rm B} T}{\mu m_p}$. First differentiate the ideal gas law to obtain
 	
 	\begin{equation}
 	\frac{dP}{dr} = \frac{P}{\rho} \frac{d \rho}{dr} + \frac{P}{T} \frac{d T}{dr} \,\, ,
@@ -59,10 +59,14 @@ spectral lines are more popular than I thought they would be.  Globular clusters
 	\int^{T(R)}_{T_{\rm eff}} dT = -\frac{m_p}{5 k_{\rm B}} G {\rm M}_\odot \int^R_{\rm R_\odot} r^{-2}dr \,\, .
 	\end{equation}
 	Alternatively, you could integrate from the base of the convection zone if you know what the temperature is there ($1.8 \times 10^6~K$) and can remember that it's about a third of the way in. The final formula is:
-	\begin{equation}
+	\begin{equation}\boxed{
 	T(R) = \frac{m_p}{5 k_{\rm B}} G {\rm M}_\odot \biggl( \frac{1}{R} - \frac{1}{{\rm R}_\odot}\biggr) + 5800~{\rm K}\,\, .
-	\end{equation}
-	And you can plug numbers in yourself (someone check the form of this equation and make sure io got it right).
+	}\end{equation}
+    This gives the temperature at the base of the convenction zone ($R=2R_\odot/3$) as
+    \begin{dmath*}
+	    T(R) = \frac{m_p}{10 k_{\rm B}} \frac{G {\rm M}_\odot}{{\rm R}_\odot} + 5800~{\rm K} \nolinebreak
+             \approx 2.3\times10^6~{\rm K}
+    \end{dmath*}.
 	
 \item \textbf{Describe the major sources of opacity in stars, and how each depends on density,
       temperature, and metallicity.}
