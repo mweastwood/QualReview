@@ -12,7 +12,7 @@ quantities? Explain qualitatively how the yield of each depends on the cosmic ba
 density and why.
 \end{enumerate}
 
-\subsection{Distances}
+\subsection{Measuring Distances}
 The basic concept of distance is the distance ladder, which is basically 
 different techniques used to measure distances farther and farther away.  
 There is overlap between the different techniques, which allows the next 
@@ -39,4 +39,89 @@ star with a parallax distance, the difference between apparent and absolute
 magnitude gives the distance to the new star.  
 
 This has been done for clusters of stars that contain Cepheid variables, 
-leading to the next step in the distance ladder.  
+leading to the next step in the distance ladder.  Cepheids are horizontal 
+branch high mass stars in the instability strip of the HR diagram (see Stars 
+notes).  Cepheids are useflu as distance indicators because their periods 
+are tightly correlated with their luminosities by 
+\begin{equation}
+\log{\frac{L}{L_{\odot}}}\sim2.4+1.2\log{\frac{P}{days}}
+\end{equation}
+So by measuring the period of pulsation, the intrinsic luminosity can be 
+determined, giving a distance.  Nearby galaxies (within $20$ Mpc) are close 
+enough that individual Cepheids can be observed and used to get distances.  
+
+Advantages:  Bright ($M_V\sim-4$ to $-7$), so the can be used in other galaxies.  
+Also, we understand the physics behind their pulsation well, and can identify 
+them based on their period.  
+
+Disadvantages:  Cepheids are relatively rare since they correspond to short 
+phases of stellar evolution and high masses.  Also, there are uncertainites 
+about systematics of the period-luminosity relation like how it depends on 
+metallicity and color.  
+
+The tip of the red giant branch method is applicable out to similar distances 
+as Cepheids.  Stars at the top of the red giant branch, right before He flash, 
+have a known absolute magnitude of $-4$.  This point also corresponds to a 
+drop-off in the frequency of stars, so once this is found and its brightness 
+is measured, the distance can be determined.  
+
+Advantages: Stars are bright and method is relatively precise and 
+well-understood.  
+
+Disadvantages:  Only works for old populations.  
+
+Another method is planetary nebulae luminosity functions.  Planetary nebulae 
+have an observed cut-off in luminosity at absolute magnitude $-4.5$.  The 
+physics behind the cut-off is understood, and planetary nebulae can be found 
+in all types of galaxies.  
+
+For galaxies out to $\sim100$ Mpc, there are several methods to get distances, 
+including the Tully-Fisher relation, globular cluster  
+luminosity functions, and surface brightness fluctuations.  The Tully-Fisher 
+relation is an observed correlation between the rotational velocity of 
+spiral galaxies and their luminosity:
+\begin{equation}
+L\propto v_{rot}^4
+\end{equation}
+The rotational velocity is usually measured by HI $21$ cm line width.  The 
+problems with this method are the relation has $\sim10-20$\% scatter, and 
+the physics behind it are not well understood.  The fundamental plane gives 
+similar relations for elliptical galaxies.  Globular clusters have well-defined empirical luminosity functions that can be used as 
+standard candels.  Globular clusters have a peak at an absolute magnitude 
+of $-6.6$.  An advantage of this method is it is not affected by dust.  
+However, deep photometry is needed to measure the luminosity function, and 
+this method is not as precise as others.  Surface brightness fluctuations 
+involve measuring the surface brightness (flux per solid angle) in several 
+regions of the same galaxy.  The observed surface brightness depends on the 
+number of stars in the region, which should be similar in the different 
+patches.  If the average number of stars is N, the Poisson scatter in the 
+number of stars (and thus the brightness) will be $\frac{1}{\sqrt{N}}$.  
+The number of stars per solid angle will also depend on distance as 
+$N\propto r^2$.  So the observed scatter $\sigma\propto\frac{1}{r}$.  This 
+relation can be calibrated using nearby galaxies.   
+
+For even more distant galaxies (out to $\sim1$ Gpc), Type Ia supernovae 
+can be used as standard candles to get a distance.  A tight correlation 
+exists between the shape of a Ia lightcurve and the luminosity of the 
+supernova, so by measuring the shape of the light curve, the distance can 
+be determined.  This method is very precise, but we still don't understand 
+the mechanism for a type Ia supernova.  Type Ia supernovae can be observed 
+into the Hubble flow, so a plot of distance versus redshift can be used 
+to determine the cosmological parameters.  The main problem with all these 
+methods so far is they rely on calibrations from other methods.  One of the 
+main goals of the Hubble Space Telescope was to improve these calibrations 
+and determine $H_0$ more precisely.  The main focus was to better calibrate 
+Cepheids and the distance to the LMC and SMC, which other methods are based 
+on.  The HST $H_0$ Key Project determined $H_0=72\pm3\pm7$ km/s/Mpc.
+
+Two methods that don't need calibration, but instead are model dependent 
+are the S-Z effect (see section in Radiative) and gravitational lense 
+time delays.  If a background quasar is lensed, variability in the quasar 
+will be seen at different times on different sides of the lense, since the 
+path length is different.  If the mass distribution of the lense is known, 
+then the ratio of the path length difference to the source distance and lense 
+distance can be determined.  Since the time delay is known, the path length 
+difference can be calculated, giving the distance to the lense and the 
+background quasar.  The modeling is very complicated however.  
+
+  
