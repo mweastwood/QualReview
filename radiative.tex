@@ -2,7 +2,7 @@
 
 Remember guys, there's nothing funny about neutrinos.
 
-\subsection{Questions}
+\subsection{Questions}\label{sec:rad_will_ask}
 
 \begin{enumerate}
 
@@ -50,9 +50,14 @@ Remember guys, there's nothing funny about neutrinos.
       \end{equation}
       where $\alpha$ is the angle between the velocity and the magnetic field.
       Plug into the Larmor Formula to get the total power radiated by a single electron:
-      \begin{equation}\boxed{
-        P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin{\alpha}^{2}
-      }\end{equation} 
+      \begin{dmath}
+        P = \frac{2}{3} \frac{q^{4}B^{2}}{c^{5}m^{2}} \gamma^{2} v^{2} \sin^2{\alpha}
+      \end{dmath}
+      Averaging over the pitch angle $\alpha$ and using the definition of the Thomson
+      cross-section, we find
+      \begin{dmath}\boxed{
+        P = \frac{4}{3} \sigma_T c\beta^2\gamma^2\frac{B^2}{8\pi}
+      }\end{dmath}
       
       \newthought{The characteristic frequency} of synchrotron emission is influenced
       by two effects: the gyro-frequency\sidenote{
@@ -143,131 +148,157 @@ Remember guys, there's nothing funny about neutrinos.
         or fermions here.
       }), we have
        \begin{dmath}
-        \frac{n_1}{n_2} = \frac{g_1}{g_2} e^{h\nu_0 / k_B T}
+        \frac{n_2}{n_1} = \frac{g_2}{g_1} e^{-h\nu_0 / k_B T}
        \end{dmath},
-       where $h\nu_0$ is the energy of the photon and the energy difference between the two levels,
-       $E_2 - E_1$.  Similarly, in thermodynamic equilibrium (with a narrow line profile), the
+       where $h\nu_0 = E_2-E_1$ is the energy difference between the two levels,
+       $E_2 - E_1$, such that taken together with detailed balance
+       \begin{dmath}
+        \bar J = \frac{A_{21}/B_{21}}{\frac{g_1B_{12}}{g_2B_{21}}e^{h\nu_0/kT}-1}
+       \end{dmath}
+       In thermodynamic equilibrium (with a narrow line profile), the
        line-averaged mean intensity is given by the Planck function\sidenote{
         \begin{dmath*}
             \bar J = B_\nu\nolinebreak= \frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/kT}-1}
         \end{dmath*}
-       }.  These two relations combined with the expression for detailed balance given
-       in Equation~\ref{eq:detailed_balance} imply that
+       }.  Therefore we must have
        \begin{dgroup}
-       \begin{dmath}
+       \begin{dmath}\boxed{
         g_1B_{12} = g_2B_{21}
-       \end{dmath},
-       \begin{dmath}
+       }\end{dmath},
+       \begin{dmath}\boxed{
         A_{21} = \frac{2 h \nu^3}{c^2}B_{21}
-       \end{dmath}.
+       }\end{dmath}.
        \end{dgroup}
        These are called the Einstein relations.
-      Even though we assumed thermodynamic equilibrium, these relations do not depend on temperature and just describe properties of the atoms. Therefore, we can say they are more general and hold for cases that are not in thermodynamic equilibrium.
+      Even though we assumed thermodynamic equilibrium, these relations do not depend on
+      temperature and just describe properties of the atoms. Therefore, we can say they are more
+      general and hold for cases that are not in thermodynamic equilibrium.
       Also, the A and B coefficients are intrinsic properties of individual 
       atoms, so they should have nothing to do with the overall state of the 
       gas and whether or not it's in thermodynamic equilibrium.
 
       \newthought{Now let's discuss} Kirchoff's law.
-      Take a thermally emitting (not necessarily blackbody) material at temperature T and place it 
-      in a blackbody cavity also at temperature T.  With just the cavity, $S_{\nu}=I_{\nu}=B_{\nu}$.  
-      With the material added, we still have a cavity of temperature T, so the total intensity must 
+      Take a thermally emitting (not necessarily blackbody) material at temperature $T$ and place it 
+      in a blackbody cavity also at temperature $T$.  With just the cavity, $I_{\nu}=B_{\nu}$
+      (by definition of the Planck function $B(\nu)$).  
+      With the material added, we still have a cavity of temperature $T$, so the total intensity must 
       still be a blackbody, since by definition this intensity does not depend on the internal 
-      structure.  The added material has some source function $S_{\nu 2}$ that affects the total 
+      structure.  The added material has some source function $S_{\nu}$ that affects the total 
       intensity of the cavity.  Think of the new material as a new piece of the cavity, with radiation 
       contributed by its source function.  If the source function is greater than the blackbody function 
       of the cavity, too much radiation will be contributed and the resulting intensity will also be 
       greater than the blackbody of the cavity on its own.  If the source function is less than the 
       blackbody function, too little radiation will be contributed, decreasing the total intensity to 
       below the blackbody function.  But we know the total intensity must still be a blackbody function 
-      of temperature T.  So the source function of the new material must be a blackbody of temperature T.  
-      So, we have 
-      \begin{displaymath}S_{\nu}=B_{\nu}\end{displaymath}
+      of temperature $T$.
+      So, we must have 
+      \begin{dmath}\boxed{
+        S_\nu = B_\nu
+      }\end{dmath},
       and, by definition of $S_{\nu}$,
-      \begin{equation}
-      j_\nu = \alpha_\nu B_\nu.
-      \end{equation}
+      \begin{dmath}\boxed{
+        j_\nu = \alpha_\nu B_\nu
+      }\end{dmath}.
       To clarify, the source function of a material in thermodynamic equilibrium is the
-      Planck function.
+      Planck function\sidenote{
+        This introduces an important distinction: \emph{thermal radiation} implies $S_\nu=B_\nu$,
+        while \emph{blackbody radiation} implies $I_\nu=B_\nu$.
+      }.
       
       We can relate the Einstein coefficients to the emission and absorption coefficients
-      by noting that each transition adds or removes $h\nu$ in energy spread over a solid
+      by noting that each transition adds or removes $h\nu$ in energy, spread over a solid
       angle of $4\pi$.  Therefore
       \begin{dgroup}
-      \begin{dmath}
-      j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
-      \end{dmath},
-      \begin{dmath}
-      \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
-      \end{dmath}.
+      \begin{dmath}\boxed{
+        j_\nu = \frac{h \nu}{4 \pi} n_2 A_{21} \phi(\nu)
+      }\end{dmath},
+      \begin{dmath}\boxed{
+        \alpha_\nu = \frac{h \nu}{4 \pi} (n_1 B_{12} - n_2 B_{21} ) \phi(\nu)
+      }\end{dmath}.
       \end{dgroup}
+
+      \newthought{Now the Milne relations} are the equivalent to the Einstein relations for
+      photoionization / recombination (rather than transitions between energy levels in an atom).
+      Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal
+      velocity distribution of electrons\sidenote{
+        The Maxwell-Boltzmann velocity distribution is
+        \begin{dmath*}
+        f(v)\,\d v = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}v^2e^{-mv^2/2kT}\,\d v
+        \end{dmath*}.
+      } and that the radiation field is described by the Planck
+      function $B_\nu$.
+      Let $\sigma_{\rm fb}(v)$ be the cross section for an electron with speed $v$ to recombine
+      with an ion, and let $\sigma_{\rm bf}(\nu)$ be the cross section for an ion to to be
+      photoionized by a photon with frequency $\nu$. We can write the rate of recombinations
+      and ionizations
+      per volume (s$^{-1}$ cm$^{-3}$) in terms of the number densities of ions and electrons,
+      the cross section, and the electron velocity distribution for a velocity range $dv$:
+      \begin{dgroup}
+      \begin{dmath}
+      R_{\rm recomb} = N_+N_e \sigma_{\rm fb} f(v)v\,\d v
+      \end{dmath}
+      \begin{dmath}
+      R_{\rm ioniz} = \frac{4\pi}{h\nu} N_n \sigma_{\rm bf} (1 - e^{-h\nu/k_{\rm B}T}) I_\nu\,\d\nu
+      \end{dmath}
+      \end{dgroup}
+      The factor of $(1-e^{-h\nu/kT})$ apparently accounts for stimulated recombinations.
+      Setting these two expressions equal (ie. assume detailed balance), and using the Planck
+      function, the Maxwellian velocity distribution, and the Saha equation\sidenote{
+        The Saha equation is
+        \begin{dmath}
+        \frac{N_+N_e}{N_n} = \left(\frac{2\pi mkT}{h^2}\right)^{3/2}\frac{g_eg_+}{g_n}e^{-\chi/kT}
+        \end{dmath},
+        where $\chi$ is the ionization potential.
+      } it can be shown\sidenote{
+        Note that $h\nu=mv^2/2+\chi$ and therefore $mv\,\d v=h\,d\nu$.
+      } that
+      \begin{dmath}\boxed{
+      \frac{\sigma_{\rm bf}}{\sigma_{\rm fb}} = \frac{m^2 v^2 c^2}{h^2\nu^2}\frac{g_e g_+}{2g_n}
+      }\end{dmath}.
       
-      Milne relations:
-      
-      These relations are analogous to the Einstein relations, but they are for photoionization and radiative recombination, rather than transitions between energy levels in an atom. Following Rybicky \& Lightman (see p.\,284 for more discussion), assume we have a thermal velocity distribution of electrons and that the radiation field is described by the Planck function $B_\nu$. Let $\sigma_{\rm fb}(v)$ be the cross section for an electron with speed $v$ to recombine with an ion; meanwhile, $\sigma_{\rm bf}(\nu)$ is the cross section for an ion to to be photoionized by a photon with frequency $\nu$. We can write the rate of recombinations per volume (s$^{-1}$ cm$^{-3}$) in terms of the number densities of ions and electrons, the cross section, and the electron velocity distribution for a velocity range $dv$:
-      
-      \begin{equation}
-      R_{\rm recomb} = N_+N_e \sigma_{\rm fb} f(v) dv
-      \end{equation}
-      
-      and the rate of ionization is
-      
-       \begin{equation}
-      R_{\rm ioniz} = \frac{4\pi}{h\nu} N_n \sigma_{\rm bf} (1 - e^{-h\nu/k_{\rm B}T}) I_\nu d\nu
-      \end{equation}
-      
-      and we have assumed $I_\nu = B_\nu$ (note: where does the factor of $(1 - e^{-h\nu/k_{\rm B}T})$ come from? Also, justify these expressions to yourself in general).
-      
-      Set these two equations equal and obtain an expression for $\sigma_{\rm bf} / \sigma_{\rm fb}$; use the Maxwell-Boltzmann distribution for $f(v)$ and the Saha equation to obtain the Milne relation:
-      
-      \begin{equation}
-      \frac{\sigma_{\rm bf}}{\sigma_{\rm fb}} = \frac{m^2 c^2 v^2 g_e g_+}{\nu^2 h^2 2 g_n}\,\, .
-      \end{equation}
-      
-      The Einstein relations, Milne relations, and Kirchoff's law all describe relationships between the absorption and emission of photons. Einstein deals with transitions between two energy levels on an atomic level using the properties and thermal distributions of atoms. Milne is the analogous relationship for ionization and radiative recombination. The Kirchoff law is general and describes both in terms of the bulk properties of the material like emission and absorption coefficients (io is kind of bullshitting here. Does anyone have a better explanation for tying these together?).
-      The question is a little vague, I think Io's answer is pretty good.  
+      The Einstein relations, Milne relations, and Kirchoff's law all describe relationships
+      between the absorption and emission of photons. Einstein deals with transitions between
+      two energy levels on an atomic level using the properties and thermal distributions of
+      atoms. Milne is the analogous relationship for ionization and radiative recombination.
+      Kirchoff's law relates the absorption and emission coefficients in thermodynamic
+      equilibrium.
       Kirchoff's law and the Einstein relations both relate emission and 
       absorption of photons, but Kirchoff's law only holds for thermal 
       radiation.  The Einstein relations are more general and extend Kirchoff's 
-      law to non-thermal radiation processes.  I don't really 
-      see a relationship like that between the Einstein and Milne relations, 
-      so maybe the question just wants us to say the connection between 
-      detailed balance and the Einstein relations and the connection between 
-      detailed balance and the Milne relations.
+      law to non-thermal radiation processes.
       
-      Bremsstrahlung:\newline
-      Kirchoff's law can be used to determine the free-free absorption coefficient.  Free-free 
-      absorption is just the inverse process to Bremsstrahlung emission, so by knowing the 
-      emission coefficient from Bremsstrahlung, the absorption coefficient can be calculted using 
-      Kirchoff's law:
-      \begin{displaymath}j_{\nu}=\alpha_{\nu}B_{\nu}\end{displaymath}
-      The emission coefficient can be derived by treating Bremsstrahlung interactions as Thompson 
-      scattering by virtual photons in the frame of the electron.  For a thermal population 
-      of electrons, this gives an expression for the emission coefficient of 
-      \begin{displaymath}\epsilon_{\nu}^{ff}=6.8\times10^{-38}T^{-1/2}Z^2n_en_ie^{-h\nu/kT}\overline{g_{ff}}ergs/s/cm^3/Hz\end{displaymath}
-      Using $j_{\nu}^{ff}=\epsilon_{\nu}^{ff}/4\pi$ and the expression for the Blackbody function, and 
-      plugging into Kirchoff's law, gives:
-      \begin{displaymath}\alpha_{\nu}^{ff}=3.7\times10^8T^{-1/2}Z^2n_en_i\nu^{-3}(1-e^{-h\nu/kT})\overline{g_{ff}}cm^{-1}\end{displaymath}
-
+      \newthought{In the case of bremsstrahlung}, the emission process is much easier to think
+      about the reverse absorption process.  However, given Kirchoff's law and an expression
+      for $j_\nu$ (see Section~\ref{sec:bremsstrahlung} for a derivation), the absorption
+      coefficient is simply
+      $\alpha_\nu = j_\nu / B_\nu$.  Recalling that $j_\nu = \epsilon_\nu/4\pi$, we have
+      \begin{dgroup}
+      \begin{dmath}
+      \epsilon_{\nu}^{ff}=6.8\times10^{-38}T^{-1/2}Z^2n_en_ie^{-h\nu/kT}\overline{g_{ff}}ergs/s/cm^3/Hz
+      \end{dmath}
+      \begin{dmath}
+      \alpha_{\nu}^{ff}=3.7\times10^8T^{-1/2}Z^2n_en_i\nu^{-3}(1-e^{-h\nu/kT})\overline{g_{ff}}cm^{-1}
+      \end{dmath}.
+      \end{dgroup}
       
 \item \textbf{Draw the energy levels of the hydrogen atom and identify which transitions are
       allowed. Which ones are in the visible part of the spectrum? Which level has no
       allowed decays, and what is its main decay mode?}
 
-      \begin{table}[ht]
-      \begin{tabular}{cccc}
+      \marginnote{
+      \begin{center}\begin{tabular}{cccc}
       $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
       4s & 4p & 4d & 4f \\
       3s & 3p & 3d &\\
       2s & 2p &&\\
       1s &&&\\
-      \end{tabular}
-      \caption{The energy levels of the hydrogen atom (ignoring fine structure).  The first
-               number is the principal quantum number, usually denoted by $n$.  The second letter
-               denotes the orbital angular momentum $l$, where s, p, d, and f denote
-               $l=1,\,2,\,3,\,4$ respectively.  The energy of a state is given by
-               $E_n = -13.6\,{\rm eV}/n^2$.}
-      \label{tab:hydrogen_energy_levels}
-      \end{table}
+      \end{tabular}\end{center}
+        The above sketch shows the energy levels of the hydrogen atom (ignoring fine structure).
+        The first number is the principal quantum number, usually denoted by $n$.
+        The second letter denotes the orbital angular momentum $l$, where s, p, d, and f denote
+        $l=1,\,2,\,3,\,4$ respectively.  The energy of a state is given by
+        $E_n = -13.6\,{\rm eV}/n^2$.
+      }
 
       \newthought{The allowed transitions}
       between states are governed by so-called ``selection rules.''
@@ -282,7 +313,7 @@ Remember guys, there's nothing funny about neutrinos.
         \Delta m = 0,\,\pm1
       \end{dmath}
       \end{dgroup}
-      Keeping these selection rules in mind, and looking at Table~\ref{tab:hydrogen_energy_levels},
+      Keeping these selection rules in mind, and looking at sketch in the margins,
       the only state that has no allowed decays is the 2s state.  Its main decay mode is through
       the spontaneous emission of two photons.
       
@@ -292,40 +323,44 @@ Remember guys, there's nothing funny about neutrinos.
 \end{enumerate}
 
 \subsection{Specific intensity}
-Specific intensity $I_{\nu}$ = energy per time per area per frequency per
+\newthought{The specific intensity} $I_{\nu}$ = energy per time per area per frequency per
 steradian (erg/s/Hz/ster/cm$^2$).
 
 \begin{table}[ht]
-\begin{tabular}{cc}
-\hline\hline
-Specific mean intensity (erg/s/cm$^2$/Hz) &
+\centering
+\begin{tabular}{ccc}
+\toprule
+Name & Units & Expression \\
+\midrule
+Specific mean intensity & erg/s/cm$^2$/Hz &
     $J_{\nu}=\frac{1}{4\pi}\int I_{\nu}\,d\Omega$ \\
-Specific energy density (erg/cm$^3$/Hz) &
+Specific energy density & erg/cm$^3$/Hz &
     $u_{\nu}=\frac{4\pi}{c}J_{\nu}$ \\
-Energy Flux (erg/s/cm$^2$/Hz) &
+Energy Flux & erg/s/cm$^2$/Hz &
     $F_{\nu}=\int I_{\nu}\cos \theta\,d\Omega$ \\
-Momentum Flux &
+Momentum Flux &&
     $p_{\nu}=\frac{1}{c}\int I_{\nu}\cos^2 \theta\,d\Omega$ \\
-\hline\hline
+\bottomrule
 \end{tabular}
 \caption{Moments of the specific intensity}
+\label{tab:moments}
 \end{table}
 
 \subsection{Radiative Transfer}
-In steady state, with no scattering, along a path s, change in intensity is emission - absorption.
+\newthought{In steady state},
+with no scattering, along a path $s$, change in intensity is emission - absorption.
 \begin{dmath}\frac{dI_{\nu}}{ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\end{dmath}
-where $\kappa_{\nu}$=absorption opacity=$n\sigma$=$\frac{1}{\lambda_{\nu}}$ and $j_{\nu}$ is 
+where $\kappa_{\nu}=\text{absorption opacity}=n\sigma=1/\lambda_{\nu}$ and $j_{\nu}$ is 
 defined as the energy emitted per unit volume per steradian per second per Hz.  This is similar 
 to emissivity, except emissivity ($\epsilon_{\nu}$) is per unit mass, not per unit volume.
 An alternate for of the radiative transfer equation is 
-\begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}\end{dmath}
+\begin{dmath}\boxed{\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+S_{\nu}}\end{dmath}
 $S_{\nu}=\frac{j_{\nu}}{\kappa_{\nu}}$ is the source function and $d\tau_{\nu}=\kappa_{\nu}ds$ 
 is measured along the path of the light ray (from the source to the observer).  If optical depth 
 is measured from the observer to the source, $d\tau_{\nu}$ picks up a negative sign, and the 
 equation becomes
 \begin{dmath}\frac{dI_{\nu}}{d\tau_{\nu}}=I_{\nu}-S_{\nu}\end{dmath}
-
-Solutions to the radiative transfer equation:
+A few solutions to the radiative transfer equation are given below:
 \begin{dgroup}
 \begin{dmath}
 \text{Constant source function:}\quad
@@ -341,19 +376,19 @@ Solutions to the radiative transfer equation:
 \end{dmath}
 \end{dgroup}
 
-Random Walk:\newline
-Good derivation in Carrol and Ostlie of 3-D random walk.  Number of steps needed to travel a 
+\newthought{Radiative transfer can} also be treated as a random walk problem.
+There is a good derivation in Carrol and Ostlie of 3-D random walk.  Number of steps needed to travel a 
 distance R is $R^2\lambda^2$.  Diffusion time is thus $\frac{R^2}{\lambda c}$ or $\frac{\tau R}{c}$ 
 for constant optical depth.  Technically, I think there should be a factor of 3 the numerator, 
 but this is all handwavy and order of magnitude anyway.
 
 \subsection{Blackbody Emission}
-Derivation of the Blackbody Function:
-Start with specific intensity.  Specific intensity is energy per time per area per frequency per 
+\newthought{To derive the Planck function},
+start with specific intensity.  Specific intensity is energy per time per area per frequency per 
 steradian.  Consider photons moving through an area dA in a direction so that they continue 
 through a solid angle d$\Omega$ (there's a drawing in our notes).  The energy these photons carry 
 is $h\nu dN$, where $dN=f_{\nu}(\v{x},\v{p})d^3xd^3p$.  $d^3x$ is just the volume a photon can be in 
-and still pass though dA at an angel we want, so this is just $cdt\cos{\theta}dA$.  $d^3p$ is the 
+and still pass though dA at an angle we want, so this is just $cdt\cos{\theta}dA$.  $d^3p$ is the 
 volume in momentum space a photon can be in.  It must be travelling in a direction to pass through 
 $d\Omega$, so the region of momentum space it can be in is also limited by $d\Omega$.  So 
 $d^3p=d\Omega p^2dp=d\Omega \frac{h^2\nu^2}{c^2}\frac{h}{c}d\nu$.  Putting this all together gives 
@@ -363,34 +398,40 @@ So $I_{\nu}=\frac{h^4\nu^3}{c^2}f_{\nu}$.
 Using the Bose-Einstein distribution for photons, 
 \begin{displaymath}f_{\nu}=\frac{2}{e^{\frac{h\nu}{kT}}-1}\end{displaymath}
 gives
-\begin{displaymath}\boxed{B_{\nu}(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{\frac{h\nu}{kT}}-1}}\end{displaymath}
+\begin{dmath}\boxed{B_{\nu}(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{\frac{h\nu}{kT}}-1}}\end{dmath}
 
-Energy density:\newline
-Use the moment formula above for u, and integrate $B_{\nu}$ over all frequencies to get 
-\begin{displaymath}u=aT^4\end{displaymath}
-Limits:
-Rayleight-Jeans limit-$h\nu<<kT$
-\begin{displaymath}I_{\nu}(T)=\frac{2\nu^2kT}{c^2}\end{displaymath}
-Here, T is often used as the brightness temperature.
-Wien limit-$h\nu>>kT$
-\begin{displaymath}I_{\nu}(T)=\frac{2h\nu^3}{c^2}e^{-\frac{h\nu}{kT}}\end{displaymath}
-Wien Displacement Law:
-\begin{displaymath}h\nu_{max}=2.82kT\end{displaymath}
-\begin{displaymath}T\lambda_{max}=0.29cmK\end{displaymath}
-Radiative diffusion:
-In the radiative transfer involving thermal radiation, the source function $S_{\nu}=B_{\nu}$.  
-This is derived from Kirchoff's Law.  
-So the transfer equation becomes 
-\begin{displaymath}\frac{dI_{\nu}}{d\tau_{\nu}}=-I_{\nu}+B_{\nu}\end{displaymath}
-In the limit of Rayleigh-Jeans limit, 
-\begin{displaymath}I_{\nu}(T_b)=\frac{2\nu^2kT_b}{c^2}\end{displaymath}
-by the definition of brightness temperature.  Also, 
-\begin{displaymath}B_{\nu}(T)=\frac{2\nu^2kT}{c^2}\end{displaymath}
-So the transfer equation becomes
-\begin{displaymath}\frac{dT_b}{d\tau_{\nu}}=-T_b+T\end{displaymath}
-The solution is similar to the intensity solution:
-\begin{displaymath}T_b(\tau_{\nu})=T_b(0)e^{-\tau_{\nu}}+T(1-e^{-\tau_{\nu}})\end{displaymath}
-This is basically saying for a material of temperature T that is emitting thermally, if the 
+\newthought{The energy density} of a blackbody radiation field is found by taking the
+first-moment of the radiation field (see Table~\ref{tab:moments}) and integrating over
+all frequencies to find
+\begin{dmath}\boxed{u=aT^4}\end{dmath}.
+In a photon gas, the pressure is simply $1/3$ of the energy density, so the radiation pressure is
+\begin{dmath}\boxed{P=\frac{1}{3}aT^4}\end{dmath}.
+
+\newthought{We can also} simplify the Planck function by considering various limits.  First,
+in the low-frequency, classical, or Rayleigh-Jeans limit ($h\nu\ll kT$) we have
+\begin{dmath}\boxed{I_{\nu}(T)=\frac{2\nu^2kT}{c^2}}\end{dmath}.
+In the high-frequency, or Wien limit ($h\nu\gg kT$)\sidenote{
+    This limit is rarely used.
+} we have
+\begin{dmath}I_{\nu}(T)=\frac{2h\nu^3}{c^2}e^{-\frac{h\nu}{kT}}\end{dmath}
+The Wien displacement law gives the location of the peak of the Planck function:
+\begin{dgroup}
+\begin{dmath}h\nu_{max}=2.82kT\end{dmath}
+\begin{dmath}T\lambda_{max}=0.29\,\text{cm K}\end{dmath}
+\end{dgroup}
+
+\subsection{Brightness Temperature}
+\newthought{In radio astronomy}, the brightness temperature is typically used in place of
+the specific intensity.  In the Rayleigh-Jeans limit, the brightness temperature is given by
+\begin{dmath}
+    T_b \frac{c^2}{2k\nu^2}I_\nu
+\end{dmath}.
+Using this definition, the radiative transfer equation in the Rayleigh-Jeans limit (and
+assuming thermal radiation\sidenote{See Kirchoff's law}) becomes
+\begin{dmath}\frac{\d T_b}{\d\tau_{\nu}}=-T_b+T\end{dmath}.
+Assuming the medium has a constant temperature, the solution is
+\begin{dmath}T_b(\tau_{\nu})=T_b(0)e^{-\tau_{\nu}}+T(1-e^{-\tau_{\nu}})\end{dmath}
+This is basically saying for a material of temperature $T$ that is emitting thermally, if the 
 material is optically thin, the observed brightness temperature will change based on the amount 
 of the material present.  More material means more emission, but the emission is not re-absorbed 
 by the extra material.  For an optically thick material, $\tau$ is large, and the observed 
@@ -399,7 +440,7 @@ optically thick things emit like blackbodies.  The equation for $T_b$ above is j
 statement of this.
 
 \subsection{Thomson Scattering}
-The cross section is defined by
+\newthought{The cross section} is defined by
 \begin{dmath*}
 \sigma_T = \frac{\text{power radiated by accelerated electron}}{\text{flux incident on the electron}}
 \end{dmath*}.
@@ -408,7 +449,7 @@ Starting from the dipole approximation, the power radiated by the accelerated el
 P = \frac{2{\ddot d}^2}{3c^3}
 \end{dmath}.
 By balancing forces ($eE_0sin(\omega t) = m_e\ddot r$)\sidenote{
-    Note that we take the time average here so that $\langle \sin^2 \rangle = 1/2$.
+    Note that we take the time average here so that $\langle \sin^2(\omega t) \rangle = 1/2$.
 }, the power becomes
 \begin{dmath}
 P = \frac{e^4E_0^2}{3c^3m_e^2}
@@ -422,12 +463,12 @@ So finally the Thomson cross-section is given by
 \sigma_T = \frac{8\pi e^4}{3c^4m_e^2}
 }\end{dmath}.
 
-\subsection{Bremsstrahlung}
-Let's begin by imagining an electron traveling (in a straight line) by a nucleus
+\subsection{Bremsstrahlung}\label{sec:bremsstrahlung}
+\newthought{Let's begin by imagining} an electron traveling (in a straight line) by a nucleus
 with atomic number $Z$.  The transverse acceleration is
 \begin{dmath}
     a_\perp = \frac{Ze^2}{m_e}\frac{1}{x^2+b^2}\frac{b}{\sqrt{x^2+b^2}}
-\end{dmath},
+\end{dmath}.
 The total perturbation to the perpendicular velocity
 is therefore given by
 \begin{dgroup*}
@@ -492,7 +533,7 @@ be created.  Therefore choose $v_{\rm min}=(2h\nu/m_e)^{1/2}$ and finally we hav
 }\end{dmath}.
 Note that this spectrum is essentially \emph{flat} until $h\nu\sim kT$.
 
-As an alternative thought\sidenote{
+\newthought{As an alternative thought}\sidenote{
     Michael: I think it's interesting to think about electron's Compton scattering off
     virtual photons conceptually, but I don't think it's elucidating (even slightly).
     I have no intuition about how an electron should Compton scatter virtual photons and
@@ -510,57 +551,122 @@ velocities of a population of electrons, and consider many possible ions to inte
 Know how to describe and explain a Bremsstrahlung spectrum.
 
 \subsection{Cyclotron}
-Non-relativistic electrons spiraling in a magnetic field.  From far away, looks like a dipole.  
-\begin{displaymath}P=\frac{2e^2a^2}{3c^3}\end{displaymath}
-The acceleration can be found from the cyclotron frequency:
-\begin{displaymath}a=\dot{v}=\frac{v^2}{r}=v\omega_{cyc}=v\frac{eB}{m_ec}\end{displaymath}
-\begin{displaymath}P=\frac{2e^4B^2v^2}{3c^5m_e^2}\end{displaymath}
-\begin{displaymath}\boxed{P=\frac{2}{3}r_0^2B^2c\beta^2}\end{displaymath}
+\newthought{Cyclotron emission is} due to \emph{non-relativistic} electrons spiraling around
+magnetic field lines.  Begin by equating the centripetal force with the magnetic force
+\begin{dmath*}
+    m_ea = \frac{m_e (v\sin\alpha)^2}{r} \nolinebreak = \frac{evB}{c}\sin\alpha
+\end{dmath*}.
+This allows us to solve for the Larmor radius, $r$, and cyclotron frequency, $\omega=v\sin\alpha/r$:
+\begin{dgroup*}
+\begin{dmath}
+    r = \frac{m_evc}{eB}\sin\alpha
+\end{dmath}
+\begin{dmath}
+    \boxed{\omega = \frac{eB}{m_ec}}
+\end{dmath}
+\end{dgroup*}
+The total power radiated from a single electron can be found by applying the Larmor formula
+for radiated power as follows
+\begin{dmath*}
+    P = \frac{2e^2a^2}{3c^3} \nolinebreak = \frac{2e^4v^2B^2}{3c^5m_e^2} \sin^2\alpha \nolinebreak
+      = 2\sigma_Tc\beta^2\frac{B^2}{8\pi}\sin^2\alpha
+\end{dmath*}.
+Averaging over pitch angle\sidenote{
+    Average the pitch angle over solid angle:
+    \begin{dmath*}
+        \langle \sin^2\alpha \rangle = \frac{1}{4\pi}\int \sin^2\alpha \,\d\Omega
+            \nolinebreak = \frac{2}{3}
+    \end{dmath*}
+}, we find
+\begin{dmath*}\boxed{
+    P = \frac{4}{3}\sigma_Tc\beta^2\frac{B^2}{8\pi}
+}\end{dmath*}.
 
 \subsection{Synchrotron}
-See will ask for derivation of power from single electron.  
+See the will ask question (Section~\ref{sec:rad_will_ask})
+for a derivation of the total radiated power from a single electron.  
 
-To get the spectrum of many electrons, assume a power law distribution of electron energies, and 
-multiply this by the power of one electron as a function of energy.  This results in 
-\begin{displaymath}j_{\nu}\propto B^{(p+1)/2}\nu^{(1-p)/2}\end{displaymath}
-For most synchrotron spectra, $(1-p)/2\equiv \alpha=-0.7$, so
-\begin{displaymath}j_{\nu}\propto B^{1.7}\nu^{-0.7}\end{displaymath}
-For optically thick synchrotron, absorption becomes important.  In this regime, $h\nu<<kT$, so
-\begin{displaymath}I_{\nu}=\frac{2k}{c^2}T\nu^2\end{displaymath}
-Since synchrotron is a non-thermal process, T is no longer brightness temperature, and varies 
-as a function of frequencies (electrons emitting at different frequencies have different 
+\newthought{For an ensemble} of electrons, assuming the electron energy distribution
+is a power law\sidenote{
+    For some reason, we only consider a power law here instead of a thermal distribution of
+    electrons.
+}, the total power is given by
+\begin{dmath}
+    P_{\rm tot}(\omega) = \int P(\omega,\omega_c)E^{-p}\,\d E
+\end{dmath},
+where $\omega_c \propto \gamma^2B$ is the critical frequency and $E\propto\gamma$.  Changing
+variables to $x=\omega/\omega_c$, such that
+\begin{dmath*}
+\d E \propto \omega_c^{-1/2}\,\d\omega_c \nolinebreak \propto \omega^{1/2}x^{-3/2}\,\d x
+\end{dmath*},
+which gives us (after a little bit of algebra)
+\begin{dmath*}
+    P_{\rm tot}(\omega) = \omega^{-(p-1)/2}\int P(x)x^{(p-3)/2}\,\d x
+\end{dmath*}.
+Assuming the integral is constant leads us to a power law spectrum $\propto\omega^{-(p-1)/2}$.
+For most synchrotron spectra, $(1-p)/2\equiv \alpha=-0.7$.\sidenote{Citation needed}
+
+Notice that the synchrotron emission is stronger at lower frequencies.  This means that the
+emission is more likely to be optically thick at low frequencies\sidenote{
+    Recall that the emission and
+    absorption coefficients are related.  Although in this case, Kirchoff's law is not
+    applicable because we do not have thermal equilibrium.
+}
+When the emission is optically thick, absorption becomes important and $h\nu\ll kT$, so we
+can take the Rayleigh-Jeans approximation
+\begin{dmath*}I_{\nu}=\frac{2k}{c^2}T\nu^2\end{dmath*}.
+Since synchrotron is a non-thermal process, $T$ is the brightness temperature (not the physical
+temperature of the gas), and varies 
+as a function of frequency (electrons emitting at different frequencies have different 
 temperatures).  Assuming an electron emits at its critical frequency, $\nu\propto\gamma^2$, so 
-$\gamma\propto\nu^{1/2}$.  Assuming $kT\sim E=\gamma m_ec^2$, then 
+$\gamma\propto\nu^{1/2}$, and assuming $kT\sim E=\gamma m_ec^2$, then 
 $T\propto\gamma\propto\nu^{1/2}$.  So, the synchrotron spectrum is described by
-\begin{displaymath}I_{\nu}\propto \nu^{5/2} (low\ frequency,\ optically\ thick)\end{displaymath}
-\begin{displaymath}I_{\nu}\propto \nu^{-0.7} (high\ frequency,\ optically\ thin)\end{displaymath}
+\begin{dgroup}
+\begin{dmath}I_{\nu}\propto \nu^{5/2}\quad\text{(low frequency, optically thick)}\end{dmath}
+\begin{dmath}I_{\nu}\propto \nu^{-(p+1)/2}\quad\text{(high frequency, optically thin)}\end{dmath}
+\end{dgroup}
 
+\newthought{Although the above} set of equations seems to indicate that a synchrotron sectrum
+can be described by two power laws, this is never actually seen in nature.  The reason is that
+synchrotron radiation rapidly cools the higher energy electrons, producing an exponential
+cutoff in the spectrum.  The timescale for this is given by
+\begin{dgroup*}
+\begin{dmath*}
+    t_{cool}=\frac{E}{-dE/dt}\nolinebreak=\frac{\gamma m_ec^2}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}
+\end{dmath*}
+\begin{dmath}
+    \boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}
+\end{dmath}
+\end{dgroup*}
 
-\subsection{Synchrotron Self-Absorption}
-	I did not even understand what was going on with this when I started studying, so I thought I'd write down what I found out in case this confuses anyone else.
-	An astrophysical synchrotron has an ensemble of electrons at various energies, producing emission at their own characteristic frequencies. The energy levels of these electrons are continuous, but can be treated as quantized on the order of $h^{3}$ (not clear about this part really). Emitted photons can change the energy level of another electron by being absorbed and giving up their energy to the electron.
-	The amount that this happens depends on the way the electron energies are distributed, both for the emission spectrum and for the distribution of energy levels that can absorb photons of specific energies.
-	Result:
-	\begin{equation}
-	\text{non-thermal electron distribution:} \quad S_{\nu} \propto \nu^{5/2}		
-	\end{equation}
-	\begin{equation}
-	\text{thermal electron distribution:} \quad S_{\nu} \propto \nu^{2}		
-	\end{equation}
-	
-	$\rightarrow$Lower energy photons are more likely to be absorbed, because for them, the synchrotron source is optically thick. You could also say it conversely: the synchrotron source is optically thick for lower energy photons because they are more likely to be absorbed. This is what causes the synchrotron spectrum to turn over and not just continue to infinity for long wavelengths.
-
-Synchrotron Cooling:
-Electrons cool by emitting photons, timescale given by
-\begin{displaymath}t=\frac{E}{-dE/dt}=\frac{\gamma m_ec^2}{\frac{4}{3}\sigma_Tc\beta^2\gamma^2U_B}\end{displaymath}
-\begin{displaymath}\boxed{t_{cool}=\frac{3m_ec}{4\sigma_TU_B\gamma \beta^2}}\end{displaymath}
-
-Equipartition:
-Electron and magnetic field energy density both scale with B.
-\begin{displaymath}U_e\propto B^{-3/2}\end{displaymath}
-\begin{displaymath}U_B\propto B^2\end{displaymath}
-At minimum total energy, $U_e\sim U_B$.  Assuming equipartion, the flux from a synchrotron source 
-can be used to determine $U_e$, which can then be used to determine $U_B$.
+\newthought{Nature tends towards} minimizing the total energy of a system.  Given a fixed
+luminosity in synchrotron radiation, what is the total energy in the electrons?  What is the
+total energy in the magnetic field?  The total energy in the electrons is given by
+\begin{dmath}
+    U_e = \int E^{1-p}\,\d E \nolinebreak
+        \propto E^{2-p}
+\end{dmath}.
+However, we expect that by increasing the total energy in the electrons, the total luminosity
+will scale proportionally\sidenote{
+    For example, both scale with the number of electrons and total system volume.
+} (which we want to hold constant).
+The total luminosity is given by
+\begin{dmath}
+    L = -\int \frac{\d E}{\d t}E^{-p}\,\d E \nolinebreak
+      \propto B^2\int E^{2-p}\,\d E \nolinebreak
+      \propto B^2 E^{3-p}
+\end{dmath}.
+Assuming the electrons are all radiating at their critical frequency, $E\propto B^{-1/2}$ so
+that
+\begin{dmath}
+    U_e \propto B^{-3/2}L
+\end{dmath}.
+We already know that the total energy in the magnetic field $U_B\propto B^2$, so there exists
+a minimum in the total energy of the system, which we suppose to be near the true value.
+This can be used to approximately measure the magnetic field.\marginnote{
+    The minimum of the total energy $U=U_e+U_B$ occurs near where $U_e=U_B$, so this is
+    another reasonable approximation that can be used to guess the magnetic field.
+}
 
 \subsection{Compton Scattering}
 In Thomson scattering, collisions are elastic (energy of the photon doesn't change).  In Compton 
@@ -604,58 +710,145 @@ Then, the angular size of the cluster can be used to determine its distance.  Th
 its redshift, can be used to measure the Hubble constant.
 
 \subsection{Dispersion}
-Light travelling through a plasma is delayed by an amount 
-\begin{displaymath}\tau=\int\left(\frac{1}{v_g}-\frac{1}{c}\right)\,ds\end{displaymath}
-\begin{displaymath}v_g\sim c\left(1-\frac{\omega_p^2}{\omega^2}\right)^{1/2}\end{displaymath}
-So
-\begin{displaymath}\tau\sim\frac{1}{2c\omega^2}\int\omega_p^2\,ds=\frac{2\pi e^2}{m_ec}\frac{1}{\omega}DM\end{displaymath}
-where $\omega_p^2=\frac{4\pi n_ee^2}{m_e}$ and $DM=\int n_e\,ds$.
+\newthought{The dispersion relation} for an electromagnetic wave traveling through a cold,
+unmagnetized plasma\sidenote{
+    Presented here without proof.  The general idea is that the slowest possible oscillations
+    in a plasma are given by the plasma frequency.  If you try to shake the plasma at frequencies
+    lower than the plasma frequency, the plasma is able to restore itself to its original
+    configuration before one period has elapsed.  This damps the wave.
+} is
+\begin{dmath}
+    \omega^2 = c^2k^2 + \omega_{pe}^2
+\end{dmath},
+where the plasma frequency is given by
+\begin{dmath}
+    \omega_{pe}^2 = \frac{4\pi n_e e^2}{m_e}
+\end{dmath}.
+This implies that the group velocity for the waves is given by
+\begin{dmath}
+    v_g = \frac{\d\omega}{\d k} \nolinebreak
+        = \frac{c^2k}{\sqrt{c^2k^2+\omega_{pe}^2}} \nolinebreak
+        = c\sqrt{1-\frac{\omega_{pe}^2}{\omega^2}} \nolinebreak
+        \approx c\left(1-\frac{1}{2}\frac{\omega_{pe}^2}{\omega^2}\right)
+\end{dmath},
+where the final approximation holds if $\omega^2 \gg \omega_{pe}^2$.
+Therefore, light travelling through a plasma is delayed by an amount 
+\begin{dmath}
+    \tau = \int\left(\frac{1}{v_g}-\frac{1}{c}\right)\,\d s \nolinebreak
+         \approx \frac{1}{2c\omega^2}\int\omega_{pe}^2\,\d s \nolinebreak
+         = \frac{2\pi e^2}{m_e c} \frac{1}{\omega^2} {\rm DM}
+\end{dmath},
+where ${\rm DM} = \int n_e\,\d s$ is known as the dispersion measure.
+
+\subsection{Faraday Rotation}
+\newthought{Faraday rotation occurs} in a \emph{magnetized} plasma.  Magnetized plasmas have
+a fairly complicated dispersion relation that differs depending on whether the wave is
+propagating along the magnetic field lines or transverse to the magnetic field lines.  To avoid
+this complexity, I will only treat this qualitatively.
+
+To begin with, note that electrons spiral right-handed about
+magnetic field lines, while the ions spiral left-handed about those same field lines.
+Therefore, if you imagine a circularly polarized electromagnetic wave traveling down a
+magnetic field line (in the direction of the magnetic field), if it is right-circularly polarized,
+the electric field will tend to align with the electrons.  If it is left-circularly polarized,
+the electric field will tend to align with the ions.  There are many implications for this,
+but the relevant result here is that left- and right-circularly polarized waves travel at
+different speeds through a magnetized plasma\sidenote{
+    Another implication is that if the frequency of the wave is exactly the cyclotron frequency,
+    electrons can be excited to very high energies because the electric field rotates with the
+    electrons.
+}.
+
+A linearly polarized wave is the superposition of a right-circularly polarized wave and a
+left-circularly polarized wave.  However, in the magnetized plasma, these components propagate
+at different speeds.  This causes the polarization of a linearly polarized wave to rotate as
+the wave propagates.
+
+Rybicki and Lightman treat this quantitatively on pages 229 to 231 with the result that the
+angle of rotation $\Delta\theta$ is given by
+\begin{dmath}
+    \Delta\theta=\frac{2\pi e^3}{m_e^2c^2\omega^2}\int n_e B_\parallel\,\d s
+\end{dmath}
+
+\subsection{Stokes Parameters}
+\newthought{The Stokes parameters}, $I$, $Q$, $U$, and $V$, describe the intensity and
+polarization state of the incident radiation.
+\marginnote{
+    \begin{tabular}{rl}
+    $I$ & Total intensity of the radiation\\
+    $Q$ & Vertical/horizontal polarization\\
+    $U$ & $\pm45^\circ$ polarization\\
+    $V$ & Circular polarization\\
+    \end{tabular}
+}
+If the radiation is 100\% polarized, the Stokes parameters are defined so that
+\begin{dmath}
+    I^2 = Q^2 + U^2 + V^2
+\end{dmath},
+however if the polarization is random (the radiation is ``unpolarized''), a time average
+measurement of the Stokes parameters will find $Q^2+U^2+V^2=0$.  Therefore if there
+is an unpolarized component to the radiation, we will measure $I^2 < Q^2 + U^2 + V^2$.
+The polarization fraction of the radiation is given by
+\begin{dmath}
+    \text{polarization fraction} = \frac{\sqrt{Q^2+U^2+V^2}}{I}
+\end{dmath}.
+See Table~\ref{tab:stokes} for some example Stokes parameters and their implied
+polarizations.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cl}
+\toprule
+$(I,Q,U,V)$ & Description \\
+\midrule
+$(1,1,0,0)$ & Linear, horizontal polarization \\
+$(1,-1,0,0)$ & Linear, vertical polarization \\
+$(1,0,1,0)$ & Linear, $+45^\circ$ polarization \\
+$(1,0,-1,0)$ & Linear, $-45^\circ$ polarization \\
+$(1,0,0,1)$ & Circular, right-handed polarization \\
+$(1,0,0,-1)$ & Circular, left-handed polarization \\
+$(1,0,0,0)$ & Random polarization / unpolarized \\
+\bottomrule
+\end{tabular}
+\caption{Example Stokes parameters with the intensity $I$ normalized to unity.}
+\label{tab:stokes}
+\end{table}
 
 \subsection{Hydrogen energy levels}
+\newthought{Neglecting fine structure}, the energy levels of hydrogen are given by
+\begin{dmath}\boxed{
+E_n = -\frac{13.6\,{\rm eV}}{n^2}
+}\end{dmath}.
 
-To calculate the energies of hydrogen levels, the following equation is typically used:
-
-\begin{equation}
-E_n = 13.6eV\big(\frac{1}{n_1^2} - \frac{1}{n_2^2}\big)
-\end{equation}
-
-Here is the derivation of the Rydberg constant.
-
-\begin{equation}
-E_{atom} = \frac{1}{2}mv^2 - \frac{ze^2}{r}
-\end{equation}
-
-Balancing forces:
-
-\begin{equation}
-\frac{ze^2}{r^2} = \frac{mv^2}{r}
-\end{equation}
-
-\begin{equation}
-E_{atom} = \frac{-ze^2}{2r}
-\end{equation}
-
-Since angular momentum is quantized, we have:
-
-\begin{equation}
-L_n = mvr_n = n\big(\frac{h}{2\pi}\big)
-\end{equation}
-
-Solving for v and plugging this value back into the force balance equation yields:
-
-\begin{equation}
-r_n = \big(\frac{h^2}{4\pi^2me^2}\big)\frac{n^2}{z}
-\end{equation}
-
-Atomic energy levels for hydrogen are given by:
-
-\begin{equation}
-E_n = \big(\frac{-2\pi^2me^4}{h^2}\big)\frac{1}{n^2}
-\end{equation}
-
-\begin{equation}
-Ry = \big(\frac{-2\pi^2me^4}{h^2}\big) = -13.6eV
-\end{equation}
-
-
+To derive the Rydberg constant, start with the Hamiltonian for an electron in the
+potential of a nucleus
+\begin{dmath}
+H = \frac{1}{2}mv^2 - \frac{Ze^2}{r}
+\end{dmath}.
+Balancing the electric force with the centripetal force give us
+\begin{dmath*}
+\frac{Ze^2}{r^2} = \frac{mv^2}{r}
+\end{dmath*},
+which implies\sidenote{
+    Notice that this satisfies the Virial theorem!
+}
+\begin{dmath}
+H = -\frac{Ze^2}{2r}
+\end{dmath}.
+Since angular momentum is quantized, we have
+\begin{dmath}
+L_n = mvr_n \nolinebreak = n\hbar
+\end{dmath}
+Solving for v and plugging this value back into the force balance equation yields
+\begin{dmath*}
+r_n = \frac{n^2\hbar^2}{m_eZe^2}
+\end{dmath*}
+Therefore, the atomic energy levels for hydrogenic atoms are given by:
+\begin{dmath}
+E_n = -\left(\frac{me^4}{2\hbar^2}\right)\frac{1}{n^2}
+\end{dmath},
+and the Rydberg constant is
+\begin{dmath}
+{\rm Ry} = \frac{me^4}{2\hbar^2} \nolinebreak = 13.6\,{\rm eV}
+\end{dmath}.
 

@@ -274,6 +274,25 @@ Very high mass stars have luminosities close to their Eddington luminosities,
 meaning they have weakly bound envelopes.  Eddington luminosity is also 
 important for accreting systems like black holes.  
 
+As an alternate derivation, consider the gravitational force on a proton at the star's surface
+and balance that with the outward radiation pressure due to Thomson scattering\sidenote{
+    Strictly speaking, Thomson scattering is a force on the electrons, but the electric
+    force is so strong that the star must remain overall neutral.  Therefore if an electron is
+    pushed out, a proton will soon follow.
+}.
+The gravitational force on this proton is simply
+\begin{dmath*}
+    F_{\rm gravity} = \frac{GM_\star m_p}{R^2}
+\end{dmath*},
+and the force due to the radiation pressure is
+\begin{dmath*}
+    F_{\rm radiation} = \sigma_T\frac{F}{c} \nolinebreak = \sigma_T\frac{L}{4\pi R^2c}
+\end{dmath*}.
+Balancing these two expressions gives
+\begin{dmath}\boxed{
+    L_{\rm edd} = \frac{4\pi G m_p c}{\sigma_T} M_\star
+}\end{dmath}
+
 \subsection{Distribution Functions}
 \begin{dgroup}
 \begin{dmath}

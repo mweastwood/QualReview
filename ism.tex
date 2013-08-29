@@ -57,10 +57,54 @@ before the final.
       \end{center}
       \caption{Spectrum of an HII region with the continuum removed. \label{f:HIIspec}}
 	\end{figure}
+	
+	 The spectrum is similar to that of a planetary nebula (a ball of mostly-hydrogen gas ionized by the newly formed white dwarf instead of a young star). The Hydrogen features are from transitions to the $n=2$ state (no Lyman features are pictured here, but ${\rm Ly}\alpha$ should be there). 
+	 
+	 The other prominent features are from singly- and doubly-ionized Oxygen bound-bound transitions. These ions are important coolants in HII regions and act as thermostats for the gas. Free electrons zooming around will collisionally excite the Oxygen ions to an excited state, which will then decay and radiate line emission. The gas is optically thin to these lines, so they are very prominent in the spectra. 
+	 
+	 \emph{An Explanation of Oxygen Cooling in HII Regions--} The Oxygen ions help maintain the temperature of the HII region at a steady 10,000 K. This is because they are collisionally excited. If the gas is hotter than 10,000 K, the increased velocity of the free electrons increases the number of collisions, converting the excess kinetic energy into line emission which escapes the gas. If the gas is cooler than 10,000 K, the lower velocity reduces the number of collisions, and hence the amount of cooling. This allows the gas opportunity to gain energy and increase its temperature back up to 10,000 K.\emph{end side note}
+	 
+	 The continuum from the HII region is from the star, and from recombination. I wish I had figures of either of these but I couldn't find any. The star's blackbody is modified as the Hydrogen absorbs any wavelength shortward of the Lyman limit of 912\AA. Remember that wavelengths closer to that number are absorbed preferentially, so photons of much higher energy are not attenuated as much. This manifests as a sharp drop of stellar flux at the Lyman limit, and then a slight rise toward shorter wavelengths. I actually found a figure of this situation but I forgot which book it was in and couldn't find it again... Basically this is what makes the stellar spectrum 'harder' toward the edge of the HII region: all the flux right at the Lyman limit has been absorbed, so the far UV flux is higher than the near UV flux. The longer wavelengths of the star's spectrum is mostly left untouched.
+	 
+	 As Hydrogen can be ionized by many possible wavelengths, the free electrons that result can have a continuum of energies. This also means that when one of these free electrons recombines with Hydrogen, the first photon it releases can have a continuum of energies. This is called the "recombination continuum". Unfortunately I have no idea what it looks like in a spectrum...
+	 
+	 
 \item \textbf{Explain quantitatively what determines the temperature of dust grains and their
       thermal emission spectrum. Give examples of astrophysical environments with different
       dust temperatures.}
 \end{enumerate}
+
+	First, let's remember what dust is. Dust grains are macroscopic particles of mostly ices and metals in solid form. With radii of $r \sim 1 nm - 0.1 \mu m$, they are around the same size of what we'd consider 'smoke'. Because they are macroscopic, their emission is based on their \textbf{temperature}. A gas's temperature is determined by interactions with a radiation field, but also by collisions between the particles. Dust temperature, however, is only determined by equilibrium with the radiation field. Hence, \emph{mixed gas and dust can have different temperatures}. 
+	
+	Dust absorbs preferentially bluer light, depending on the grain's size. In class we had a homework problem where the fraction of light absorbed was defined as:
+	
+	\begin{equation}
+	Q_{abs} = (\frac{2\pi a}{\lambda})^{n}
+	\end{equation}
+	
+	where $a$ is the radius of the dust grain, and $n$ is a positive number. If the grain is very large, or the photon wavelength is very small, all light will be absorbed. This quantity comes into play in the definition of the dust absorption coefficient:
+	
+	\begin{equation}
+	\kappa_{\lambda} = \pi a^{2} Q_{abs} n_{dust}
+	\end{equation}
+	
+	For the typical sizes of dust grains, in a region where the incident flux is dominated by UV light, one can approximate as all the incident flux being absorbed by the dust. 
+	
+	This coefficient, in a detailed treatment, also affects the emission of the dust grain, where:
+	
+	\begin{equation}
+	j_{\lambda} = \kappa_{\lambda} B_{lambda}(T_{dust})
+	\end{equation}
+	
+	This describes the emission as a blackbody at equilibrium dust temperature $T_{dust}$ modified by the opacity. 
+	
+	In the approximation that the dust emits completely like a blackbody, $n = 1$ and one finds the temperature of the dust as function of distance from a nearby star:
+	
+	\begin{equation}
+	T_{dust}(r) = \sqrt{\frac{R_{*}}{2r}}T_{*}
+	\end{equation}	
+	
+	
 
 \subsection{Useful Numbers and Relations}
 $2\times10^{21}$ H cm$^{-2}$ for $1$ mag of visual extinction\newline
@@ -507,10 +551,10 @@ slower D-type front.  In an R-type front, $u_1>u_R>a_2>a_1$, so the shock into t
 is supersonic.  In a D-type front, $u_1<u_D<a_1<a_2$, so the shock is subsonic.  
 
 \begin{figure}[!h]
-\label{fig:shock}
 \begin{center}
 \includegraphics[width=\textwidth]{shock_plot.pdf}
 \end{center}
+\caption{Density vs. Velocity in an expanding HII region \label{fig:shock}}
 \end{figure}
 
 For every ionization front velocity $u_1$, there are two possible density ratios because of the 
@@ -544,10 +588,10 @@ R_{final}=\left(\frac{2T_2}{T_2}\right)^{2/3}R_S\sim27R_S
 Before the HII region gets to this point though, the central star will have supernova-ed.  
 
 \begin{figure}[!h]
-\label{fig:front}
 \begin{center}
 \includegraphics[width=\textwidth]{shock_diagram.pdf}
 \end{center}
+\caption{Evolution of the shock created by an expanding HII region \label{fig:front}}
 \end{figure}
 
 The other thing of interest for HII regions is ionization fraction.  Balancing ionization with 
@@ -589,17 +633,67 @@ suggest another scientific term- ``gets a tan'')
 
 Some facts about dust:
 
-Thermal emission from dust grains is usually in the range of sub-mm wavelengths to about $2~\mu m$. Dust extinguishes (through both absorption and scattering) background sources in the $0.1-20~\mu m$ range, from UV to mid-IR. This range implies that the sizes of particles is about $0.1-0.2~\mu m$, though I'm not sure why. Dust also polarizes light, and this has to do with how magnetic fields cause dust grains to align, but someone should help fill in the details here.
+Thermal emission from dust grains is usually in the range of sub-mm wavelengths 
+to about $2~\mu m$. Interstellar grains, with temperatures of $10-100$ K, emit
+at $30-300\ \mu$m.  Grains near stars have temperatures of a few hundred 
+Kelvin, and emit at around $10\ \mu$m.  Dust extinguishes (through both absorption and scattering) background sources in the $0.1-20~\mu m$ range, from UV to mid-IR. This range implies that the sizes of particles is about $0.1-0.2~\mu m$ (see explanation below). Dust also polarizes light, and this has to do with how magnetic fields cause dust grains to align, but someone should help fill in the details here.
 
 Some observational evidence of dust includes the following. One is that low observed abundances of heavy elements, i.e. lower than solar, means that individual metal atoms have been depleted in order to form dust grains. Another is the presence of molecular hydrogen, whose formation if catalyzed on the surfaces of dust grains. Dust also can shield H$_2$ from UV radiation, which prevents it from dissociating as much (Anneila also lists IR absorption lines and diffuse radiation in the galaxy. See notes 5).
 
-Scattering by dust roughly follows a $\lambda^{-1}$ law, meaning that redder light is extinguished more easily. Extinction from dust, represented by $A_\lambda$, increases the apparent magnitude of an object:
+Another observational indicator of dust is through the extinction (absorption + scattering) and reddening of the light from background stars.  Scattering by dust roughly follows a $\lambda^{-1}$ law; therefore, shorter bluer wavelengths are more effectively scattered, and light that is transmitted through the cloud appears redder.  An observer not along the dust cloud-star-line-of-sight will receive the shorter bluer wavelengths which were scattered by the dust cloud, and will therefore see a blue reflection nebula.
+
+Extinction from dust, represented by $A_\lambda$, increases the apparent magnitude of an object:
 
 \begin{equation}
 m_\lambda = M + 5 \log d - 5 + A_\lambda \,\, .
 \end{equation}
 
-Assuming $I = I_0 e^{-\tau_\lambda}$,
+Assuming the fractional change in the intensity of light is
+
+\begin{equation}
+I_{\lambda} / I_{\lambda,o} = e^{-\tau_{\lambda}},
+\end{equation}
+
+\noindent we can combine this with
+
+\begin{equation}
+m_1 - m_2 = -2.5 \log_{10} \left(\frac{F_1}{F_2}\right)
+\end{equation}
+
+\noindent to show that
+
+\begin{equation}
+A_\lambda = 1.086 \tau_\lambda.
+\end{equation}
+
+That is, the change in magnitude due to extinction by dust is approximately equal to the optical depth along the line of sight.
+
+\textbf{Mie theory and why dust extinction follows a $1/\lambda$ law}: We can define the extinction coefficient $Q_{\lambda}$ as
+
+\begin{equation}
+Q_\lambda \equiv \frac{\sigma_{\lambda}}{\sigma_g}
+\end{equation}
+
+\noindent where $\sigma_\lambda$ is the scattering cross section and $\sigma_g = \pi a^2$ is the geometrical cross section of the dust grain.  Mie theory states that in the regime where the wavelength of light $\lambda$ is on the order of the size of the dust grains $a$, then $Q_\lambda \sim a/\lambda$.\sidenote{The derivation of this involves using the complex index of refraction and solving Maxwell's equations with appropriate boundary conditions.  I don't include this derivation here; it can be found in Anneila's notes - Lecture 6, pg. 19.}  Then,
+
+\begin{equation}
+\sigma_\lambda \propto \frac{a^3}{\lambda} \quad (\lambda \gtrsim a)
+\end{equation}
+
+This is why dust scattering goes as $1/\lambda$, and why dust particles that are about $0.1-0.2$ $\mu m$ effectively extinct background sources in the $0.1 - 20$ $\mu m$ range (UV to mid-IR).  For wavelengths much longer than this, $Q_{\lambda}$ goes to zero.\sidenote{The waves on the surface of water analogy is good for remembering this.  If the wavelength of the waves is much larger than the object through which they are passing, like a grain of sand, then the waves will pass through unobstructed.}  For wavelengths much smaller than this, $Q_\lambda$ becomes independent of $\lambda$, and
+
+\begin{equation}
+\sigma_\lambda \propto a^2 \quad (\lambda \ll a).
+\end{equation}
+
+Figure \ref{dustextinct} shows some interstellar extinction curves.  These are usually plotted as the ratio of the extinction at a specific wavelength $\lambda$ to the extinction in a reference wavelength ($A_\lambda / A_V$) on the y-axis, and $1/\lambda$ on the x-axis.  At longer wavelengths (left side of the plot), the curve shows a linear increase because the extinction is going as $1/\lambda$ (as we expect from Mie theory).  The bump in the ultraviolet (middle of the plot) is caused by graphite and polycyclic aromatic hydrocarbons.  These are small molecules ($< 0.1$ $\mu m$) that interact strongly with light at 217.5 nm.  Beyond the UV (right side of the plot), the steep increase in the slope of the plot is consistent with Rayleigh scattering\sidenote{Like what happens in the Earth's atmosphere!} $A_\lambda \propto \lambda^{-4}$, where the size of the particles doing the Rayleigh scattering is small, $\leq 0.015$ $\mu m$.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=.5\textwidth]{dust_extinction_curve.pdf}\label{dustextinct}
+\end{center}
+\caption{Interstellar extinction curves.}
+\end{figure}
 
 \subsection{Phases of a Supernova}
 \newthought{Anneila mentioned that} this was a fairly popular question on the quals, so
@@ -609,7 +703,7 @@ something that is wrong or could be explained better -- this is the point of usi
 \begin{enumerate}
     \item The free-expansion phase
 
-    This phase is defined by the fact that the velocity of the ejecta is constant with time. This is also known as ``homologous expansion" because the shape of the density profile remains the same. For every shell of the expanding ejecta, the distance from the source $r = vt$. The condition for being in this phase is that $M_{\rm ejecta} \ll M_{\rm swept}$, that is, the mass swept up by the ejecta from the ISM is not a significant fraction of the ejecta mass.
+    This phase is defined by the fact that the velocity of the ejecta is constant with time. This is also known as ``homologous expansion" because the shape of the density profile remains the same. For every shell of the expanding ejecta, the distance from the source $r = vt$. The condition for being in this phase is that $M_{\rm ejecta} \gg M_{\rm swept}$, that is, the mass swept up by the ejecta from the ISM is not a significant fraction of the ejecta mass.
     The expanding mass of ejecta creates a shock that travels outwards through the ISM
     and a reverse shock that travels inwards through the ejecta.  The reverse shock has a finite
     amount of material to travel through and dies away.
@@ -685,9 +779,298 @@ or
 along every streamline. The first term is kinetic energy, the second is gravitational potential energy, and and third is thermal energy $+$ work that can be done.
 
 \subsection{Shocks}
+Adiabatic shocks:\newline
+Shocks form easily in astrophysical enviroments because gravity can accelarate 
+gas to large velocities, but the cold gas in the ISM has a low sound speed.  
+The ratio of flow velocity to sound speed is called the Mach number:
+\begin{equation}
+\boxed{M=\frac{v}{c_s}}
+\end{equation}
+A shock forms when the bulk flow of a fluid is faster than the sound speed in the 
+gas, and the gas is decelerated by another fluid.  Since the fluid is 
+moving supersonically, the next layer of the fluid hits the decelaration before 
+information about the decelaration can reach it from the previous layer.  So 
+the fluid cannot adjust slowly to the decelaration, and a discontinuity forms.  
+This is a shock.  
+
+Adiabatic Shocks:\newline
+The jump conditions across a shock can be derived using the 1-D fluid 
+continiuity equations across the shock boundary.  In the frame of the shock, 
+fluid is coming at the shock from region 1 and leaving the shock into region 2.  
+Consider a thin layer d$x$ around the shock.  Starting with mass continuity:
+\begin{equation}
+\frac{\partial \rho}{\partial t}+\frac{\partial}{\partial x}(\rho u_x)=0
+\end{equation}
+Mass is not accumalted in the layer d$x$, so 
+$\frac{\partial \rho}{\partial t}=0$.  This implies 
+$\frac{\partial}{\partial x}(\rho u_x)=0$, so 
+\begin{equation}
+\boxed{\rho_1u_2=\rho_2u_2}
+\end{equation}
+Similarly, the momentum energy conservation equations (assuming an adiabatic 
+shock) give 
+\begin{equation}
+\boxed{\rho_1u_1^2+p_1=\rho_2u_2^2+p_2}
+\end{equation}
+\begin{equation}
+\boxed{\frac{1}{2}u_1^2+\epsilon_1+\frac{p_1}{\rho_1}=\frac{1}{2}u_2^2+\epsilon_2+\frac{p_2}{\rho_2}}
+\end{equation}
+These are the Rankine-Hugoniot jump conditions.  The energy condition can 
+be put into a more convenient form by substituting for $\epsilon$, the internal 
+energy per unit mass.  The fluid is brought to $\epsilon$ by $p$d$V$ work (it's 
+adiabatic), so
+\begin{equation}
+\epsilon=\frac{pdV}{m}=K\rho^{\gamma}d(1/\rho)=\frac{1}{\gamma-1}\frac{p}{\rho}
+\end{equation}
+Then
+\begin{equation}
+\frac{1}{2}u_1^2+\frac{\gamma}{\gamma-1}\frac{p_1}{\rho_1}=\frac{1}{2}u_2^2+\frac{\gamma}{\gamma-1}\frac{p_2}{\rho_2}
+\end{equation}
+Assuming $\gamma$ does not change across the shock.  Using 
+$=\gamma\frac{p}{\rho}$,
+\begin{equation}
+\frac{1}{2}u_1^2+\frac{c_1^2}{\gamma-1}=\frac{1}{2}u_2^2+\frac{c_2^2}{\gamma-1}
+\end{equation}
+Now follows a bunch of messy algebra that we probably don't need to know, but 
+look at pages 82 and 83 of Clark and Carswell if you're interested.  
+The result is that 
+\begin{equation}
+\frac{\rho_2}{\rho_1}=\frac{(\gamma+1)p_2+(\gamma-1)p_1}{(\gamma+1)p_1+(\gamma-1)p_2}
+\end{equation}
+In a strong shock, $p_1$ is negligible, and this expression becomes
+\begin{equation}\label{eq:den}
+\boxed{\frac{\rho_2}{\rho_1}=\frac{\gamma+1}{\gamma-1}=4}
+\end{equation}
+assuming $\gamma=5/3$.  The compression of the fluid is limited because of 
+the adiabatic assumption.  As the shock gets stronger, the thermal pressure 
+of the post-shocked gas increases, which prevents additional compression.  
+If the thermal energy could be released, this wouldn't happen, but we assumed 
+the shock is adiabatic.  
+
+Using the second jump condition, and neglecting $p_1$, 
+\begin{equation}
+P_2=\rho_1u_1^2-\rho_2u_2^2=\rho_1u_1^2-\rho_1u_1^2/4=\frac{3}{4}\rho_1u_1^2
+\end{equation}
+This can be used with Equation \ref{eq:den} and the ideal gas law to show 
+\begin{equation}
+\boxed{T_2=\frac{3\mu m_H u_1^2}{16k}}
+\end{equation}
+For typical shock velocities of $100$ km/s, this corresponds to post-shock 
+temperatures of $\sim10^5$ K.  Also of interest is the Mach number of the 
+post-shocked gas.  
+\begin{equation}
+M_2^2=\frac{u_2^2}{c_2^2}=
+\frac{\rho_2}{\gamma p_2}\frac{u_1^2}{16}=
+\frac{u_1^2}{16}\frac{4\rho_2}{3\gamma\rho_1u_1^2}=
+\frac{1}{3\gamma}=
+\frac{1}{5}
+\end{equation}
+So the post-shocked gas moves subsonically.
+
+Isothermal Shocks:\newline
+The other limiting case of shocks is an isothermal shock.  In an isothermal 
+shock, the shocked gas cools to its pre-shock temperature.  This 
+happens over a cooling length that is much less than the lengthscale of the 
+system.  The immediate post-shock will be adiabatic, but if this is over a 
+small enough length, the adiabatic portion can be lumped is as part of the 
+shock and ignored.  The continuity conditions can then be applied to the 
+pre-shock and isothermal part of the post-shock.  The first two jump conditions 
+still hold, but the energy conserving one no longer applies.  Instead, it is 
+replaced by 
+\begin{equation}
+\boxed{T_1=T_2}
+\end{equation}
+Since the shock is isothermal, the sounds speed before and after is the same.
+\begin{equation}
+c_s^2=\frac{p}{\rho}
+\end{equation}
+The momentum jump condition then gives
+\begin{equation}
+\rho_1(u_1^2+c_s^2)=\rho_2(u_2^2+c_s^2)
+\end{equation}
+Substituting the mass jump condition for $\rho_1$ and rearrangeing gives
+\begin{equation}
+(u_2-u_1)c_s^2=u_1u_2(u_2-u_1)
+\end{equation}
+Therefore
+\begin{equation}
+c_s^2=u_1u_2
+\end{equation}
+and 
+\begin{equation}
+\boxed{\frac{\rho_2}{\rho_1}=\frac{u_1}{u_2}=\left(\frac{u_1}{c_s}\right)^2=M^2}
+\end{equation}
+So there is no limit to how much a strong shock can compress the gas.  
+Note that because $c_s^2=u_1u_2$ and $u_1>c_s$ by definition of a shock, the 
+post-shocked gas is subsonic.  
+
+Magnetic Fields in Shocks:\newline
+This is based on the class notes, so I'm going to be making some statements 
+that seem to come out of thin air (just like they do in the notes).  Someone 
+who has a better reference or understands this better should fill in the 
+details.  
+
+In the presence of magnetic field, magnetic pressure must be included in 
+the momentum conservation equation across a shock of a plasma.  
+\begin{equation}
+P_1+\rho_1v_s^2+\frac{B_1^2}{8\pi}=P_2+\rho_2u_2^2+\frac{B_2^2}{8\pi}
+\end{equation}
+Assuming that in the pre-shock gas, ram pressure dominates and in the post-
+shock gas, magnetic pressure dominates, this becomes
+\begin{equation}\label{eq:B2}
+B_2^2=8\pi\rho_1v_s^2
+\end{equation}
+Because the magnetic field lines are frozen into the plasma and magnetic flux 
+$B/\rho$ is through a ``circuit'' of the plasma is conserved, the presence 
+of the magnetic field reduces the compression of the gas by the shock.  
+By flux conservation:
+\begin{equation}
+B_2=B_1\frac{\rho_2}{\rho_1}
+\end{equation}
+Combining this with Equation \ref{eq:B2} and solving for the density ratio gives
+\begin{equation}
+\left(\frac{\rho_2}{\rho_1}\right)^2=2\times\frac{4\pi\rho_1v_s^2}{B_1^2}=2\frac{v_s^2}{v_a^2}
+\end{equation}
+where $v_a$ is the \emph{Alfven velocity}, defined as
+\begin{equation}
+v_a\equiv\frac{B}{(4\pi\rho)^{1/2}}
+\end{equation}
+The Alfven Mach number is then defined as 
+\begin{equation}
+M_A\equiv\frac{v_s}{v_A}
+\end{equation}
+With this definition, 
+\begin{equation}
+\frac{\rho_2}{\rho_1}=\sqrt{2}M_A
+\end{equation}
+In the presence of a magnetic field, disturnbance propogate at the Alfven 
+velocity, not at the sound speed.  
+
+In a gas containing a mix of ions and neutrals, a magnetic field will affect 
+the structure of a shock.  Only the ions feel the magnetic field, but they 
+can transfer the effects to the neutrals through collisions.  The shock 
+structure depends on the strength off the magnetic field.  A magnetic 
+precursor to the shock with smooth out the velocity disontinuity for the ions 
+(see Figure \ref{fig:Cshock}).  The magnetic field does not want to 
+suddenly change strength (and therefore flux), so it pushes the ions away from 
+the shock, smoothing their velocity and density change into the shock.  
+In a very weak magnetic field, the ions will 
+have a small warning off the shock, and will feel less of a discontinuity, 
+while the neutrals will be uneffected and feel a normal \emph{J-shock}.  For 
+increasingly strong magnetic fields, the ions will have more warning and 
+their discontinuity will be increasingly smoothed out.  With the additional 
+warning time, the ions will have more time to collisionally change the 
+neutral velocity, smoothing out the neutral discontinuity as well.  If the 
+magnetic field is strong enough, the J-shock of the neutral will turn into 
+a completely smooth transition known as a \emph{C-shock}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{Cshock.pdf}
+\end{center}
+\caption{Shocks involving magnetic fields. \label{fig:Cshock}}
+\end{figure}
 
 \subsection{Magnetic Fields}
+Applications of magnetic fields is covered in shocks and in star formation.  
+
+Observational evidence of interstellar magnetic fields include polarization 
+of starlight, the Zeeman effect, and pulsar faraday rotation measurements.  
+Polarization of starlight is caused by non-sherical dust grains.  These dust 
+grains can be modeled as cylinders rotating end over end, with their short 
+axis parallel to the B field.  Observations indicate ISM B fields of order 
+$10^{-6}$ gauss.  The Zeeman effect can be observed as hyperfine splitting 
+of the $21$ cm H line due to the B field.  The frequency difference between 
+the two lines is $\frac{eB}{4\pi m_ec}\sim3\times10^6B Hz$, so this is 
+difficult to observe for B fields of $10^{-6}$ gauss.  
+
+Faraday rotation is the rotation of linearly polarized light to a different 
+linear polarization as it passes through a plasma with a magnetic field going 
+through it (see section in radiative processes).  The amount of rotation, which 
+can be measured as a function of frequency, is 
+$\propto \int_0^L n_eB$, so a measure of rotation gives the product of density 
+and magnetic field.  The density can be determined using dispersion, a measure 
+of the time delay in a signal as a function of frequency.  This is proportional 
+to $\int_0^L n_e$.  So by measuring Faraday rotation and dispersion, B can 
+be determined.  Pulsar observations using this technique find a B field 
+strength also of order $10^{-6}$ gauss. 
 
 \subsection{Star Formation}
+I think most of what we need to know about star formation is in the Stars 
+section of the notes.  The only thing new here is magnetic fields.  
+
+Most molecular cloud cores are Jeans-unstable to collapse, but star formation 
+efficiency is lower than it should be if this is true.  The angular momentum 
+and magnetic flux in stars is lower than that in clouds, so angular momentum 
+and magnetic flux must be lost during collapse.  Also, collapsing clouds are 
+not as flat as theory predicts, and have broadened lines implying some sort 
+of turbulence.  All this implies magnetic fields play an important role in star 
+formation.  \emph{Ambipolar diffusion} delays cloud collapse and provides a way 
+for magnetic flux to be lost.  The Alfven waves produced in this process 
+cause turbulence, which can broaden spectral lines (the notes just state these 
+things without justifying them).   
+
+Even in a cold molecular cloud core, this is a small fraction of ionization.  
+The ionized particles are frozen to the magnetic field lines, which prevents 
+them from collapsing.  The neutral particles don't care about the magnetic 
+field lines, but they do have diffuse through the trapped ions in order to 
+collapse.  The force per unit volume $f$ on the neutrals from collions with the 
+ions is the collision rate per unit volume times the change in momentum 
+of a neutral per collision.  So $f$ is given by
+\begin{equation}
+f=n_in_n<v\sigma>m_n(u_i-u_n)
+\end{equation}
+Here, $u_i-u_n$ is the velocity of the neutrals relative to the ions and field 
+lines.  Therefore, this is also the velocity with which the neutrals drift 
+across the magnetic field lines, $v_D$.  Balancing the collisional force with 
+gravity:
+\begin{equation}
+\rho\frac{GM}{r^2}=n_in_n<v\sigma>m_nv_D
+\end{equation}
+\begin{equation}
+n_nm_n\frac{GM}{r^2}=n_in_n<v\sigma>m_nv_D
+\end{equation}
+\begin{equation}
+\frac{GM}{r^2}=n_i<v\sigma>v_D
+\end{equation}
+The left hand side can be rewritten as
+\begin{equation}
+\frac{GM}{r^2}=\frac{GM}{r^3}r=\frac{4\pi}{3}Gn_nm_nr
+\end{equation}
+So
+\begin{equation}
+\frac{4\pi}{3}Gn_nm_nr=n_i<v\sigma>v_D
+\end{equation}
+\begin{equation}
+v_D=\frac{4\pi}{3}\frac{Gn_nm_nr}{n_i<v\sigma>}
+\end{equation}
+The timescale for ambipolar diffusion is 
+\begin{equation}
+t_D=\frac{r}{v_D}=\frac{3n_i<v\sigma>}{4\pi Gn_nm_n}\sim7\times10^{13}\frac{n_i}{n_n} years
+\end{equation}
+I'm not sure where the numbers being plugged into this come from.  For 
+molecular cloud cores, $n_i/n_n\lesssim10^{-6}-10^{-5}$, so the diffusion time 
+is $\lesssim10^7$ years.
 
 \subsection{ISM in Other Galaxies}
+The following is taken from slide 21 on February 28.  I don't really understand 
+it, but it get's an entire slide to itself, so it must be important...
+
+AGN       ?'s.....
+
+The other galaxies stuff is all from Nick's slides, so most of what he 
+shows is example spectra and images.  Not really sure what to do with that, 
+but he's on the committee and this is what he does research on, so he might 
+ask about it.  If anyone has a better reference for this stuff, feel free 
+to add to this section.  The main topics seem to be special types of galaxies 
+like AGN and galaxies with lots of star formation.  AGN will be covered in High Energy with better detail, 
+so I'll skip that for now.  
+
+Star formation happens in starburst galaxies, where a recent galaxy merger 
+forces large amounts of gas into the center, triggering star formation.  
+If the star formation is obscured by dust, the dust re-emitts at longer 
+wavelengths and you see an ULIRG (Ultra-Luminous Infrared Galaxy) or a sub-mm 
+galaxies.  This is about all I know off the top of my head, and I can't figure 
+out anything useful from Nick's notes.  I think this topic is partially covered 
+in the Galaxies will-ask though, and may also be covered in George's cosmology 
+topics.  
