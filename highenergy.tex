@@ -23,7 +23,7 @@
       
       Now let's figure out how to get the pressure. %Define the phase space distribution $\tilde{f} = \frac{g_s}{h^3} f$, where $g_s = 2S + 1$ which is $2$ in the case of spin-1/2 particles. The pressure is defined by
       \begin{equation}
-      P = \frac{1}{3} \int p v n(p) dp\,\,.
+      P = \frac{1}{3} \int p v n(p) 4 \pi p^2 dp\,\,.
       \end{equation}
       We also know the electron density
       \begin{equation}
@@ -31,7 +31,7 @@
       \end{equation}
       for a regular white dwarf. Now let's calculate the electron degeneracy pressure in the nonrelativistic case, in which $v = p/m_e$. Then we have
       \begin{equation}
-      P_e = \frac{1}{3} \int^{p_F}_0 \frac{p}{m_e} p \frac{8 \pi p^2}{3 h^3} dp = \frac{8 \pi p_F^5}{15 h^3 m_e}\,\,.
+      P_e = \frac{1}{3} \int^{p_F}_0 p \frac{p}{m_e} \frac{2}{h^3} 4 \pi p^2 dp = \frac{8 \pi p_F^5}{15 h^3 m_e}\,\,.
       \end{equation}
       Plugging in for $p_F$ gives
       \begin{equation}
@@ -41,7 +41,7 @@
       
       Now let's look at the very relativistic case. Here we can approximate $v \sim c$, and the pressure becomes
       \begin{equation}
-      P_{e,r} = \frac{1}{3} \int^{p_F}_0 c p \frac{8 \pi p^2}{3 h^3} dp = \frac{8\pi c p_F^4}{12 h^3} = \frac{2\pi c p_F^4}{3 h^3}\,\,.
+      P_{e,r} = \frac{1}{3} \int^{p_F}_0 p c \frac{2}{h^3} 8 \pi p^2 dp = \frac{8\pi c p_F^4}{12 h^3} = \frac{2\pi c p_F^4}{3 h^3}\,\,.
       \end{equation}
       This can be rewritten as
       \begin{equation}
