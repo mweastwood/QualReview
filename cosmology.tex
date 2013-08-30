@@ -323,4 +323,97 @@ accelarating due to a cosmological constant $\Lambda$, with
 $\Omega_{\Lambda}\sim0.7$ (see expansion test section).  We don't know what 
 dark energy actually is though.  
 
+\subsection{Large Scale Structure}
+The Milky Way is part of the local group of galaxies, which is on the edge 
+of the much larger local supercluster.  The local supercluster is a $\sim60$ 
+Mpc flatten group of galaxies clusters, with the Virgo cluster at its center.  
+Other superclusters can be as large as $\sim100$ Mpc.  
+
+Formation of large scale structure:\newline
+For structures collapsing on a free-fall timescale, $t_{ff}\propto\rho^{-1/2}$, 
+so smaller structures (which tend to be denser) form first.  For example, 
+the free-fall time of a galaxy is hundreds of Myr, while for a cluster, the 
+timescale is $\sim10$ Gyr.  This means galaxies should have formed early in the 
+Universe (at high redshifts), and clusters should still be forming today.  This 
+matches what we observe.  If the collapse of material into a cluster is 
+non-spherical, the collapse will happen first along the shortest axis, forming 
+a pancake.  The next shortest axis will collapse next, forming a thin 
+filament.  Finally, it collapses along the remaining axis forming a spherical 
+cluster.  We see these pancakes and filaments in numerical simulations and 
+observations of large scale structure.  
+
+Observations of large scale structure:\newline
+Large scale structure can be mapped in 3-D using redshift surveys.  Mapping 
+the positions of galaxies on the sky, then moving through different redshift 
+slices reveals that the 3-D distribution of galaxies is not random.  Galaxies 
+are in coherent structures.  One problem with using redshifts for this is 
+the ``finger of God'' effect.  If a cluster is physically spherical, but has 
+velocity dispersion amoung its galaxies, the dispersion velocities of the 
+galaxies will add to or subtract from their measured redshifts, causing the 
+cluster to appear elongated in redshift space (see Figure \ref{fig:finger}).  
+If the cluster is still collapsing, than galaxies on the close side will 
+be moving away from us with extra velocity, while galaxies on the far side 
+will have extra motion towards us.  This has the effect of flattening 
+the galaxy in redshift space.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{finger.jpg}
+\end{center}
+\caption{Velocity dispersion and infall effects on redshift maps. 
+\label{fig:finger}}
+\end{figure}
+
+2 Point Correlation Function:\newline
+The degree to which galaxies are clustered is quantified by the 2 point 
+correlation function, $\xi (r)$.  This is defined as the excess 
+probability of finding a galaxy a distance $r$ away from another galaxy, 
+relative to a uniform galaxy distributin.  In other words, for a uniform 
+galaxy distribution, the number of galaxies you'd expect to find a distance 
+r away from a single galaxy is $dN(r)=4\pi r^2ndr$ where $n$ is the number 
+density of galaxies.  If the galaxies are clustered with a correlation function 
+$\xi$, then the number you would find is $dN(r)=4\pi r^2n(1+\xi(r))dr$.  
+The 2 point correlation function is usually assumed to be (you guessed it!) a 
+power law:
+\begin{equation}
+\xi(r)=\left(\frac{r}{r_0}\right)^{-\gamma}
+\end{equation}
+where, for galaxies, $r_0\sim5h^{-1}$ Mpc, and $\gamma\sim1.8$.  For clusters, 
+clustering is stronger (clusters of clusters are more clustered than clusters 
+of galaxies).  Generally, bigger structures cluster more strongly.  $\xi (r)$ 
+can be estimated by counting the number of galaxy pairs in a dataset (DD) 
+and by counting the number of pairs in a randomly generated uniform catalog 
+(RR).  Then
+\begin{equation}
+\xi (r)=\frac{DD}{RR}-1
+\end{equation}
+There are more sophisticated methods to take into account effects at the edges 
+of the dataset, but this is the basic idea.  Observations indicate that 
+brigher galaxies are more strongly clustered than fainter ones, and redder 
+galaxies (ellipticals) are clustered more strongly than bluer galaxies 
+(spirals).  To compare with structure formation simulations, a power spectrum 
+can be calculated from the Fourier transform of the correlation function.  
+The observed power spectrum matches CDM simulations, and shows a peak 
+corresponding to the peak in the power spectrum of CMB fluctuations (this 
+isn't really explained well on the slide, but I think it has something to do 
+with one of the will-ask questions).  
+
+Peculiar Velocities:\newline
+Large scale structure can also be probed using the peculiar velocities of 
+galaxies.  This is a measure of their motions in addition to their Hubble 
+flow velocities, in other words
+\begin{equation}
+v_{tot}=v_{Hub}+v_{pec}=H_0d+v_{pec}
+\end{equation}
+This peculiar motion is due to fluctuations in the large scale density field 
+(i.e. large scale structure).  The redshifts of galaxies can be measured and 
+assumed to be due to only Hubble flow.  The positions of the galaxies this 
+gives can be used to find what their accelarations towards each other would 
+be.  These accelarations times the Hubble time gives a peculiar velocity 
+estimate.  Once the peculiar velocity has been found this way, the positions 
+of the galaxies can be updated using only the Hubble contribution to their 
+redshifts.  This can be repeated until things converge, giving a final density 
+field.  For example, the Milky Way is falling towards the Virgo 
+Cluster at $\sim300$ km/s, and the local supercluster is falling towards the 
+Hydra-Centaurus Supercluster at $\sim500$ km/s.
 
