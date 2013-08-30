@@ -4,7 +4,7 @@ FYI- I looked through the old qual questions we got, and it seems like almost ev
 something about the HR Diagram, so we should know that inside and out.  Also, questions about 
 spectral lines are more popular than I thought they would be.  Globular clusters were also popular.
 
-\subsection{Questions}
+\subsection{Questions}\label{sec:stars_questions}
 \begin{enumerate}
 \item \textbf{Explain what is the Hayashi track, and describe what types of objects live on it.
       Qualitatively explain how it arises and what assumptions are required for its derivation.}
@@ -210,47 +210,303 @@ T_{\rm eff} \sim 1000 - 5 \times 10^4~{\rm K}
 \end{dgroup}
 
 \subsection{Spectral Types}
-O, B, A, F, G, K, M\newline
-Within these types, stars are numbered 0 through 9 (hottest to coolest).  Luminosity classes 
-are also used.  I-IV are giant stars, while V are main sequence stars.  D is for white dwarfs.  
-So, for example, the Sun is a G2V star.\newline
-O stars:\newline
->16 $M_{\odot}$, $M_V=-5$ or brighter\newline
-Very weak spectral lines (just about everything is ionized, so there's nothing 
-to produce transitions).  Very weak Balmer lines and some weak lines to due 
-ionization of He.  No Balmer break visible.\newline
-B stars:\newline
-2-16 $M_{\odot}$\newline
-Stronger Balmer lines, also He absorption lines.  Still a relatively clean 
-spectrum though.  Balmer break visible (and visible in all later spectral 
-types.\newline
-A stars:\newline
-1.5-2 $M_{\odot}$, $M_V\sim 0$\newline
-Strongest Balmer lines because these are the hottest stars (hot enough to have 
-lots of H in the n=2 state) without being too hot and ionizing all the H.  
-Effective temperature of $\sim$10,000 K is perfect for Balmer lines.\newline
-F stars:\newline
-1-1.5 $M_{\odot}$\newline
-Balmer lines start to weaken again.  Star seeing metal lines (mainly neutral 
-or singly ionized Ca, Mg, and Na).\newline
-G stars:\newline
-0.8-1 $M_{\odot}$, $M_V\sim4$\newline
-This includes the Sun.  Weaker Balmer lines, stronger metal lines.\newline
-K stars:\newline
-0.5-0.8 $M_{\odot}$\newline
-Weaker Balmer, stronger metal.  Also start seeing absorption bands from 
-molecules (smearing of lots of absorption lines due to rotational, vibrational, 
-and electronic transitions).
-M stars:\newline
-<0.5 $M_{\odot}$, $M_V\sim 8-12$\newline
-Dominated by molecular bands, in particular TiO between 6600\AA\ and 8600\AA.
+\newthought{Stars are categorized} by a spectral type and a luminosity class.
+Spectral types are (from hottest to coolest) O, B, A, F, G, K, M, L, T,\sidenote{
+    Pneumonic: Oh be a fine girl kiss me lovingly tonight
+} where L and T
+denote brown dwarfs.  Within these types, stars are numbered 0 through 9 (hottest to coolest).
+Luminosity classes are also used:  I-IV are giant stars, while V are main sequence stars. 
+D is for white dwarfs. So, for example, the Sun is a G2V star.
+See Table~\ref{tab:spectral_types} for a brief rundown of the various spectral types.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{cccp{4in}}
+\toprule
+Spectral Type & $M / M_\astrosun$ & $M_V$ & Description \\
+\midrule
+O & $>16$ & $<-5$ &
+    Very weak spectral lines (just about everything is ionized, so there's nothing 
+    to produce transitions).  Very weak Balmer lines and some weak lines to due 
+    ionization of He.  No Balmer break visible. \\
+B & $2-16$ &&
+    Stronger Balmer lines, also He absorption lines.  Still a relatively clean 
+    spectrum though.  Balmer break visible (and visible in all later spectral 
+    types). \\
+A & $1.5-2$ & $\sim 0$ &
+    Strongest Balmer lines because these are the hottest stars (hot enough to have 
+    lots of H in the n=2 state) without being too hot and ionizing all the H.  
+    Effective temperature of $\sim$10,000 K is perfect for Balmer lines. \\
+F & $1-1.5$ &&
+    Balmer lines start to weaken again.  Star seeing metal lines (mainly neutral 
+    or singly ionized Ca, Mg, and Na). \\
+G & $0.8-1$ & $\sim4$ &
+    This includes the Sun.  Weaker Balmer lines, stronger metal lines. \\
+K & $0.5-0.8$ &&
+    Weaker Balmer, stronger metal.  Also start seeing absorption bands from 
+    molecules (smearing of lots of absorption lines due to rotational, vibrational, 
+    and electronic transitions). \\
+M & $<0.5$ & $\sim 8-12$ &
+    Dominated by molecular bands, in particular TiO between 6600\AA\ and 8600\AA. \\
+\bottomrule
+\end{tabular}
+\caption{A brief overview of stellar spectral types.}
+\label{tab:spectral_types}
+\end{table}
 
 \subsection{HR Diagram}
-Be able to draw and explain one.  Some useful approximate relations for the main sequence:
-\begin{equation}L\propto T_{eff}^8\end{equation}
-\begin{equation}R\propto T_{eff}^2\end{equation}
-\begin{equation}L\propto M^3\ for\ stars\ more\ massive\ than\ the\ Sun\end{equation}
-\begin{equation}L\propto M^5\ for\ stars\ less\ massive\ than\ the\ Sun\end{equation}
+\newthought{You will need to} be able to draw and explain an HR diagram.
+See Figure~\ref{fig:hr_diagram} for an example, and see Section~\ref{sec:scaling_relations}
+for some useful scaling relations that will help you draw and explain the various
+features of the main sequence.  In general, you should be able to draw and explain the paths
+taken by various objects as they form and evolve.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{stars_hr_diagram}
+\caption{An example HR diagram. Note the approximate magnitude ranges for different kinds
+         of stars -- people have been asked about those on their quals.}
+\label{fig:hr_diagram}
+\end{figure}
+
+\subsection{Equations of Stellar Structure}
+\newthought{There are three} key pieces of physics that are necessary for understanding stars:
+\begin{enumerate}
+    \item Force balance: pressure vs. gravity (and sometimes rotation)
+    \item Energy transport: conduction, radiation, convection
+    \item Energy generation: fusion, gravitational contraction
+\end{enumerate}
+These form the essence of the equations of stellar structure:
+\begin{dgroup*}
+\begin{dmath}\label{eq:mass_continuity}\boxed{
+    \frac{\d M_r}{\d r} = 4\pi r^2\rho
+}\end{dmath}
+\begin{dmath}\label{eq:energy_generation}\boxed{
+    \frac{\d L_r}{\d r} = 4\pi r^2\rho\epsilon
+}\end{dmath}
+\begin{dmath}\label{eq:hydrostatic_equilibrium}\boxed{
+    \frac{\d P}{\d r} = -\frac{GM_r\rho}{r^2}
+}\end{dmath}
+\begin{dmath}\label{eq:radiative_transport}\boxed{
+    \frac{\d T}{\d r}=-\frac{3}{4ac}\frac{\bar\kappa\rho}{T^3}\frac{L_r}{4\pi r^2}
+}\end{dmath}
+\end{dgroup*}
+Equations~\ref{eq:mass_continuity} (mass continuity) and
+\ref{eq:energy_generation} (energy generation) contain no physics -- they are true by
+construction.  For example, the equation of mass continuity holds merely due to the
+fact that $M_r$ represents the mass of the star internal to a sphere of radius $r$.
+Furthermore, the energy generation equation should be taken to be the definition of $\epsilon$.
+That is, $\epsilon$ is the energy per unit time per unit mass produced at a radius $r$ in
+the star.
+
+\newthought{The equation of hydrostatic equilibrium} (Equation~\ref{eq:hydrostatic_equilibrium})
+encodes the idea that the inward pull of gravity should be balanced by a supporting pressure
+gradient.  It is simply a statement of force balance.
+We can look at a layer in the star with pressure $P$ at its base and $P+dP$ above, and we know
+the force on the layer due to gravity. The total force will be the pressure difference times
+the area of the shell $A$ (which will eventually drop out) plus the gravitational force
+$-\frac{G M_r M_{\rm shell}}{r^2}$. If we assume hydrostatic equilibrium, the total force is zero.
+We then can switch to differentials to get the hydrostatic equilibrium equation.
+
+\newthought{The radiative temperature gradient} (Equation~\ref{eq:radiative_transport})
+can be derived by considering the energy in shells at different 
+radii.  Since energy flows out of the star, the energy density must decrease outwards.  Consider 
+a shell with energy density $u+du$ (shell 1), with another shell $dr$ above it of energy 
+density $u$ (shell 2).  The energy flow from shell 1 to shell 2 per unit time ($L(r)$) is 
+the excess energy in shell 1 divided by the time it takes for this energy to flow from shell 1 to 
+shell 2.  So
+\begin{equation}\label{eq:L}
+L(r)=-\frac{4\pi r^2\,dr\,du}{(dr)^2/lc}
+\end{equation}
+where the denominator is the time it takes a photon to cross from shell 1 to shell 2 by random 
+walk.  Taking the angle of the radiation into account introduces a factor of 1/3 on the right hand 
+side.  Equation \ref{eq:L} can be rewritten as 
+\begin{equation}
+\frac{L(r)}{4\pi r^2}=-\frac{cl}{3}\frac{du}{dr}
+\end{equation}
+This can also be thought of as a diffusion equation, where the left hand side is energy flux, 
+$\frac{cl}{3}$ is the diffusion coefficient, and $\frac{du}{dr}$ is the energy density gradient.  
+Plugging in $u=aT^4$ and $l=\frac{1}{\kappa\rho}$, and solving for $\frac{dT}{dr}$ gives
+the radiative diffusion equation given in Equation~\ref{eq:radiative_transport}.
+
+\newthought{In addition to} the four main equations of stellar structure,
+three more equations must be 
+specified for the pressure (the ``equation of state''), opacity, and energy generation.  
+\begin{dgroup}
+\begin{dmath}
+P=P(\rho,T,\text{composition})
+\end{dmath}
+\begin{dmath}
+\kappa=\kappa(\rho,T,\text{composition})
+\end{dmath}
+\begin{dmath}
+\epsilon=\epsilon(\rho,T,\text{composition})
+\end{dmath}
+\end{dgroup}
+The opacity $\kappa$ is discussed in a will-ask question (Section~\ref{sec:stars_questions}),
+while the energy generation $\epsilon$ is discussed in Section~\ref{sec:nuclear_reactions}.
+The equation of state is typically taken to be polytropic\sidenote{
+    $P = K\rho^\gamma$ with $\gamma=5/3$ for an ideal, monatomic gas.  Note that $\gamma\leq 4/3$
+    is unstable.
+}, ideal gas\sidenote{
+    $P = \frac{\rho kT}{\mu m_p}$
+}, or radiation pressure\sidenote{
+    $P = \frac{1}{3}aT^4$
+}.
+
+Here is a brief review of the mean molecular weight $\mu$.
+For a fully ionized gas, H contributes 2 particles, He contributes 3, and metals contribute 
+$\sim\frac{A}{2}$.  So the total number density of particles is
+\begin{equation}
+n=2n_H+3n_{He}+\Sigma \frac{A}{2}n_A=\frac{rho}{m_H}\left(2X+\frac{3}{4}Y+\frac{1}{2}Z\right)=\frac{\rho}{2m_H}\left(3X+\frac{1}{2}Y+1\right)
+\end{equation}
+using the fact that $X+Y+Z=1$.  Then
+\begin{equation}
+\mu=\frac{\rho}{nm_H}=\frac{2}{1+3X+0.5Y}
+\end{equation}
+Alternatively
+\begin{equation}
+\frac{1}{\mu_I} = \sum \frac{X_i}{A_i}\,\, ,
+\end{equation}
+\begin{equation}
+\frac{1}{\mu_e} = \sum \frac{Z_iX_i}{A_i} \,\, ,
+\end{equation}
+\begin{equation}
+\frac{1}{\mu} = \biggl(\frac{1}{\mu_I} + \frac{1}{\mu_e} \biggr)^{-1}\,\,.
+\end{equation}
+
+\newthought{Finally, in order}
+to specify a unique solution, we take the following four boundary conditions:
+\begin{dgroup}
+\begin{dmath}
+    M_r(r=0)=0
+\end{dmath}
+\begin{dmath}
+    L_r(r=0)=0
+\end{dmath}
+\begin{dmath}
+    P(r=R_\star)=0
+\end{dmath}
+\begin{dmath}
+    M(r=R_\star)=M_\star
+\end{dmath}
+\end{dgroup}
+So, in total there are 7 equations for 7 unknowns, and 4 boundary conditions for 4 differential equations.  
+This means that there is a unique solution given the composition and total mass of the star, the 
+only two free parameters in the equations.  This is the \emph{Vogt-Russell conjecture}, that the 
+properties and evolution of a star depend only on its mass and initial composition.
+
+\subsection{Scaling Relations and Homology on the Main Sequence}\label{sec:scaling_relations}
+\newthought{Homology is used to} find scaling relations between properties of a star,
+e.g. $R(M)$, $L(M)$, $P_{c}(M)$, $T_{c}(M)$ to name a few.  We must first determine four
+things about the star we are considering:
+\begin{enumerate}
+	\item Is pressure given by ideal gas ($P \propto \rho T$), radiative pressure support
+          ($P \propto T^{4}$), or polytropic pressure ($P\propto\rho^\gamma$)?
+	\item Is the luminosity carried by radiative diffusion
+          ($\kappa \propto T^{4} L^{-1} M^{-1} R^{4}$)\sidenote{
+                This scaling relation comes from solving for $\kappa$ in
+                Equation \ref{eq:radiative_transport}.
+          } or convection ($T \propto M R^{-1}$)\sidenote{
+                From the adiabatic temperature gradient, Equation \ref{conv}
+          }?
+	\item Is Thomson ($\kappa \propto \rho^{0} T^{0}$) or Kramer's opacity
+          ($\kappa \propto \rho T^{-3.5}$) dominating?
+	\item Through what process is fusion occurring, e.g. p-p chain
+          ($\epsilon \propto \rho T^{4}$) or CNO cycle ($\epsilon \propto \rho T^{15}$)?
+\end{enumerate}
+Then, using the equations of \emph{mass continuity}
+\begin{equation}
+\rho \propto \frac{M}{R^{3}}
+\end{equation}
+and \emph{hydrostatic equilibrium}
+\begin{equation}
+P \propto \frac{M \rho}{R}
+\end{equation}
+and the \emph{energy conservation} equation
+\begin{equation}
+L \propto R^3 \rho \epsilon
+\end{equation}
+we can set up a system of equations to solve for whatever scaling relation we desire for the star.
+
+The following homology relationships were solved for using a quick python code
+($\texttt{homology.py}$)\sidenote{
+    Feel free to play around with the code, I committed it to the git repo.
+    It's pretty poorly commented, but come talk to me if you want an explanation of the output.
+
+    -- Michael
+}.
+\begin{itemize}
+    \item $M < 0.5M_\astrosun$ (fully convective stars)
+
+          In this case, we can use polytropic pressure (with $\gamma=5/3$), convection, and
+          the p-p chain to find
+          \begin{dgroup}
+          \begin{dmath}
+            R\propto M^{-1/3}
+          \end{dmath}
+          \begin{dmath}
+            L\propto M^{25/3}
+          \end{dmath}
+          \begin{dmath}
+            T\propto M^{4/3}
+          \end{dmath}
+          \end{dgroup}
+
+    \item $M\sim1M_\astrosun$ (solar type stars)
+
+          Using ideal gas pressure, radiative diffusion, Kramer's opacity law, and the p-p chain
+          \begin{dgroup}
+          \begin{dmath}
+            R\propto M^{0.35}
+          \end{dmath}
+          \begin{dmath}
+            L\propto M^{1.6}
+          \end{dmath}
+          \begin{dmath}
+            T\propto M^{0.15}
+          \end{dmath}
+          \end{dgroup}
+
+    \item $M\sim2M_\astrosun$ (intermediate mass stars)
+
+          Using ideal gas pressure, radiative diffusion, electron scattering, and the CNO cycle
+          \begin{dgroup}
+          \begin{dmath}
+            R\propto M^{0.78}
+          \end{dmath}
+          \begin{dmath}
+            L\propto M^{3}
+          \end{dmath}
+          \begin{dmath}
+            T\propto M^{0.22}
+          \end{dmath}
+          \end{dgroup}
+
+    \item $M\sim10M_\astrosun$ (high mass stars)
+
+          Using radiation pressure, radiative diffusion, electron scattering, and the CNO cycle
+          \begin{dgroup}
+          \begin{dmath}
+            R\propto M^{0.47}
+          \end{dmath}
+          \begin{dmath}
+            L\propto M^{1}
+          \end{dmath}
+          \begin{dmath}
+            T\propto M^{0.03}
+          \end{dmath}
+          \end{dgroup}
+
+\end{itemize}
+
+\newthought{Astrophysics in a Nutshell} gives the following scaling relations on the main sequence:
+\begin{dgroup}
+\begin{dmath}L\propto T_{\rm eff}^8\end{dmath}
+\begin{dmath}R\propto T_{\rm eff}^2\end{dmath}
+\begin{dmath}L\propto M^3\ \text{for stars more massive than the Sun}\end{dmath}
+\begin{dmath}L\propto M^5\ \text{for stars less massive than the Sun}\end{dmath}
+\end{dgroup}
 Main sequence masses range from $\sim 0.1\ M_{\odot}$ to $\sim 100\ M_{\odot}$.  Main sequence 
 radii range from $\sim 0.25\ R_{\odot}$ to $\sim 25\ R_{\odot}$.  Temperatures range from 
 around $2000-3000\ K$ to $\sim 50,000\ K$.  Luminosities range from $\sim10^{-3}L_{\odot}$ to 
@@ -272,120 +528,41 @@ and for stars less massive than the Sun,
 \end{equation}
 Anything less massive than the Sun basically lives forever.
 
-\subsection{Equations of Stellar Structure}
-\newthought{There are three} key pieces of physics that are necessary for understanding stars:
-\begin{enumerate}
-    \item Force balance: pressure vs. gravity (and sometimes rotation)
-    \item Energy transport: conduction, radiation, convection
-    \item Energy generation: fusion, gravitational contraction
-\end{enumerate}
-These form the essence of the equations of stellar structure.
-\begin{dgroup*}
-\begin{dmath}
-    \frac{\d M_r}{\d r} = 4\pi r^2\rho \quad \text{(mass continuity)}
-\end{dmath}
-\begin{dmath}
-    \frac{\d P}{\d r} = -\frac{GM_r\rho}{r^2} \quad \text{(hydrostatic equilibrium)}
-\end{dmath}
-\end{dgroup*}
+\newthought{Here's an alternative} treatment of the scaling relationships.
+For moderately massive stars greater than $1 M_\odot$, the pressure is dominated by kinetic gas pressure and the opacity is dominated by electron scattering.
+\begin{equation}
+P \thicksim \rho T
+\end{equation}
+\begin{equation}
+\kappa = constant
+\end{equation}
+Equating hydrostatic equilibrium with the equation of state:
+\begin{equation}
+P \thicksim \frac{M\rho}{r} \thicksim \rho T
+\end{equation}
+\begin{equation}
+T \thicksim \frac{M}{r}
+\end{equation}
+Replacing T in the luminosity equation yeidls:
+\begin{equation}
+L \thicksim M^3
+\end{equation}
+Furthermore, $M \thicksim R$ on the main sequence, which implies a constant core temperature.  To see this, consider a star that is contracting and heating up.  An equilibrium will be established when the density and the temperature in the core are high enough for the onset of nuclear reactions.  Since the nuclear power density $\epsilon$ depends mainly on temperature, for any initial mass, the radius of the star will stop shrinking when a particular core temperature is reached.  Therefore the internal temperature is comparable in all main sequence stars.  From stellar models, over a range of around 100 in mass, the core temperature varies only by a factor of 4.  
 
-Let's talk first about force balance. Assuming no radiation, this is just a competition between pressure and gravity. We can look at a layer in the star with pressure $P$ at its base and $P+dP$ above, and we know the force on the layer due to gravity. The total force will be the pressure difference times the area of the shell $A$ (which will eventually drop out) plus the gravitational force $-\frac{G M_r M_{\rm shell}}{r^2}$. If we assume hydrostatic equilibrium, the total force is zero. We then can switch to differentials to get the hydrostatic equilibrium equation:
-
+For stars less massive than the sun, the opacity is dominated by bound-bound and bound-free opacities, which follow kramer's opacity $\kappa \thicksim \rho T^{-3.5}$.  Since the temperature is approximately constant:
 \begin{equation}
-\frac{dP}{dr} = -\frac{\rho G M_r}{r^2}\,\,.
-\end{equation}
-
-The mass continuity equatin just comes from the amount of mass in a spherical shell at radius r 
-and of thickness dr.
-
-The radiative temperature gradient can be derived by considering the energy in shells at different 
-radii.  Since energy flows out of the star, the energy density must decrease outwards.  Consider 
-a shell with energy denstity $u+du$ (shell 1), with another shell $dr$ above it of energy 
-density $u$ (shell 2).  The energy flow from shell 1 to shell 2 per unit time ($L(r)$) is 
-the excess energy in shell 1 divided by the time it takes for this energy to flow from shell 1 to 
-shell 2.  So
-\begin{equation}\label{eq:L}
-L(r)=-\frac{4\pi r^2\,dr\,du}{(dr)^2/lc}
-\end{equation}
-where the denominator is the time it takes a the photon to cross from shell 1 to shell 2 by random 
-walk.  Taking the angle of the radiation into account introduces a factor of 1/3 on the right hand 
-side.  Equation \ref{eq:L} can be rewritten as 
-\begin{equation}
-\frac{L(r)}{4\pi r^2}=-\frac{cl}{3}\frac{du}{dr}
-\end{equation}
-This can also be thought of as a diffusoin equation, where the left hand side is energy flux, 
-$\frac{cl}{3}$ is the diffusion coefficient, and $\frac{du}{dr}$ is the energy density gradient.  
-Plugging in $u=aT^4$ and $l=\frac{1}{\kappa\rho}$, and solving for $\frac{dT}{dr}$ gives
-\begin{equation}\label{eq:rad}
-\boxed{\frac{dT(r)}{dr}=-\frac{3L(r)\kappa(r)\rho(r)}{4\pi r^2 4acT^3(r)}}
-\end{equation}
-
-The energy conservation equation just comes from defining $\epsilon(r)$ as the power generated 
-per unit mass.  With this definition,
-\begin{equation}
-\boxed{\frac{dL(r)}{dr}=4\pi r^2\rho (r)\epsilon (r)}
-\end{equation}
-
-In addition to the four main equations of stellar structure, three more equations must be 
-specified for the pressure, opacity, and energy generation.  
-\begin{equation}
-P=P(\rho,T,composition)
+ M \thicksim R
 \end{equation}
 \begin{equation}
-\kappa=\kappa(\rho,T,composition)
+\kappa \thicksim \rho \thicksim \frac{M}{r^3} \thicksim M^{-2}
 \end{equation}
+The luminosity equation becomes:
 \begin{equation}
-\epsilon=\epsilon(\rho,T,composition)
+L \thicksim \frac{M}{M^{-2}M^{-2}} \thicksim M^{5}
 \end{equation}
-Also, the four differential equations require four boundary conditions:
+For the most massive stars, radiation pressure dominates.  The equation of state then goes as $P \thicksim T^4$, and electron scattering opacity dominates.  The mass-luminosity relationship then goes as:
 \begin{equation}
-M(r=0)=0
-\end{equation}
-\begin{equation}
-L(r=0)=0
-\end{equation}
-\begin{equation}
-P(r=R)=0
-\end{equation}
-\begin{equation}
-M(r=R)=M_*
-\end{equation}
-
-So, there are 7 equations for 7 unknowns, and 4 boundary conditions for 4 differential equations.  
-This means that there is a unique solution given the composition and total mass of the star, the 
-only two free parameters in the equations.  This is the \emph{Vogt-Russell conjecture}, that the 
-properties and evolution of a star depend only on its mass and initial composition.
-
-The equation of state is almost always ideal gas, but here's a good derivation of mean molecular 
-weight, which I personally can never remember.
-
-For a fully ionized gas, H contributes 2 particles, He contributes 3, and metals contribue 
-$\sim\frac{A}{2}$.  So the total number density of particles is
-\begin{equation}
-n=2n_H+3n_{He}+\Sigma \frac{A}{2}n_A=\frac{rho}{m_H}\left(2X+\frac{3}{4}Y+\frac{1}{2}Z\right)=\frac{\rho}{2m_H}\left(3X+\frac{1}{2}Y+1\right)
-\end{equation}
-using the fact that $X+Y+Z=1$.  Then
-\begin{equation}
-\mu=\frac{\rho}{nm_H}=\frac{2}{1+3X+0.5Y}
-\end{equation}
-
-io likes the following definition of mean molecular weight:
-\begin{equation}
-\frac{1}{\mu_I} = \sum \frac{X_i}{A_i}\,\, ,
-\end{equation}
-\begin{equation}
-\frac{1}{\mu_e} = \sum \frac{Z_iX_i}{A_i} \,\, ,
-\end{equation}
-\begin{equation}
-\frac{1}{\mu} = \biggl(\frac{1}{\mu_I} + \frac{1}{\mu_e} \biggr)^{-1}\,\,.
-\end{equation}
-
-See the will ask question for a discussion of opacity.
-
-Also, radiation pressure can contribute to the overall pressure (and sometimes dominate).  
-For a photon gas,
-\begin{equation}
-P_{rad}=\frac{1}{3}u=\frac{1}{3}aT^4
+L \thicksim M
 \end{equation}
 
 \subsection{The Hayashi Track}\label{sec:hayashi}
@@ -465,7 +642,6 @@ sensitive, the photosphere will stay at a location where the temperature remains
 constant.  This means that the effective temperature stays constant.
 
 \subsection{The Henyey Track}
-
 \newthought{In the core}
 of a protostar, Kramer's opacity law is a good description of the mean opacity.
 As the protostar contracts along the Hayashi track, the temperature of the core increases
@@ -487,7 +663,7 @@ temperature on the Hayashi track).  This track is occasionally called the Henyey
 \begin{enumerate}
 	\item Kramer's opacity: $\kappa \propto \rho T_{c}^{-3.5}$
 	\item Ideal gas: $P \propto \rho T_{c}$, where $\rho \propto M R^{-3}$
-	\item Radiative energy transport\sidenote{This scaling relation comes from solving for $\kappa$ in Equation \ref{eq:rad}, and approximating $dT(r)/dr$ as $T/R$}: $\kappa \propto T_{c}^{4} L^{-1} M^{-1} R^{4}$
+	\item Radiative energy transport\sidenote{This scaling relation comes from solving for $\kappa$ in Equation \ref{eq:radiative_transport}, and approximating $dT(r)/dr$ as $T/R$}: $\kappa \propto T_{c}^{4} L^{-1} M^{-1} R^{4}$
 \end{enumerate}
 
 \noindent Finally, by using everyone's favorite $L \propto R^{2} T_{eff}^{4}$, you find that
@@ -498,66 +674,12 @@ L \propto M^{22/5} T_{eff}^{4/5}
 
 This equation illustrates what was described above -- as the core becomes radiative, an increase in $L$ corresponds to an increase in $T_{eff}$.
 
-\newthought{Cool note} on the Henyey Track -- if the mass of the protostar is too low, then hydrogen burning ignites before the events which cause the protostar to travel along the Henyey track can begin.  Thus, the resulting main sequence star will remain completely convective -- this is why main sequence stars with mass $< .8 M_{\odot}$ are fully convective (and why their Hayashi tracks directly intersect the main sequence, without the upward trend of the Henyey track; see Figure 2.2 in HKT for a good plot illustrating this).  
-
-\subsection{Scaling Relations on the Main Sequence}
-Assume that P(r), M(r), $\rho (r)$, and T(r) are roughly power laws.  Then from the equations of stellar structure we have:
-
-\begin{equation}
-P \thicksim \frac{\rho M}{r}
-\end{equation}
-\begin{equation}
-M \thicksim r^3\rho
-\end{equation}
-\begin{equation}
-L \thicksim \frac{T^4r}{\kappa \rho}
-\end{equation}
-
-For moderately massive stars greater than $1 M_\odot$, the pressure is dominated by kinetic gas pressure and the opacity is dominated by electron scattering.
-
-\begin{equation}
-P \thicksim \rho T
-\end{equation}
-\begin{equation}
-\kappa = constant
-\end{equation}
-
-Equating hydrostatic equilibrium with the equation of state:
-
-\begin{equation}
-P \thicksim \frac{M\rho}{r} \thicksim \rho T
-\end{equation}
-\begin{equation}
-T \thicksim \frac{M}{r}
-\end{equation}
-
-Replacing T in the luminosity equation yeidls:
-\begin{equation}
-L \thicksim M^3
-\end{equation}
-
-Furthermore, $M \thicksim R$ on the main sequence, which implies a constant core temperature.  To see this, consider a star that is contracting and heating up.  An equilibrium will be established when the density and the temperature in the core are high enough for the onset of nuclear reactions.  Since the nuclear power density $\epsilon$ depends mainly on temperature, for any initial mass, the radius of the star will stop shrinking when a particular core temperature is reached.  Therefore the internal temperature is comparable in all main sequence stars.  From stellar models, over a range of around 100 in mass, the core temperature varies only by a factor of 4.  
-
-For stars less massive than the sun, the opacity is dominated by bound-bound and bound-free opacities, which follow kramer's opacity $\kappa \thicksim \rho T^{-3.5}$.  Since the temperature is approximately constant:
-
-\begin{equation}
- M \thicksim R
-\end{equation}
-\begin{equation}
-\kappa \thicksim \rho \thicksim \frac{M}{r^3} \thicksim M^{-2}
-\end{equation}
-
-The luminosity equation becomes:
-
-\begin{equation}
-L \thicksim \frac{M}{M^{-2}M^{-2}} \thicksim M^{5}
-\end{equation}
-
-For the most massive stars, radiation pressure dominates.  The equation of state then goes as $P \thicksim T^4$, and electron scattering opacity dominates.  The mass-luminosity relationship then goes as:
-
-\begin{equation}
-L \thicksim M
-\end{equation}
+\newthought{Cool note} on the Henyey Track -- if the mass of the protostar is too low,
+then hydrogen burning ignites before the events which cause the protostar to travel along the
+Henyey track can begin.  Thus, the resulting main sequence star will remain completely convective
+-- this is why main sequence stars with mass $< .8 M_{\odot}$ are fully convective (and why their
+Hayashi tracks directly intersect the main sequence, without the upward trend of the Henyey track;
+see Figure 2.2 in HKT for a good plot illustrating this).  
 
 
 
@@ -882,39 +1004,8 @@ think of is polytropes.  Maybe just some basic knowledge of them would be good (
 answer that question Shri kept asking us in stars about what it means for white dwarfs or 
 protostars to have a certain polytropic index).
 
-\subsection{Homology}
 
-Homology is used to find scaling relations between properties of a star, e.g. $R(M), L(M), P_{c}(M), T_{c}(M)$ to name a few.  We must first determine four things about the star we are considering:
-
-\begin{enumerate}
-	\item Is pressure given by ideal gas ($P \propto \rho T$) or radiative pressure support ($P \propto T^{4}$).
-	\item Is the luminosity carried by radiative diffusion ($\kappa \propto T^{4} L^{-1} M^{-1} R^{4}$)\sidenote{This scaling relation comes from solving for $\kappa$ in Equation \ref{eq:rad}.} or convection ($T \propto M R^{-1}$)\sidenote{From the adiabatic temperature gradient, Equation \ref{conv}}.
-	\item Is Thomson ($\kappa \propto \rho^{0} T^{0}$) or Kramer's opacity ($\kappa \propto \rho T^{-3.5}$) dominating.
-	\item Through what process is fusion occurring, e.g. p-p chain ($\epsilon \propto \rho T^{4}$) or CNO cycle ($\epsilon \propto \rho T^{15}$).
-\end{enumerate}
-
-Then, using the equations of \textbf{mass continuity}
-
-\begin{equation}
-\rho \propto \frac{M}{R^{3}}
-\end{equation}
-
-\noindent and \textbf{hydrostatic equilibrium}
-
-\begin{equation}
-P \propto \frac{M \rho}{R}
-\end{equation}
-
-\noindent and the \textbf{energy conservation} equation
-
-\begin{equation}
-L \propto R^3 \rho \epsilon
-\end{equation}
-
-\noindent we can set up a system of equations to solve for whatever scaling relation we desire for the star.
-
-
-\subsection{Nuclear Energy Generation}
+\subsection{Nuclear Energy Generation}\label{sec:nuclear_reactions}
 
 Nuclear reactions are the primary power source in stars -- for stars on the main sequence, it is the fusion of four hydrogen nuclei into one $^{4}$He.  For fusion to occur, an atomic nucleus must overcome the Coulomb barrier of another nucleus into the potential well created by the strong nuclear force which binds nuclei together.
 
