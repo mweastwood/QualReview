@@ -149,7 +149,7 @@ assuming the radius is about $10~{\rm kpc}$ and the mass is about $10^{11}~\rm{M
 
 The Schwarzschild metric:
 
-The gravitational field around a nonrotating black hole is described by the Schwarzschild metric, which is given by (note it is customary to set $G = c = 1$)
+Here we get to break out some fun GR notation. The gravitational field around a nonrotating black hole is described by the Schwarzschild metric, which is given by (note it is customary to set $G = c = 1$)
 \begin{equation}
 -d\tau^2 = ds^2 = -\biggl( 1 - \frac{2M}{r} \biggr) dt^2 + \frac{dr^2}{1 - \frac{2M}{r}} + r^2(d\theta^2 + \sin^2\theta) d\phi^2\,\,.
 \end{equation}
@@ -157,6 +157,43 @@ In real units, this can be rewritten as
 \begin{equation}
 -c d\tau^2 = -\biggl( 1 - \frac{R_s}{r} \biggr) c^2 dt^2 + \frac{dr^2}{1 - \frac{R_s}{r}} + r^2(d\theta^2 + \sin^2\theta) d\phi^2\,\,.
 \end{equation}
+Here $r$ is the circumferential length. At a fixed point, $dt = \frac{d\tau}{\sqrt{1 - \frac{2M}{r}}}$. 
+
+Let's look at orbits in this metric. Set $\frac{\partial}{\partial t} = 0$ and $\frac{\partial}{\partial \phi} = 0$ (not sure why). Define $e = -u_0 = $ constant and $h = -u_\phi =$ constant. We have
+\begin{equation}
+e = -u_0 = -g_{00} u^0 = -g_{00} \frac{dt}{d\tau} = \biggl( 1 - \frac{2M}{r} \biggr) \frac{dt}{d\tau}\,\,,
+\end{equation}
+\begin{equation}
+h = -u_\phi = g_{\phi \phi} u^\phi = r^2 \frac{d\phi}{d\tau}\,\,.
+\end{equation}
+We've defined these orbits to remain in the plane $\theta = \frac{\pi}{2}$, so $u^\theta = 0$.
+\begin{equation}
+g_{\alpha \beta}u^\alpha u^\beta = -1 \rightarrow g_{00} (u^0)^2 + g_{rr}(u^r)^2 + g_{\phi \phi} (u^\phi)^2 = -1
+\end{equation}
+and this can be rewritten as
+\begin{equation}
+g^{00} (u_0)^2 + g_{rr}(u^r)^2 + g^{\phi \phi} (u_\phi)^2 = \frac{1}{g_{00}} e^2 + \frac{1}{1 - \frac{2M}{r}}(u^r)^2 + \frac{1}{g_{\phi \phi}} h^2 = -1
+\end{equation}
+The important take-away equation is then:
+\begin{equation}
+\biggl(\frac{dr}{d\tau} \biggr)^2 = e^2 - \biggl( 1 - \frac{2M}{r} \biggr) \biggl( 1 + \frac{h^2}{r^2} \biggr)\,\,,
+\end{equation}
+where the second term (not $e^2$) is the effective potential $V_{\rm eff}$. A plot of this potential (the square root of it) is shown in Figure \ref{f:veff}. The equilibrium points are shown with black dots, but the inner ones are unstable. The curve with the equilibrium point that reaches 1 has the same potential energy at infinity, so this represents a particle that comes from infinity, approaches this radius, and then goes back out to infinity.
+
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{veff.jpg}
+\caption{Effective potential versus radius around a Schwarzschild black hole. The innermost stable circular orbit (ISCO) is marked at $r = 6M$ \label{f:veff}}
+\end{center}
+\end{figure}
+
+
+This is the potential for massive particles. For massless particles like photons, the orbits are described instead by
+\begin{equation}
+\biggl(\frac{dr}{d\lambda} \biggr)^2 = e^2 - \biggl( 1 - \frac{2M}{r} \biggr)  \frac{h^2}{r^2}\,\,.
+\end{equation}
+Here $e^2$ describes the energy and $\frac{h^2}{r^2}$ describes the momentum.
 
 \subsection{Bondi Accrection}
 
