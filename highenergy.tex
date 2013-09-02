@@ -175,6 +175,35 @@ Solutions are depicted in Figure \ref{f:mach}. The point where $v = c_s$ is call
 
 \subsection{Supernovae}
 
+Let's start with core-collapse supernovae. This occurs for stars with a ZAMS mass of $\sim 8-10$ solar masses or higher (the actual cutoff is debateable). These stars have burned through H, He, C, O, Ne, Si, all the way up to iron. At the beginning of every core burning phase, the core has contracted until the temperature was high enough to start fusing the next main isotope in the series. However, iron is the element with the most binding energy per nucleon. See Figure \ref{f:be} for the binding energy curve, showing $^{56}Fe$ at the top. This is therefore the most energetically favorable isotope.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{binding_energy.jpg}
+\caption{Binding energy per nucleon. The peak is Fe-56, which is the most stable isotope. \label{f:be}}
+\end{center}
+\end{figure}
+
+So, what happens when you get a massive iron core? At this stage, the electrons are fully degenerate, but it's good to note that not all the pressure comes from degeneracy, since the core temperature is still quite high (probably close to $10^{10}-10^{11}~{\rm K}$. The core starts to contract, as it did at the end of every other burning phase. As a result, the temperature increases, but this time, there is no other isotope we can fuse iron into and extract energy to re-expand the core. Instead, the temperature continues to increase until photons are energetic enough to start photodissociating iron nuclei into alpha particles and neutrons and photodissociating alpha particles into neutrons and protons. This robs the core of some of its pressure support, which is a combination of thermal and photon pressure, because a bunch of photon energy goes into breaking these nuclei apart. Note that this effect is more important in more massive stars, which have higher core temperatures. Meanwhile, neutronization has been happening at the same time. This starts occurring during Si burning, but when the Fe core grows very massive, it can produce a runaway that saps the core of its electron degeneracy pressure. The neutronization (which is through inverse beta decay), removes electrons and therefore reduced the electron degeneracy pressure. This is what eventually causes the core to collapse rapidly to a neutron star. This also ``deleptonizes" the core by sending out neutrinos, which don't interact much with matter and escape rapidly at this state. The timescale for this collapse is roughly the freefall timescale
+\begin{equation}
+\tau_{ff} \approx (G\rho)^{-1/2} \approx \biggl(\frac{GM}{R^3}\biggr)^{-1/2} \approx \biggl(\frac{G{\rm M}_\odot}{(6\times 10^8~{\rm cm})^3}\biggr)^{-1/2} \approx 1.2~{\rm s}\,\,.
+\end{equation}
+Some people quote the freefall time as 0.1-0.5 s, so this gets it to an order of magnitude.
+
+Anyway, now we've rapidly collapsed our entire Chandrasekhar-mass iron core into a neutron star. What happens to everything else? Well, this collapse is much faster than the sound-crossing time of the star. It takes the outer layers a lot more time to ``learn" about the sudden loss of support from below. Note that the core radius is tiny, something like an Earth radius, while the rest of the star may be several to a thousand solar radii. There is not a super sharp cutoff for which layers follow the core and which hang for a bit, but they are basically divided into these two groups. The outer layers of the star then start falling supersonically (I think) toward the core. Meanwhile, the core density roughly equals and surpasses the nuclear density, which is something like $10^{14}~{\rm g}~{\rm cm}^{-3}$. Through rapid collapse, it's overshot its equilibrium as the nuclear strong force takes over pressure support. This causes the core to ``bounce" and the surface moves out a bit very rapidly, right into the falling outer layers. This creates a powerful shock that then propagates outward into the still infalling layers of the star. Much of the shock energy goes into thermally heating the layers of the star and dissociating heavy elements as well as causing explosive nucleosynthesis. This is dominated by the production of $^{56}Ni$ because the layers outside the core are mostly symmetric ions, meaning they have the same numbers of protons and neutrons. Nickel is the most energetically favorable nucleus under the conditions of this rapid nucleosynthesis of symmetric matter, whereas iron was most favorable when there were more neutrons than protons.
+
+The shock has lost a lot of its energy now, even before it reaches the surface. Depending on the energy in the shock, the density of the material, and the radius of the star (i.e. how much matter the shock needs to get through), it will most likely stall. This may not be the case for low-density matter and small radii, but for Type II supernovae (big hydrogen layer) it's very likely. Through some mechanism, we need to revive the shock if we want an explosion.
+
+Meanwhile, the neutron star is super hot and is cooling by releasing neutrinos. These come from the inverse beta decay processes that have been happening before and during collapse:
+\begin{equation}
+e^- + p \rightarrow \nu_e + n\,\,.
+\end{equation}
+In fact, this is where most of the energy from the core collapse goes. If we calculate the difference between the gravitational binding energy of the pre-collapse core and the resulting proto-NS, it's about $10^{53}$ ergs! Spoiler alert---that's 100 times as much as the energy we actually see coming out of a supernova based on its line velocities and luminosity. It seems like the best way to reconcile all this is to somehow get 1\% of the energy from neutrinos deposited into the outer layers of the collapsing star in order to revive the shock and get an explosion as we observe. It's not a crazy idea, since the densities become so high that neutrino interactions should be important but we still haven't really pinned this down. There are a couple other possible explanations for how to revive the shock, such as through fluid instabilities, but neutrinos seem like the most viable way right now.
+
+Okay, we've successfully blown up our star. What do we expect to see? The first thing should be what's called ``shock breakout". This is just when the shock reaches the surface of the star, and there should be a burst of high-energy radiation associated with that. So far it hasn't been observed because it occurs on a very short timescale (I would say minutes to hours), and we'd have to be pointing directly at the supernova while this happens.
+
+
+
 \subsection{Neutron Stars}
 
 \subsection{Black Holes}
