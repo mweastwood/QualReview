@@ -510,4 +510,148 @@ deficient spirals are located in the cores of clusters where the x-ray gas
 density is the highest.  Gas deficiency also correlates with x-ray luminosity 
 (which depends on density). 
 
+\subsection{Galaxy Relations}
+Hubble Sequence:\newline
+Hubble classified galaxies in a tuning fork diagram based on their appearance 
+(see Figure \ref{fig:fork}).  Ellipticals are on the left, with the number 
+after E corresponding to the ellipticity of the galaxy times $10$, rounded to 
+the nearest integer.  The two branches on the right are for spirals with bars 
+and spirals without bars.  Left to right on the branches corresponds to 
+less tightly wound arms and a less prominent central bulge.  The S$0$ galaxies 
+in the center are a cross between ellipticals and spirals.  They have a bulge 
+and disk structure, but no spiral arms and a low star formation rate.  Hubble 
+originally thought this diagram was an evolutionary sequence, so ellipticals 
+are still called early type galaxies and spirals are called late type 
+galaxies.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{fork.jpg}
+\end{center}
+\caption{Hubble Sequence 
+\label{fig:fork}}
+\end{figure}
+
+Hubble's classification scheme is subjective and based on appearance, not 
+physics, but there are still properties that correlate with the sequence.  
+Moving from left to right on the diagram, there is a transition from 
+pressure support of the galaxy (kinematic pressure) to rotational support, 
+an increase in star formation, red color to blue color, hot gas to cold gas 
+and dust, old to still forming, and high luminosity density to low luminosity 
+density.  These trends represent different star formation histories in 
+ellipticals and spirals.  Ellipticals had a large burst of star formation 
+early in their histories, using up all of their gas.  So all that's left is 
+old, red stars.  Spirals have had a more steady star formation history, and 
+are being supplied with new infalling gas (they have star formation rates of a 
+few $M_{\odot}$ per year, but only a few $\times 10^9\ M_{\odot}$ of gas).  
+Another difference between spirals and ellipticals is formation.  If 
+ellipticals formed from the merger of stellar dominated systems, the 
+dissipationless collisions would result in a pressure supported system, 
+with the stars following the random $3$-D motions that they came in with.  
+On the other hand, if clouds of gas merge, energy will be dissapated in the 
+process, forming a disk before stars form.  
+
+Scaling Relations:\newline
+Properties of galaxies tend to follow power laws, which reflect the actual 
+physics of the galaxies (even though we don't understand the physics, like 
+Shri says, big galaxies are big).  Such correlations that relate distance 
+dependent quantities to distance independent quantities (like the Tully-Fisher 
+relation) are useful as distance indicators.  For spiral galaxies, the 
+Tully-Fisher relation relates the luminosity and rotational speed of the 
+galaxy:
+\begin{equation}
+L\propto V_{rot}^{\sim4}
+\end{equation}
+This relation can be hand-wavingly derived by assuming a galaxy disk has 
+radius $r_d$ and uniform surface brightness $I$.  Then the total luminosity 
+of the galaxy is given by $L\propto r_d^2I$.  Using the virial theorem, the 
+mass inside of $r_d$ is $M\propto r_dV_{rot}^2$.  These two equations can 
+be combined to give:
+\begin{equation}
+L\propto \left(\frac{M}{L}\right)^{-2}V_{rot}^4I^{-1}
+\end{equation}
+If if is assumed that all spirals have the same mass to light ratio and 
+surface brighteness, then this becomes 
+\begin{equation}
+L\propto V_{rot}^4
+\end{equation}
+The surprising thing about the Tully-Fisher relation is it connects a property 
+of the dark halo ($V_{rot}$) to a property of the visible matter ($L$), so 
+there must some sort of feedback mechanism relating the two.  Elliptical 
+galaxies follow the same proportionallity between their luminosity and 
+velocity dispersion, known as the Faber-Jackson relation:
+\begin{equation}
+L\propto \sigma^4
+\end{equation}
+
+Fundamental Plane:\newline
+Observationally, elliptical galaxies line in a plane in radius, surface 
+brightness, velocity dispersion space defined by 
+\begin{equation}
+R\propto \sigma^{1.4}I^{-0.8}
+\end{equation}
+Sometimes luminosity is used instead of radius:
+\begin{equation}
+L\propto \sigma^{3.26}I^{-0.8}
+\end{equation}
+This can be approximately derived starting with the Virial Theorem
+\begin{equation}
+\frac{GM}{<R>}=k_E\frac{<V^2>}{2}
+\end{equation}
+and assuming that the observable radius, velocity dispersion, and luminosity 
+(without the brackets) are related to the actual average $3$-D values (with 
+the brackets) by $R=k_R<R>$, $V^2=k_V<V^2>$, and $L=k_LIR^2$.  I think all of 
+these k's are just accounting for the fact that this is handwavy and 
+approximate.  Solving for 
+mass in the Virial Theorem and dividing by luminosity and rearranging gives:
+\begin{equation}
+R=K_{SR}V^2I^{-1}(M/L)^{-1}
+\end{equation}
+\begin{equation}
+L=K_{SL}V^4I^{-1}(M/L)^{-2}
+\end{equation}
+with 
+\begin{equation}
+K_{SR}=\frac{k_E}{2Gk_Rk_Lk_V}
+\end{equation}
+\begin{equation}
+K_{SL}=\frac{k_E^2}{4G^2k_R^2k_L^2k_V^2}
+\end{equation}
+The relations for $R$ and $L$ are a little off from the observed relations, 
+meaning either the k's or the mass to light ratio varies with the fundamental 
+plane parameters.  If lensing is used to to replace surface brightness with 
+surface density, observations give 
+\begin{equation}
+R\propto \sigma^{1.8\pm0.2}\Sigma^{-1\pm0.2}
+\end{equation}
+consistent with the Virial Theorem derivation.  Looking at the fundamental 
+plane with different pairs of parameters gives other relations, such as the 
+Faber-Jackson relation and the Kormendy relation:
+\begin{equation}
+R\propto I^{-0.8}
+\end{equation}
+Scatter in these relations is just scatter due to the other axis of the $3$-D 
+space.  
+
+The fundamental plane is surpising because if means elliptical galaxies 
+only occupy a small part of their possible parameter space, regardless of 
+their formation or evolution histories.  Simulations can reproduce the plain, 
+but not explain it.  
+
+Other correlations George mentioned are the correlation between black hole 
+mass and K-band absolute magnitude ($M_{BH}\propto M_K$) and the correlation 
+between black hole mass and velocity dispersion ($M_{BH}\propto \sigma^{4.5}$) 
+for spiral bulges and ellipticals.  These relations are not fully understood, 
+but probably have to do with some sort of feedback.  
+
+Dwarf Galaxies:\newline
+Dwarf ellipticals and dwarf spheroidals are classified with regular ellipticals 
+in the Hubble sequence, but follow different scaling relations.  For example, 
+while regular ellipticals show decreasing average surface brightness with 
+increasing total luminosity, while dwarfs follow an opposite trend.  The 
+difference is the different formation and evolutionary processes for dwarf 
+galaxies.  With less mass, these galaxies are less able to hold onto their gas, 
+so the first generation of supernovae can blow the gas out of the galaxy, 
+leaving the galaxy with a few stars and lots of dark matter.  
+
 
