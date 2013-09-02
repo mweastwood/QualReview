@@ -188,6 +188,8 @@ where the second term (not $e^2$) is the effective potential $V_{\rm eff}$. A pl
 \end{center}
 \end{figure}
 
+I have in my notes that if you have an accretion disk around your black hole, the energy you get out is the gravitational binding energy of the matter at the innermost stable circular orbit. I'm not sure why in infall from $R_{ISCO}$ doesn't count, though.
+
 
 This is the potential for massive particles. For massless particles like photons, the orbits are described instead by
 \begin{equation}
@@ -197,7 +199,7 @@ Here $e^2$ describes the energy and $\frac{h^2}{r^2}$ describes the momentum. Le
 \begin{equation}
 \frac{1}{h^2} \biggl( \frac{dr}{d\lambda} \biggr)^2 = \frac{e^2}{h^2} - \biggl( 1 - \frac{2M}{r} \biggr) \frac{1}{r^2} = \frac{1}{b^2} - \biggl( 1 - \frac{2M}{r} \biggr) \frac{1}{r^2}\,\, ,
 \end{equation}
-where $b$ is the impact parameter. The effect of this is that you can bend photons around black holes many times, and they can spiral around the black hole before either escaping or getting absorbed. See Figure \ref{f:veff_phot} for a plot showing the shape of the potential for photons.
+where $b$ is the impact parameter. The effect of this is that you can bend photons around black holes many times, and they can spiral around the black hole before either escaping or getting absorbed. See Figure \ref{f:veff_phot} for a plot showing the shape of the potential for photons. In this way, you can, for example, see both polar caps of a neutron star (this treatment applies outside a nonrotating NS as well), and this will affect the light curves of X-ray binaries, among other things.
 
 \begin{figure}[!h]
 \begin{center}
@@ -213,6 +215,14 @@ where $b$ is the impact parameter. The effect of this is that you can bend photo
 \end{center}
 \end{figure}
 
+Rotating Black Holes:
+
+Hopefully we don't need to know too much about this. There's some stuff in my notes about precession as disk warping, but I'll skip it for now and maybe put it in later. The basic thing you should know is that a rotating black hole has what's called an ergosphere. The shape is basically a bulging outward from the event horizon perpendicular to the axis of rotation (so kind of like an oblate spheroid). Spacetime is dragged along with the rotation of the black hole, causing what's called ``frame dragging" (also known as the Lense-Thirring effect). This has some interesting consequences for the spins of objects in the ergosphere, and can actually spin them up or down, even though in the object's rest frame where is no torque. It is also possible to extract rotational energy from the ergosphere by dropping something into the ergosphere such that it passes through and comes back out.
+
+The space around a rotating black hole is described by Kerr geometry. The orbit of an object described by $\Omega$ is constrained by $\Omega_{\rm min} < \Omega = \frac{d\phi}{dt} < \Omega_{\rm max}$, where
+\begin{equation}
+\Omega^{\rm min}_{\rm max} = \frac{ - g_{0\phi} \mp \sqrt{g_{0\phi}^2 - g_{00}g_{\phi\phi}}}{g_{\phi\phi}}
+\end{equation}
 
 \subsection{Bondi Accrection}
 
