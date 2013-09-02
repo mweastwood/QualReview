@@ -168,5 +168,346 @@ brightness scaling relations for elliptical galaxies make a good standard
 surface brightness.  Observations of clusters at different redshifts match 
 $B\propto(1+z)^{-4}$.  
 
+Hubble Diagrams:\newline
+Hubble diagrams use standard candels or standard rulers to plot luminosity 
+distance or angular diameter distance vs. redshift.  The shape of the 
+curve gives information about the cosmological parameters.  For example, 
+if the Universe has a lower density or positive $\Lambda$, it will have 
+expanded faster and be larger today.  We know the Hubble constant today, 
+so to slow down to this expansion rate would require more time, so the 
+Universe would be older.  Since the Universe is larger, at a given 
+redshift, objects would be further away, so they would look fainter and 
+smaller.  A higher density Universe would behave the opposite way.  Plots 
+of luminosity/angular diameter distance (or some proxy like magnitude or 
+angular size) vs. redshift would show this (see Figure \ref{fig:hubble}).
 
-  
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{hubble.jpg}
+\end{center}
+\caption{A Hubble Diagram for different cosmological parameters.
+\label{fig:hubble}}
+\end{figure}
+
+Early attempts at this used galaxies, clusters, and radio sources as standard 
+candles and standard rulers, but galaxy and cluster evolution effects 
+dominated over the effects of different cosmologies.  The use of type Ia 
+supernovae (standard candles) and CMB fluctuations (standard rulers) provided 
+much better tests.  
+
+In these tests, biases from missed sources must be taken into account, as well 
+as the K correction.  The idea behind the K correction is if we measure the 
+light from a galaxy in a certain bandpass in our frame, the light we are seeing 
+is from a bluer region of the spectrum, and this region is narrower by a 
+factor of (1+z).  The bandpass emitted by the galaxy is redshifted and 
+stretched when it reaches us.  This effect depends on redshift, so it must be 
+taken into account when looking at galaxies at different redshifts.  The 
+ratio of the flux in our frame to the flux in the galaxy's frame as a function 
+of redshift has been computed for different types of galaxies and for different 
+bandpasses.  
+
+Using type Ia supernovae or CMB fluctuations indivually creates a degeneracy 
+between $\Omega_{\Lambda}$ and $\Omega_M$ (here, $\Omega_M$ is density of 
+baryonic and dark matter).  Combining these tests, however, breaks the 
+degeneracy, and results in $\Omega_{\Lambda}\sim0.7$ and $\Omega_M\sim0.3$.
+
+Another cosmological test is galaxy and cluster counts.  Plotting 
+source counts vs magnitude (as a proxy for redshift) gives information 
+on the density of the Universe.  A Universe with lower denstiy or higher 
+$\Lambda$ will be larger, therefore there will be more sources to observe, 
+so the curve will be higher.  A Universe with higher density will be smaller, 
+and have a lower curve.  Galaxy evolution makes things difficult.  Galaxies 
+were brighter in the past, so there will be extra counts at brighter 
+magnitudes.  Also, because galaxies merge, there were more faint pieces in 
+the past, which produces extra counts at fainter magnitudes.  To avoid this, 
+really need redshifts of these galaxies.  Cluster counts rely on the 
+assumption that we know what the number density of distant clusters should 
+be based on the number density of nearby ones.  In a low density, older 
+Universe, clusters could have formed further back in time, so we'd expect 
+to see lots of distant ones.  In a higher density, younger Universe, clusters 
+would only just be forming now, so we wouldn't see many distant ones.  
+
+The combination of all these tests helps to better constrain the cosmological 
+parameters and break degeneracies.  The results (I think these are pre-Planck) 
+are shown in Table \ref{tab:cosmo}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c c}
+\hline\hline
+Parameter&Value\\
+\hline
+$t_0$ & $13.82\pm0.05$ Gyr\\
+$H_0$ & $69$ km/s/Mpc\\
+$\Omega_{baryon}$ & $0.04$\\
+$\Omega_{matter}$ & $0.31$\\
+$\Omega_{\Lambda}$ & $0.69$\\
+\hline
+\end{tabular}
+\caption{Cosmological Parameters \label{tab:cosmo}}
+\end{table}
+
+\subsection{Contents of the Universe}
+Baryonic Dark Matter:\newline
+Observations show that the Universe's luminous matter density is only 
+$\Omega_{lum}\sim0.005$, compared to $\Omega_{baryon}\sim0.04$.  This comes 
+from measuring the amount of light we see, and combining this with a mass to 
+light ratio.  So there is a lot of missing baryonic matter.  Two possibilities 
+are massive compact halo objects (MACHOs) and cold H$_2$ gas clouds.  The most 
+likely explanation looks to be warm/hot gas in galaxies groups that never 
+collapsed into galaxies.  This gas would have temperatures of $\sim10^5-10^6$ 
+K.  The emission from this gas would be in the far-UV/soft x-rays, which would 
+be absorbed by the ISM and not be detectable.  There have been some potential 
+detections through UV absorption though.  
+
+Non-baryonic Dark Matter:\newline
+This is the actual dark matter we usually talk about.  Galaxies and x-ray 
+gas in clusters have typical velocity dispersions of $500-1500$ km/s, with 
+cluster radii of $3-5$ Mpc.  Using the virial theorem, this gives masses 
+of $10^{14}-10^{15}\ M_{\odot}$.  The total luminosity of clusters is only 
+$\sim10^{12}\ L_{\odot}$, so the mass to light ratio of these clusters 
+is in the hundreds.  This means lots of dark matter.  In individual galaxies, 
+flat rotation curves (spirals) and flat velocity dispersions (ellipticals) 
+cannot be accounted for with just the visible matter, implying the presence of 
+dark matter.  The density profile of a spiral galaxy can be found by 
+balancing rotation with gravity.  
+\begin{equation}
+\frac{v^2(r)}{r}=\frac{GM(r)}{r^2}
+\end{equation}
+If density is constant, then
+\begin{equation}
+M(r)=\frac{4}{3}\pi r^3\rho
+\end{equation}
+and
+\begin{equation}
+v(r)=r\sqrt{\frac{4\pi G\rho}{3}}
+\end{equation}
+This velocity profile is seen in the bulges of spirals (see Figure 
+\ref{fig:vcurve}).  If the density is assumed to follow a power law
+\begin{equation}
+\rho(r)=\rho_0\left(\frac{r}{r_0}\right)^{-\alpha}
+\end{equation}
+then
+\begin{equation}
+v(r)=\sqrt{\frac{4\pi G\rho_0r_0^{\alpha}}{3-\alpha}}r^{1-\alpha/2}
+\end{equation}
+For $v(r)$ to be constant, need $\alpha=2$.  So $\rho\propto r^{-2}$ and 
+$M(r)\propto r$.  This is called a singular isothermal sphere.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{vcurve.jpg}
+\end{center}
+\caption{Velocity curves of spiral galaxies. \label{fig:vcurve}}
+\end{figure}
+
+Small irregular galaxies can have mass to light ratios of $100$, 
+meaning they are even more dark matter dominated than big galaxies.  This is 
+thought to be because the shallow gravitational potential of these galaxies 
+allows the baryonic matter to be expelled, leaving only the dark matter.  
+
+Candidates for dark matter include massive neutrinos (which we know exist, we 
+just don't know how much exists), and theoretical particles like weakly 
+interacting massive particles (WIMPS, not to be confused with the glorious 
+society) and axions.  Modified Newtonian gravity is another, less popular 
+possibility.  In terms of structure formation, dark matter is broken down into 
+two classes- hot (HDM) and cold (CDM).  Hot dark matter would be relativistic 
+particles such as neutrinos.  The relativistic speeds of HDM would smooth-out 
+small-scale density fluctuations in the early Universe, so large structures 
+would form first, and smaller structures would form later through fragmentation 
+(top-down structure formation).  CDM would consist of slower moving 
+particles like WIMPs or axions.  Small density fluctuations would not be 
+affected, so small structures would form before large structures (bottom-up 
+structure formation).  Most dark matter is probably CDM.  
+
+Dark energy is a complete mystery.  We know the Universe's expansion is 
+accelarating due to a cosmological constant $\Lambda$, with 
+$\Omega_{\Lambda}\sim0.7$ (see expansion test section).  We don't know what 
+dark energy actually is though.  
+
+\subsection{Large Scale Structure}
+The Milky Way is part of the local group of galaxies, which is on the edge 
+of the much larger local supercluster.  The local supercluster is a $\sim60$ 
+Mpc flatten group of galaxies clusters, with the Virgo cluster at its center.  
+Other superclusters can be as large as $\sim100$ Mpc.  
+
+Formation of large scale structure:\newline
+For structures collapsing on a free-fall timescale, $t_{ff}\propto\rho^{-1/2}$, 
+so smaller structures (which tend to be denser) form first.  For example, 
+the free-fall time of a galaxy is hundreds of Myr, while for a cluster, the 
+timescale is $\sim10$ Gyr.  This means galaxies should have formed early in the 
+Universe (at high redshifts), and clusters should still be forming today.  This 
+matches what we observe.  If the collapse of material into a cluster is 
+non-spherical, the collapse will happen first along the shortest axis, forming 
+a pancake.  The next shortest axis will collapse next, forming a thin 
+filament.  Finally, it collapses along the remaining axis forming a spherical 
+cluster.  We see these pancakes and filaments in numerical simulations and 
+observations of large scale structure.  
+
+Observations of large scale structure:\newline
+Large scale structure can be mapped in 3-D using redshift surveys.  Mapping 
+the positions of galaxies on the sky, then moving through different redshift 
+slices reveals that the 3-D distribution of galaxies is not random.  Galaxies 
+are in coherent structures.  One problem with using redshifts for this is 
+the ``finger of God'' effect.  If a cluster is physically spherical, but has 
+velocity dispersion amoung its galaxies, the dispersion velocities of the 
+galaxies will add to or subtract from their measured redshifts, causing the 
+cluster to appear elongated in redshift space (see Figure \ref{fig:finger}).  
+If the cluster is still collapsing, than galaxies on the close side will 
+be moving away from us with extra velocity, while galaxies on the far side 
+will have extra motion towards us.  This has the effect of flattening 
+the galaxy in redshift space.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{finger.jpg}
+\end{center}
+\caption{Velocity dispersion and infall effects on redshift maps. 
+\label{fig:finger}}
+\end{figure}
+
+2 Point Correlation Function:\newline
+The degree to which galaxies are clustered is quantified by the 2 point 
+correlation function, $\xi (r)$.  This is defined as the excess 
+probability of finding a galaxy a distance $r$ away from another galaxy, 
+relative to a uniform galaxy distributin.  In other words, for a uniform 
+galaxy distribution, the number of galaxies you'd expect to find a distance 
+r away from a single galaxy is $dN(r)=4\pi r^2ndr$ where $n$ is the number 
+density of galaxies.  If the galaxies are clustered with a correlation function 
+$\xi$, then the number you would find is $dN(r)=4\pi r^2n(1+\xi(r))dr$.  
+The 2 point correlation function is usually assumed to be (you guessed it!) a 
+power law:
+\begin{equation}
+\xi(r)=\left(\frac{r}{r_0}\right)^{-\gamma}
+\end{equation}
+where, for galaxies, $r_0\sim5h^{-1}$ Mpc, and $\gamma\sim1.8$.  For clusters, 
+clustering is stronger (clusters of clusters are more clustered than clusters 
+of galaxies).  Generally, bigger structures cluster more strongly.  $\xi (r)$ 
+can be estimated by counting the number of galaxy pairs in a dataset (DD) 
+and by counting the number of pairs in a randomly generated uniform catalog 
+(RR).  Then
+\begin{equation}
+\xi (r)=\frac{DD}{RR}-1
+\end{equation}
+There are more sophisticated methods to take into account effects at the edges 
+of the dataset, but this is the basic idea.  Observations indicate that 
+brigher galaxies are more strongly clustered than fainter ones, and redder 
+galaxies (ellipticals) are clustered more strongly than bluer galaxies 
+(spirals).  To compare with structure formation simulations, a power spectrum 
+can be calculated from the Fourier transform of the correlation function.  
+The observed power spectrum matches CDM simulations, and shows a peak 
+corresponding to the peak in the power spectrum of CMB fluctuations (this 
+isn't really explained well on the slide, but I think it has something to do 
+with one of the will-ask questions).  
+
+Peculiar Velocities:\newline
+Large scale structure can also be probed using the peculiar velocities of 
+galaxies.  This is a measure of their motions in addition to their Hubble 
+flow velocities, in other words
+\begin{equation}
+v_{tot}=v_{Hub}+v_{pec}=H_0d+v_{pec}
+\end{equation}
+This peculiar motion is due to fluctuations in the large scale density field 
+(i.e. large scale structure).  The redshifts of galaxies can be measured and 
+assumed to be due to only Hubble flow.  The positions of the galaxies this 
+gives can be used to find what their accelarations towards each other would 
+be.  These accelarations times the Hubble time gives a peculiar velocity 
+estimate.  Once the peculiar velocity has been found this way, the positions 
+of the galaxies can be updated using only the Hubble contribution to their 
+redshifts.  This can be repeated until things converge, giving a final density 
+field.  For example, the Milky Way is falling towards the Virgo 
+Cluster at $\sim300$ km/s, and the local supercluster is falling towards the 
+Hydra-Centaurus Supercluster at $\sim500$ km/s.
+
+Evolution of Clustering:\newline
+Large scale structure starts out as primordial density fluctuations that 
+continuously collapse under their own gravity.  Therefore, it is expected 
+that clustering is stronger today than at high redshifts, since things 
+will have collapsed more.  This is what is observed out to $z=1$.  At higher 
+redshifts, however, clustering strength increases.  This is because the 
+galaxies we see at high redshifts are a biased tracer of clustering.  
+For galaxy clusters to have already formed at high redshift, they must 
+correspond to higher peaks in the density fluctuations.  We see the light 
+from these galaxies and clusters, but not the light from other mass that 
+has not yet collapsed.  So all we can see is the few things that are most 
+strongly clustered.  For example, 
+at high z, the only things that have already started clustering came from 
+$5\sigma$ density fluctuations.  These fluctuations collapsed quickly and are 
+tightly clustered, so the clustering strenght looks high.  At lower 
+redshifts, these $5\sigma$ peaks will be even more strongly clustered, 
+but the total clustering strength will be brought down by $1$ and $3\sigma$ 
+peaks that have finally had time to form clusters.  So clustering does 
+strengthen in time, but today we see a correlation function that is brought 
+down by intrinsically less strongly clustered things.  At high z, all we 
+can see are intrinsically tightly clustered things.  It's like looking at 
+a nearby population of stars and a far away population of stars, and concluding 
+the two have different IMFs because all you can see in the distant population 
+are massive stars.  
+
+\subsection{Galaxy Clusters}
+Galaxy clusters are usuallay a few Mpc across and contain $100-1000$ luminous 
+galaxies and many more dwarfs.  Total masses are 
+$\sim10^{14}-10^{15}\ M_{\odot}$.  Clusters are gravitationally bound, but 
+not all have virialized yet.  Clusters are $\sim80$\% dark matter, $10$\% 
+galaxies, and $10$\% hot x-ray gas.  Clusters are denser than galaxy groups 
+and are dominated by elliptical galaxies, while groups are dominated by 
+spirals.  The closest cluster to us is the Virgo cluster, $\sim3$ Mpc in size, 
+$\sim16$ Mpc away, and containing $\sim2000$ galaxies, mostly dwarfs.
+
+Finding Clusters:\newline
+Cluster can be identified by finding the galaxies themselves, the x-ray gas, 
+or the dark matter.  Using optical observations, overdensities of 
+galaxies can be identified.  Also, color information can be used since clusters 
+contain many red elliptical galaxies.  The problem with this technique is 
+galaxies may appaear close together on the sky, but could be at different 
+distances.  Another technique involves using the color-magnitude sequence 
+for elliptical galaxies (basically a mass-metallicity relationship).  This 
+sequence changes at different redshifts because of the K correction, so 
+picking out galaxies along the same sequence can be used to finds ones at the 
+same distance.  
+
+The hot IGM gas in clusters can be detected by x-ray observations of thermal 
+bremsstrahlung from the gas or by the S-Z effect.  Both of these techniques, 
+however, are based on detecting clusters from light, not from mass.  Weak 
+lensing can be used to identify the dark matter in clusters, actually detecting 
+the clusters based on mass.  This is difficult to do observationally though.  
+
+The Galaxies:\newline
+Many (but not all) clusters are dominated by a large elliptical galaxy in the 
+center.  The distribution of galaxies can be regular (spherically symmetric 
+with increasing density toward the center) or irregular (not spherically, 
+with a uniform number density, also contain more spirals).  The interpretation 
+is that regular clusters are those that have had time to dynamically relax 
+and reach equilibrium.  Mergers have turned the spiral galaxies into elliptical 
+galaxies, and built up the large central galaxy.  Irregular clusters 
+are still forming and have not come to equilibrium or used up their spirals 
+yet.  
+
+The giant elliptical galaxies in the centers of clusters are often surrounded 
+by diffuse light from stars that have collected at the center of the cluster.  
+These stars (originally noticed by Zwicky) have probably been 
+stripped from other galaxies during mergers and have collected in the center 
+of the cluster.  This is evidence that the evolution of galaxies is affected 
+by their environment.  Another example is the stripping of gas from spiral 
+galaxies due to the ram pressure of the IGM x-ray gas.  
+
+The x-ray Gas:\newline
+The x-ray gas in galaxy clusters has a typical temperature of $10^7-10^8$ K, 
+emitting by thermal bremsstrahlung.  There is too much of this gas for it 
+to have all escaped from galaxies, so it must be left over from formation of 
+the cluster.  The gas was probably heated by shocks as it fell into the cluster 
+potential, and since it can only cool through bremsstrahlung, it is still hot.  
+The gas does contain some metals though, so some of it has been added by 
+galaxies.  The temperature of the gas can be used in the virial theorem to 
+find a cluster mass of $10^{14}-10^{15}\ M_{\odot}$, implying the presence of 
+dark matter (see Contents of the Universe section).  The mass profile of the 
+cluster can also be found using this gas (I'm not really sure how, the slide 
+doesn't give much detail, but this could be used in the galaxies will-ask).  
+The x-ray gas is also important for the S-Z effect for finding and determining 
+distances to clusters.  As mentioned above, the x-ray gas can strip cold gas 
+out of spiral galaxies in the cluster.  As expected, the most gas 
+deficient spirals are located in the cores of clusters where the x-ray gas 
+density is the highest.  Gas deficiency also correlates with x-ray luminosity 
+(which depends on density). 
+
+

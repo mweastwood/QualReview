@@ -111,6 +111,89 @@ Solutions are depicted in Figure \ref{f:mach}. The point where $v = c_s$ is call
 
 \subsection{Black Holes}
 
+The first thing to know about black holes is that their escape velocities are greater than the speed of light. The hand-wavey way to derive the Schwarzschild radius is to set the gravitational potential energy $\frac{-G Mm}{r}$ equal to the kinetic energy of a classical particle orbiting it $\frac{1}{2}m v^2$, then setting the orbital velocity equal to the speed of light. This gives the result
+\begin{equation}
+R_s = \sqrt{\frac{2GM}{c^2}}\,\,.
+\end{equation}
+Of course, the real way to derive this radius is using general relativity, but I think this approach will suffice. Note: if you try to derive this by setting the gravitational force equal to the centripetal force experienced by the particle, you will be off by a factor of two.
+
+The mean density of a black hole is given approximately by finding $\frac{M}{R_s^3}$, which is roughly
+\begin{equation}
+\frac{M}{\biggl( \frac{GM}{c^2} \biggr)} \approx 6 \times 10^{17} \biggl(\frac{M}{{\rm M}_\odot} \biggr)^2~{\rm g}~{\rm cm}^{-3}\,\,.
+\end{equation}
+This density is important for determining how important tidal dissipation is. For the tidal force, imagine a body of mass $M$ tidally pulling on a smaller mass $m$ at a distance $r$. Say the small mass can be divided into two masses $\frac{m}{2}$ separated by a distance $h$, which would be about the radius of the small mass. The force required to pull this mass apart is about $\frac{G (m/2)}{h^2}$. The tidal force is given by
+\begin{equation}
+\frac{GM(m/2)}{(r + h)^2} - \frac{GM(m/2)}{r^2} \approx \frac{GM(m/2)h}{r^3} > \frac{G(m/2)^2}{h^2}
+\end{equation}
+is the condition for tidal dissipation (note: there was some expansiony math stuff that happened here that I'm not sure about. I think it works if you just multiply out and take the largest term on the top and bottom). This gives us
+\begin{equation}
+\frac{M}{r^3} > \frac{m}{h^3}\,\,,
+\end{equation}
+so the densities of both the disrupting black hole and the small mass determine whether tidal disruption can happen.
+
+Spins of black holes:
+
+Let's look at the angular momentum at maximal spin. This we can approximate by treating the system semi-classically and just using $v = c$ and the Schwarzschild radius
+\begin{equation}
+J \sim Mc \frac{GM}{c^2} \sim \frac{GM^2}{c} = 9 \times 10^{48} \biggl( \frac{M}{{\rm M}_\odot} \biggr)^2 ~{\rm g}~{\rm cm}^2~{\rm s}^{-1}\,\,.
+\end{equation}
+By comparison, for a maximally rotating Main-Sequence star,
+\begin{equation}
+J_* \approx \sqrt{G M_* R_*} M_* \approx 6 \times 10^{51}\biggl( \frac{M_*}{{\rm M}_\odot} \biggr)^2 ~{\rm g}~{\rm cm}^2~{\rm s}^{-1}
+\end{equation}
+and for a galaxy:
+\begin{equation}
+J_{\rm gal} \approx \sqrt{G M_{\rm gal} R_{\rm gal}} M_{\rm gal} \approx 10^{74}~{\rm g}~{\rm cm}^2~{\rm s}^{-1}\,\, ,
+\end{equation}
+assuming the radius is about $10~{\rm kpc}$ and the mass is about $10^{11}~\rm{M}_\odot$.
+
+The Schwarzschild metric:
+
+Here we get to break out some fun GR notation. The gravitational field around a nonrotating black hole is described by the Schwarzschild metric, which is given by (note it is customary to set $G = c = 1$)
+\begin{equation}
+-d\tau^2 = ds^2 = -\biggl( 1 - \frac{2M}{r} \biggr) dt^2 + \frac{dr^2}{1 - \frac{2M}{r}} + r^2(d\theta^2 + \sin^2\theta) d\phi^2\,\,.
+\end{equation}
+In real units, this can be rewritten as
+\begin{equation}
+-c d\tau^2 = -\biggl( 1 - \frac{R_s}{r} \biggr) c^2 dt^2 + \frac{dr^2}{1 - \frac{R_s}{r}} + r^2(d\theta^2 + \sin^2\theta) d\phi^2\,\,.
+\end{equation}
+Here $r$ is the circumferential length. At a fixed point, $dt = \frac{d\tau}{\sqrt{1 - \frac{2M}{r}}}$. 
+
+Let's look at orbits in this metric. Set $\frac{\partial}{\partial t} = 0$ and $\frac{\partial}{\partial \phi} = 0$ (not sure why). Define $e = -u_0 = $ constant and $h = -u_\phi =$ constant. We have
+\begin{equation}
+e = -u_0 = -g_{00} u^0 = -g_{00} \frac{dt}{d\tau} = \biggl( 1 - \frac{2M}{r} \biggr) \frac{dt}{d\tau}\,\,,
+\end{equation}
+\begin{equation}
+h = -u_\phi = g_{\phi \phi} u^\phi = r^2 \frac{d\phi}{d\tau}\,\,.
+\end{equation}
+We've defined these orbits to remain in the plane $\theta = \frac{\pi}{2}$, so $u^\theta = 0$.
+\begin{equation}
+g_{\alpha \beta}u^\alpha u^\beta = -1 \rightarrow g_{00} (u^0)^2 + g_{rr}(u^r)^2 + g_{\phi \phi} (u^\phi)^2 = -1
+\end{equation}
+and this can be rewritten as
+\begin{equation}
+g^{00} (u_0)^2 + g_{rr}(u^r)^2 + g^{\phi \phi} (u_\phi)^2 = \frac{1}{g_{00}} e^2 + \frac{1}{1 - \frac{2M}{r}}(u^r)^2 + \frac{1}{g_{\phi \phi}} h^2 = -1
+\end{equation}
+The important take-away equation is then:
+\begin{equation}
+\biggl(\frac{dr}{d\tau} \biggr)^2 = e^2 - \biggl( 1 - \frac{2M}{r} \biggr) \biggl( 1 + \frac{h^2}{r^2} \biggr)\,\,,
+\end{equation}
+where the second term (not $e^2$) is the effective potential $V_{\rm eff}$. A plot of this potential (the square root of it) is shown in Figure \ref{f:veff}. The equilibrium points are shown with black dots, but the inner ones are unstable. The curve with the equilibrium point that reaches 1 has the same potential energy at infinity, so this represents a particle that comes from infinity, approaches this radius, and then goes back out to infinity.
+
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{veff.jpg}
+\caption{Effective potential versus radius around a Schwarzschild black hole. The innermost stable circular orbit (ISCO) is marked at $r = 6M$ \label{f:veff}}
+\end{center}
+\end{figure}
+
+
+This is the potential for massive particles. For massless particles like photons, the orbits are described instead by
+\begin{equation}
+\biggl(\frac{dr}{d\lambda} \biggr)^2 = e^2 - \biggl( 1 - \frac{2M}{r} \biggr)  \frac{h^2}{r^2}\,\,.
+\end{equation}
+Here $e^2$ describes the energy and $\frac{h^2}{r^2}$ describes the momentum.
 
 \subsection{Bondi Accrection}
 
