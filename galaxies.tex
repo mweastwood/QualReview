@@ -1,11 +1,13 @@
 \section{Galaxies}
 \subsection{Questions}
-galaxies suck!!!!
 \begin{enumerate}
 \item \textbf{Define two-body relaxation and estimate its time scale in (a) a globular cluster; (b)
       the Milky Way's disk. In which cases is two-body relaxation important?}
       
-      Here's one way of calculating two-body relaxation. Assume $N$ bodies of mass $m$. Look at one mass travelling past another mass with relative velocity $v$ and impact parameter $b$. Assume that the time for the two to interact gravitationally is $2b/v$, that is, they are only interacting while the moving mass is $b$ away from its point of closest approach. The acceleration the mass feels due to the other mass is on the order of $Gm/b^2$. Therefore the change in velocity is
+      \newthought{Here's one way} of calculating two-body relaxation.\sidenote{
+        Another derivation is in Section~\ref{sec:timescales}.
+      }
+      Assume $N$ bodies of mass $m$. Look at one mass travelling past another mass with relative velocity $v$ and impact parameter $b$. Assume that the time for the two to interact gravitationally is $2b/v$, that is, they are only interacting while the moving mass is $b$ away from its point of closest approach. The acceleration the mass feels due to the other mass is on the order of $Gm/b^2$. Therefore the change in velocity is
       \begin{equation}
       \delta v_\perp (v,b) \sim \frac{Gm2b}{b^2v} = \frac{2Gm}{bv}\,\,.
       \end{equation}
@@ -24,52 +26,105 @@ galaxies suck!!!!
       \end{equation}
       
       The average density of stars in a globular cluster is $0.4~{\rm pc}^{-3}$, and we can probably assume the average mass is something like $1-2~{\rm M}_\odot$.
+
 \item \textbf{Draw qualitatively the spectral energy distribution of the Milky Way, and describe
       how its morphology might appear to an external observer as a function of wavelength.}
       
-      \begin{figure}[!h]
-\begin{center}
-\includegraphics[width=\textwidth]{galaxy_sed.jpg}
-\end{center}
-\end{figure}
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{galaxy_sed.jpg}
+    \caption{The SED of various galaxies.}
+    \label{fig:galaxy_sed}
+    \end{figure}
 
-The spectral energy distribution of the Milky Way looks like the magenta curve on the above plot.  There are a number of important features, which will be identified by their wavelength range.  
+    \begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{MW_morphology.jpg}
+    \caption{The morphology of the Milky Way as a function of wavelength.}
+    \label{fig:MW_morphology}
+    \end{figure}
 
-1. $ \thicksim0.1 \mu m$:  This is the Lyman limit.  912 angstroms corresponds to the photon energy required to ionize the electron in the hydrogen ground state.  The left of the break is dominated by stars whoa re hot enough to produce many photons with 13.6 eV or more that can ionize hydrogen en masse.  This appears as a sharp break because the opacity dramatically increases when stars become hot enough to produce photons at these energies.  
+    The spectral energy distribution of the Milky Way looks like the magenta curve in
+    Figure~\ref{fig:galaxy_sed}.  There are a number of important features, which are
+    identified by their wavelength range in Table~\ref{tab:galaxy_sed}.
+    Figure~\ref{fig:MW_morphology} shows the morphology of the Milky Way as a function of
+    wavelength, while Table~\ref{tab:MW_morphology} summarizes the important features.
 
-2.  $\thicksim 0.1 \mu m - 0.25 \mu m$:  Here the UV continuum of the disk SED is lower than that of a star-forming galaxy since it does not have as many O and B stars that dominate this wavelength range.
+    \begin{table}[p]
+    \centering
+    \begin{tabular}{cp{4in}}
+    \toprule
+    Wavelength range ($\mu$m) & Description \\
+    \midrule
+    $\sim0.1$ &
+        This is the Lyman limit.  912 angstroms corresponds to the photon energy required to
+        ionize the electron in the hydrogen ground state.  The left of the break is dominated by
+        stars whoa re hot enough to produce many photons with 13.6 eV or more that can ionize
+        hydrogen en masse.  This appears as a sharp break because the opacity dramatically
+        increases when stars become hot enough to produce photons at these energies. \\
+    $\sim0.1 - 0.25$ &
+        Here the UV continuum of the disk SED is lower than that of a star-forming galaxy
+        since it does not have as many O and B stars that dominate this wavelength range. \\
+    $\sim0.25 - 1$ &
+        Dust extinction is strong for bluer optical wavelengths (also for UV), which causes the
+        downward slope as wavelength decreases.  The bluer the light is, the more it is extinct. \\
+    $\sim1-11$ &
+        After the peak at $1 \mu m$, which is dominated by $1 M_\odot$ and slightly lower mass
+        stars, this wavelength range is dominated by evolved and low mass stars, which output a
+        lower total intensity than the solar mass stars at the peak.  The longer the wavelength,
+        the cooler the star, and the less energy is outputted.  This regime also has little to
+        no extinction. \\
+    $\sim5-10$ &
+        These strong emission lines are due to PAHs (polycyclic aromatic hydrocarbons).  These
+        are complex organic planar molecules with multiple benzene ring-like structures that are
+        probably responsible for a series of molecular bonds that have been observed in emission
+        in the light from diffuse dust clouds.  The emission lines appear to be due to vibrations
+        in the C-C and C-H bonds common in PAHs. \\
+    $\sim100$ &
+        Dust in the galaxy preferentially absorbs shorter wavelengths, i.e. UV and blue optical.
+        This peak is due to this high energy radiation being absorbed and re-emitted
+        (i.e. reprocessed), as thermal emission by dust. \\
+    \bottomrule
+    \end{tabular}
+    \caption{A tabulation of important features in the SED of a spiral galaxy.}
+    \label{tab:galaxy_sed}
+    \end{table}
 
-3. $ 0.25 \mu m - 1 \mu m$:  Dust extinction is strong for bluer optical wavelengths (also for UV), which causes the downward slope as wavelength decreases.  The bluer the light is, the more it is extinct.
-
-4.  $  \thicksim 1 \mu m - \thicksim 11 \mu m$:  After the peak at $1 \mu m$, which is dominated by $1 M_\odot$ and slightly lower mass stars, this wavelength range is dominated by evolved and low mass stars, which output a lower total intensity than the solar mass stars at the peak.  The longer the wavelength, the cooler the star, and the less energy is outputted.  This regime also has little to no extinction.   
-
-5.  $\thicksim 5 \mu m - \thicksim 10 \mu m$:  These strong emission lines are due to PAHs (polycyclic aromatic hydrocarbons).  These are complex organic planar molecules with multiple benzene ring-like structures that are probably responsible for a series of molecular bonds that have been observed in emission in the light from diffuse dust clouds.  The emission lines appear to be due to vibrations in the C-C and C-H bonds common in PAHs.  
-
-6.  $\thicksim 100 \mu m$:  Dust in the galaxy preferentially absorbs shorter wavelengths, i.e. UV and blue optical.  This peak is due to this high energy radiation being absorbed and re-emitted (i.e. reprocessed), as thermal emission by dust.
-
-
-The following figure is the one to have in mind when thinking about the morphology of the Milky Way as a function of wavelength.
-
-\begin{figure}[!h]
-\begin{center}
-\includegraphics[width=\textwidth]{MW_morphology.jpg}
-\end{center}
-\end{figure}
-
-Starting from the bottom and working back up:
-
-Gamma rays:  The central plane of the galaxy is brightest at these wavelengths.  This radiation can come from objects such as blazers, pulsars, and accreting black holes, found predominantly in the mid plane of the galaxy.
-
-X-rays:  Here the galaxy has a large scale height since the hot gas producing the x-rays has a larger scale height than the dust in the disk.  Dust is responsible for absorbing light from the mid plane.
-
-Optical:  Most of the light comes from the mid plane and the central part of the bulge.  Since dust preferentially extincts bluer wavelengths, some light from the mid plane is extinct (this is coming from the young, bright, blue stars).
-
-Near-IR:  As is evident from the image, there is hardly any extinction by dust in this wavelength range.  The light here is dominated by massive, evolved stars.  The bulge is especially bright since it s dominated by these evolved stars that peak in the near-IR.
-
-Far-IR:  These wavelengths are dominated by reprocessed thermal emission from dust.  This emission is brightest at the mid plane.
-
-Radio:  The continuum is dominated by synchrotron emission (from black holes, jets, pulsars, etc).  Objects producing this radiation are found in the mid plane - this it is bright in the radio.  In terms of line emission, hydrogen emission (21 cm line), is brightest at the mid plane but has a larger scale height than molecular gas that produces molecular lines.  
-
+    \begin{table}[p]
+    \centering
+    \begin{tabular}{cp{4in}}
+    \toprule
+    Wavelength & Description \\
+    \midrule
+    Gamma rays & 
+        The central plane of the galaxy is brightest at these wavelengths.  This radiation can
+        come from objects such as blazers, pulsars, and accreting black holes, found predominantly
+        in the mid plane of the galaxy. \\
+    X-rays &
+        Here the galaxy has a large scale height since the hot gas producing the x-rays has a
+        larger scale height than the dust in the disk.  Dust is responsible for absorbing light
+        from the mid plane. \\
+    Optical &
+        Most of the light comes from the mid plane and the central part of the bulge.  Since
+        dust preferentially extincts bluer wavelengths, some light from the mid plane is
+        extinct (this is coming from the young, bright, blue stars). \\
+    Near-IR &
+        As is evident from the image, there is hardly any extinction by dust in this wavelength
+        range.  The light here is dominated by massive, evolved stars.  The bulge is especially
+        bright since it s dominated by these evolved stars that peak in the near-IR. \\
+    Far-IR &
+        These wavelengths are dominated by reprocessed thermal emission from dust.
+        This emission is brightest at the mid plane. \\
+    Radio &
+        The continuum is dominated by synchrotron emission (from black holes, jets, pulsars, etc).
+        Objects producing this radiation are found in the mid plane - this it is bright in the
+        radio.  In terms of line emission, hydrogen emission (21 cm line), is brightest at the
+        mid plane but has a larger scale height than molecular gas that produces molecular lines. \\
+    \bottomrule
+    \end{tabular}
+    \caption{A discussion of the morphology of the Milky Way by wavelength.}
+    \label{tab:MW_morphology}
+    \end{table}
       
 \item \textbf{Describe at least three methods to probe the gravitational potential of galaxies,
       their assumptions, and their realm of applicability.}
@@ -88,8 +143,7 @@ Radio:  The continuum is dominated by synchrotron emission (from black holes, je
 \end{enumerate}
 
 \subsection{``The Galaxy''}
-
-Good numbers to keep in mind for order-of-magnitude estimates-
+\newthought{Good numbers to keep} in mind for order-of-magnitude estimates
 \begin{dgroup}
 \begin{dmath}
 R_{\astrosun}=8\ kpc
@@ -107,7 +161,7 @@ Radial scale length is $3.5$ kpc.  Vertical scale height is $330$ pc for the
 thick disk and $160$ pc for the thin disk.  Stellar density is $\sim1$ 
 pc$^{-3}$.  The bulge has radius of $\sim1$ kpc, while the halo extends to 
 $\sim50$ kpc.  The total mass in the halo (including dark matter) is 
-$10^12\ M_{\odot}$.  The MW's supermassive black hole is 
+$10^{12}\ M_{\odot}$.  The MW's supermassive black hole is 
 $\sim4\times10^6\ M_{\odot}$.  In other galaxies, the central black hole can 
 reach $10^9\ M_{\odot}$.  The luminosity of the MW is 
 $\sim L_*\sim3\times10^{10}\ L_{\odot}$.  Their is $\sim1\ L_*$ galaxy per 
@@ -133,7 +187,8 @@ where the scale height of a stellar population scales with its age.
 
 \subsection{The Luminosity Function}
 
-The luminosity function $\Phi(M)dM$ is the number of objects per volume in an absolute magnitude range $M$ to $M+dM$. 
+\newthought{The luminosity function} $\Phi(M)dM$
+is the number of objects per volume in an absolute magnitude range $M$ to $M+dM$. 
 
 In the context of stars, note that while faint K and M dwarfs make up most of
 the stellar mass density in the solar neighborhood, almost all emitted light
@@ -174,7 +229,8 @@ or in terms of absolute magnitude:
 
 \subsection{The Initial Mass Function}
 
-After a burst of star formation, the number of stars in a mass range $\mathcal{M}$ to $\mathcal{M}+d\mathcal{M}$ is given by:
+\newthought{After a burst of} star formation, the number of stars in a
+mass range $\mathcal{M}$ to $\mathcal{M}+d\mathcal{M}$ is given by:
 
 \begin{equation}
 dN = N_0 \xi(\mathcal{M}) d\mathcal{M}
@@ -202,7 +258,8 @@ where M is absolute magnitude and $\mathcal{M}$ is mass. The function $M(\mathca
 
 \subsection{Malmquist Bias}
 
-In any apparent magnitude-limited survey, intrinsically brighter objects will be overrepresented. The sample's true mean absolute magnitude is biased by the amount
+\newthought{In any apparent magnitude-limited} survey, intrinsically brighter objects
+will be overrepresented. The sample's true mean absolute magnitude is biased by the amount
 
 \begin{equation}
 \overline{\Delta M} = \left<M\right>_m - M_0
@@ -224,55 +281,66 @@ The Malmquist bias also allows for a more accurate calculation of the mean dista
 
 \subsection{G-dwarf problem}
 
-The closed box model of chemical evolution predicts that one half of all stars near the sun have less than a third of the metallicity of the most metal rich stars.  Since the latter have metallicities comparable to that of the Sun, the closed box model implies that one half of solar neighborhood stars should have metallicities less than $\frac{1}{3}z_\odot$.  However, from observations only $2$\% of disk F and G stars in the solar neighborhood have $z < -.25 z_\odot$.  This contradiction between the standard close-box model and observation is known as the G-dwarf problem.  From observations, stars are more metal rich than predicted.
+\newthought{The closed box model} of chemical evolution predicts that one half of all stars
+near the sun have less than a third of the metallicity of the most metal rich stars.  Since
+the latter have metallicities comparable to that of the Sun, the closed box model implies
+that one half of solar neighborhood stars should have metallicities less than
+$\frac{1}{3}z_\odot$.  However, from observations only $2$\% of disk F and G stars in the solar
+neighborhood have $z < -.25 z_\odot$.  This contradiction between the standard close-box model
+and observation is known as the G-dwarf problem.  From observations, stars are
+more metal rich than predicted.
 
-\subsection{Distance Measures}
+\subsection{Measuring the Distance}
+\newthought{Here we will treat} a few methods for measuring
+distances.  Note that not all of these can be used for measuring
+the distance to a galaxy (you cannot, for example, measure the
+proper motion of a galaxy), but they are relevant for calibrating
+procedures that can measure the distance to a galaxy.
+See Section~\ref{sec:distance_ladder} for additional discussion on
+measuring distances (including Cepheids, supernovae, the Sunyaev-Zeldovich effect and others).
+\begin{itemize}
+\item Moving cluster method
 
-Moving cluster method:
+    \begin{equation}
+    D = -\frac{\theta}{\dot \theta}v_r
+    \end{equation}
+    Measuring the radial velocity of the cluster and the rate at which the cluster
+    is expanding or shrinking allows you to find the distance to the cluster.
 
-\begin{equation}
-D = \frac{-\theta}{\dot \theta}v_r
-\end{equation}
+\item Secular parallax
 
-Measuring the radial velocity of the cluster and the rate at which the cluster is expanding or shrinking allows you to find the distance to the cluster.
+    \begin{equation}
+    v_t = v_r\tan(\theta) = \mu d
+    \end{equation}
+    For any individual star,
+    \begin{dmath}
+    d = \frac{v_r\tan(\theta)}{\mu}
+    \end{dmath}.
+    However, if you pick a population of stars
+    that should all be at the same distance, $v_t$
+    should on average be the speed of the sun projected
+    along the direction to the population of stars.
 
-Using proper motions:
+\item Baade-Wessilink method
 
-\begin{equation}
-v_t = v_rtan(\theta)
-\end{equation}
-\begin{equation}
-v_t = \mu d
-\end{equation}
-\begin{equation}
-\mu = \frac{v_rtan(\theta)}{d}
-\end{equation}
-\begin{equation}
-d = \frac{v_rtan(\theta)}{\mu}
-\end{equation}
+    This method requires an expanding/shrinking object, for example a variable star or a
+    type Ia supernova.  The change in the radius of the object is given by:
+    \begin{equation}
+    r_1 - r_2 = v_r(t_1 - t_2)
+    \end{equation}
+    Next, use the flux measured at each time to determine the ratio of the radii at those times.
+    \begin{equation}
+    F_1 = \frac{4\pi r_1^2\sigma T_1^4}{4\pi d^2}
+    \end{equation}
+    \begin{equation}
+    \frac{r_1}{r_2} = \bigg(\frac{F_1T_2^4}{F_2T_1^4}\bigg)^{\frac{1}{2}}
+    \end{equation}
+    Now you can solve for the radii individually, and use the angular size of the object to
+    get the distance.  
 
-Baade-Wessilink Method:
+\end{itemize}
 
-This method requires an expanding/shrinking object, for example a variable star or a type Ia supernova.  The change in the radius of the object is given by:
-
-\begin{equation}
-r_1 - r_2 = v_r(t_1 - t_2)
-\end{equation}
-
-Next, use the flux measured at each time to determine the ratio of the radii at those times.
-
-\begin{equation}
-F_1 = \frac{4\pi r_1^2\sigma T_1^4}{4\pi d^2}
-\end{equation}
-
-\begin{equation}
-\frac{r_1}{r_2} = \bigg(\frac{F_1T_2^4}{F_2T_1^4}\bigg)^{\frac{1}{2}}
-\end{equation}
-
-Now you can solve for the radii individually, and use the angular size of the object to get the distance.  
-
-
-\subsection{Star Formation}
+\subsection{Measuring Star Formation}
 
 Observational methods to measure star formation:
 
@@ -295,7 +363,7 @@ Observational methods to measure star formation:
 	cons:  not direct, atmospheric absorption, distribution of dust, contribution of old stars
 
 
-\subsection{Galaxy Mass Measurements}
+\subsection{Measuring Mass}
 
 \begin{enumerate}
 \item Mass to Light Ratio
@@ -419,6 +487,7 @@ In this equation, $\sigma$ is the stellar velocity dispersion, $\Sigma$ is the l
 
 Marta will add the derivation when she is not hungry.
 
+\subsection{Feedback}
 
 
 
