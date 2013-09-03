@@ -1,18 +1,78 @@
 \section{Cosmology}
 \subsection{Questions}
 \begin{enumerate}
-\item Put on a timeline, and describe the principal events in the thermal history of the
-universe, from $kT = 10$ TeV to $kT = 0.1$ eV.
-\item Give a semi-quantitative discussion of the connection between flucuations of the
+\item \textbf{Put on a timeline, and describe the principal events in the thermal history of the
+universe, from $kT = 10$ TeV to $kT = 0.1$ eV.}
+\item \textbf{Give a semi-quantitative discussion of the connection between flucuations of the
 cosmic microwave background on angular scales of arcminutes to degrees, and the
 baryonic structures (galaxies, clusters, correlations of galaxies) observed in the local
-universe, redshift $z < 0.5$.
-\item Which elements/isotopes are produced in Big Bang Nucleosynthesis and in what
+universe, redshift $z < 0.5$.}
+\item \textbf{Which elements/isotopes are produced in Big Bang Nucleosynthesis and in what
 quantities? Explain qualitatively how the yield of each depends on the cosmic baryon
-density and why.
+density and why.}
 \end{enumerate}
 
+\subsection{The FRW Metric}
+\newthought{The universe is} both homogeneous and isotropic (to at least 1 part in $10^{-5}$).
+The only solutions allowed by Einstein's field equations under these assumptions is
+\begin{dmath}
+\d s^2 = \d t^2 - \frac{a^2(t)}{c^2}\left[\d r^2 + 
+    \left\{\begin{matrix}
+        r^2 \\ R^2\sin^2\frac{r}{R} \\ R^2\sinh^2\frac{r}{R} \\
+    \end{matrix}\right\} \left(\d\theta^2 + \sin^2\theta\,\d\phi^2\right)\right]
+\end{dmath}.
+This is the Friedman-Robertson-Walker metric.  The scale-factor $a(t)$ is defined to be
+1 today so that $a = 1/(1+z)$,
+$r$ is the comoving distance, $R$ is the radius of curvature, and the three cases
+describe a flat, closed, or open geometry respectively.
+
+\subsection{The Friedmann Equation}
+\newthought{The Friedmann equation} describes the time-evolution of the scale factor.
+\begin{dgroup}
+\begin{dmath}
+    \dot a^2 = \frac{8}{3}\pi G\rho a^2 \mp \frac{c^2}{R^2}
+\end{dmath}
+\begin{dmath}\boxed{
+    H^2 = H_0^2\left(\Omega_{M,0}a^{-3} + \Omega_{R,0}a^{-4} + \Omega_{\Lambda,0} + \Omega_{k,0}a^{-2}\right)
+}\end{dmath}
+\end{dgroup}
+The second equation follows from the first by defining $H = \dot a/a$ and
+$\Omega_0 = \rho_0/\rho_{c,0}$, where $\rho_c = 3H_0^2/8\pi G$ is the critical density.
+The $0$ subscripts denote quantities that are measured today.
+
 \subsection{What Distance Means in Cosmology}
+\newthought{The angular diameter distance} is the distance that is relevant for
+``standard rulers''.  For an object of a known size $d$ and apparent angular size $\theta$,
+the angular diameter distance is given by
+\begin{dmath}\boxed{
+    D_A = \frac{d}{\theta} \nolinebreak = \frac{1}{1+z} \left\{\begin{matrix}
+                r \\ R\sin\frac{r}{R} \\ R\sinh\frac{r}{R} \\
+            \end{matrix}\right\}
+}\end{dmath}.
+This is found by taking $D_A = \d l/\d\theta$ from the FRW metric.
+
+\newthought{The luminosity distance} is relevant for ``standard candles''.  For an object of
+known luminosity $L$ and observed flux $F$, the luminosity distance is
+\begin{dmath}\boxed{
+    D_L = \sqrt{\frac{L}{4\pi F}} \nolinebreak
+        = (1+z) \left\{\begin{matrix}
+                r \\ R\sin\frac{r}{R} \\ R\sinh\frac{r}{R} \\
+            \end{matrix}\right\}
+}\end{dmath}.
+This is found by considering the surface area of a sphere with radius $r$, given by
+\begin{dmath}
+    A = 4\pi\left\{\begin{matrix}
+            r^2 \\ R^2\sin^2\frac{r}{R} \\ R^2\sinh^2\frac{r}{R} \\
+        \end{matrix}\right\}
+\end{dmath},
+and setting the observed luminosity to $L/(1+z)^2$ where one factor of $1/(1+z)$ is due to
+the photons being red-shifted, and the other factor is due to time-dilation.\sidenote{
+    To clarify a little bit, set
+    \begin{dmath*}
+        F = \frac{L/(1+z)^2}{A}
+    \end{dmath*},
+    and use the definition of $D_L$ to eliminate $F$ and $L$.
+}
 
 \subsection{Measuring Distances}\label{sec:distance_ladder}
 The basic concept of distance is the distance ladder, which is basically 
