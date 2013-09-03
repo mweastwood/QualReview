@@ -1,14 +1,108 @@
 \section{Instrumentation}
 \subsection{Questions}
 \begin{enumerate}
-\item Describe quantitatively the point spread function of a diffraction-limited optical
+\item \textbf{Describe quantitatively the point spread function of a diffraction-limited optical
       telescope. Explain how diffraction spikes arise, and what determines their positions
       and intensities. Under what circumstances will the PSF be broadened by atmospheric
-      turbulence?
-\item Derive an expression for the point source sensitivity of a radio interferometer as
+      turbulence?}
+\item \textbf{Derive an expression for the point source sensitivity of a radio interferometer as
       a function of the frequency, bandwidth, system temperature, diameter of each dish,
-      number of dishes, etc.
-\item Describe some of the common technologies for detecting gamma rays, the approxi-
-      mate energy range over which they are applicable, and some of their main advantages
-      and disadvantages.
+      number of dishes, etc.}
+
+      \newthought{Let's begin by} deriving the point source sensitivity of a single dish
+      radio telescope.  To do so, we need a little bit of background on what a radio telescope
+      is.  There are two broad classes of single-dish radio telescopes: those with coherent
+      detectors and those with incoherent detectors.  Coherent detectors measure the amplitude
+      and phase of the incoming electric field, while incoherent detectors discard the phase
+      information.  In this way, incoherent detectors are essentially very sensitive thermometers.
+      We will focus this discussion on coherent detectors (because the phase information is needed
+      for interferometry).
+
+      A radio telescope can be broken down into a number of parts.  We will consider these
+      parts in the order that they translate the sky brightness into a brightness temperature.
+      \begin{itemize}
+      \item The antenna and feed
+
+            First, there must be a component that is sensitive to a time varying electric
+            field.  The feed converts the time varying electric field into a time varying voltage.
+            This can be a massive dish with a feed at its focus, or merely a
+            simple piece of wire acting as a dipole antenna.  Obviously the large dish will
+            be very sensitive in the forward direction, while the simple dipole antenna will
+            be sensitive to almost the entire sky, but not particularly sensitive in any one
+            direction.  The pattern of sensitivity for an antenna is called its ``gain pattern''.
+            The higher the gain in a given direction, the more sensitive the antenna is to signals
+            from that direction.  This gain pattern is typically encoded in the ``effective
+            collecting area'' of the antenna.
+
+            It can be shown that for any antenna the angle-averaged effective collecting area
+            is given by
+            \begin{dmath}\label{eq:Ae}
+                \langle A_e\rangle = \frac{\lambda^2}{4\pi}
+            \end{dmath},
+            where $\lambda$ is roughly the central wavelength of the bandpass.  We can get
+            an intuitive understanding for why this equation must be true by comparing the
+            100 m Green Bank telescope with a simple LWA dipole.  The Green Bank telescope
+            has a $\pi(50~{\rm m})^2 \approx 8000~{\rm m}^2$ collecting area in its forward
+            direction, and a low (but nonzero) sensitivity in the off-axis directions coming
+            in through the telescope's sidelobes.  Averaging over all angles reproduces
+            Equation~\ref{eq:Ae}.  On the other hand, the LWA dipoles are roughly evenly
+            sensitive to the whole sky.  Therefore, at $\lambda=10~{\rm m}$ each dipole has
+            an effective collecting area of $\approx 8~{\rm m}^2$ towards all parts of the sky.
+
+            Finally, it should be noted that an antenna can only be sensitive to one polarization
+            of light.  Therefore, in order to measure the total power from a source one must
+            build two feeds so that one is sensitive to each polarization.
+
+      \item The receiver
+
+            The receiver is a general term for the electronics that process the signal coming
+            from the feed.  For a radiometer\sidenote{
+                A radiometer simply measures the total power in the voltage fluctuations coming
+                from the feed.
+            }, the receiver will consist of (in its simplest design):
+            a gain stage to amplify the signal,
+            a bandpass filter to restrict the signal to a known frequency range,
+            a square law detector that produces a voltage output proportional to the total
+            power\sidenote{
+                $V_{\rm out} \propto V_{\rm in}^2$
+            }, and an integrator that accumulates the voltage samples over a given time.
+
+            Additionally, most radiometers include electronics to stabilize the gain of the
+            amplifiers, analog to digital converters that sample and digitize the signal\sidenote{
+                Digital signals are less likely to deteriorate as they pass through lossy cable.
+                However the digitization process itself is lossy and can restrict the dynamic
+                range of the telescope if not enough bits are used to represent the signal.
+                The rate at which an ADC must sample is determined by the Nyquist frequency.
+            }, and a mixer that converts high frequency signals into low frequency signals
+            that are easier to process electronically.
+      \end{itemize}
+
+      Now let's assume we have an antenna with a bandwidth $B$ (set by the bandpass filter),
+      integration time $\tau$.  After the integrator we have an estimate for the system
+      temperature $T_{\rm sys} = P_\nu/k$, where $P_\nu$ is the power per unit frequency in the
+      antenna and $k$ is the Boltzmann constant.  With an ADC sampling at the Nyquist frequency,
+      the integrator uses $2B\tau$ independent samples of the power to estimate $T_{\rm sys}$.
+      Therefore, the uncertainty on the measurement of $T_{\rm sys}$ is
+      \begin{dmath*}
+        \sigma_T = \frac{\sigma_{T,0}}{\sqrt{2B\tau}}
+      \end{dmath*},
+      where $\sigma_{T,0}$ is the uncertainty on a single sample of $T_{\rm sys}$.  To derive
+      $\sigma_{T,0}$ we use the fact that $T_{\rm sys} \propto \langle V^2\rangle$ where $V$
+      is the voltage before the square-law detector.  Setting the constant of proportionality
+      to unity we have
+      \begin{dmath*}
+        \sigma_{T,0}^2 = \langle V^4\rangle - \langle V^2\rangle^2
+                       = \frac{1}{\sqrt{2\pi T_{\rm sys}}}\int_{-\infty}^{+\infty} V^4e^{-V^2/2T_{\rm sys}}\,\d V
+                       - \left(\frac{1}{\sqrt{2\pi T_{\rm sys}}}\int_{-\infty}^{+\infty} V^2e^{-V^2/2T_{\rm sys}}\,\d V\right)^2
+                       = 3T_{\rm sys}^2 - T_{\rm sys} \nolinebreak = 2T_{\rm sys}
+      \end{dmath*}.
+      Therefore we have derived the radiometer equation, which describes the temperature
+      sensitivity of a single dish radio telescope:
+      \begin{dmath}\boxed{
+        \sigma_T = \frac{T_{\rm sys}}{\sqrt{B\tau}}
+      }\end{dmath}
+
+\item \textbf{Describe some of the common technologies for detecting gamma rays, the approximate
+      energy range over which they are applicable, and some of their main advantages
+      and disadvantages.}
 \end{enumerate}
