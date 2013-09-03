@@ -94,13 +94,53 @@
         \sigma_{T,0}^2 = \langle V^4\rangle - \langle V^2\rangle^2
                        = \frac{1}{\sqrt{2\pi T_{\rm sys}}}\int_{-\infty}^{+\infty} V^4e^{-V^2/2T_{\rm sys}}\,\d V
                        - \left(\frac{1}{\sqrt{2\pi T_{\rm sys}}}\int_{-\infty}^{+\infty} V^2e^{-V^2/2T_{\rm sys}}\,\d V\right)^2
-                       = 3T_{\rm sys}^2 - T_{\rm sys} \nolinebreak = 2T_{\rm sys}
+                       = 3T_{\rm sys}^2 - T_{\rm sys}^2 \nolinebreak = 2T_{\rm sys}^2
       \end{dmath*}.
+
+      Finally, we want to relate the measured system temperature with the observed flux $S$.
+      The system temperature is a combination of many components, only one of which is the
+      astrophysical signal we are interested in:
+      \begin{dmath}
+        T_{\rm sys} = T_{\rm signal} + T_{\rm noise} + T_{\rm atmosphere} + \cdots
+      \end{dmath}.
+      In the limit where $T_{\rm signal} \ll T_{\rm sys}$, the uncertainty on $T_{\rm signal}$
+      is dominated by the uncertainty on $T_{\rm sys}$, which we have already derived.
+      Finally we can relate $T_{\rm signal}$ to the observed flux by remembering that each
+      antenna is only sensitive to one polarization and hence can only detect half the flux:
+      \begin{dmath}
+        kT_{\rm signal} = \frac{SA_e}{2}
+      \end{dmath},
+      where $A_e$ is again the effective collecting area.
+
       Therefore we have derived the radiometer equation, which describes the temperature
-      sensitivity of a single dish radio telescope:
+      sensitivity of a single dish radio telescope (in the absence of gain fluctuations in
+      the amplification stage of the receiver):
       \begin{dmath}\boxed{
-        \sigma_T = \frac{T_{\rm sys}}{\sqrt{B\tau}}
+        \sigma_S = \frac{2kT_{\rm sys}}{A_e\sqrt{B\tau}}
       }\end{dmath}
+
+      For an interferometer, we replace the square-law detector with a correlator that multiplies
+      voltages from different antennas.  In that case
+      \begin{dmath*}
+        \sigma_{T,0}^2 = \langle V_i^2V_j^2\rangle - \langle V_iV_j\rangle^2
+                       = \langle V_i^2\rangle\langle V_j^2\rangle \nolinebreak
+                       = T_{\rm sys}^2
+      \end{dmath*},
+      so for a two-element interferometer we have
+      \begin{dmath}
+        \sigma_S = \frac{\sqrt{2}kT_{\rm sys}}{A_e\sqrt{B\tau}}
+      \end{dmath}.
+      In an array with $N$ antennas there are $N(N-1)/2$ baselines (pairs of antennas).
+      Each baseline represents an independent measurement of the flux\sidenote{
+        If you disagree with this, like me, there are apparently some subtleties that make
+        each baseline independent from the others.  I've spent the better part of a few months
+        trying to understand this and I don't think I'm there yet.
+
+        --Michael
+      }, therefore
+      \begin{dmath}\boxed{
+        \sigma_S = \frac{2kT_{\rm sys}}{A_e\sqrt{N(N-1)B\tau}}
+      }\end{dmath}.
 
 \item \textbf{Describe some of the common technologies for detecting gamma rays, the approximate
       energy range over which they are applicable, and some of their main advantages
