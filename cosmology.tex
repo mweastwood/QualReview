@@ -714,4 +714,110 @@ galaxies.  With less mass, these galaxies are less able to hold onto their gas,
 so the first generation of supernovae can blow the gas out of the galaxy, 
 leaving the galaxy with a few stars and lots of dark matter.  
 
+\subsection{Galaxy evolution}
+Galaxy evolution takes two forms, evolution of stars and stellar populations 
+and structural evolution of the galaxies themselves.  Structural assembly 
+of galaxies through dissipationless processes is easy to model, but hard 
+to observe (since it involves dark matter).  Stellar aspects of evolution are 
+easy to observe, but difficult to model.  Good timescales to know for galaxy 
+evolution are:
+\begin{itemize}
+\item $\sim100$ Myr- galaxy free-fall and cooling timescales
+\item $10-100$ Myr- lifetimes of massive stars
+\item $10-100$ Myr- lifetimes of AGN
+\item few $100$ Myr- rotation period of a spiral galaxy
+\item $\sim1$ Gyr- timescale for two galaxies to merge
+\item $\sim10$ Gyr- age of Universe
+\end{itemize}
+
+Modelling Stellar Population Evolution:\newline
+Assume a star formation rate as a function of time and an initial mass 
+function.  Use isochrones and libraries of stellar spectra to find the 
+total spectrum you'd observe from the population as a fucntion of time.  
+The basic idea is since massive stars are blue, bright, and short-lived, 
+different histories will produce very different looking spectra at blue 
+wavelengths.  The theoretical spectra can then be matched to observations.  
+Using this process, elliptical galaxies are best fit by an early burst 
+of star formation followed by passive evolution with little to no star 
+formation.  Spirals seem to have more gradual star formation, with a decay 
+time in the star formation rate of $3-10$ Gyr.  Irregular galaxies seem to 
+have constant star formation rates.  Note that observationally, star formation 
+can be obscured by dust, in which case most of the energy will be reprocessed 
+into the far IR and sub-mm, or unobscured, in which case the energy will be 
+emitted in the UV, visible, and near IR (in both cases, what we see will be 
+redshifted).  In obscured galaxies, spectra often show 2 peaks, one in the 
+UV for unprocessed starlight, and a larger one (depending on how obscured the 
+galaxy is) is the far IR from dust.  
+
+Photometric Redshifts:\newline
+Models can be used to predict the restframe colors of galaxies, then the 
+observed colors or fluxes in different filters can be used to estimate the 
+redshift (this technique is 
+easier than getting spectroscopic redshifts, but not as accurate).  A similar 
+technique is using continuum breaks such as the Lyman or Balmer break to 
+determine redshifts.  The idea is light from the galaxy emitted at wavelengths 
+shorter than $912$\AA will be absorbed by the galaxy itself or the surrounding 
+IGM.  This will show up as a dropoff in intensity from the galaxy, but in our 
+frame, we will see this at a redder wavelength.  By measuring the observed 
+wavelength this happens at by looking at the galaxy in different filters, we 
+can determine the redshift.  
+
+Evolutionary Trends:\newline
+Observations show that galaxies were smaller and brighter in the past 
+(an important consideration in testing cosmology with luminosity or angular 
+diameter distances).  Also, mergers were more common in the past.  The 
+higher luminosities of galaxies in the past is reflected in higher surface 
+brightnesses and a change in the fundamental plane for elliptical galaxies.  
+Brighter galaxies have a larger increase in brightness in the past, so 
+the fundamental plane actually rotates slightly.  The increase in brightness 
+matches models of early bursts of star formation followed by passive 
+evolution.  It is not clear if spirals were brighter in the past and how 
+this affects the Tully-Fisher relation.  
+
+Evolution in Clusters:\newline
+Galaxies in clusters evolve differently than field galaxies because of 
+dynamical interactions.  One example of this is the 
+\emph{Butcher-Oemler effect}, that the fraction of blue galaxies in clusters 
+increases dramatically at high z (I assuming faster than for the field 
+population?).  Also, at a given redshift, the fraction of spiral galaxies is 
+smaller for denser clusters.  \emph{Post-starburst galaxies} are a 
+important product of evolution in clusters.  These galaxies show spectra 
+with strong features of K and A stars, but not other features associated with 
+ongoing star formation.  The interpretation is these galaxies were forming 
+stars within the past $1.5$ Gyr, followed by an abrupt end to star formation.  
+The general picture of this for spiral galaxies is the galaxies fall into 
+the cluster at z$\sim5$, and a starburst is triggered.  The gas in the 
+galaxies is stripped by the IGM, creating a post-starburst galaxy.  
+Tidal interactions with other galaxies dynamically heat the disk and the 
+stars slowly fade.  The result is an S0 galaxy today.  
+
+Star Formation History:\newline
+By adding up all the light from galaxies at different photometric redshifts, 
+and converting this light to a star formation rate, it is possible to 
+build up a star formation history of the Universe.  Star formation peaks 
+at around a redshift of 3, then declines more recently and further in the past 
+as galaxies were first being formed (see Figure \ref{fig:madau}).  
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=\textwidth]{madau.jpg}
+\end{center}
+\caption{Flux density and star formation as a function of redshift.  I'm not 
+sure what the two sequences on the lower plot are.  
+\label{fig:madau}}
+\end{figure}
+
+Diffuse Backgrounds:\newline
+George is on the committee, and we kept doing these sorts of problems in 
+class, so we should probably review how to calculate the expected backgrounds.  
+The point of these sorts of measurements is to makesure all the energy 
+from different redshifts is collected (surveys for individual sources 
+miss the faintest objects).  There's no redshift information though, so I'm not 
+really sure what you can do with these sorts of observations (other than 
+have something for students to do at teh board).  The total diffuse 
+background from UV to sub-mm is $\sim100$ nW m$^{-2}$ sr$^{-1}$.  Most of 
+this is in two peaks in the UV and far IR from obscured and unobscured 
+galaxies.  This doesn't include the CMB, all this background at these 
+wavelengths is only a few percent as bright is the CMB at its peak 
+wavelengths.  
 
