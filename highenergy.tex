@@ -232,28 +232,70 @@
       them. Define the Eddington luminosity and explain its relevance to the peak frequency
       of the emitted radiation.}
       
-      Consider the vertical structure of an accretion disk, assume we're at large radii ($r \gg r_{\rm in}$), and assume it's a thin disk radiating mostly just through the top and bottom. The heating rate per volume is
+      Assume a thin, optically thick disk. The following is probably way too complicated for the qual, but it's good to get some sense of where these things are coming from. You can probably skip ahead to the easier/more approximate derivation at the end.
+      
+      Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor. We can approximate the viscosity as
+\begin{equation}
+\nu \sim \lambda v_{th}\,\, ,
+\end{equation}
+where $\lambda$ is the distance between our two layers and $v_{th}$ is the speed of whatever is mediating the interaction. For molecular transport, $\lambda$ is the mean free path and $v_{th}$ I have already denoted as the thermal speed of the particles. The torque of the inner layer on the outer layer is
+\begin{equation}
+T(r) = 2 \pi r \nu \Sigma r^2 \Omega^\prime
+\end{equation}
+where $ \Omega^\prime = \frac{\partial \Omega}{\partial r}$. The viscous torques cause a dissipation at a rate $T \Omega^\prime dr$ for a ring with width $dr$. The rate per area of the ring is $D(r)$, and it can be found by dividing this area by $2 \times 2\pi r dr$, where the extra factor of $2$ comes from the ring having two sides, top and bottom. Then
+\begin{equation}
+D(r) = \frac{T \Omega^\prime}{4 \pi r}  = \frac{1}{2} \nu \Sigma (r \Omega^\prime)^2
+\end{equation}
+Let's assume the orbital frequency is Keplerian, so $\Omega^\prime = \sqrt{GM/R^3}$. Then
+\begin{equation}
+D(r) = \frac{9}{8} \nu \Sigma \frac{GM}{r^3}\,\,.
+\end{equation}
+
+Now let's look at the case of the steady thin disk. In this case, $\dot{M} = 2 \pi r \Sigma (-v_r)$ is constant. Using the momentum equation gives
+\begin{equation}
+r \Sigma v_r r^2 \Omega = \frac{T}{2 \pi} + {\rm constant}\,\,.
+\end{equation}
+Plugging in for $T$ gives
+\begin{equation}
+-\nu \Sigma \Omega^\prime = -v_r\Sigma \Omega + {\rm constant}\,\,.
+\end{equation}
+We need to find the constant by considering the disk down at the surface of the star or compact object $R_*$. The central object should be rotating at less than breakup speed, so $\Omega_* < \Omega_K$. Therefore the disk is Keplerian in the outer layers, but as we go inward in radius, it must eventually decrease to the rotation speed of the star over some boundary layer. I'm not going to go into the details right now, but the result is that
+\begin{equation}
+\nu\Sigma \approx \frac{\dot{M}}{3\pi} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\,\,.
+\end{equation}
+Therefore
+\begin{equation}
+D(r) \approx \frac{3GM\dot{M}}{8\pi r^3} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\,\,.
+\end{equation}
+
+      Because we're assuming the disk is optically thick, we can use the blackbody flux. This just gives $\sigma T_{\rm eff}^4(r) = D(r)$, so
       \begin{equation}
-      \nabla \cdot F_{\rm rad} = \rho \nu (r \Omega^\prime)^2 = \rho \nu \biggl(\frac{3}{2} \Omega \biggr)^2
-      \end{equation}
-      from assuming that the rotation is Keplerian. Use radiative diffusion with $P_{\rm rad} = \frac{1}{3} a T^4 = \frac{1}{3}\frac{4 \sigma_{\rm SB}}{c}T^4$. Assume that the disk is optically thick enough that the spectrum is a blackbody. Assume radiation travelling through a layer that is one mean free path $\lambda = 1/\kappa \rho$ thick is what's giving you the flux. The flux is then the speed of light times the mean free path times the change in radiation pressure with height (note: I have not totally justified this expression. If anyone can shed light on this, that'll be cool):
-      \begin{equation}
-      F_{\rm rad} - \frac{1}{\kappa \rho} \frac{d}{dz}P_{\rm rad} c = -\frac{4}{3}\frac{\sigma_{\rm SB}}{\kappa \rho}\frac{\partial T^4}{\partial z}
-      \end{equation}
-      This is similar to the radiative diffusion equation for stars\footnote{$L(r) = -4 \pi r^2 \frac{4}{3} \frac{c a T^3}{\kappa\rho}\frac{\partial T}{\partial r}$}. Now let's integrate vertically, because we want the total flux from each vertical layer in the accretion disk coming out of the top and bottom of the disk.
-      \begin{equation}
-      \int^\infty_0 \frac{\partial F_{\rm rad}}{\partial z} = \sigma T_{\rm eff}^4 = \frac{1}{2} \Sigma \langle \nu \rangle \frac{9}{4}\Omega^2 = \frac{9}{8} \frac{G M \dot{M}}{3 \pi r^3}
-      \end{equation}
-      Now approximate 
-      \begin{equation}
-      -\frac{4}{3} \frac{\sigma_{\rm SB}}{\kappa rho} \frac{\partial T^4}{\partial z} \approx D(r) = \frac{3}{8 \pi}\frac{GM\dot{M}}{r^3}\biggl[1 - \sqrt{\frac{r_{\rm in}}{r}} \biggr]
+      T_{\rm eff}(r) \approx \biggl(\frac{3GM\dot{M}}{8\pi \sigma r^3} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\biggr)^{1/4}\,\,.
       \end{equation}
       
-      We eventually want to get here:
-      \begin{equation}
-      D(r) \approx \frac{4}{3}\frac{\sigma_{\rm SB}}{\kappa \rho}\frac{T^4_{\rm midplane}}{H} \approx \frac{4}{3}\sigma_{\rm SB}\frac{T^4_{\rm midplane}}{\tau_{\rm vert}} = \frac{4}{3}\sigma_{\rm SB}T^4_{\rm eff}
-      \end{equation}
+      The result of this is that the spectrum of an accretion disk looks like a superposition of many blackbodies, each weighted by the circumference of the ring associated with that particular temperature.
       
+      There is an easier way to arrive at a similar formula that well approximates the temperature at $r \gg R_*$ This is probably enough for the qual. Consider a ring of mass $M_r$ at a distance $r$ from the center and width $dr$. This ring is $\dot{M} dt$, where $dt$ is the time it takes for that mass to move radially a distance $dr$ (assume this is slow). The energy of such a ring, assuming the Virial theorem holds and assuming that the mass of the central object dominates, is
+      \begin{equation}
+      E = -\frac{1}{2} \frac{G M_* M_r}{r} = -\frac{G M \dot{M} dt}{2r}\,\,.
+      \end{equation}
+      Now let's pull out a small trick and do
+      \begin{equation}
+      \frac{dE}{dr} = \frac{G M \dot{M}dt}{2r^2}\,\,.
+      \end{equation}
+      Taking $dt$ to the other side gives
+      \begin{equation}
+      \frac{dL}{dr} =  \frac{G M \dot{M}}{2r^2}\,\,,
+      \end{equation}
+      and we know $dL = 2 \times 2 \pi r F dr$, since $2 \pi r dr$ is the area of the ring that is emitting, but there are two sides to it. Therefore
+      \begin{equation}
+      \frac{4 \pi r dr F}{dr} = \frac{G M \dot{M}}{2r^2} \rightarrow \sigma T_{\rm eff}^4 = \frac{G M \dot{M}}{8 \pi r^3}\,\,.
+      \end{equation}
+      This time, then, our expression is
+      \begin{equation}
+      T_{\rm eff} = \biggl(\frac{G M \dot{M}}{8 \pi \sigma r^3}\biggr)^{1/4}\,\,.
+      \end{equation}
+      This expression is not too far off from the previosu one, aside from a factor of $3^{1/4}$ and the correction at small radii. This will probably do for the qual, but it's good to know the form of the more accurate expression and realize that it comes from needing to match angular velocities in the inner disk to the central object. I've seen this argument for accretion around stars and neutron stars, but I \textbf{think} it holds in a similar way for black holes.
       
 \end{enumerate}
 
@@ -499,39 +541,14 @@ In this case, the incoming gas (from the perspective of the accreting mass) trav
 
 \subsection{Accretion Disks}
 
-The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplertian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. We can also write this as
+The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplerian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. We can also write this as
 \begin{equation}
 \Omega = \Omega_K = \sqrt{\frac{GM}{r^3}}\,\,.
 \end{equation}
 
 The disk is characterized by its surface density $\Sigma$, which is the mass density $\rho$ integrated vertically. Assuming symmetry in the $\phi$ direction, an annulus defined as the disk material between $r$ and $r+dr$ has a mass $2 \pi r dr \Sigma$ and angular momentum $2 \pi r dr \Sigma r^2 \Omega$. 
 
-Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor. We can approximate the viscosity as
-\begin{equation}
-\nu \sim \lambda v_{th}\,\, ,
-\end{equation}
-where $\lambda$ is the distance between our two layers and $v_{th}$ is the speed of whatever is mediating the interaction. For molecular transport, $\lambda$ is the mean free path and $v_{th}$ I have already denoted as the thermal speed of the particles. The torque of the inner layer on the outer layer is
-\begin{equation}
-T(r) = 2 \pi r \nu \Sigma r^2 \Omega^\prime
-\end{equation}
-where $ \Omega^\prime = \frac{\partial \Omega}{\partial r}$. The viscous torques cause a dissipation at a rate $T \Omega^\prime dr$ for a ring with width $dr$. The rate per area of the ring is $D(r)$, and it can be found by dividing this area by $2 \times 2\pi r dr$, where the extra factor of $2$ comes from the ring having two sides, top and bottom. Then
-\begin{equation}
-D(r) = \frac{T \Omega^\prime}{4 \pi r}  = \frac{1}{2} \nu \Sigma (r \Omega^\prime)^2
-\end{equation}
-Let's assume the orbital frequency is Keplerian, so $\Omega^\prime = \sqrt{GM/R^3}$. Then
-\begin{equation}
-D(r) \ frac{9}{8} \nu \Sigma \frac{GM}{r^3}\,\,.
-\end{equation}
 
-Now let's look at the case of the steady thin disk. In this case, $\dot{M} = 2 \pi r \Sigma (-v_r)$ is constant. Using the momentum equation gives
-\begin{equation}
-r \Sigma v_r r^2 \Omega = \frac{T}{2 \pi} + {\rm constant}\,\,.
-\end{equation}
-Plugging in for $T$ gives
-\begin{equation}
--\nu \Sigma \Omega^\prime = -v_r\Sigma \Omega + {\rm constant}\,\,.
-\end{equation}
-We need to find the constant by considering the disk down at the surface of the star or compact object $R_*$. The central object should be rotating at less than breakup speed, so $\Omega_* < \Omega_K$. Therefore the disk is Keplerian in the outer layers, but as we go inward in radius, it must eventually decrease to the rotation speed of the star.
 
 One good thing to know about an accretion disk is its thickness. The scale height $H$ provides a measure of the thickness when compared with the radius $R$. It's possible to approximate the scale height by using hydrostatic equilibrium in the $z$ direction:
 \begin{equation}
