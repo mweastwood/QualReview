@@ -898,7 +898,7 @@ galaxies.  This doesn't include the CMB, all this background at these
 wavelengths is only a few percent as bright is the CMB at its peak 
 wavelengths.  
 
-\section{Intergalactic Medium}
+\subsection{Intergalactic Medium}
 The baryons in the IGM do not belong to any individual galaxy.  Instead, 
 they follow dark matter potentials, forming the ``cosmic web.''  Some of 
 this gas does fall into galaxy, will gas blown out of galaxies chemically 
@@ -935,4 +935,110 @@ a background source blueward of Ly$\alpha$.  The wavelength of the dropoff
 in flux we observe gives the redshift of the H.  Observations of this effect 
 show a steep dropoff in Lyman flux at redshift of around $6$, indicating that 
 this was when re-ionization was complete.  
+
+\subsection{Gravitational Lensing}
+The supplementary slides of George's lecture on the IGM and lensing have some 
+stuff about determining the mass profiles of galaxies from lensing.  I couldn't 
+really follow what he was doing, but it might be worth looking at when we're 
+practicing the galaxies will-ask question on measuring masses.  
+
+As light from a distant source basses by a mass in the line of sight, the light 
+will be bent around the mass, causing the apparent position of the source to 
+change.  Assuming the impact parameter of the light $b$ is much greater than 
+the Schwarchild radius of the lens, and that the light is only affected by 
+the lens for a distance of order $b$, which is much smaller than any other 
+distance in the problem, then the amount of deflection ($\alpha$) 
+depends on $b$ and the mass of the lens:
+\begin{equation}
+\alpha=\frac{4GM}{c^2b}={2R_s}{b}
+\end{equation}
+where $R_s$ is the Schwarzchild radius.  Light rays that pass too close to the 
+lens will be deflected too much and not reach the observer.  Light rays 
+too far away will not be deflected enough to reach the observer.  Only 
+rays within a certain range of impact parameters will be deflected to the 
+observer, so the observer will see an \emph{Einstein ring} around the lens.  
+If the observer, lens, and source are all along the same line, the angle 
+between this line and the ring can be calculated using Figure \ref{fig:lens}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens.jpg}
+\end{center}
+\caption{Gravitational lensing.  The distance from the observer to the source 
+is $D_{OS}$, from the observer to the lens is $D_{OL}$, and from the lens to 
+the source is $D_{LS}$.  
+\label{fig:lens}}
+\end{figure}
+
+Since we are assuming $R_S/b<<1$, then $\alpha=2R_S/b<<1$.  Also, since 
+$b<<D_{OL}$, $\theta_E<<1$.  With these assumptions, the distance from S to I 
+is given by 
+\begin{equation}
+SI=\alpha D_{LS}=\theta_ED_{OS}
+\end{equation}
+plugging in for $\alpha$ and solving for the Einstein angle gives
+\begin{equation}
+\boxed{\theta_E=\left(\frac{4GM}{c^2}\frac{D_{LS}}{D_{OL}D_{OS}}\right)^{1/2}}
+\end{equation}
+If the source is not directly behind the lens, things are slightly more 
+complicated.  The situation is shown in Figure \ref{fig:lens2}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens2.jpg}
+\end{center}
+\caption{Gravitational lensing with the source not directly behind the lens.  
+\label{fig:lens2}}
+\end{figure}
+
+As before, the angles $\theta$, $\beta$, and $\alpha$ are small.  $\theta$ can 
+be calculated by considering the length from point A to point C.  
+\begin{equation}
+AB+BC=AC
+\end{equation}
+\begin{equation}
+D_{LS}\alpha+D_{OS}\beta=D_{OS}\theta
+\end{equation}
+Solving for $\beta$ gives
+\begin{equation}
+\beta=\theta-\frac{D_{LS}}{D_{OS}}\alpha=\theta-\frac{D_{LS}}{D_{OS}}\frac{4GM}{c^2D_{OL}\theta}=\theta-\frac{\theta_E^2}{\theta}
+\end{equation}
+This can be rewritten as a quadratic equation for $\theta$, with solution 
+\begin{equation}
+\theta_{\pm}=\frac{1}{2}[\beta\pm(\beta^2+4\theta_E^2)^{1/2}]
+\end{equation}
+Distant sources lensed by galaxy cluster give a way to measure the masses 
+of the clusters, giving mass to light ratios in the hundreds.  
+
+Gravitational lensing has also been used to test the composition of the 
+dark matter in the Milky Way's halo.  If this dark matter is just dim compact 
+objects (MACHOs), microlensing events would be observed when these objects 
+passed into the line of sight to a star in the LMC.  A star will be lensed 
+if a MACHO passes within $\theta_E$ of the line of sight to the star.  
+So the cross section for lensing for a single Macho is $\theta_E^2$.  
+Therefore, the probability that this Macho is currently lensing a background 
+star is 
+\begin{equation}
+P\propto\theta_E^2\propto\left(\frac{D_{LS}}{D_{OL}D_{OS}}\right)M
+\end{equation}
+If a distance to the LMC and to a typical MACHO is assumed, then the 
+probability of a lensing event happening at a given time from all the MACHOs 
+in the halo is just proportional to the total mass in the halo.  Also, the 
+duration of lensing events gives information about the mass of individual 
+MACHOs.  A lensing event will last for as long as it takes the lens to 
+cross the Einstein ring (in reality, it is mainly the Sun that is moving around 
+the Milky Way, causing the lens to move out of alignment).  The event duration 
+is then
+\begin{equation}
+\tau=\frac{2D_{OL}\theta_E}{v_{\odot}}=\frac{4}{v_{\odot}c}\left(\frac{GMD_{OL}D_{LS}}{D_{OS}}\right)
+\end{equation}
+Plugging in the distances makes the duration dependent on the mass of the 
+lens, allowing the type of object doing the lensing to be constrained.  
+Surveys looking for MACHOs lensing LMC stars have been conducted, finding 
+typical lens masses between $0.15\,M_{\odot}$ and $0.9\,M_{\odot}$, i.e. white 
+dwarfs.  The frequency of lensing events ruled out the possibility of all 
+the mass in the halo being composed of MACHOs.  Also, having this many 
+white dwarfs in the halo would have required a huge amount of star formation 
+in the past, producing lots of metals, which we don't see.  
+
 
