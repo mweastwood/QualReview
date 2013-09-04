@@ -40,6 +40,83 @@ The second equation follows from the first by defining $H = \dot a/a$ and
 $\Omega_0 = \rho_0/\rho_{c,0}$, where $\rho_c = 3H_0^2/8\pi G$ is the critical density.
 The $0$ subscripts denote quantities that are measured today.
 
+Here is a short derivation of the Friedmann equation.  Consider dynamics of a uniform sphere:
+
+\begin{equation}
+\ddot x = - \frac{GM}{x^2} = -\frac{4}{3}\pi G\rho x
+\end{equation}
+
+Since $x \sim a(t)$;
+\begin{equation}
+\ddot a = \frac{-4}{3}\pi G\rho a
+\end{equation}
+
+For matter, $\rho = \frac{\rho_0}{a^3}$, so $\ddot a = -\frac{4}{3}\pi G\frac{\rho_0}{a}$.  Multiply both sides by $2\dot a$ and integrate:
+\begin{equation}
+\int 2\dot a \ddot adt = -\frac{8}{3}\pi G\rho_0 \int \frac{\dot a dt}{a^2}
+\end{equation}
+
+So:  
+\begin{equation}
+\dot  a^2 =\frac{8}{3}\pi G\rho a^2 + cnst
+\end{equation}
+
+GR further tells us that the constant is $\frac{\pm c^2}{R^2}$, where R is the comoving radius of curvature.  
+
+The Friedmann equation can be rewritted as:
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho \pm \frac{c^2}{a^2R^2}
+\end{equation}
+
+So the critical density (where $R \rightarrow \infty$) is $\rho_c = \frac{3H^2}{8\pi G}$.  The universe is flat if $\rho = \rho_c$, open if $\rho < \rho_c$, and closed if $\rho > \rho_c$.
+
+\subsection{Solutions to the Friedmann Equation}
+
+Einstein-de Sitter model:  $\Omega = 1$, no $\Lambda$ (spatially flat, only matter).
+
+\begin{equation}
+H = \bigg(\frac{8}{3}\pi G\rho \bigg)^{0.5} = \bigg(\frac{8}{3}\pi G\rho_0 \bigg)^{0.5}a^{-1.5} = H_0a^{-1.5}
+\end{equation}
+
+\begin{equation}
+a(t) = \bigg(\frac{t}{t_0}\bigg)^{\frac{2}{3}}
+\end{equation}
+where $t_0 = \frac{2}{3H_0}$.  
+
+Matter and curvature model:  $\Omega \ne 1$, no $\Lambda$.
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho \pm \frac{c^2}{a^2R^2}
+\end{equation}
+\begin{equation}
+H^2 = \frac{\Omega_mH_0^2}{a^3} + \frac{\Omega_kH_0^2}{a^2}
+\end{equation}
+
+As the universe becomes large:
+\begin{itemize}
+\item For $\Omega < 1$, the second term dominates and the long term future is $H \sim \frac{1}{a}$, and $\dot a \rightarrow cnst$.  In this case, the universe expands forever.
+\item For $\Omega > 1$, the second term is negative and H reaches 0 when $a = a_{max} = \frac{\Omega}{\Omega - 1}$.  The universe turns around ($\dot a < 0$), and ends in a Big Crunch.
+\end{itemize}
+
+Matter and $\Lambda$, flat universe.
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho
+\end{equation}
+
+but here, $\rho = \rho_m + \rho_\Lambda$.  So:
+\begin{equation}
+H^2 = \frac{\Omega_mH_0^2}{a^3} + \Omega_\Lambda H_0^2
+\end{equation}
+
+In the far future, $\frac{\Omega_m}{a^3} \rightarrow 0$, $H \rightarrow \Omega_\Lambda^{0.5}H_0  = cnst$.  Since $H = \frac{1}{a}\frac{da}{dt}$, this means that $a \sim e^{Ht} = e^{\left(\frac{8}{3}\pi G\rho_\Lambda \right)t}$.  Thus the universe will expand exponentially.
+
+
+
+
+
+
 \subsection{What Distance Means in Cosmology}
 \newthought{The angular diameter distance} is the distance that is relevant for
 ``standard rulers''.  For an object of a known size $d$ and apparent angular size $\theta$,

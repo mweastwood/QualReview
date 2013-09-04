@@ -5,11 +5,50 @@
       are appropriate to which type of particle? Which ones produce electromagnetic
       radiation that we can observe, and in what wave bands?}
 
+      \begin{figure}[ht]
+      \centering
+      \includegraphics[width=\textwidth]{highenergy_cosmic_ray_spectrum}
+      \caption{The ``specific intensity'' of cosmic rays as a function of energy.  Although this
+               is almost a perfect power law over 11 orders of magnitude (!), there are two
+               important features: the knee at $10^{15}~{\rm eV}$ and the ankle at $10^{18}~{\rm eV}$.}
+      \label{fig:cosmic_ray_spectrum}
+      \end{figure}
+
+      \newthought{Let's begin by} discussing a few properties of cosmic rays.  At the top of
+      the atmosphere, 98\% of cosmic rays are protons and nuclei, while 2\% are electrons.
+      Of the protons and nuclei, 87\% are protons, 12\% are helium nuclei, and the remaining
+      1\% are more massive nuclei.
+      See Figure~\ref{fig:cosmic_ray_spectrum} for the differential energy spectrum at the top of the
+      atmosphere (interactions with the atmosphere can produce secondary cosmic rays).
+      For protons and nuclei we have
+      \begin{dmath}
+        N(E)\,\d E \approx 1.8\times10^4\,\left(\frac{E}{\rm GeV}\right)^{-2.7}
+                           \,\d E\,{\rm nucleons}\,{\rm m}^{-2}\,{\rm s}^{-1}\,{\rm sr}^{-1}
+      \end{dmath},
+      while for electrons we have
+      \begin{dmath}
+        N(E)\,\d E \approx 700\,\left(\frac{E}{\rm GeV}\right)^{-3.3}
+                           \,\d E\,{\rm nucleons}\,{\rm m}^{-2}\,{\rm s}^{-1}\,{\rm sr}^{-1}
+      \end{dmath}.
+      The steeper power law for electrons reflects the fact that electrons are less massive
+      and hence lose energy more easily.
+
+      \begin{figure}[ht]
+      \centering
+      \includegraphics[width=\textwidth]{highenergy_cosmic_ray_abundances}
+      \caption{The elemental abundances seen in cosmic rays compared with the local galaxy.
+               Note the overabundances of lithium, beryllium, and boron.  A similar
+               overabundance is seen near titanium.  The pattern of even elements being more
+               common than odd elements (due to the alpha capture process in stars) is seen to
+               a lesser extent.  The abundance of heavy elements is remarkably flat.}
+      \label{fig:cosmic_ray_abundances}
+      \end{figure}
+
 \item \textbf{Discuss the equation of state of relativistic/nonrelativistic degenerate gases of electrons
       and neutrons and derive the Chandrasekhar mass limit for white dwarfs. (A
       heuristic approach, as in Shapiro and Teukolsky, is sufficient.)}
       
-      \newthought{Let's derive the} degeneracy pressure for nonrelativistic electrons. First we look at
+      \newthought{Let's derive the} degeneracy pressure for non-relativistic electrons. First we look at
       the Heisenberg uncertainty principle, which states that
       $\Delta x \Delta p \ge \frac{\hbar}{2}$.  This suggests that there's a minimum volume
       of phase space that can be occupied by two electrons\sidenote{
@@ -130,6 +169,62 @@
       \end{dgroup*}
       Taking $q\sim 1$ (note that $q<1$ in all physical cases), we find $M\approx1.2M_\astrosun$
       for the Chandrasekhar mass limit.
+
+      \newthought{I just had a} brilliant idea!  Let's use the Buckingham $\Pi$ theorem to
+      derive the Chandrasekhar mass.  Quantum mechanics is important here, so we'll include
+      $\hbar$.  The speed of light is also important because we need relativistic degeneracy
+      pressure.  Gravity is important, so include $G$.  Finally, the mass per electron is
+      important, so we'll include the mass of hydrogen.
+
+      \begin{table}[ht]
+      \centering
+      \begin{tabular}{cc}
+      \toprule
+      Constant & Units \\
+      \midrule
+      $\hbar$ & $ML^2T^{-1}$ \\
+      $c$ & $LT^{-1}$ \\
+      $G$ & $M^{-1}L^3T^{-2}$ \\
+      $m_H$ & $M$ \\
+      $M_{\rm Chandrasekhar}$ & $M$ \\
+      \bottomrule
+      \end{tabular}
+      \caption{The constants that are relevant for defining the Chandrasekhar mass.}
+      \label{tab:chandrasekhar_mass_constants}
+      \end{table}
+
+      Now the Chandrasekhar mass arises because we're trying to squeeze too many electrons into
+      a small volume.  In order for electrons to occupy the same physical location, they must
+      have different velocities.  However, eventually you run into the speed of light.
+      Therefore the higher the speed of light is, the higher the Chandrasekhar mass should be.
+      Similarly, if gravity is stronger, the Chandrasekhar mass should be lower.
+
+      Looking at Table~\ref{tab:chandrasekhar_mass_constants} we have 5 constants and 3 units,
+      so there are 2 dimensionless $\Pi$s.  These are
+      \begin{dgroup}
+      \begin{dmath}
+        \Pi_1 = \frac{M_{\rm Chandrasekhar}}{m_H}
+      \end{dmath}
+      \begin{dmath}
+        \Pi_2 = \frac{\hbar c}{m_H^2G}
+      \end{dmath}.
+      \end{dgroup}
+      Now in general we can write
+      \begin{dgroup*}
+      \begin{dmath*}
+        \Pi_1 = f(\Pi_2)
+      \end{dmath*}
+      \begin{dmath*}
+        M_{\rm Chandrasekhar} = m_H\,f\left(\frac{\hbar c}{m_H^2G}\right)
+      \end{dmath*}
+      \end{dgroup*}
+      Now we simply need to show from a brief physical analysis how $M_{\rm Chandrasekhar}$
+      should depend on one of these constants (see the previous derivations, but you can
+      discard all the other constants).  This gets you
+      \begin{dmath}\boxed{
+        M_{\rm Chandrasekhar} = \frac{1}{m_H^2}\left(\frac{\hbar c}{G}\right)^{3/2} \nolinebreak
+                              = 1.85\,M_\astrosun
+      }\end{dmath}.
       
 \item \textbf{Derive the equation for the effective temperature of an accretion disk around a
       black hole of mass $M$ with accretion rate $\dot M$, as a function of radius $r$. Specify the
