@@ -266,6 +266,15 @@ For reference, here is the general equation for accretion and winds for which yo
 \end{equation}
 Solutions are depicted in Figure \ref{f:mach}. The point where $v = c_s$ is called the sonic point, and it represents the transition between subsonic and supersonic flow.
 
+\subsection{Star Cores}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{HE_starcore.jpg}
+\caption{Temperature/density tracks of stars with various core masses. This plot is separated into degenerate and nondegenerate regions, and the temperatures at which fusion of various elements start are shown. \label{f:starcore}}
+\end{center}
+\end{figure}
+
 \subsection{White Dwarfs}
 
 \subsection{Supernovae}
@@ -490,7 +499,39 @@ In this case, the incoming gas (from the perspective of the accreting mass) trav
 
 \subsection{Accretion Disks}
 
-The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplertian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor.
+The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplertian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. We can also write this as
+\begin{equation}
+\Omega = \Omega_K = \sqrt{\frac{GM}{r^3}}\,\,.
+\end{equation}
+
+The disk is characterized by its surface density $\Sigma$, which is the mass density $\rho$ integrated vertically. Assuming symmetry in the $\phi$ direction, an annulus defined as the disk material between $r$ and $r+dr$ has a mass $2 \pi r dr \Sigma$ and angular momentum $2 \pi r dr \Sigma r^2 \Omega$. 
+
+Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor. We can approximate the viscosity as
+\begin{equation}
+\nu \sim \lambda v_{th}\,\, ,
+\end{equation}
+where $\lambda$ is the distance between our two layers and $v_{th}$ is the speed of whatever is mediating the interaction. For molecular transport, $\lambda$ is the mean free path and $v_{th}$ I have already denoted as the thermal speed of the particles. The torque of the inner layer on the outer layer is
+\begin{equation}
+T(r) = 2 \pi r \nu \Sigma r^2 \Omega^\prime
+\end{equation}
+where $ \Omega^\prime = \frac{\partial \Omega}{\partial r}$. The viscous torques cause a dissipation at a rate $T \Omega^\prime dr$ for a ring with width $dr$. The rate per area of the ring is $D(r)$, and it can be found by dividing this area by $2 \times 2\pi r dr$, where the extra factor of $2$ comes from the ring having two sides, top and bottom. Then
+\begin{equation}
+D(r) = \frac{T \Omega^\prime}{4 \pi r}  = \frac{1}{2} \nu \Sigma (r \Omega^\prime)^2
+\end{equation}
+Let's assume the orbital frequency is Keplerian, so $\Omega^\prime = \sqrt{GM/R^3}. Then
+\begin{equation}
+D(r) \ frac{9}{8} \nu \Sigma \frac{GM}{r^3}\,\,.
+\end{equation}
+
+Now let's look at the case of the steady thin disk. In this case, $\dot{M} = 2 \pi r \Sigma (-v_r)$ is constant. Using the momentum equation gives
+\begin{equation}
+r \Sigma v_r r^2 \Omega = \frac{T}{2 \pi} + {\rm constant}\,\,.
+\end{equation}
+Plugging in for $T$ gives
+\begin{equation}
+-\nu \Sigma \Omega^\prime = -v_r\Sigma \Omega + {\rm constant}\,\,.
+\end{equation}
+We need to find the constant by considering the disk down at the surface of the star or compact object $R_*$. The central object should be rotating at less than breakup speed, so $\Omega_* < \Omega_K$. Therefore the disk is Keplerian in the outer layers, but as we go inward in radius, it must eventually decrease to the rotation speed of the star.
 
 One good thing to know about an accretion disk is its thickness. The scale height $H$ provides a measure of the thickness when compared with the radius $R$. It's possible to approximate the scale height by using hydrostatic equilibrium in the $z$ direction:
 \begin{equation}
@@ -508,9 +549,14 @@ Now let's define the surface mass density $\Sigma(r) = \int^\infty_{-\infty} \rh
 \end{equation}
 which is constant with $r$.
 
-Let's look at energy dissipation in the disk. First define the shear $\sigma_{\hat{r}\hat{\phi}} = \frac{1}{2}(v_{x,y} + v_{y,x})$.
-
-(note: I am having trouble condensing this into the important information about accretion disks. If anyone wants to add and restructure, go for it. I'll work on some other things and come back to it later. -io)
+For an accretion disk, the mass conservation equation turns out to be
+\begin{equation}
+r \frac{\partial \Sigma}{\partial t} + \frac{\partial}{\partial r} (r \Sigma v_r} = 0\,\,,
+\end{equation}
+and conservation of momentum is
+\begin{equation}
+f \frac{\partial}{\partial t} (\Sigma r^2 \Omega)
+\end{equation}
 
 \subsection{High-Energy Binaries}
 
