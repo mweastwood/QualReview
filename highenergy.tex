@@ -387,28 +387,70 @@
       them. Define the Eddington luminosity and explain its relevance to the peak frequency
       of the emitted radiation.}
       
-      Consider the vertical structure of an accretion disk, assume we're at large radii ($r \gg r_{\rm in}$), and assume it's a thin disk radiating mostly just through the top and bottom. The heating rate per volume is
+      Assume a thin, optically thick disk. The following is probably way too complicated for the qual, but it's good to get some sense of where these things are coming from. You can probably skip ahead to the easier/more approximate derivation at the end.
+      
+      Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor. We can approximate the viscosity as
+\begin{equation}
+\nu \sim \lambda v_{th}\,\, ,
+\end{equation}
+where $\lambda$ is the distance between our two layers and $v_{th}$ is the speed of whatever is mediating the interaction. For molecular transport, $\lambda$ is the mean free path and $v_{th}$ I have already denoted as the thermal speed of the particles. The torque of the inner layer on the outer layer is
+\begin{equation}
+T(r) = 2 \pi r \nu \Sigma r^2 \Omega^\prime
+\end{equation}
+where $ \Omega^\prime = \frac{\partial \Omega}{\partial r}$. The viscous torques cause a dissipation at a rate $T \Omega^\prime dr$ for a ring with width $dr$. The rate per area of the ring is $D(r)$, and it can be found by dividing this area by $2 \times 2\pi r dr$, where the extra factor of $2$ comes from the ring having two sides, top and bottom. Then
+\begin{equation}
+D(r) = \frac{T \Omega^\prime}{4 \pi r}  = \frac{1}{2} \nu \Sigma (r \Omega^\prime)^2
+\end{equation}
+Let's assume the orbital frequency is Keplerian, so $\Omega^\prime = \sqrt{GM/R^3}$. Then
+\begin{equation}
+D(r) = \frac{9}{8} \nu \Sigma \frac{GM}{r^3}\,\,.
+\end{equation}
+
+Now let's look at the case of the steady thin disk. In this case, $\dot{M} = 2 \pi r \Sigma (-v_r)$ is constant. Using the momentum equation gives
+\begin{equation}
+r \Sigma v_r r^2 \Omega = \frac{T}{2 \pi} + {\rm constant}\,\,.
+\end{equation}
+Plugging in for $T$ gives
+\begin{equation}
+-\nu \Sigma \Omega^\prime = -v_r\Sigma \Omega + {\rm constant}\,\,.
+\end{equation}
+We need to find the constant by considering the disk down at the surface of the star or compact object $R_*$. The central object should be rotating at less than breakup speed, so $\Omega_* < \Omega_K$. Therefore the disk is Keplerian in the outer layers, but as we go inward in radius, it must eventually decrease to the rotation speed of the star over some boundary layer. I'm not going to go into the details right now, but the result is that
+\begin{equation}
+\nu\Sigma \approx \frac{\dot{M}}{3\pi} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\,\,.
+\end{equation}
+Therefore
+\begin{equation}
+D(r) \approx \frac{3GM\dot{M}}{8\pi r^3} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\,\,.
+\end{equation}
+
+      Because we're assuming the disk is optically thick, we can use the blackbody flux. This just gives $\sigma T_{\rm eff}^4(r) = D(r)$, so
       \begin{equation}
-      \nabla \cdot F_{\rm rad} = \rho \nu (r \Omega^\prime)^2 = \rho \nu \biggl(\frac{3}{2} \Omega \biggr)^2
-      \end{equation}
-      from assuming that the rotation is Keplerian. Use radiative diffusion with $P_{\rm rad} = \frac{1}{3} a T^4 = \frac{1}{3}\frac{4 \sigma_{\rm SB}}{c}T^4$. Assume that the disk is optically thick enough that the spectrum is a blackbody. Assume radiation travelling through a layer that is one mean free path $\lambda = 1/\kappa \rho$ thick is what's giving you the flux. The flux is then the speed of light times the mean free path times the change in radiation pressure with height (note: I have not totally justified this expression. If anyone can shed light on this, that'll be cool):
-      \begin{equation}
-      F_{\rm rad} - \frac{1}{\kappa \rho} \frac{d}{dz}P_{\rm rad} c = -\frac{4}{3}\frac{\sigma_{\rm SB}}{\kappa \rho}\frac{\partial T^4}{\partial z}
-      \end{equation}
-      This is similar to the radiative diffusion equation for stars\footnote{$L(r) = -4 \pi r^2 \frac{4}{3} \frac{c a T^3}{\kappa\rho}\frac{\partial T}{\partial r}$}. Now let's integrate vertically, because we want the total flux from each vertical layer in the accretion disk coming out of the top and bottom of the disk.
-      \begin{equation}
-      \int^\infty_0 \frac{\partial F_{\rm rad}}{\partial z} = \sigma T_{\rm eff}^4 = \frac{1}{2} \Sigma \langle \nu \rangle \frac{9}{4}\Omega^2 = \frac{9}{8} \frac{G M \dot{M}}{3 \pi r^3}
-      \end{equation}
-      Now approximate 
-      \begin{equation}
-      -\frac{4}{3} \frac{\sigma_{\rm SB}}{\kappa rho} \frac{\partial T^4}{\partial z} \approx D(r) = \frac{3}{8 \pi}\frac{GM\dot{M}}{r^3}\biggl[1 - \sqrt{\frac{r_{\rm in}}{r}} \biggr]
+      T_{\rm eff}(r) \approx \biggl(\frac{3GM\dot{M}}{8\pi \sigma r^3} \biggl[ 1 - \biggl(\frac{R_*}{r}\biggr)^{1/2}\biggr]\biggr)^{1/4}\,\,.
       \end{equation}
       
-      We eventually want to get here:
-      \begin{equation}
-      D(r) \approx \frac{4}{3}\frac{\sigma_{\rm SB}}{\kappa \rho}\frac{T^4_{\rm midplane}}{H} \approx \frac{4}{3}\sigma_{\rm SB}\frac{T^4_{\rm midplane}}{\tau_{\rm vert}} = \frac{4}{3}\sigma_{\rm SB}T^4_{\rm eff}
-      \end{equation}
+      The result of this is that the spectrum of an accretion disk looks like a superposition of many blackbodies, each weighted by the circumference of the ring associated with that particular temperature.
       
+      There is an easier way to arrive at a similar formula that well approximates the temperature at $r \gg R_*$ This is probably enough for the qual. Consider a ring of mass $M_r$ at a distance $r$ from the center and width $dr$. This ring is $\dot{M} dt$, where $dt$ is the time it takes for that mass to move radially a distance $dr$ (assume this is slow). The energy of such a ring, assuming the Virial theorem holds and assuming that the mass of the central object dominates, is
+      \begin{equation}
+      E = -\frac{1}{2} \frac{G M_* M_r}{r} = -\frac{G M \dot{M} dt}{2r}\,\,.
+      \end{equation}
+      Now let's pull out a small trick and do
+      \begin{equation}
+      \frac{dE}{dr} = \frac{G M \dot{M}dt}{2r^2}\,\,.
+      \end{equation}
+      Taking $dt$ to the other side gives
+      \begin{equation}
+      \frac{dL}{dr} =  \frac{G M \dot{M}}{2r^2}\,\,,
+      \end{equation}
+      and we know $dL = 2 \times 2 \pi r F dr$, since $2 \pi r dr$ is the area of the ring that is emitting, but there are two sides to it. Therefore
+      \begin{equation}
+      \frac{4 \pi r dr F}{dr} = \frac{G M \dot{M}}{2r^2} \rightarrow \sigma T_{\rm eff}^4 = \frac{G M \dot{M}}{8 \pi r^3}\,\,.
+      \end{equation}
+      This time, then, our expression is
+      \begin{equation}
+      T_{\rm eff} = \biggl(\frac{G M \dot{M}}{8 \pi \sigma r^3}\biggr)^{1/4}\,\,.
+      \end{equation}
+      This expression is not too far off from the previosu one, aside from a factor of $3^{1/4}$ and the correction at small radii. This will probably do for the qual, but it's good to know the form of the more accurate expression and realize that it comes from needing to match angular velocities in the inner disk to the central object. I've seen this argument for accretion around stars and neutron stars, but I \textbf{think} it holds in a similar way for black holes.
       
 \end{enumerate}
 
@@ -420,6 +462,15 @@ For reference, here is the general equation for accretion and winds for which yo
 \frac{1}{v} \frac{dv}{dr} (v^2 - c_s^2) = \frac{2 c_s^2}{r} - \frac{G M}{r^2}\,\,.
 \end{equation}
 Solutions are depicted in Figure \ref{f:mach}. The point where $v = c_s$ is called the sonic point, and it represents the transition between subsonic and supersonic flow.
+
+\subsection{Star Cores}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{HE_starcore.jpg}
+\caption{Temperature/density tracks of stars with various core masses. This plot is separated into degenerate and nondegenerate regions, and the temperatures at which fusion of various elements start are shown. \label{f:starcore}}
+\end{center}
+\end{figure}
 
 \subsection{White Dwarfs}
 
@@ -452,7 +503,11 @@ In fact, this is where most of the energy from the core collapse goes. If we cal
 
 Okay, we've successfully blown up our star. What do we expect to see? The first thing should be what's called ``shock breakout". This is just when the shock reaches the surface of the star, and there should be a burst of high-energy radiation associated with that. So far it hasn't been observed because it occurs on a very short timescale (I would say minutes to hours), and we'd have to be pointing directly at the supernova while this happens. Then it goes dark---a lot of energy has just been deposited into the outer layers of the star, but it's so dense that the photons haven't had time to diffuse out yet. When they do, there is a gradual rise to roughly peak brightness over the course of a few days to a week.
 
-This is where supernovae from stripped-envelope stars (SNe Ib, Ic) differ from stars that mostly still have their big fat layer of hydrogen (SNe II). For stars without this envelope, energy deposited directly from the shock is not that significant for powering the supernova light curve. Instead it is mostly the decay of $^{56}{\rm Ni}$ to $^{56}{\rm Co}$ (half life $\sim 6$ days to $^{56}{\rm Fe}$ (half life $\sim 80$ days) that supplies all the power. These are beta decays accompanied by gamma-ray emission in the center of the explosion near the proto-NS, and these gamma-rays are thermalized in the ejecta and the energy is re-emitted partly at optical wavelengths, which is why we see this energy come out in the optical. The relationship between the observed peak of the supernova and the is given by Arnett's law, which assumes that the luminosity at peak is given roughly by the total amount of nickel produced (I should find a good expression of Arnett's law and put it here). Anyway, at first the ejecta expands adiabatically and we don't see much because all these photons are trapped inside. Once the photon diffusion time roughly equals the time since explosion, all these photons start to escape, and then the light curve dips to follow the cobalt decay tail (see Figure \ref{f:sn_lc}
+This is where supernovae from stripped-envelope stars (SNe Ib, Ic) differ from stars that mostly still have their big fat layer of hydrogen (SNe II). For stars without this envelope, energy deposited directly from the shock is not that significant for powering the supernova light curve. Instead it is mostly the decay of $^{56}{\rm Ni}$ to $^{56}{\rm Co}$ (half life $\sim 6$ days to $^{56}{\rm Fe}$ (half life $\sim 80$ days) that supplies all the power. These are beta decays accompanied by gamma-ray emission in the center of the explosion near the proto-NS, and these gamma-rays are thermalized in the ejecta and the energy is re-emitted partly at optical wavelengths, which is why we see this energy come out in the optical. The relationship between the observed peak of the supernova and the is given by Arnett's law, which assumes that the luminosity at peak is given roughly by the total amount of nickel produced (I should find a good expression of Arnett's law and put it here). Anyway, at first the ejecta expands adiabatically and we don't see much because all these photons are trapped inside. The diffusion time is
+\begin{equation}
+t_{\rm diff} = \frac{N\lambda}{c} \sim \frac{R^2}{\lambda c} \sim \frac{R^2}{c} \kappa \rho
+\end{equation}
+Once the photon diffusion time roughly equals the time since explosion, all these photons start to escape, and then the light curve dips to follow the cobalt decay tail (see Figure \ref{f:sn_lc}. This diffusion takes about 20 days.
 
 For Type II supernovae, the story is a bit different. Here the ejecta are dominated by a thick hydrogen layer (of course, there will be some situations in between these and Ib types, so you could have sort of hybrid cases). The shock-heated ejecta expand adiabatically as before, and radioactive decays are still depositing photons into the ejecta, which we can't see yet. Then the luminosity goes up as the ejecta expands---however, the luminosity is mediated not immediately by radioactivity but by hydrogen recombination.
 
@@ -463,7 +518,7 @@ For Type II supernovae, the story is a bit different. Here the ejecta are domina
 \end{center}
 \end{figure}
 
-Hydrogen recombines at roughly a single temperature (check what this is). As we look at the ejecta, it starts out ionized, but the temperature in the outer layers drops to the recombination temperature, and the opacity drops dramatically. In the optical, at least, we basically see down to where the hydrogen is recombining. This front moves inward in comoving (or mass) coordinates, as more of the inner layers cool---but the layers are also moving outward in real space coordinates. The net effect is that the radius at which most of your light is being emitted stays roughly the same. The temperature also stays roughly the same, so this results in a ``plateau" in luminosity for about 100 days. After we've seen through the entire hydrogen layer, which has become optically thin, the light curve proceeds in a way similar to Type I supernovae, following a cobalt decay tail (again see Figure \ref{f:sn_lc}.
+Hydrogen recombines at roughly a single temperature $\sim 10^4~{\rm K}$. As we look at the ejecta, it starts out ionized, but the temperature in the outer layers drops to the recombination temperature, and the opacity drops dramatically. In the optical, at least, we basically see down to where the hydrogen is recombining. This front moves inward in comoving (or mass) coordinates, as more of the inner layers cool---but the layers are also moving outward in real space coordinates. The net effect is that the radius at which most of your light is being emitted stays roughly the same. The temperature also stays roughly the same, so this results in a ``plateau" in luminosity for about 100 days. After we've seen through the entire hydrogen layer, which has become optically thin, the light curve proceeds in a way similar to Type I supernovae, following a cobalt decay tail (again see Figure \ref{f:sn_lc}.
 
 Now let's talk about thermonuclear supernovae, the most common of which are Type Ia supernovae. These come generally from C/O-dominated white dwarfs that are close to the Chandrasekhar mass. Contrary to popular belief, they don't generally blow up quite at the Chandrasekhar mass. This is just the maximum mass a white dwarf can have before relativistic electron degeneracy pressure can no longer support it. What actually matters is when you're allowed to unstably burn carbon. 
 
@@ -473,11 +528,13 @@ This burning of carbon and oxygen to heavier elements ends up being enough to un
 
 These supernovae are, like other Type I supernovae, powered predominantly by radioactive decay, and so their light curves look very similar to those of SNe Ibc, although generally brighter and over a longer timescale (i.e. more nickel is formed in these explosions).
 
-One thing we don't know is what happens if a white dwarf gets dense enough in its center for electron capture to happen before you can start runaway carbon burning. This is more likely for O/Ne/Mg white dwarfs, since electron capture onto Mg and Ne is easier than onto C and O (and C is what you need to burn unstably). These should come from intermediate ZAMS mass stars, $6-8$ or $8-10$ solar masses, depending on whom you ask. In this case, the white dwarf could theoretically collapse to a neutron star and create a really weak explosion, which is the topic of io's research. :)
+One thing we don't know is what happens if a white dwarf gets dense enough in its center for electron capture to happen ($\sim 4\times 10^4~{\rm g}~{\rm cm}^{-3}$) before you can start runaway carbon burning. This is more likely for O/Ne/Mg white dwarfs, since electron capture onto Mg and Ne is easier than onto C and O (and C is what you need to burn unstably). These should come from intermediate ZAMS mass stars, $6-8$ or $8-10$ solar masses, depending on whom you ask. In this case, the white dwarf could theoretically collapse to a neutron star and create a really weak explosion, which is the topic of io's research. :) These, like Type Ia supernovae, can occur theoretically by either the single-degenerate or double-degenerate channel.
 
 \textbf{Good numbers to know} about normal supernovae of any type: $E \sim 10^{51}~{\rm ergs}$, $M_{\rm ej} \sim 1~{\rm M}_\odot$, $L \sim 10^{42-43}~{\rm ergs}~{\rm s}^{`-1}$, $v_{\rm ej} \sim 10,000~{\rm km}~{\rm s}^{-1}$.
 
 \subsection{Neutron Stars}
+
+A lot of the neutron stars we see are pulsars.
 
 \subsection{Black Holes}
 
@@ -639,7 +696,14 @@ In this case, the incoming gas (from the perspective of the accreting mass) trav
 
 \subsection{Accretion Disks}
 
-The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplertian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. Because the velocity decreases with radius, we can imagine a thin ring of the disk with an adjacent interior ring moving more slowly and an adjacent outer ring moving more quickly. Imagine elements in these three rings for temporary `bonds' with each other, so the inner ring gets pulled back and bit and the outer ring gets pushed forward a bit due to the interaction between the rings (which is due to viscosity). Actually, the lowest energy state that the disk is trying to get to is one in which a small part of the mass goes out to infinity and carries all the angular momentum with it, while the rest of the accretion disk falls into the accretor.
+The idea behind accretion disks is that material falls in and maintains the angular momentum it had at large radii, so it starts to orbit the central mass. Viscosity in the disk is what causes it to heat up and radiate, which causes the material to lose energy and start falling in. Let's assume an axisymmetric situation. For Keplerian rotation, $v_\phi = \sqrt{\frac{GM}{r}}$. We can also write this as
+\begin{equation}
+\Omega = \Omega_K = \sqrt{\frac{GM}{r^3}}\,\,.
+\end{equation}
+
+The disk is characterized by its surface density $\Sigma$, which is the mass density $\rho$ integrated vertically. Assuming symmetry in the $\phi$ direction, an annulus defined as the disk material between $r$ and $r+dr$ has a mass $2 \pi r dr \Sigma$ and angular momentum $2 \pi r dr \Sigma r^2 \Omega$. 
+
+
 
 One good thing to know about an accretion disk is its thickness. The scale height $H$ provides a measure of the thickness when compared with the radius $R$. It's possible to approximate the scale height by using hydrostatic equilibrium in the $z$ direction:
 \begin{equation}
@@ -657,9 +721,14 @@ Now let's define the surface mass density $\Sigma(r) = \int^\infty_{-\infty} \rh
 \end{equation}
 which is constant with $r$.
 
-Let's look at energy dissipation in the disk. First define the shear $\sigma_{\hat{r}\hat{\phi}} = \frac{1}{2}(v_{x,y} + v_{y,x})$.
-
-(note: I am having trouble condensing this into the important information about accretion disks. If anyone wants to add and restructure, go for it. I'll work on some other things and come back to it later. -io)
+For an accretion disk, the mass conservation equation turns out to be
+\begin{equation}
+r \frac{\partial \Sigma}{\partial t} + \frac{\partial}{\partial r} (r \Sigma v_r) = 0\,\,,
+\end{equation}
+and conservation of momentum is
+\begin{equation}
+f \frac{\partial}{\partial t} (\Sigma r^2 \Omega)
+\end{equation}
 
 \subsection{High-Energy Binaries}
 

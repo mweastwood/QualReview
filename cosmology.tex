@@ -40,6 +40,83 @@ The second equation follows from the first by defining $H = \dot a/a$ and
 $\Omega_0 = \rho_0/\rho_{c,0}$, where $\rho_c = 3H_0^2/8\pi G$ is the critical density.
 The $0$ subscripts denote quantities that are measured today.
 
+Here is a short derivation of the Friedmann equation.  Consider dynamics of a uniform sphere:
+
+\begin{equation}
+\ddot x = - \frac{GM}{x^2} = -\frac{4}{3}\pi G\rho x
+\end{equation}
+
+Since $x \sim a(t)$;
+\begin{equation}
+\ddot a = \frac{-4}{3}\pi G\rho a
+\end{equation}
+
+For matter, $\rho = \frac{\rho_0}{a^3}$, so $\ddot a = -\frac{4}{3}\pi G\frac{\rho_0}{a}$.  Multiply both sides by $2\dot a$ and integrate:
+\begin{equation}
+\int 2\dot a \ddot adt = -\frac{8}{3}\pi G\rho_0 \int \frac{\dot a dt}{a^2}
+\end{equation}
+
+So:  
+\begin{equation}
+\dot  a^2 =\frac{8}{3}\pi G\rho a^2 + cnst
+\end{equation}
+
+GR further tells us that the constant is $\frac{\pm c^2}{R^2}$, where R is the comoving radius of curvature.  
+
+The Friedmann equation can be rewritted as:
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho \pm \frac{c^2}{a^2R^2}
+\end{equation}
+
+So the critical density (where $R \rightarrow \infty$) is $\rho_c = \frac{3H^2}{8\pi G}$.  The universe is flat if $\rho = \rho_c$, open if $\rho < \rho_c$, and closed if $\rho > \rho_c$.
+
+\subsection{Solutions to the Friedmann Equation}
+
+Einstein-de Sitter model:  $\Omega = 1$, no $\Lambda$ (spatially flat, only matter).
+
+\begin{equation}
+H = \bigg(\frac{8}{3}\pi G\rho \bigg)^{0.5} = \bigg(\frac{8}{3}\pi G\rho_0 \bigg)^{0.5}a^{-1.5} = H_0a^{-1.5}
+\end{equation}
+
+\begin{equation}
+a(t) = \bigg(\frac{t}{t_0}\bigg)^{\frac{2}{3}}
+\end{equation}
+where $t_0 = \frac{2}{3H_0}$.  
+
+Matter and curvature model:  $\Omega \ne 1$, no $\Lambda$.
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho \pm \frac{c^2}{a^2R^2}
+\end{equation}
+\begin{equation}
+H^2 = \frac{\Omega_mH_0^2}{a^3} + \frac{\Omega_kH_0^2}{a^2}
+\end{equation}
+
+As the universe becomes large:
+\begin{itemize}
+\item For $\Omega < 1$, the second term dominates and the long term future is $H \sim \frac{1}{a}$, and $\dot a \rightarrow cnst$.  In this case, the universe expands forever.
+\item For $\Omega > 1$, the second term is negative and H reaches 0 when $a = a_{max} = \frac{\Omega}{\Omega - 1}$.  The universe turns around ($\dot a < 0$), and ends in a Big Crunch.
+\end{itemize}
+
+Matter and $\Lambda$, flat universe.
+
+\begin{equation}
+H^2 = \frac{8}{3}\pi G\rho
+\end{equation}
+
+but here, $\rho = \rho_m + \rho_\Lambda$.  So:
+\begin{equation}
+H^2 = \frac{\Omega_mH_0^2}{a^3} + \Omega_\Lambda H_0^2
+\end{equation}
+
+In the far future, $\frac{\Omega_m}{a^3} \rightarrow 0$, $H \rightarrow \Omega_\Lambda^{0.5}H_0  = cnst$.  Since $H = \frac{1}{a}\frac{da}{dt}$, this means that $a \sim e^{Ht} = e^{\left(\frac{8}{3}\pi G\rho_\Lambda \right)t}$.  Thus the universe will expand exponentially.
+
+
+
+
+
+
 \subsection{What Distance Means in Cosmology}
 \newthought{The angular diameter distance} is the distance that is relevant for
 ``standard rulers''.  For an object of a known size $d$ and apparent angular size $\theta$,
@@ -820,4 +897,148 @@ this is in two peaks in the UV and far IR from obscured and unobscured
 galaxies.  This doesn't include the CMB, all this background at these 
 wavelengths is only a few percent as bright is the CMB at its peak 
 wavelengths.  
+
+\subsection{Intergalactic Medium}
+The baryons in the IGM do not belong to any individual galaxy.  Instead, 
+they follow dark matter potentials, forming the ``cosmic web.''  Some of 
+this gas does fall into galaxy, will gas blown out of galaxies chemically 
+enriches the IGM (although the IGM still has close to primordial abundances).  
+AGN and stars in galaxy provide enough flux to keep the IGM ionized (also, 
+it's probably hard to recombine at IGM densities).  
+
+One way to study the IGM is through absorption of light from background 
+quasars.  Absorption systems seen this way include:
+\begin{itemize}
+\item Lyman $\alpha$ Forest- weak, unsaturated absorption lines implying low 
+column density ($10^{14}\leq N_{HI}\leq10^{16}$ cm$^{-2}$) hydrogen clouds.  These clouds 
+are spatially larger than galaxies, and have primordial metallicity.  They 
+are thought to be proto-galactic clouds.  
+\item Lyman Limit Systems and Damped Lyman $\alpha$ absorption lines- rare 
+systems with strong H absorption lines, implying high column densities.  These 
+are due to galaxies themselves or almost-formed protogalaxies.  Lyman limit 
+systems have saturated Lyman $\alpha$ lines and strong absorption shortward 
+of $912$\AA (similar to Lyman break galaxies).  These systems have column 
+densities of $N_{HI}\geq10^17$cm$^{-2}$.  Damped Lyman $\alpha$ systems 
+have column densities of $\geq10^20$ cm$^{-2}$, creating heavily saturated 
+lines (more saturated than Lyman limit systems).  
+\item Metal absorption lines- lines from C, Si, Mg, Al, Fe...  Mostly from 
+galaxies in the line of sight.  
+\end{itemize}
+
+Gunn-Peterson Effect:\newline
+The idea here is even a tiny amount of neutral H in the IGM (anything above
+$x_{HI}\sim10^{-4}$) will completely absorb flux blueward of Ly$\alpha$ (does 
+anyone know why Ly$\alpha$ and not the Lyman limit?).  This effect can 
+be used to determine when re-ionization was completed, because if there's 
+any neutral H left at a certain redshift, it will absorb all the flux from 
+a background source blueward of Ly$\alpha$.  The wavelength of the dropoff 
+in flux we observe gives the redshift of the H.  Observations of this effect 
+show a steep dropoff in Lyman flux at redshift of around $6$, indicating that 
+this was when re-ionization was complete.  
+
+\subsection{Gravitational Lensing}
+The supplementary slides of George's lecture on the IGM and lensing have some 
+stuff about determining the mass profiles of galaxies from lensing.  I couldn't 
+really follow what he was doing, but it might be worth looking at when we're 
+practicing the galaxies will-ask question on measuring masses.  
+
+As light from a distant source basses by a mass in the line of sight, the light 
+will be bent around the mass, causing the apparent position of the source to 
+change.  Assuming the impact parameter of the light $b$ is much greater than 
+the Schwarchild radius of the lens, and that the light is only affected by 
+the lens for a distance of order $b$, which is much smaller than any other 
+distance in the problem, then the amount of deflection ($\alpha$) 
+depends on $b$ and the mass of the lens:
+\begin{equation}
+\alpha=\frac{4GM}{c^2b}={2R_s}{b}
+\end{equation}
+where $R_s$ is the Schwarzchild radius.  Light rays that pass too close to the 
+lens will be deflected too much and not reach the observer.  Light rays 
+too far away will not be deflected enough to reach the observer.  Only 
+rays within a certain range of impact parameters will be deflected to the 
+observer, so the observer will see an \emph{Einstein ring} around the lens.  
+If the observer, lens, and source are all along the same line, the angle 
+between this line and the ring can be calculated using Figure \ref{fig:lens}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens.jpg}
+\end{center}
+\caption{Gravitational lensing.  The distance from the observer to the source 
+is $D_{OS}$, from the observer to the lens is $D_{OL}$, and from the lens to 
+the source is $D_{LS}$.  
+\label{fig:lens}}
+\end{figure}
+
+Since we are assuming $R_S/b<<1$, then $\alpha=2R_S/b<<1$.  Also, since 
+$b<<D_{OL}$, $\theta_E<<1$.  With these assumptions, the distance from S to I 
+is given by 
+\begin{equation}
+SI=\alpha D_{LS}=\theta_ED_{OS}
+\end{equation}
+plugging in for $\alpha$ and solving for the Einstein angle gives
+\begin{equation}
+\boxed{\theta_E=\left(\frac{4GM}{c^2}\frac{D_{LS}}{D_{OL}D_{OS}}\right)^{1/2}}
+\end{equation}
+If the source is not directly behind the lens, things are slightly more 
+complicated.  The situation is shown in Figure \ref{fig:lens2}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens2.jpg}
+\end{center}
+\caption{Gravitational lensing with the source not directly behind the lens.  
+\label{fig:lens2}}
+\end{figure}
+
+As before, the angles $\theta$, $\beta$, and $\alpha$ are small.  $\theta$ can 
+be calculated by considering the length from point A to point C.  
+\begin{equation}
+AB+BC=AC
+\end{equation}
+\begin{equation}
+D_{LS}\alpha+D_{OS}\beta=D_{OS}\theta
+\end{equation}
+Solving for $\beta$ gives
+\begin{equation}
+\beta=\theta-\frac{D_{LS}}{D_{OS}}\alpha=\theta-\frac{D_{LS}}{D_{OS}}\frac{4GM}{c^2D_{OL}\theta}=\theta-\frac{\theta_E^2}{\theta}
+\end{equation}
+This can be rewritten as a quadratic equation for $\theta$, with solution 
+\begin{equation}
+\theta_{\pm}=\frac{1}{2}[\beta\pm(\beta^2+4\theta_E^2)^{1/2}]
+\end{equation}
+Distant sources lensed by galaxy cluster give a way to measure the masses 
+of the clusters, giving mass to light ratios in the hundreds.  
+
+Gravitational lensing has also been used to test the composition of the 
+dark matter in the Milky Way's halo.  If this dark matter is just dim compact 
+objects (MACHOs), microlensing events would be observed when these objects 
+passed into the line of sight to a star in the LMC.  A star will be lensed 
+if a MACHO passes within $\theta_E$ of the line of sight to the star.  
+So the cross section for lensing for a single Macho is $\theta_E^2$.  
+Therefore, the probability that this Macho is currently lensing a background 
+star is 
+\begin{equation}
+P\propto\theta_E^2\propto\left(\frac{D_{LS}}{D_{OL}D_{OS}}\right)M
+\end{equation}
+If a distance to the LMC and to a typical MACHO is assumed, then the 
+probability of a lensing event happening at a given time from all the MACHOs 
+in the halo is just proportional to the total mass in the halo.  Also, the 
+duration of lensing events gives information about the mass of individual 
+MACHOs.  A lensing event will last for as long as it takes the lens to 
+cross the Einstein ring (in reality, it is mainly the Sun that is moving around 
+the Milky Way, causing the lens to move out of alignment).  The event duration 
+is then
+\begin{equation}
+\tau=\frac{2D_{OL}\theta_E}{v_{\odot}}=\frac{4}{v_{\odot}c}\left(\frac{GMD_{OL}D_{LS}}{D_{OS}}\right)
+\end{equation}
+Plugging in the distances makes the duration dependent on the mass of the 
+lens, allowing the type of object doing the lensing to be constrained.  
+Surveys looking for MACHOs lensing LMC stars have been conducted, finding 
+typical lens masses between $0.15\,M_{\odot}$ and $0.9\,M_{\odot}$, i.e. white 
+dwarfs.  The frequency of lensing events ruled out the possibility of all 
+the mass in the halo being composed of MACHOs.  Also, having this many 
+white dwarfs in the halo would have required a huge amount of star formation 
+in the past, producing lots of metals, which we don't see.  
+
 
