@@ -309,3 +309,42 @@ where $\beta=\frac{1}{kT}$.
 \subsection{Unit Conversion}
 $1$ erg $\approx6\times10^{11}$eV
 
+\subsection{Superluminal Motion}
+Superluminal motion is the apparent motion of an object that is faster than 
+the speed of light.  It happens when the emitting object is moving towards 
+us relativistically.  The situation is shown in Figure \ref{fig:slum}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{slum.jpg}
+\end{center}
+\caption{Superluminal Motion
+\label{fig:slum}}
+\end{figure}
+
+A blob of gas at position B emits light, then moves to position C with 
+velocity $v$, and emits again.  The observer at position A knows the distance 
+D to the blob (which is much greater than the distance the blob moves) and 
+can measure $\delta t$ and $\Delta\phi$, a small angle.  The observer will 
+measure a velocity in the plane of the sky of 
+\begin{equation}\label{eq:beta}
+\beta_T=\frac{v_T}{c}=\frac{1}{c}\frac{D\Delta\phi}{\Delta t}
+\end{equation}
+The angular separation between B and C is 
+\begin{equation}\label{eq:phi}
+\Delta\phi=\frac{v\delta t\sin\theta}{D}
+\end{equation}
+If the first emission from the blob is at $t=0$, then this light will 
+reach the observer at $t_1=\frac{D+v\delta t\cos\theta}{c}$.  The second 
+emission will occur at $t=\delta t$ and be observed at 
+$t_2=\delta t+\frac{D}{c}$.  The observed time difference will then be
+\begin{equation}\label{eq:t}
+\Delta t=t_2-t_1=\delta t+\frac{D}{c}-\frac{D+v\delta t\cos\theta}{c}
+=\delta t(1-\beta\cos\theta)
+\end{equation}
+Plugging Equation \ref{eq:phi} and \ref{eq:t} into \ref{eq:beta} gives 
+\begin{equation}
+\beta_T=\frac{\beta\sin\theta}{1-\beta\cos\theta}
+\end{equation}
+which can be greater than $1$.
+
