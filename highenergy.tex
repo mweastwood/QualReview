@@ -193,11 +193,127 @@
 
       \newthought{Finally, let's consider} processes that accelerate high energy particles.
       \begin{itemize}
-      \item Supernovae and their remnants
-      \item Solar flares
+      \item Electric fields
+
+            In general, large sustained electric fields are impossible in astrophysical situations.
+            If there were to exist even a slight charge separation, it would be quickly
+            neutralized due to the strength of the electric force.
+            However, when $\nabla\times\b B$ and $\partial\b B/\partial t$ are nonzero, electric
+            fields can be produced nonetheless\sidenote{
+                This is how magnetic fields can be used to do work.  For instance during
+                magnetic reconnection the energy that is in the magnetic fields is used to do
+                work on charged particles.  This is possible because the changing magnetic field
+                induces an electric field which actually does the work.
+            }.
+
+            Now assuming we have an electric field $\b E$, the equation of motion for an electron is
+            \begin{dmath}\label{eq:accelerating_e_fields}
+                m_e\frac{\d v}{\d t} = eE - \nu_cm_e v
+            \end{dmath},
+            where $\nu_c$ is the collision frequency.  Longair uses a fairly complicated
+            expression for $\nu_c$ in Chapter 17.2, but the key piece of physics here is that
+            there is a critical electric field, below which the particles are not accelerated.
+            Setting the right-hand side of Equation~\ref{eq:accelerating_e_fields} to zero,
+            the critical electric field strength is
+            \begin{dmath}
+                E_{\rm critical} = \frac{\nu_cm_ev_0}{e}
+            \end{dmath},
+            where $v_0$ is a typical thermal velocity for the electrons.
+
       \item Fermi acceleration
+
+            In 1949, Fermi proposed a mechanism by which particles can gain energy by reflecting
+            off magnetic mirrors\sidenote{
+                In a slowly varying magnetic field, the magnetic moment $\mu = IA$ of a gyrating
+                particle is conserved, where $I$ is the current carried by the particle in its
+                orbit and $A$ is the area interior to its orbit.
+                We know the frequency of the orbit (nonrelativistic) is $\omega = eB/m_e c$
+                and the radius is $r = m_evc\sin\alpha/eB$.
+                Therefore $\mu = (e\omega/2\pi)(\pi r^2)\sim \sin\alpha/B^2$.
+                So as the magnetic field gets larger, the pitch angle $\alpha$ must also
+                grow.  When $\sin\alpha = 1$, the particle reflects and reverses direction.
+                Hence regions of large magnetic fields can act as mirrors for charged particles.
+            }.  Magnetic flux freezing suggests that these magnetic mirrors are denser regions
+            of the ISM.  Because head-on collisions are more likely than collisions approaching
+            the cloud from reverse, there is an assymetry that means particles are more likely
+            to gain energy than lose it.  The average gain in energy per collision is
+            \begin{dmath}
+                \left\langle\frac{\Delta E}{E}\right\rangle = \frac83\left(\frac{V}{c}\right)^2
+            \end{dmath},
+            where $V$ is the speed of the cloud.  If the mean free path between clouds is $L$,
+            the rate of energy gain becomes\sidenote{
+                An extra factor of $1/2$ comes from averaging over pitch angle.
+            }
+            \begin{dmath}
+                \frac{\d E}{\d t} = \frac43 \left(\frac{V^2}{cL}\right) E \nolinebreak
+                                  = \alpha E
+            \end{dmath}.
+            After doing a bit of math involving the diffusion-loss equation\sidenote{
+                See Longair Equation 7.41.
+            }, one can show that this naturally leads to a power-law distribution for the
+            energy such that
+            \begin{dmath}
+                N(E)\,\d E \propto E^{1+1/\alpha\tau_{\rm escape}}\,\d E
+            \end{dmath},
+            where $\tau_{\rm escape}$ is the typical time a particle remains in the accelerating
+            region.
+
+            This theory runs into problems because $V/c\le10^{-4}$ for typical clouds in the
+            ISM, and there aren't enough clouds to accelerate particles to the observed energies.
+            Modern theory accounts for this by allowing particles to be accelerated by scattering
+            off plasma waves as well, but the math remains similar to the expressions we
+            already derived.
+
       \item Shock acceleration
+
+            Imagine a strong shock propagating with a velocity $U$.  In ISM we showed that the
+            density enhancement upstream of a strong shock is
+            $\rho_2/\rho_1 = (\gamma+1)/(\gamma-1)$.  For the case of a monatomic gas,
+            $\gamma=5/3$ so that $\rho_2/\rho_1 = 4$.  However, mass continuity across the shock
+            requires that $\rho_1v_1 = \rho_1U = \rho_2v_2$.  Therefore $v_2 = U/4$ for a
+            strong shock.  A summary of the situation is presented in Table~\ref{tab:strong_shock_speeds}.
+
+            \begin{table}[ht]
+            \centering
+            \begin{tabular}{p{1.5in}p{1.5in}p{1.5in}}
+            \toprule
+            Frame & Upstream & Downstream \\
+            \midrule
+            Rest frame of the shock &
+                Gas flows out of the shock with speed $v_2 = U/4$ &
+                Gas flows into the shock with speed $v_1 = U$ \\
+            Rest frame of the upstream gas &
+                Gas is stationary &
+                Gas flows into the shock with speed $v_1 = 3U/4$ \\
+            Rest frame of the downstream gas &
+                Gas flows into the shock with speed $v_1 = 3U/4$ &
+                Gas is stationary \\
+            \bottomrule
+            \end{tabular}
+            \caption{Summary of the motion of gas upstream and downstream from a strong shock
+                     as a function of reference frame.}
+            \label{tab:strong_shock_speeds}
+            \end{table}
+
+            Now imagine the gas upstream of the shock.  In its rest frame it sees the downstream
+            gas flowing into the shock with a speed $3U/4$.  A particle diffusing across the shock
+            front therefore receives an energy increase of order $\Delta E/E \sim U/c$.
+            The particle is now downstream and collisions can randomize the direction of the
+            particle's motion.  It is now free to diffuse upstream where it again sees the
+            gas flowing with a speed $3U/4$ into the shock and again receives the same increase
+            in energy.  No matter which direction the particle diffuses through the shock, it
+            gains an increase in energy.
+
+            It can be shown that this naturally leads to a power law of index 2.  That is
+            \begin{dmath}
+                N(E)\,\d E \propto E^{-2}\,\d E
+            \end{dmath}.
+
       \end{itemize}
+
+      We end with a small discussion on the specific locations where these processes operate.
+      
+      Todo: Solar flares, Pulsars, Supernovae remnants
 
 \item \textbf{Discuss the equation of state of relativistic/nonrelativistic degenerate gases of electrons
       and neutrons and derive the Chandrasekhar mass limit for white dwarfs. (A
