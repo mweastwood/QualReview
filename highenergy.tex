@@ -44,6 +44,161 @@
       \label{fig:cosmic_ray_abundances}
       \end{figure}
 
+      \newthought{Now consider processes} through which charged particles can lose energy.
+      Longair only seems to treat these processes in the context of electrons\sidenote{
+        Perhaps this is because electrons are lower mass, experience more acceleration,
+        and hence suffer more radiative losses than protons and heavy nuclei.
+      }, so keep in mind
+      that the following expressions may only be valid for electrons.
+      \begin{itemize}
+      \item Ionization
+
+            The formula for ionization losses of an electron is pretty complicated\sidenote{
+                See Longair Equation 5.36
+            }.  In this process, the high energy electron strips electrons from other atoms it passes
+            near.  There is no radiation associated with this because the cosmic ray electron
+            imparts energy to other electrons (as opposed to depositing this energy into
+            a photon).  Because the ionization losses are logarithmically dependent on $\gamma$,
+            the timescale for the electron losing all its energy through ionization losses is
+            \begin{dmath}
+                \tau_{\rm ionization} \approx \frac{E(\rm eV)}{7.64\times10^{-9}n(3\ln\gamma+19.8)}\,{\rm s}
+            \end{dmath}.
+            Approximating all $\log$s as unity, the decay time becomes
+            \begin{dmath}
+                \tau_{\rm ionization} \sim 10^8 \frac{E}{1\,{\rm GeV}}\frac{1\,{\rm cm}^{-3}}{n}\,{\rm yr}
+            \end{dmath}.
+
+      \item Bremsstrahlung
+
+            Bremsstrahlung is treated in Section~\ref{sec:bremsstrahlung}, although to do this
+            rigorously we would need to
+            treat the case of the energy losses for a single ultra-relativistic electron.
+            Summarizing Longair chapter 6.6, the spectrum is flat out to frequency
+            $\nu\approx (\gamma-1)m_e c^2/h$.  That is, the cutoff frequency is where the energy
+            of the photon is greater than the kinetic energy of the electron.
+            The actual intensity of the radiation (at a given frequency) is independent of
+            $\gamma$, so the total power radiated is proportional to $\gamma$ because the
+            bandwidth scales with $\gamma$:
+            \begin{dmath}
+                -\frac{\d E}{\d t} \propto Z^2nE
+            \end{dmath}.
+            In chapter 16.2.2, Longair provides expressions for the decay time in a fully ionized
+            hydrogen plasma and in a fully screened neutral hydrogen gas cloud.  To the order
+            of magnitude level, it doesn't make a difference\sidenote{
+                Only the Gaunt factor is affected.
+            }.  Therefore, we can write
+            \begin{dmath}
+                \tau_{\rm ionization} \sim 10^8 \frac{1\,{\rm cm}^{-3}}{n}\,{\rm yr}
+            \end{dmath}.
+
+      \item Adiabatic losses
+
+            If the particles are contained to an expanding volume\sidenote{
+                Longair chapter 15.7 discusses how cosmic rays are confined within our own
+                galaxy.  Scattering by irregularities in the magnetic field, Alfv\'{e}n waves,
+                and hydromagnetic waves all impede the motion of the particles.  These are not
+                present in regions where the ISM is predominantly neutral.  Therefore, cosmic
+                rays are capable of diffusing rapidly through regions of neutral material,
+                but can only propagate at the Alfv\'{e}n speed in fully ionized plasmas.
+            }.  The timescale for adiabatic losses is shown by Longair (chapter 16.2.3) to be
+            the timescale for the expansion of the confinement region.  That is
+            \begin{dmath}
+                \tau_{\rm adiabatic} \sim \frac{R}{\d R/\d t}
+            \end{dmath}.
+            Therefore adiabatic losses are important if the particles are confined for a
+            time comparable to the expansion time.  If particles have always been confined to an
+            expanding region, adiabatic losses are always important.
+
+            Note that there is no radiation associated with adiabatic losses.  The cosmic rays
+            have simply used up energy to do $P\,\d V$ work and expand the confinement region.
+
+      \item Synchrotron radiation
+
+            Synchrotron radiation is treated in Section~\ref{sec:synchrotron}.  The total
+            power radiated by a relativistic electron is given by
+            \begin{dmath}
+                P = \frac43\sigma_Tc\gamma^2\frac{B^2}{8\pi}
+            \end{dmath}.
+            The timescale for synchrotron cooling is therefore
+            \begin{dmath}
+                \tau_{\rm synchrotron} \sim 10^{10}\frac{1\,{\rm GeV}}{E}\left(\frac{1\,\mu{\rm G}}{B}\right)^2\,{\rm yr}
+            \end{dmath}.
+            Also recall that the peak frequency for synchrotron radiation occurs at
+            \begin{dmath}
+                \nu \sim \frac{\gamma^2eB\sin\alpha}{m_e c}
+            \end{dmath}
+
+      \item Inverse Compton scattering
+
+            Inverse Compton scattering is treated in section~\ref{sec:compton}.  Similar to
+            synchrotron radiation, the total power radiated by a relativistic electron is
+            \begin{dmath}
+                P = \frac43\sigma_Tc\gamma^2aT^4
+            \end{dmath},
+            where $aT^4$ is the energy density in a photon field of temperature $T$.
+            The timescale for cooling through inverse Compton scattering off the CMB\sidenote{
+                $T\approx2.73\,{\rm K}$
+            } is therefore
+            \begin{dmath}
+                \tau_{\rm Compton} \sim 10^9\frac{1\,{\rm GeV}}{E}\left(\frac{2.73\,{\rm K}}{T}\right)^4\,{\rm yr}
+            \end{dmath}.
+            A typical CMB photon has $\lambda\sim 1\,{\rm mm}$.
+            A 1 GeV electron has $\gamma\sim 2000$.  When the CMB photon inverse Compton scatters
+            off of the electron, it leaves with energy $h\nu = \gamma^2 h\nu_0 = 5\,{\rm keV}$.
+            Therefore inverse Compton scattering typically produces X-rays.
+
+      \item The GZK cutoff
+
+            Longair actually discusses this in the context of high energy protons (not electrons).
+            If a proton is traveling with enough energy, it sees the CMB photons as $\gamma$-rays
+            in its rest frame.  When the photon energy is above 200 MeV, the photon can interact
+            with the proton to produce a pion:
+            \begin{dgroup}
+            \begin{dmath}
+                \gamma+p\rightarrow n+\pi^+
+            \end{dmath}
+            \begin{dmath}
+                \gamma+p\rightarrow p+\pi^0\nolinebreak\rightarrow p+\gamma+\gamma
+            \end{dmath}
+            \begin{dmath}
+                \gamma+p\rightarrow p+N\pi
+            \end{dmath}.
+            \end{dgroup}
+            These pions later decay into muons and muon neutrinos.  These high energy neutrinos,
+            in particular, could be detected by a ground based neutrino detector.
+
+            The proton sees the CMB photons Lorentz boosted into its frame.  Therefore
+            \begin{dmath*}
+                \epsilon_{\rm CMB}' = \epsilon_{\rm CMB}\gamma\left(1+\beta\cos\theta\right)\nolinebreak
+                                    \le 2\epsilon_{\rm CMB}\gamma
+            \end{dmath*}
+            The requirement that $\epsilon_{\rm CMB} < 200\,{\rm MeV}$ implies
+            $\gamma < 2\times10^{11}$ or $E = \gamma m_pc^2 < 1.9\times10^{20}\,{\rm eV}$.
+            Doing a proper calculation that involves integrating over the Planck spectrum and
+            solid angle puts the threshold at $5\times10^{10}\,{\rm eV}$.
+            Referring to Figure~\ref{fig:cosmic_ray_spectrum}, we can see that protons have
+            been detected with energies above this theoretical cutoff.
+
+            The cross-section for the relevant interaction is 250 microbarns or
+            $2.5\times10^{-28}\,{\rm cm}^2$.  This implies that the mean free path is
+            $1/n_\gamma\sigma\sim 3\,{\rm Mpc}$.  The energy of each pion created is
+            $\gamma m_\pi c^2$ so that every pion produced reduces the energy of the proton
+            by a factor of $m_\pi/m_p\approx 1/10$.  Therefore, the proton loses all of its
+            energy after traveling 30 Mpc or
+            \begin{dmath}
+                \tau_{\rm pion} \sim 10^8\,{\rm years}
+            \end{dmath}.
+
+      \end{itemize}
+
+      \newthought{Finally, let's consider} processes that accelerate high energy particles.
+      \begin{itemize}
+      \item Supernovae and their remnants
+      \item Solar flares
+      \item Fermi acceleration
+      \item Shock acceleration
+      \end{itemize}
+
 \item \textbf{Discuss the equation of state of relativistic/nonrelativistic degenerate gases of electrons
       and neutrons and derive the Chandrasekhar mass limit for white dwarfs. (A
       heuristic approach, as in Shapiro and Teukolsky, is sufficient.)}
