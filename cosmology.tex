@@ -458,9 +458,120 @@ affected, so small structures would form before large structures (bottom-up
 structure formation).  Most dark matter is probably CDM.  
 
 Dark energy is a complete mystery.  We know the Universe's expansion is 
-accelarating due to a cosmological constant $\Lambda$, with 
+accelerating due to a cosmological constant $\Lambda$, with 
 $\Omega_{\Lambda}\sim0.7$ (see expansion test section).  We don't know what 
 dark energy actually is though.  
+
+\subsection{The Cosmic Microwave Background}
+
+\newthought{First of all}, I highly recommend Wayne Hu's website\sidenote{
+    \url{http://background.uchicago.edu/~whu/intermediate/intermediate.html}
+}.  He's a CMB theorist at Chicago, and his website is a very good introduction
+to the all things related to the CMB.  I will mostly be summarizing material from
+his website.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{cosmology_cmb}
+\caption{A plot of the CMB power spectrum.  The various regimes and experiments that measured
+         them are labeled on the plot.  Note that $l\approx100/\theta$, where $\theta$ is the
+         angular scale in degrees.}
+\label{fig:cmb_power_spectrum}
+\end{figure}
+
+The COBE experiment measured the CMB temperature to be 2.73 K in 1992.  This is directly
+related to the radiation density of the universe through
+\begin{dmath}
+    \Omega_R = \frac{aT_{\rm CMB}^4/c^2}{\rho_{\rm critical}}
+\end{dmath},
+where $\rho_{\rm crit} = 3H^2/8\pi G$.  The temperature of the radiation $T\propto a^{-1}$ so
+that $\Omega_R\propto a^{-4}$.  Today, $\Omega_R\approx 6\times10^{-5}$, which you can verify
+from the above expression.
+
+Beyond the total radiation density, the CMB provides a lot of information about the universe
+through the fluctuations we see in the CMB.  Some of these fluctuations are primordial\sidenote{
+    That is, they reflect fluctuations in the initial conditions of the universe.
+}, some of these fluctuations are not cosmological\sidenote{
+    For example, there exists a dipole fluctuation due to the motion of the Milky Way with
+    respect to the CMB.  Note that this motion is not the only source of dipole fluctuations.
+}, but some of these fluctuations are due to sound waves that propagated in the early universe.
+The early universe was radiation dominated, so $p = u/3 = \rho c^2/3$.  Therefore the sound
+speed is
+\begin{dmath}
+    c_s = \sqrt{\frac{\partial p}{\partial\rho}} \nolinebreak
+        = \frac{c}{\sqrt{3}}
+\end{dmath}.
+
+Before we discuss the acoustic oscillations in the CMB power spectrum, let us briefly describe
+the contents of the universe at recombination.  Recombination occurs at $z\sim1100$.
+At this time, the universe was about 3000 K in temperature, 80\% matter, and 20\% radiation.
+Recombination occurred at such a low temperature because the average density of the universe
+was quite low\sidenote{
+    Recall that the rate of recombinations scales as $n^2$, while the rate of
+    ionizations scale as $n$.  Therefore at lower densities, the equilibrium between recombinations
+    and ionizations shifts towards a higher ionization state.  This means that a lower temperature
+    is necessary for the universe to recombine at low densities.
+}.
+
+Finally, the propagation of sound waves in a relativistic plasma depends on the physical
+densities of matter, baryons and dark energy.  The physical density is
+$\Omega\rho_{\rm critical} \propto \Omega h^2$ where $H_0 = 100h\,{\rm km}/{\rm s}/{\rm Mpc}$.
+Therefore, most CMB papers fit for $\Omega h^2$ instead of $\Omega$ on its own in order to
+reduce degeneracies with the Hubble constant.
+
+\newthought{The first peak} in the CMB power spectrum (see Figure~\ref{fig:cmb_power_spectrum})
+occurs near $l\sim200$ or $\theta\sim0.5^\circ$.  The angular scale of this peak is set by the
+ratio of the comoving distance a sound wave can propagate in the time to recombination and
+the comoving angular diameter distance to recombination.  That is
+\begin{dmath}
+    \theta_{\text{first peak}} \sim \frac{c_s t(\text{recombination})}{D_A(\text{recombination})}
+\end{dmath}.
+In an open universe, the distance to recombination is increased, and hence the peak moves to smaller
+angular scales.  In a closed universe, the distance to recombination is decreased, and hence
+the peak moves to larger angular scales.  However, the time to recombination and distance to
+recombination scale in a similar way with $\Omega_M$.  Therefore, the first peak is relatively
+insensitive to $\Omega_M$, but is very sensitive to $\Omega_M+\Omega_\Lambda$.
+
+Now the dispersion relation for a (linear) sound wave is given by
+\begin{dmath}
+    \omega^2 = c_s^2k^2
+\end{dmath}.
+The first peak tells us about the maximum wavelength of a sound wave in the time before
+recombination.  Assuming sound waves of all wavelengths began at a maximum after inflation,
+we should expect to see harmonics such that $\omega_{\text{nth peak}} = n\omega_{\text{first peak}}$.
+This implies $k_{\text{nth peak}} = nk_{\text{first peak}}$ and
+$l_{\text{nth peak}} = nl_{\text{first peak}}$.  Again refer to Figure~\ref{fig:cmb_power_spectrum}
+and notice the harmonic spacing of the peaks.
+
+\newthought{The second peak} of the CMB power spectrum occurs precisely where we expect it to
+from the fact that it is a harmonic of the first peak.  Also note that because the first
+peak corresponds to a compression at the time of recombination, the first harmonic (the second peak)
+must correspond to a rarefaction\sidenote{
+    You can see this by drawing harmonics.  Put amplitude on the $y$-axis and time on the $x$-axis.
+    All the sound waves begin at a minimum (maximal rarefaction).
+    A peak in the power spectrum occurs when a sound
+    wave of a given frequency is at a maximum or a minimum when $t=t_{\rm recombination}$.
+    Notice that the fundamental frequency ends at a point of maximal compression, and the
+    first harmonic ends at a point of maximal rarefaction.  Ask Michael to draw this for you
+    if you need help visualizing it.
+}.  Now although the baryons are coupled to the radiation during these acoustic oscillations,
+the dark matter is not.  Hence after inflation, the dark matter immediately begins collapsing
+to form the voids, filaments, and halos we observe today.  The baryons (but not the radiation)
+feels the gravitational potential of the dark matter and if it wasn't coupled to the radiation,
+the baryons would flow into the potential wells created by the dark matter.  This means that
+the amplitude of the compressions is made relatively larger than the amplitude of the rarefactions.
+Hence the amplitude of the second peak relative to the first and third peaks (which both correspond
+to compressions) gives us information about the baryon density $\Omega_bh^2$.
+
+\newthought{The damping tail} of the CMB power spectrum at small angular scales\sidenote{
+    $l > 1000$
+} is related to the diffusion of photons.  This process is called Silk damping.
+A sound wave of wavelength $\lambda$ requires that all particles within this
+wavelength move coherently together.  Sound waves can be superimposed on each other to create
+an arbitrarily complex waveform, but the random motion associated with diffusion will damp a wave
+if the random motion is large enough.  Essentially, if the mean free path of a photon is comparable
+to the wavelength of the oscillations, a photon can diffuse from peak to trough and your wave
+begins to dissipate.  This can be seen in Figure~\ref{fig:cmb_power_spectrum} at large $l$.
 
 \subsection{Large Scale Structure}
 The Milky Way is part of the local group of galaxies, which is on the edge 
