@@ -1,4 +1,7 @@
 \section{Instrumentation}
+I don't think there's much we need to know here (if anything at all), 
+but I'm adding a few things that shouldn't be hard to study and might come up.  
+
 \subsection{Questions}
 \begin{enumerate}
 \item \textbf{Describe quantitatively the point spread function of a diffraction-limited optical
@@ -146,3 +149,71 @@
       energy range over which they are applicable, and some of their main advantages
       and disadvantages.}
 \end{enumerate}
+
+
+\subsection{Telescope Design}
+Here's a diagram of a telescope, with the focuses labeled.  There's also the 
+prime focus (at the position of the secondary mirror) and the coude focus 
+(the light is sent into another room with really big instruments).  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{telescope.jpg}
+\end{center}
+\caption{Make sure it's pointed up.
+\label{fig:telescope}}
+\end{figure}
+
+\subsection{Spectrographs}
+Here's a basic spectrograph layout.  Also possibly useful- in an echelle 
+spectrograph, the light is dispersed twice, onto a two dimensional plane.  
+The first dispersion separates the light into different wavelengths, but 
+the different diffraction orders overlap.  A second disperser splits the 
+orders in the other direction.  The result is the wavelength changes from 
+left to right across the orders, and the orders (different wavelength ranges) 
+change from top to bottom.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{spectrograph.jpg}
+\end{center}
+\caption{Double rainbow!  All the way across the focal plane!.
+\label{fig:spectrograph}}
+\end{figure}
+
+
+\subsection{CCDs}
+Photons hitting a CCD remove electrons from the atoms in the CCD.  These 
+electrons are trapped below the photon collecting later in a potential well, 
+then changing voltages move the electrons to the edge, then corner of the 
+CCD where the number of electrons can be measured, corresponding to which 
+pixels were hit by photons.  Here's the basic idea:
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{CCD.jpg}
+\end{center}
+\caption{Hopefully readout isn't as long as waiting for your luggage on an 
+airport conveyor belt.
+\label{fig:CCD}}
+\end{figure}
+
+\subsection{Adaptive Optics}
+Adaptive optics is used to correct wavefront distortions caused by the 
+atomsphere using a deformable mirror.  The basic layout is shown below.  Light 
+from the telescope is split, with some going to instruments and some going 
+to a wavefront sensor that measure the phase errors of the light.  The 
+sensor then controls the deformable mirror to match and correct for the 
+wavefront errors.  The whole process happens on a timescale faster than 
+the time for the wavefront hitting the telescope to change due to changes in 
+turbulence.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{AO.jpg}
+\end{center}
+\caption{I'm Shacked and dis-Hartmanned.
+\label{fig:AO}}
+\end{figure}
+
+
