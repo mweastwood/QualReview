@@ -3,104 +3,6 @@
 \begin{enumerate}
 \item \textbf{Put on a timeline, and describe the principal events in the thermal history of the
 universe, from $kT = 10$ TeV to $kT = 0.1$ eV.}
-
-$10^{-34}$ sec, $z \sim 10^{27}$, $T \sim 10^{27}K$:  inflation ends, causally connected regions have expanded exponentially, initial fluctuation spectrum determined.
-
-$\sim 1 sec$, 1.6 MeV:  Neutrino decoupling.  Neutrinos have weak interactions with $e^+, e^-$, with the number density of $e^+ e^-$ and the cross section for neutrino interactions determining the number of reactions:
-
-\begin{equation}
-n_{e^+e^-} \sim 5x10^{31}(kT)^3_{MeV} cm^{-3}
-\end{equation}
-\begin{equation}
-\sigma_{weak} \sim 10^{-44}E_{MeV}^2 cm^2
-\end{equation}
-
-The number of neutrino interactions in the lifetime of the universe is:
-
-\begin{equation}
-n\sigma ct \sim 0.1(kT)^5_{MeV}
-\end{equation}
-
-At $kT \sim 1.6 MeV$, the universe transitions from begin neutrino opaque to transparent (number of interactions = 1).
-
-Fun fact about the neutrino background:  For $kT < m_ec^2$, almost all the electrons and positrons annihilate ($\sim 1ppb$ more electrons than positrons $\rightarrow$ these electrons survive).  The energy of annihilation heats the photons but not the neutrinos, so $T_\gamma > T_\nu$.  While the CMB background is given by $T_\gamma = 2.7(1+z) K$, the neutrino background is $T_\nu = 1.95(1+z) K$.  
-
-2 sec, $z \sim 4x10^9$, $T \sim 10^{10} K$, 0.8MeV:  neutron freeze out.  Before this time, the following reactions could easily proceed in both directions:
-
-\begin{equation}
-e^- + p + 0.8MeV \rightharpoonup \leftharpoondown \nu_e + n
-\end{equation}
-\begin{equation}
-\bar \nu_e + p + 1.8MeV \rightharpoonup \leftharpoondown e^+ + n
-\end{equation}
-
-The ratio between neutrons and protons as a function of temperature is:
-\begin{equation}
-n:p = exp\bigg(\frac{-(m_n - m_p)c^2}{kT}\bigg)
-\end{equation}
-
-Where the rest mass difference between neutrons and protons is 1.3MeV.  When $T \gg 1MeV$, this ratio is close to one.  As the universe cools off, the ratio of neutrons to protons decreases.  The ratio freezes out when $T \sim 0.8MeV$, because at this point the mean reaction time for the first reaction is longer than the age of the universe at that epoch.  The ratio freezes at approximately 0.15.  By the time the universe is around 3 minutes old, this ratio has dropped to around 0.12 because some neutrons decay.  The neutron abundance declines as:
-
-\begin{equation}
-\frac{n}{n+p} \sim \frac{0.15}{2^{t/11 min}}
-\end{equation}
-
-3 min, $z \sim 4x10^8$, $T \sim 10^9$:  primordial nucleosynthesis is over $\rightarrow$ the light element abundances are set.  After the $\frac{n}{p}$ ratio freezes out, most of the neutrons become integrated into helium nuclei via the following reactions.
-
-\begin{equation}
-n + p \rightarrow d + \gamma
-\end{equation}
-\begin{equation}
-p + d \rightarrow ^3He + \gamma
-\end{equation}
-\begin{equation}
-d + d \rightarrow ^3He + \gamma
-\end{equation}
-\begin{equation}
-n + ^3He \rightarrow ^4He + \gamma
-\end{equation}
-\begin{equation}
-d + ^3He \rightarrow ^4He + p
-\end{equation}
-
-Some of the neutrons undergo beta decay into a proton and an electron before making it into a helium nucleus, and a small fraction is integrated into other elements.  Please see the first cosmology will ask question for more details on nucleosynthesis.
-
-65,000 years, $z \sim 3500$, $T \sim 10^4$:  The universe goes from radiation dominated to matter dominated, $a \sim t^0,5$ to $a \sim t^{2/3}$.  Let's briefly see why this transition occurs at this time.  The radiation energy density at any time is related to the present radiation density by:
-
-\begin{equation}
-\rho_{rad} = \rho_{rad,0}\frac{a_0^4}{a^4}
-\end{equation}
-
-The corresponding matter density is:
-\begin{equation}
-\rho_mc^2 = \rho_{m,0}c^2\frac{a_0^3}{a^3}
-\end{equation}
-
-The two energy densities are equal when:
-\begin{equation}
-\frac{a_0}{a} = \frac{\rho_{m,0}c^2}{\rho_{rad,0}}
-\end{equation}
-
-We can calculate the present day radiation density using $\rho_{rad} = aT^4$, where $T = T_{CMB}$.  The present day matter density is apparently not far from the critical density.  We get:
-
-\begin{equation}
-\frac{a_0}{a} = \frac{0.3\rho_cc^2}{1.7\rho_{rad,0}} = 3500
-\end{equation}
-
-The 1.7 factor in front of the radiation density accounts for the energy density due to the cosmic neutrino background.  
-
-400,000 years, $z \sim 1100$, $T \sim 3700K$, 0.3 eV:  Recombination.  At this time, the universe cooled to the point where the formation of neutral hydrogen was energetically favorable.  Shortly after, the photons decoupled from matter in the universe (surface of last scattering).  Prior to recombination, photons were primarily coupled to matter through the reaction:
-
-\begin{equation}
-H + \gamma \rightharpoonup \leftharpoondown p + e^-
-\end{equation}
-
-Using the Saha equation, by plugging in an ionization fraction of 0.5 for hydrogen, the temperature and redshift at which this occurs in the universe is approximately $T \sim 4000 K$ and $z \sim 1500$.  
-
-However, in the real universe recombination is not an equilibrium process.  Recombination to the ground state of hydrogen doesn't work because the universe is optically thick to photons with energies of 13.6eV and higher (these photons would just go ionize a recombined hydrogen atom).  What happens is recombination to excited states, then decay to the ground state, emitting a non-ionizing photon.  
-
-
-
 \item \textbf{Give a semi-quantitative discussion of the connection between flucuations of the
 cosmic microwave background on angular scales of arcminutes to degrees, and the
 baryonic structures (galaxies, clusters, correlations of galaxies) observed in the local
@@ -556,9 +458,131 @@ affected, so small structures would form before large structures (bottom-up
 structure formation).  Most dark matter is probably CDM.  
 
 Dark energy is a complete mystery.  We know the Universe's expansion is 
-accelarating due to a cosmological constant $\Lambda$, with 
+accelerating due to a cosmological constant $\Lambda$, with 
 $\Omega_{\Lambda}\sim0.7$ (see expansion test section).  We don't know what 
 dark energy actually is though.  
+
+\subsection{The Cosmic Microwave Background}
+
+\newthought{First of all}, I highly recommend Wayne Hu's website\sidenote{
+    \url{http://background.uchicago.edu/~whu/intermediate/intermediate.html}
+}.  He's a CMB theorist at Chicago, and his website is a very good introduction
+to the all things related to the CMB.  I will mostly be summarizing material from
+his website.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{cosmology_cmb}
+\caption{A plot of the CMB power spectrum.  The various regimes and experiments that measured
+         them are labeled on the plot.  Note that $l\approx100/\theta$, where $\theta$ is the
+         angular scale in degrees.}
+\label{fig:cmb_power_spectrum}
+\end{figure}
+
+The COBE experiment measured the CMB temperature to be 2.73 K in 1992.  This is directly
+related to the radiation density of the universe through
+\begin{dmath}
+    \Omega_R = \frac{aT_{\rm CMB}^4/c^2}{\rho_{\rm critical}}
+\end{dmath},
+where $\rho_{\rm crit} = 3H^2/8\pi G$.  The temperature of the radiation $T\propto a^{-1}$ so
+that $\Omega_R\propto a^{-4}$.  Today, $\Omega_R\approx 6\times10^{-5}$, which you can verify
+from the above expression.
+
+Beyond the total radiation density, the CMB provides a lot of information about the universe
+through the fluctuations we see in the CMB.  Some of these fluctuations are primordial\sidenote{
+    That is, they reflect fluctuations in the initial conditions of the universe.
+}, some of these fluctuations are not cosmological\sidenote{
+    For example, there exists a dipole fluctuation due to the motion of the Milky Way with
+    respect to the CMB.  Note that this motion is not the only source of dipole fluctuations.
+}, but some of these fluctuations are due to sound waves that propagated in the early universe.
+The early universe was radiation dominated, so $p = u/3 = \rho c^2/3$.  Therefore the sound
+speed is
+\begin{dmath}
+    c_s = \sqrt{\frac{\partial p}{\partial\rho}} \nolinebreak
+        = \frac{c}{\sqrt{3}}
+\end{dmath}.
+
+Before we discuss the acoustic oscillations in the CMB power spectrum, let us briefly describe
+the contents of the universe at recombination.  Recombination occurs at $z\sim1100$.
+At this time, the universe was about 3000 K in temperature, 80\% matter, and 20\% radiation.
+Recombination occurred at such a low temperature because the average density of the universe
+was quite low\sidenote{
+    Recall that the rate of recombinations scales as $n^2$, while the rate of
+    ionizations scale as $n$.  Therefore at lower densities, the equilibrium between recombinations
+    and ionizations shifts towards a higher ionization state.  This means that a lower temperature
+    is necessary for the universe to recombine at low densities.
+}.
+
+Finally, the propagation of sound waves in a relativistic plasma depends on the physical
+densities of matter, baryons and dark energy.  The physical density is
+$\Omega\rho_{\rm critical} \propto \Omega h^2$ where $H_0 = 100h\,{\rm km}/{\rm s}/{\rm Mpc}$.
+Therefore, most CMB papers fit for $\Omega h^2$ instead of $\Omega$ on its own in order to
+reduce degeneracies with the Hubble constant.
+
+\newthought{The first peak} in the CMB power spectrum (see Figure~\ref{fig:cmb_power_spectrum})
+occurs near $l\sim200$ or $\theta\sim0.5^\circ$.  The angular scale of this peak is set by the
+ratio of the comoving distance a sound wave can propagate in the time to recombination and
+the comoving angular diameter distance to recombination.  That is
+\begin{dmath}
+    \theta_{\text{first peak}} \sim \frac{c_s t(\text{recombination})}{D_A(\text{recombination})}
+\end{dmath}.
+In an open universe, the distance to recombination is increased, and hence the peak moves to smaller
+angular scales.  In a closed universe, the distance to recombination is decreased, and hence
+the peak moves to larger angular scales.  However, the time to recombination and distance to
+recombination scale in a similar way with $\Omega_M$.  Therefore, the first peak is relatively
+insensitive to $\Omega_M$, but is very sensitive to $\Omega_M+\Omega_\Lambda$.
+
+Now the dispersion relation for a (linear) sound wave is given by
+\begin{dmath}
+    \omega^2 = c_s^2k^2
+\end{dmath}.
+The first peak tells us about the maximum wavelength of a sound wave in the time before
+recombination.  Assuming sound waves of all wavelengths began at a maximum after inflation,
+we should expect to see harmonics such that $\omega_{\text{nth peak}} = n\omega_{\text{first peak}}$.
+This implies $k_{\text{nth peak}} = nk_{\text{first peak}}$ and
+$l_{\text{nth peak}} = nl_{\text{first peak}}$.  Again refer to Figure~\ref{fig:cmb_power_spectrum}
+and notice the harmonic spacing of the peaks.
+
+\newthought{The second peak} of the CMB power spectrum occurs precisely where we expect it to
+from the fact that it is a harmonic of the first peak.  Also note that because the first
+peak corresponds to a compression at the time of recombination, the first harmonic (the second peak)
+must correspond to a rarefaction\sidenote{
+    You can see this by drawing harmonics.  Put amplitude on the $y$-axis and time on the $x$-axis.
+    All the sound waves begin at a minimum (maximal rarefaction).
+    A peak in the power spectrum occurs when a sound
+    wave of a given frequency is at a maximum or a minimum when $t=t_{\rm recombination}$.
+    Notice that the fundamental frequency ends at a point of maximal compression, and the
+    first harmonic ends at a point of maximal rarefaction.  Ask Michael to draw this for you
+    if you need help visualizing it.
+}.  Now although the baryons are coupled to the radiation during these acoustic oscillations,
+the dark matter is not.  Hence after inflation, the dark matter immediately begins collapsing
+to form the voids, filaments, and halos we observe today.  The baryons (but not the radiation)
+feels the gravitational potential of the dark matter and if it wasn't coupled to the radiation,
+the baryons would flow into the potential wells created by the dark matter.  This means that
+the amplitude of the compressions is made relatively larger than the amplitude of the rarefactions.
+Hence the amplitude of the second peak relative to the first and third peaks (which both correspond
+to compressions) gives us information about the baryon density $\Omega_bh^2$.
+
+\newthought{The damping tail} of the CMB power spectrum at small angular scales\sidenote{
+    $l > 1000$
+} is related to the diffusion of photons.  This process is called Silk damping.
+A sound wave of wavelength $\lambda$ requires that all particles within this
+wavelength move coherently together.  Sound waves can be superimposed on each other to create
+an arbitrarily complex waveform, but the random motion associated with diffusion will damp a wave
+if the random motion is large enough.  Essentially, if the mean free path of a photon is comparable
+to the wavelength of the oscillations, a photon can diffuse from peak to trough and your wave
+begins to dissipate.  This can be seen in Figure~\ref{fig:cmb_power_spectrum} at large $l$.
+
+Hopefully now at the end of this discussion you should be able to explain most of the variation
+seen in Figure~\ref{fig:cmb_parameters}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{cosmology_cmb_parameters}
+\caption{This plot shows how the CMB power spectrum is expected to vary as various cosmological
+         parameters are altered.}
+\label{fig:cmb_parameters}
+\end{figure}
 
 \subsection{Large Scale Structure}
 The Milky Way is part of the local group of galaxies, which is on the edge 
@@ -995,4 +1019,318 @@ this is in two peaks in the UV and far IR from obscured and unobscured
 galaxies.  This doesn't include the CMB, all this background at these 
 wavelengths is only a few percent as bright is the CMB at its peak 
 wavelengths.  
+
+\subsection{Intergalactic Medium}
+The baryons in the IGM do not belong to any individual galaxy.  Instead, 
+they follow dark matter potentials, forming the ``cosmic web.''  Some of 
+this gas does fall into galaxy, will gas blown out of galaxies chemically 
+enriches the IGM (although the IGM still has close to primordial abundances).  
+AGN and stars in galaxy provide enough flux to keep the IGM ionized (also, 
+it's probably hard to recombine at IGM densities).  
+
+One way to study the IGM is through absorption of light from background 
+quasars.  Absorption systems seen this way include:
+\begin{itemize}
+\item Lyman $\alpha$ Forest- weak, unsaturated absorption lines implying low 
+column density ($10^{14}\leq N_{HI}\leq10^{16}$ cm$^{-2}$) hydrogen clouds.  These clouds 
+are spatially larger than galaxies, and have primordial metallicity.  They 
+are thought to be proto-galactic clouds.  
+\item Lyman Limit Systems and Damped Lyman $\alpha$ absorption lines- rare 
+systems with strong H absorption lines, implying high column densities.  These 
+are due to galaxies themselves or almost-formed protogalaxies.  Lyman limit 
+systems have saturated Lyman $\alpha$ lines and strong absorption shortward 
+of $912$\AA (similar to Lyman break galaxies).  These systems have column 
+densities of $N_{HI}\geq10^17$cm$^{-2}$.  Damped Lyman $\alpha$ systems 
+have column densities of $\geq10^20$ cm$^{-2}$, creating heavily saturated 
+lines (more saturated than Lyman limit systems).  
+\item Metal absorption lines- lines from C, Si, Mg, Al, Fe...  Mostly from 
+galaxies in the line of sight.  
+\end{itemize}
+
+Gunn-Peterson Effect:\newline
+The idea here is even a tiny amount of neutral H in the IGM (anything above
+$x_{HI}\sim10^{-4}$) will completely absorb flux blueward of Ly$\alpha$ (does 
+anyone know why Ly$\alpha$ and not the Lyman limit?).  This effect can 
+be used to determine when re-ionization was completed, because if there's 
+any neutral H left at a certain redshift, it will absorb all the flux from 
+a background source blueward of Ly$\alpha$.  The wavelength of the dropoff 
+in flux we observe gives the redshift of the H.  Observations of this effect 
+show a steep dropoff in Lyman flux at redshift of around $6$, indicating that 
+this was when re-ionization was complete.  
+
+\subsection{Gravitational Lensing}
+The supplementary slides of George's lecture on the IGM and lensing have some 
+stuff about determining the mass profiles of galaxies from lensing.  I couldn't 
+really follow what he was doing, but it might be worth looking at when we're 
+practicing the galaxies will-ask question on measuring masses.  
+
+As light from a distant source basses by a mass in the line of sight, the light 
+will be bent around the mass, causing the apparent position of the source to 
+change.  Assuming the impact parameter of the light $b$ is much greater than 
+the Schwarchild radius of the lens, and that the light is only affected by 
+the lens for a distance of order $b$, which is much smaller than any other 
+distance in the problem, then the amount of deflection ($\alpha$) 
+depends on $b$ and the mass of the lens:
+\begin{equation}
+\alpha=\frac{4GM}{c^2b}={2R_s}{b}
+\end{equation}
+where $R_s$ is the Schwarzchild radius.  Light rays that pass too close to the 
+lens will be deflected too much and not reach the observer.  Light rays 
+too far away will not be deflected enough to reach the observer.  Only 
+rays within a certain range of impact parameters will be deflected to the 
+observer, so the observer will see an \emph{Einstein ring} around the lens.  
+If the observer, lens, and source are all along the same line, the angle 
+between this line and the ring can be calculated using Figure \ref{fig:lens}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens.jpg}
+\end{center}
+\caption{Gravitational lensing.  The distance from the observer to the source 
+is $D_{OS}$, from the observer to the lens is $D_{OL}$, and from the lens to 
+the source is $D_{LS}$.  
+\label{fig:lens}}
+\end{figure}
+
+Since we are assuming $R_S/b<<1$, then $\alpha=2R_S/b<<1$.  Also, since 
+$b<<D_{OL}$, $\theta_E<<1$.  With these assumptions, the distance from S to I 
+is given by 
+\begin{equation}
+SI=\alpha D_{LS}=\theta_ED_{OS}
+\end{equation}
+plugging in for $\alpha$ and solving for the Einstein angle gives
+\begin{equation}
+\boxed{\theta_E=\left(\frac{4GM}{c^2}\frac{D_{LS}}{D_{OL}D_{OS}}\right)^{1/2}}
+\end{equation}
+If the source is not directly behind the lens, things are slightly more 
+complicated.  The situation is shown in Figure \ref{fig:lens2}.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{lens2.jpg}
+\end{center}
+\caption{Gravitational lensing with the source not directly behind the lens.  
+\label{fig:lens2}}
+\end{figure}
+
+As before, the angles $\theta$, $\beta$, and $\alpha$ are small.  $\theta$ can 
+be calculated by considering the length from point A to point C.  
+\begin{equation}
+AB+BC=AC
+\end{equation}
+\begin{equation}
+D_{LS}\alpha+D_{OS}\beta=D_{OS}\theta
+\end{equation}
+Solving for $\beta$ gives
+\begin{equation}
+\beta=\theta-\frac{D_{LS}}{D_{OS}}\alpha=\theta-\frac{D_{LS}}{D_{OS}}\frac{4GM}{c^2D_{OL}\theta}=\theta-\frac{\theta_E^2}{\theta}
+\end{equation}
+This can be rewritten as a quadratic equation for $\theta$, with solution 
+\begin{equation}
+\theta_{\pm}=\frac{1}{2}[\beta\pm(\beta^2+4\theta_E^2)^{1/2}]
+\end{equation}
+Distant sources lensed by galaxy cluster give a way to measure the masses 
+of the clusters, giving mass to light ratios in the hundreds.  
+
+Gravitational lensing has also been used to test the composition of the 
+dark matter in the Milky Way's halo.  If this dark matter is just dim compact 
+objects (MACHOs), microlensing events would be observed when these objects 
+passed into the line of sight to a star in the LMC.  A star will be lensed 
+if a MACHO passes within $\theta_E$ of the line of sight to the star.  
+So the cross section for lensing for a single Macho is $\theta_E^2$.  
+Therefore, the probability that this Macho is currently lensing a background 
+star is 
+\begin{equation}
+P\propto\theta_E^2\propto\left(\frac{D_{LS}}{D_{OL}D_{OS}}\right)M
+\end{equation}
+If a distance to the LMC and to a typical MACHO is assumed, then the 
+probability of a lensing event happening at a given time from all the MACHOs 
+in the halo is just proportional to the total mass in the halo.  Also, the 
+duration of lensing events gives information about the mass of individual 
+MACHOs.  A lensing event will last for as long as it takes the lens to 
+cross the Einstein ring (in reality, it is mainly the Sun that is moving around 
+the Milky Way, causing the lens to move out of alignment).  The event duration 
+is then
+\begin{equation}
+\tau=\frac{2D_{OL}\theta_E}{v_{\odot}}=\frac{4}{v_{\odot}c}\left(\frac{GMD_{OL}D_{LS}}{D_{OS}}\right)
+\end{equation}
+Plugging in the distances makes the duration dependent on the mass of the 
+lens, allowing the type of object doing the lensing to be constrained.  
+Surveys looking for MACHOs lensing LMC stars have been conducted, finding 
+typical lens masses between $0.15\,M_{\odot}$ and $0.9\,M_{\odot}$, i.e. white 
+dwarfs.  The frequency of lensing events ruled out the possibility of all 
+the mass in the halo being composed of MACHOs.  Also, having this many 
+white dwarfs in the halo would have required a huge amount of star formation 
+in the past, producing lots of metals, which we don't see.  
+
+\subsection{AGN}
+Quasars and AGN are extemely luminous galaxies powered 
+by accretion onto the central supermassive black hole.  A diagarm of an AGN is 
+shown in Figure \ref{fig:AGN}.  AGN emit radiation from radio to gamma rays.  
+AGN are point sources like stars, but can be distinguished from stars based on 
+several features:
+\begin{itemize}
+\item Nonthermal radio and X-ray emission
+\item Different colors from stars, bluer spectra
+\item Strong, broad emission lines
+\item Strong variability 
+\item No proper motion (because of large distances)
+\end{itemize}
+Today (at z=$0$), around $30$\% of galaxies show low level AGN activity, 
+while $\sim1$\% are moderately luminous (Seyfert Galaxies) and $1$ out of 
+every million contains a quasar.  All non-dwarf galaxies contain central 
+supermassive black holes, so at some point all large galaxies probably went 
+through an AGN phase.  Quasars were more luminous and more common in the past.  
+Observations indicate the number of quasars peaked at around redshift $2-3$.  
+Before this, the black holes and host galaxies were still forming.  After this, 
+galaxy mergers declined, leading to less fueling events.  Quasar surveys 
+indicate there are $\sim100$ quasars per square degree on the sky.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{AGN.jpg}
+\end{center}
+\caption{Diagram of an AGN  
+\label{fig:AGN}}
+\end{figure}
+
+AGN Classification:\newline
+AGN are classified based on their radio emission (radio loud or radio quiet), 
+there optical spectra (broad lines or no broad lines), and optical 
+luminosity (Seyfert to quasar sequence).  There may different physics 
+going on, but the main distinction between these types has to do with 
+the orientation we see them in.  If the central black hole is rapidly 
+spinning, a jet will be produced, giving rise to radio emission.  These 
+radio loud systems include blazars (when we are looking directly down the 
+jet), radio galaxies, and quasars.  If the black hole is spinning more 
+slowly, there will be no jet and little or no radio emission.  These systems 
+are Seyfert galaxies and radio quiet QSOs.  If we are viewing the AGN from 
+above and can see into the central regions, the spectrum we see will show 
+broad emission lines coming from the rapidly orbiting material near the 
+black hole.  This results in a type $1$ quasar or Seyfert galaxy or a broad 
+line radio galaxy.  If the central region is obscured by the dusty torus, 
+we'll only see narrow emission lines from the narrow line region.  
+This results in a type $2$ quasar or Seyfert galaxy, or a narrow line 
+radio galaxy.  Emission from the broad line region can be scattered off the 
+narrow line region, so broad emission lines are visible in polarized 
+observations.  
+
+The Black Hole:\newline
+The luminosity of AGN comes from the release of gravitational energy as 
+material falls onto the black hole.  The amount of energy released by a 
+mass falling in can be $6$\% of the rest mass energy for a non-spinning 
+black hole, and as hight as $42$\% for a spinning black hole (which has 
+a closer in last stable circular orbit).  The luminosity produced can 
+be written as:
+\begin{equation}
+L=\eta \dot{M}c^2
+\end{equation}
+Assuming $\eta\sim0.1$, the black hole must accrete $\sim2\,M_{\odot}$ per 
+year to sustain a luminosity of $10^{44}-10^{46}$ erg/s.  Assuming this 
+luminosity is equal to the Eddington luminosity (the accretion is Eddington 
+limited), black hole masses of $10^6-10^8\,M_{\odot}$ are required.  
+
+The energy of an AGN is released through thermal and nonthermal processes.  
+The temperaure at the inner edge of the accretion disk is of order $10^5$ K, 
+producing thermal UV emission.  Some of this is reprocessed by 
+the dusty torus in the IR.  Magnetic fields in the accretion disk or black hole 
+are twisted into bipolar tubes as the system rotates.  Charged particles 
+are accelarated along these tubes, creating jets that produce 
+radio and X-ray synchrotron emission.  
+
+One of the reasons we know black holes exist at the centers of AGN is 
+the shape of the emission lines from the broad line region.  In Newtonian 
+physics, a rotating annulus will produce an emission line peaked at the edges 
+of the line (see Figure \ref{fig:line}).  In the presense of a black hole, 
+however, relativistic beaming 
+enhances the blue side of the line, while time dilation redshifts the 
+entire line to lower frequencies.  Gravitational redshift also redshifts the 
+line.  Integrating the resulting profile over all disk radii gives a line 
+profile that matches observations.  
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=\textwidth]{line.jpg}
+\end{center}
+\caption{Line profiles from a rotating annulus, considering different effects.  
+\label{fig:line}}
+\end{figure}
+
+\subsection{Galaxy Formation}
+Observations have detected young protogalaxies (age $<1$ Gyr) at redshifts 
+of $5-7$.  These are thought to be the progenitors of todays 
+large galaxies (dwarf galaxies are still forming today).  The general picture 
+of galaxy formation starts with small density fluctuations collapsing, starting 
+right after recombination at z$\sim1100$.  Once the gas density in these 
+regions becomes high enough, the first stars form at z$\sim20-30$.  
+This begins reionization, which is complete by z$\sim6$.  By this time, 
+the density fluctuations have grown into protogalaxies, which continue merging 
+and forming bigger galaxies.  Gas falls into these galaxies, and is 
+also expelled by supernovae and AGN (feedback).  
+
+Closely tied to galaxy formation is supermassive black hole formation.  It is 
+not clear how these black holes formed, but possible mechanisms include 
+collapse of the first stars (forming $10-100\,M_{\odot}$ seeds) or collapse of 
+entire star clusters (forming $10^2-10^4\,M_{\odot}$ seeds).  These 
+seeds then grow through accretion and mergers with other seeds.  Other 
+possible seeds are primoridal black holes formed in the early Universe or 
+direct collapse of entire protogalactic cores.  Note that because the 
+Eddington accretion rate is proportional to mass, black hole growth through 
+accretion is an exponential process.  The energy released during the 
+growth of a supermassive blackhole is comparable to the gravitational 
+energy released during the formation of a galaxy or the nuclear energy 
+released by all the stars in the galaxy.  So black holes and AGN played an 
+important role in reionization.  
+
+\subsection{The First Stars and Reionization}
+The first stars (population III) formed out of pure H$_2$ clouds (no metals) 
+that slowly cooled through molecular line transitions.  Because of inefficient 
+cooling, these stars are thought to have been $10^2-10^4\,M_{\odot}$.  
+Formation of these stars began at z$\sim20-30$, starting the process of 
+reionization (as indicated by WMAP data)\sidenote{
+    Actually, WMAP only tells us that the average redshift of reionization was $z\sim 10$.
+    Observations of Gunn-Peterson troughs in high-redshift quasars indicate a neutral fraction
+    $X_{\rm HI} > 10^{-4}$ at $z\sim 7$, so an extended period of reionization seems likely.
+    The redshift of Pop III star formation is only known from simulations.
+}.  While population III stars were likely very bright in the UV, they are theoretically
+expected to not live long enough and not be numerous enough to reionize the universe on their
+own.  Instead, Pop III stars formed and exploded very quckly, seeding the nearby area with
+metals for Pop II star formation.
+Naturally, the largest density fluctuations experienced the largest bursts of star formation,
+leading to ``clumpy'' reionization.  
+However, feedback from massive Pop III stars may have prevented further star formation in their 
+host galaxies, leading to a partial recombination\sidenote{
+    It is expected that the number of UV photons required to reionize the universe is of
+    order 1-2 times the number of hydrogen atoms that needed to be ionized.  The process
+    of reionization is very photon starved, and recombinations were, for the most part,
+    negligible.
+}.
+
+It is unlikely that Pop III stars could have reionized the universe on their own (due to their
+short life and scarcity).  Furthermore, quasars are incredibly rare past $z\sim 7$.  What about
+the Pop II stars in the largest galaxies?  It turns out that studies of high-$z$ galaxies
+with Hubble and Spitzer come up short.  That is, although large galaxies reionize the area
+around them first, they do not produce enough UV photons to completely ionize the universe.
+It is the low mass galaxies (that can only be seen as absorption features) that must provide
+the photons that reionize the universe.
+
+To observe the H in the IGM when it was still neutral, experiments 
+are underway to observe the redshifted $21$ cm line at $\sim 10$ meter wavelengths.
+In order to observe the 21 cm transition, the spin temperature of hydrogen must differ
+from the CMB temperature.  We are essentially looking for neutral hydrogen as it is backlit
+by the CMB.  Therefore, if the spin temperature is equal to the CMB temperature, the neutral
+hydrogen will be indistinguishable from the CMB.  Luckily for us, after matter and radiation
+decouple, the matter cools adiabatically (faster than the radiation).  This means that
+as long as the spin temperature is collisionally coupled to the gas temperature, the 21 cm line
+will be seen in absorption.  However, when the mean density of the universe becomes too low,
+the 21 cm temperature will instead be coupled to the radiation temperature and the hydrogen
+will be invisible.  When the first stars and galaxies form, the IGM will be bathed
+in Ly$\alpha$ photons that can scramble the spin state of the neutral hydrogen, coupling it to
+the gas temperature again\sidenote{
+    This produces the absorption feature the LWA will be looking for.
+}.  Meanwhile, X-rays heat the gas, raising its temperature above the CMB temperature\sidenote{
+    This produces an emission feature that PAPER, the MWA, and LOFAR will essentially
+    be looking for.
+}.  As reionization procedes, the 21 cm transition eventually disappears due to a lack of neutral
+hydrogen.
 
