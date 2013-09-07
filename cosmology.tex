@@ -3,6 +3,102 @@
 \begin{enumerate}
 \item \textbf{Put on a timeline, and describe the principal events in the thermal history of the
 universe, from $kT = 10$ TeV to $kT = 0.1$ eV.}
+
+$10^{-34}$ sec, $z \sim 10^{27}$, $T \sim 10^{27}K$:  inflation ends, causally connected regions have expanded exponentially, initial fluctuation spectrum determined.
+
+$\sim 1 sec$, 1.6 MeV:  Neutrino decoupling.  Neutrinos have weak interactions with $e^+, e^-$, with the number density of $e^+ e^-$ and the cross section for neutrino interactions determining the number of reactions:
+
+\begin{equation}
+n_{e^+e^-} \sim 5x10^{31}(kT)^3_{MeV} cm^{-3}
+\end{equation}
+\begin{equation}
+\sigma_{weak} \sim 10^{-44}E_{MeV}^2 cm^2
+\end{equation}
+
+The number of neutrino interactions in the lifetime of the universe is:
+
+\begin{equation}
+n\sigma ct \sim 0.1(kT)^5_{MeV}
+\end{equation}
+
+At $kT \sim 1.6 MeV$, the universe transitions from begin neutrino opaque to transparent (number of interactions = 1).
+
+Fun fact about the neutrino background:  For $kT < m_ec^2$, almost all the electrons and positrons annihilate ($\sim 1ppb$ more electrons than positrons $\rightarrow$ these electrons survive).  The energy of annihilation heats the photons but not the neutrinos, so $T_\gamma > T_\nu$.  While the CMB background is given by $T_\gamma = 2.7(1+z) K$, the neutrino background is $T_\nu = 1.95(1+z) K$.  
+
+2 sec, $z \sim 4x10^9$, $T \sim 10^{10} K$, 0.8MeV:  neutron freeze out.  Before this time, the following reactions could easily proceed in both directions:
+
+\begin{equation}
+e^- + p + 0.8MeV \rightharpoonup \leftharpoondown \nu_e + n
+\end{equation}
+\begin{equation}
+\bar \nu_e + p + 1.8MeV \rightharpoonup \leftharpoondown e^+ + n
+\end{equation}
+
+The ratio between neutrons and protons as a function of temperature is:
+\begin{equation}
+n:p = exp\bigg(\frac{-(m_n - m_p)c^2}{kT}\bigg)
+\end{equation}
+
+Where the rest mass difference between neutrons and protons is 1.3MeV.  When $T \gg 1MeV$, this ratio is close to one.  As the universe cools off, the ratio of neutrons to protons decreases.  The ratio freezes out when $T \sim 0.8MeV$, because at this point the mean reaction time for the first reaction is longer than the age of the universe at that epoch.  The ratio freezes at approximately 0.15.  By the time the universe is around 3 minutes old, this ratio has dropped to around 0.12 because some neutrons decay.  The neutron abundance declines as:
+
+\begin{equation}
+\frac{n}{n+p} \sim \frac{0.15}{2^{t/11 min}}
+\end{equation}
+
+3 min, $z \sim 4x10^8$, $T \sim 10^9$:  primordial nucleosynthesis is over $\rightarrow$ the light element abundances are set.  After the $\frac{n}{p}$ ratio freezes out, most of the neutrons become integrated into helium nuclei via the following reactions.
+
+\begin{equation}
+n + p \rightarrow d + \gamma
+\end{equation}
+\begin{equation}
+p + d \rightarrow ^3He + \gamma
+\end{equation}
+\begin{equation}
+d + d \rightarrow ^3He + \gamma
+\end{equation}
+\begin{equation}
+n + ^3He \rightarrow ^4He + \gamma
+\end{equation}
+\begin{equation}
+d + ^3He \rightarrow ^4He + p
+\end{equation}
+
+Some of the neutrons undergo beta decay into a proton and an electron before making it into a helium nucleus, and a small fraction is integrated into other elements.  Please see the first cosmology will ask question for more details on nucleosynthesis.
+
+65,000 years, $z \sim 3500$, $T \sim 10^4$:  The universe goes from radiation dominated to matter dominated, $a \sim t^0,5$ to $a \sim t^{2/3}$.  Let's briefly see why this transition occurs at this time.  The radiation energy density at any time is related to the present radiation density by:
+
+\begin{equation}
+\rho_{rad} = \rho_{rad,0}\frac{a_0^4}{a^4}
+\end{equation}
+
+The corresponding matter density is:
+\begin{equation}
+\rho_mc^2 = \rho_{m,0}c^2\frac{a_0^3}{a^3}
+\end{equation}
+
+The two energy densities are equal when:
+\begin{equation}
+\frac{a_0}{a} = \frac{\rho_{m,0}c^2}{\rho_{rad,0}}
+\end{equation}
+
+We can calculate the present day radiation density using $\rho_{rad} = aT^4$, where $T = T_{CMB}$.  The present day matter density is apparently not far from the critical density.  We get:
+
+\begin{equation}
+\frac{a_0}{a} = \frac{0.3\rho_cc^2}{1.7\rho_{rad,0}} = 3500
+\end{equation}
+
+The 1.7 factor in front of the radiation density accounts for the energy density due to the cosmic neutrino background.  
+
+400,000 years, $z \sim 1100$, $T \sim 3700K$, 0.3 eV:  Recombination.  At this time, the universe cooled to the point where the formation of neutral hydrogen was energetically favorable.  Shortly after, the photons decoupled from matter in the universe (surface of last scattering).  Prior to recombination, photons were primarily coupled to matter through the reaction:
+
+\begin{equation}
+H + \gamma \rightharpoonup \leftharpoondown p + e^-
+\end{equation}
+
+Using the Saha equation, by plugging in an ionization fraction of 0.5 for hydrogen, the temperature and redshift at which this occurs in the universe is approximately $T \sim 4000 K$ and $z \sim 1500$.  
+
+However, in the real universe recombination is not an equilibrium process.  Recombination to the ground state of hydrogen doesn't work because the universe is optically thick to photons with energies of 13.6eV and higher (these photons would just go ionize a recombined hydrogen atom).  What happens is recombination to excited states, then decay to the ground state, emitting a non-ionizing photon.  
+
 \item \textbf{Give a semi-quantitative discussion of the connection between flucuations of the
 cosmic microwave background on angular scales of arcminutes to degrees, and the
 baryonic structures (galaxies, clusters, correlations of galaxies) observed in the local
