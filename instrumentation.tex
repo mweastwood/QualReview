@@ -148,6 +148,61 @@ but I'm adding a few things that shouldn't be hard to study and might come up.
 \item \textbf{Describe some of the common technologies for detecting gamma rays, the approximate
       energy range over which they are applicable, and some of their main advantages
       and disadvantages.}
+      
+      \newthought{The file} "answers.pdf" by Kunal is where I referenced this material. It goes into more detail if you like, but I tried to get the most important points.
+      
+      \begin{itemize}
+      \item \emph{Scintillators}
+      
+      Scintillators work by absorbing the gamma ray and producing a charged particle which then emits a lower-energy photon. These lower-energy photons are then collected. 
+      
+      Range: 1 keV - 30 MeV (low to mid)
+      
+      Pros: Wide field of view
+      
+      Cons: No directionality on their own (can only measure energies, not location on sky)
+      
+      \item \emph{Solid-State Detectors}
+      
+      The gamma ray exchanges energy with an electron/hole pair in a semi-conductor, the same way a CCD works. 
+      
+      Range: 10 keV - 1 MeV (low to mid)
+      
+      Pros: Better energy and spatial resolution than scintillators, less noise
+      
+      Cons: More expensive, some must be cooled, and no directionality on their own
+      
+      \item \emph{Compton Scattering Detectors}
+      
+      This is a two-level system which allows directionality to be measured. A gamma ray Compton-scatters off the first layer and is then absorbed by the second layer (usually a scintillator). An image can be constructed by looking at the scattering angle trajectory and energy deposited in each layer.
+      
+      Range: 1 - 30 MeV (mid)
+      
+      Pros: Directionality able to be measured
+      
+      Cons: Small effective area (since not all rays will scatter before being absorbed), azimuthal angle of impact cannot be measured
+      
+      \item \emph{Pair Production Telescopes}
+      
+      These detect electron-positron pairs produced by gamma rays in the telescope. Layers interleaved with tracking material trace the direction of the particles, and a scintillator or calorimeter detects their energies.
+      
+      Range: >20 MeV (high)
+      
+      Pros: Wide field of view, directionality
+      
+      Cons: Modest resolution, no good for lower energy gamma rays
+      
+      \item \emph{Air Cherenkov Detectors}
+      
+      Gamma rays that create charged particles in the Earth's upper atmosphere can impart energies which cause them to emit Cherenkov radiation. These detectors use mirrors of about the same quality as optical telescopes, since all they do is collect Cherenkov light.
+      
+      Range: >50 GeV (extremely high!)
+      
+      Pros: High time resolution, wide field of view, good spatial resolution
+      
+      Cons: Incident photon energy is not well-determined, must be a clear, moonless night because the Cherenkov sources are faint
+      \end{itemize}
+      
 \end{enumerate}
 
 
