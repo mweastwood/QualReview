@@ -8,6 +8,99 @@ but I'm adding a few things that shouldn't be hard to study and might come up.
       telescope. Explain how diffraction spikes arise, and what determines their positions
       and intensities. Under what circumstances will the PSF be broadened by atmospheric
       turbulence?}
+      
+      \newthought{Let's think of a telescope} aperture as a series of slits infinitesimally close together. The radiation field from a single slit then looks like a point charge with an electric field given by:
+      \begin{equation}
+      E_{\mbox{pt charge}} \sim e^{ik \cdot r}.
+      \end{equation}
+      The radiation field from the series of slits looks like a line of point charges infinitesimally close together. Their total electric field is given by:
+      \begin{equation}
+      E_{tot} = \int \frac{e^{ik \cdot r}}{r}dr
+      \label{eqn:efield}
+      \end{equation}
+      where r is the vector from the charge to the point of measurement. 
+      
+      \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\textwidth]{fourier_layout.png}
+      \label{fig:optics}
+      \end{figure}
+      
+      Figure \ref{fig:optics} shows the telescope aperture on the right and the detector on the left. Note that r is parallel to the wave vector k. We can write r in terms of d and y:
+      \begin{equation}
+ 	\begin{aligned}
+    	&|r| = |d-y|\\
+     	 &=|R^2 +(h-y)^2|^{1/2}\\
+	 &=(R^2+h^2 +y^2-2hy)^{1/2}\\
+	 &=R(1+\frac{h^2}{R^2}-\frac{2yh}{R^2}+\frac{y^2}{R^2})^{1/2}
+  	\end{aligned}
+	\label{eqn:r}
+      \end{equation}
+      where $d = R\hat{x}+h\hat{y}$ and $y = y \hat{y}$. 
+      
+      Since the detector is smaller than the mirror, $h<y$ and $\theta << 1$. Therefore, we can use the small angle theorem to re-express $\theta$ as 
+      \begin{equation}
+      tan\theta \approx \theta = \frac{h}{R}.
+      \end{equation}
+      Now, we can write $|r|$ in terms of $\theta$:
+      \begin{equation}
+      |r| = R\left( 1+\theta^2 - \frac{2 \theta y}{R} + \frac{y^2}{R^2}  \right)^{1/2}
+      \label{eqn:r2}
+      \end{equation}
+      Since $\theta$ is small, $\theta^2 \approx 0$. Therefore, 
+      \begin{equation}
+      |r| = R \left(  1-\frac{2 \theta y}{R} + \frac{y^2}{R^2} \right)^{1/2}
+      \end{equation}
+      In the Fraunhofer regime, $R>> \frac{D^2}{\lambda^2}$, so $\frac{y^2}{R^2} \approx 0$. Now, we can re-write $|r|$ as 
+      \begin{equation}
+      |r| = R(1-\frac{2 \theta y}{R})^{1/2}.
+      \end{equation}
+      Taylor expanding the above expression, we get 
+      \begin{equation}
+      |r| = R(1-\frac{y}{R}\theta).
+      \label{eqn:r5}
+      \end{equation}
+      
+      Plugging this expression for $|r|$ into the electric field (Equation \ref{eqn:efield}), we get
+      \begin{equation}
+      E \sim \frac{1}{R} \int e^{i k |d-y|} dy.
+      \end{equation}
+      Note that at large separations, $\frac{1}{r}$ becomes $\frac{1}{R}$, so we've replaced $|r|$ with $|d-y|$ as in Equation \ref{eqn:r}. Following Equations \ref{eqn:r2} - \ref{eqn:r5}, we write the electric field as:
+      \begin{equation}
+      E \sim \int^{\frac{+D}{2}}_{\frac{-D}{2}} \frac{1}{R} e^{i k (R(1-y-\frac{\theta}{R}))}.
+      \end{equation}
+      Factoring out the R, we get
+      \begin{equation}
+      E \sim \frac{e^{ikR}}{R} \int^{\frac{+D}{2}}_{\frac{-D}{2}} e^{iky\theta} dy
+      \end{equation}
+      Since we're writing $E$ as a proportionality, we can drop the constant terms. We can also change the limits of integration to $+\infty$ and $-\infty$ in we include a top hat function in the integral to represent the aperture:
+      \begin{equation}
+      \int^{\infty}_{-\infty} e^{-iky \theta} F(y) dy
+      \label{eqn:fourier}
+      \end{equation}
+      where $F(y)$ is out top hat function, which is equal to zero everywhere except between $\frac{+D}{2}$ and $\frac{-D}{2}$ where it's equal to one.
+      
+      Equation \ref{eqn:fourier} is the definition of a Fourier transform. Therefore, the electric field at a detector one focal length away from the aperture is simply the Fourier transform of the electric field at the telescope aperture. Here, the Fourier transform of a top hat is a sinc function. A real telescope aperture, however, is 2D and circular. The electric field at the detector is then given by the Fourier transform of a circ function. That expression is pretty complicated, but the result is that the normalized intensity is given by
+      \begin{equation}
+      I = E \cdot E^{*} \sim \left [ \frac{2 J_{1} (\pi x)}{\pi x} \right ]^{1/2}
+      \end{equation}
+      where $x = \frac{2 w r}{\lambda z}$, $w$ is the aperture radius, and $z$ is the distance from the aperture to the measured point. Figure \ref{fig:intensity} plots the intensity as a function of $x$.
+      
+      \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\textwidth, angle=180]{circ.jpg}
+      \label{fig:intensity}
+      \end{figure} 
+      
+      By ``diffraction spikes," I think they're referring to the image artifacts introduced by the structure holding up the secondary mirror. Figure \ref{fig:spiders} gives a good overview. The main idea is that you can approximate the mirror struts as thin, rectangular apertures. When the width of the structure is small, the spider is more spread out, so you see a long and skinny spike in the image plane. Since the intensity of the spike is proportional to the area of the structure, the total intensity in the spike will be low. This is favorable, since we'd prefer to keep most of the light in the star's PSF rather than in the spiders. When the width of the structure is large, the spider is more concentrated towards the center of the image, and the spikes are shorter. While the image may look better, because you won't see the long spikes, more of the light has been pushes from the central PSF into the spider. 
+      
+      \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.75\textwidth]{spiders.png}
+      \label{fig:spiders}
+      \end{figure}
+      
+      
 \item \textbf{Derive an expression for the point source sensitivity of a radio interferometer as
       a function of the frequency, bandwidth, system temperature, diameter of each dish,
       number of dishes, etc.}
