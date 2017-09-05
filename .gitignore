@@ -2,6 +2,6 @@
 *.log
 *.toc
 *.out
-*.pdf
+review.pdf
 *.swp
 *.gz
